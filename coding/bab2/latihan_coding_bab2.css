@@ -301,6 +301,7 @@ body.dark .info-latihan p {
     color: #94a3b8;
 }
 
+
 /* === FIX TEXT WRAPPING ON SMALL SCREENS === */
 .question h4,
 label {
@@ -321,6 +322,7 @@ label input[type="radio"] {
     margin-top: 4px;
     flex-shrink: 0;
 }
+
 /* === RESPONSIVE DESIGN === */
 
 /* Tablet (≤768px) */
