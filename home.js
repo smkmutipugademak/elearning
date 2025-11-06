@@ -22,7 +22,7 @@ const mapelPerKelas = {
     ],
 };
 
-const babListData = ["Latihan Bab 1", "Latihan Bab 2", "Latihan Bab 3"];
+const babListData = ["Latihan Bab 1", "Latihan Bab 2", "Latihan Bab 3", "Latihan Bab 4", "Latihan Bab 5", "Latihan Bab 6", "Latihan Bab 7"];
 
 // === PILIH KELAS ===
 document.querySelectorAll(".kelas").forEach((card) => {
