@@ -301,6 +301,26 @@ body.dark .info-latihan p {
     color: #94a3b8;
 }
 
+/* === FIX TEXT WRAPPING ON SMALL SCREENS === */
+.question h4,
+label {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+/* Pastikan radio button sejajar rapi di kiri */
+label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+label input[type="radio"] {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
 /* === RESPONSIVE DESIGN === */
 
 /* Tablet (≤768px) */
