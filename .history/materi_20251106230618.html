@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materi & Praktikum | LMS Produktif</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a2b5b6f9b4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <i class="fa-solid fa-graduation-cap"></i>
+      <span>LMS Produktif</span>
+    </div>
+    <a href="index.html" class="btn-back">
+      <i class="fa-solid fa-arrow-left"></i> Kembali ke Dashboard
+    </a>
+  </header>
+
+  <main class="content">
+    <section class="materi-section">
+      <h2>📘 Materi Teori</h2>
+      <div class="materi-grid">
+        <!-- Materi otomatis dari JS -->
+      </div>
+    </section>
+
+    <section class="praktikum-section">
+      <h2>🔧 Praktikum</h2>
+      <div class="praktikum-grid">
+        <!-- Praktikum otomatis dari JS -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 LMS Produktif • Materi & Praktikum
+  </footer>
+
+  <script>
+    const materiContainer = document.querySelector('.materi-grid');
+    const praktikumContainer = document.querySelector('.praktikum-grid');
+
+    // Buat daftar 8 materi
+    for (let i = 1; i <= 8; i++) {
+      const div = document.createElement('div');
+      div.className = 'materi-card';
+      div.innerHTML = `
+        <h4>Materi ${i}</h4>
+        <p>Topik pembelajaran ke-${i} dari mapel ini.</p>
+        <button onclick="alert('Membuka Materi ${i}')">Buka Materi</button>
+      `;
+      materiContainer.appendChild(div);
+    }
+
+    // Buat daftar 8 praktikum
+    for (let i = 1; i <= 8; i++) {
+      const div = document.createElement('div');
+      div.className = 'praktikum-card';
+      div.innerHTML = `
+        <h4>Praktikum ${i}</h4>
+        <p>Langkah-langkah praktikum ke-${i} sesuai mapel.</p>
+        <button onclick="alert('Membuka Praktikum ${i}')">Mulai</button>
+      `;
+      praktikumContainer.appendChild(div);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Produktif | Dashboard</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🎓 LMS Mata Pelajaran Produktif</div>
+        <!-- Tombol dark mode akan ditambahkan otomatis lewat JS -->
+    </header>
+
+    <main class="dashboard">
+        <h1>Selamat Datang di LMS Mata Pelajaran Produktif</h1>
+        <p class="subtitle">Pilih kelas dan mata pelajaran untuk memulai pembelajaran</p>
+
+        <!-- PILIH KELAS -->
+        <section id="kelasSection" class="dashboard-grid">
+            <div class="card kelas" data-kelas="X">
+                <h2>Kelas X</h2>
+                <p>Coding, Desain Komunikasi Visual, Informatika</p>
+            </div>
+            <div class="card kelas" data-kelas="XI">
+                <h2>Kelas XI</h2>
+                <p>Pemrograman Dasar, Desain Grafis Percetakan</p>
+            </div>
+            <div class="card kelas" data-kelas="XII">
+                <h2>Kelas XII</h2>
+                <p>Pemrograman Web, Audio Video, Media Interaktif</p>
+            </div>
+        </section>
+
+        <!-- PILIH MAPEL -->
+        <section id="mapelSection" class="hidden">
+            <h2>Pilih Mata Pelajaran</h2>
+            <div id="mapelList" class="dashboard-grid"></div>
+            <button class="btn-back-home" id="backToKelas">← Kembali ke Pilihan Kelas</button>
+        </section>
+
+        <!-- PILIH MENU -->
+        <section id="menuSection" class="hidden">
+            <h2 id="selectedMapelTitle"></h2>
+            <div class="dashboard-grid" id="menuList"></div>
+            <button class="btn-back-home" id="backToMapel">← Kembali ke Pilihan Mapel</button>
+        </section>
+
+        <!-- PILIH BAB TRYOUT -->
+        <section id="babSection" class="hidden">
+            <h2>Pilih Latihan TryOut</h2>
+            <div id="babList" class="dashboard-grid"></div>
+            <button class="btn-back-home" id="backToMenu">← Kembali ke Menu Mapel</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 LMS Produktif | Versi 2.0</p>
+    </footer>
+
+    <script src="home.js"></script>
+</body>
+
+</html>

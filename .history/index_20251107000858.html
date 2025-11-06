@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">📘 Latihan Soal</div>
+        <a href="index.html" class="btn-back">← Dashboard</a>
+    </header>
+
+    <main class="content">
+        <section class="quiz-container">
+            <h2>Latihan Pilihan Ganda</h2>
+
+            <div class="user-info">
+                <input type="text" id="nama" placeholder="Nama Lengkap" required />
+                <select id="kelas">
+                    <option value="X">Kelas X</option>
+                    <option value="XI">Kelas XI</option>
+                    <option value="XII">Kelas XII</option>
+                </select>
+                <input type="text" id="mapel" placeholder="Mata Pelajaran" required />
+            </div>
+
+            <div id="quiz"></div>
+
+            <button id="submitQuiz" disabled>Kirim Jawaban</button>
+
+            <div id="result"></div>
+
+            <div id="hasilPembahasan" style="display:none;"></div>
+
+            <button id="ulangQuiz" style="display:none;">🔁 Ulangi Latihan</button>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

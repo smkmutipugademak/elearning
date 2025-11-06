@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TryOut | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-brain"></i>
+            <span>TryOut Simulasi</span>
+        </div>
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+    </header>
+
+    <main class="content tryout">
+        <h2>Simulasi TryOut Online</h2>
+        <p>Ujian terdiri dari 40 soal dengan waktu 60 menit.</p>
+        <button class="btn-start" onclick="startTryOut()">Mulai TryOut</button>
+
+        <div id="tryoutArea" style="display:none;">
+            <h4>Soal 1:</h4>
+            <p>Apa fungsi sensor ultrasonik?</p>
+            <label><input type="radio" name="q1"> Mengukur jarak</label><br />
+            <label><input type="radio" name="q1"> Mengukur suhu</label><br />
+            <button onclick="nextQuestion()">Selanjutnya</button>
+        </div>
+    </main>
+
+    <script>
+        function startTryOut() {
+            document.querySelector(".btn-start").style.display = "none";
+            document.getElementById("tryoutArea").style.display = "block";
+        }
+        function nextQuestion() {
+            alert("Pertanyaan berikutnya...");
+        }
+    </script>
+</body>
+
+</html>

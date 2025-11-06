@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a2b5b6f9b4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-clipboard-check"></i>
+            <span>Latihan Soal</span>
+        </div>
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+    </header>
+
+    <main class="content">
+        <section class="quiz-container">
+            <h2>Latihan Pilihan Ganda</h2>
+
+            <div class="user-info">
+                <input type="text" id="nama" placeholder="Nama Lengkap" required />
+                <select id="kelas">
+                    <option value="X">Kelas X</option>
+                    <option value="XI">Kelas XI</option>
+                    <option value="XII">Kelas XII</option>
+                </select>
+                <input type="text" id="mapel" placeholder="Mata Pelajaran" required />
+            </div>
+
+            <div id="quiz"></div>
+
+            <button id="submitQuiz">Kirim Jawaban</button>
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <script>
+        // === KONFIGURASI BACKEND GOOGLE SHEET ===
+        const BASE_URL = "https://script.google.com/macros/s/AKfycbyLMS-backend/exec"; // ganti URL kamu
+
+        // === DATA SOAL ===
+        const quizData = [
+            {
+                q: "Apa kepanjangan dari PLC?",
+                a: ["Programmable Logic Controller", "Power Line Control", "Program Logic Chip"],
+                correct: 0,
+                pembahasan: "PLC adalah alat kendali industri berbasis mikroprosesor."
+            },
+            {
+                q: "Simbol resistor pada rangkaian listrik adalah?",
+                a: ["Z", "R", "Ω"],
+                correct: 1,
+                pembahasan: "Resistor dilambangkan dengan huruf R, dari kata Resistance."
+            },
+            {
+                q: "Satuan gaya adalah?",
+                a: ["Newton", "Joule", "Watt"],
+                correct: 0,
+                pembahasan: "Gaya diukur dalam satuan Newton (N)."
+            },
+            {
+                q: "Warna kabel netral di listrik rumah?",
+                a: ["Coklat", "Biru", "Hitam"],
+                correct: 1,
+                pembahasan: "Warna kabel netral standar adalah biru."
+            },
+            {
+                q: "Sensor suhu menggunakan komponen?",
+                a: ["Thermistor", "LDR", "Potensiometer"],
+                correct: 0,
+                pembahasan: "Thermistor adalah resistor yang peka terhadap suhu."
+            },
+            {
+                q: "Alat ukur arus listrik adalah?",
+                a: ["Voltmeter", "Ammeter", "Ohmmeter"],
+                correct: 1,
+                pembahasan: "Ammeter digunakan untuk mengukur arus listrik."
+            },
+            {
+                q: "Komponen yang menyimpan muatan listrik adalah?",
+                a: ["Resistor", "Induktor", "Kapasitor"],
+                correct: 2,
+                pembahasan: "Kapasitor berfungsi menyimpan muatan listrik sementara."
+            }
+        ];
+
+        // === FUNGSI ACAK ===
+        function shuffleArray(array) {
+            const newArr = [...array];
+            for (let i = newArr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+            }
+            return newArr;
+        }
+
+        // Acak urutan soal
+        const randomizedQuiz = shuffleArray(quizData);
+
+        const quizContainer = document.getElementById("quiz");
+        const submitBtn = document.getElementById("submitQuiz");
+        const resultDiv = document.getElementById("result");
+
+        // === Render Soal dengan Pilihan Diacak ===
+        randomizedQuiz.forEach((item, i) => {
+            const shuffledAnswers = shuffleArray(item.a.map((text, idx) => ({
+                text,
+                isCorrect: idx === item.correct
+            })));
+
+            // Simpan ulang kunci jawaban yang benar setelah diacak
+            randomizedQuiz[i].shuffledAnswers = shuffledAnswers;
+
+            const div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML =
+                `<h4>${i + 1}. ${item.q}</h4>` +
+                shuffledAnswers.map(
+                    (ans, idx) => `
+            <label>
+              <input type="radio" name="q${i}" value="${idx}"> 
+              ${String.fromCharCode(65 + idx)}. ${ans.text}
+            </label><br>`
+                ).join("");
+            quizContainer.appendChild(div);
+        });
+
+        // === Event Kirim Jawaban ===
+        submitBtn.addEventListener("click", async () => {
+            const nama = document.getElementById("nama").value.trim();
+            const kelas = document.getElementById("kelas").value;
+            const mapel = document.getElementById("mapel").value.trim();
+
+            if (!nama || !mapel) {
+                alert("Lengkapi nama dan mata pelajaran terlebih dahulu!");
+                return;
+            }
+
+            let benar = 0;
+            let feedback = "";
+
+            randomizedQuiz.forEach((item, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                const selectedIndex = selected ? Number(selected.value) : null;
+                const answers = item.shuffledAnswers;
+
+                const correctAns = answers.find(a => a.isCorrect);
+                const yourAns = selected ? answers[selectedIndex] : null;
+                const isCorrect = yourAns && yourAns.isCorrect;
+
+                if (isCorrect) benar++;
+
+                feedback += `
+          <div class="feedback-item ${isCorrect ? 'benar' : 'salah'}">
+            <h4>${i + 1}. ${item.q}</h4>
+            <p><b>Jawaban kamu:</b> ${yourAns ? yourAns.text : 'Tidak dijawab'}</p>
+            <p><b>Jawaban benar:</b> ${correctAns.text}</p>
+            <p class="pembahasan"><b>Pembahasan:</b> ${item.pembahasan}</p>
+          </div>
+        `;
+            });
+
+            const total = randomizedQuiz.length;
+            const nilai = Math.round((benar / total) * 100);
+
+            // === Tampilkan Hasil ===
+            resultDiv.innerHTML = `
+        <div class="result-box">
+          <h3>🎯 Nilai Kamu: ${nilai}</h3>
+          <p>Jawaban benar: ${benar} dari ${total}</p>
+        </div>
+        <h3>Pembahasan:</h3>
+        ${feedback}
+      `;
+
+            // === Simpan Nilai ke Google Sheet ===
+            const data = { nama, kelas, mapel, jenis: "Latihan", nilai };
+            const res = await fetch(BASE_URL, {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            const result = await res.json();
+            if (result.status === "ok") {
+                console.log("✅ Nilai tersimpan di Sheet");
+            } else {
+                console.error("❌ Gagal simpan nilai");
+            }
+
+            // Disable input setelah kirim
+            submitBtn.disabled = true;
+            document.querySelectorAll("input[type='radio']").forEach(inp => inp.disabled = true);
+        });
+    </script>
+</body>
+
+</html>

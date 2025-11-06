@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Materi & Praktikum | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a2b5b6f9b4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-book"></i>
+            <span>Materi & Praktikum</span>
+        </div>
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+    </header>
+
+    <main class="content">
+        <section class="materi-section">
+            <h2>📘 Materi Teori</h2>
+            <div class="materi-grid"></div>
+        </section>
+
+        <section class="praktikum-section">
+            <h2>🔧 Praktikum</h2>
+            <div class="praktikum-grid"></div>
+        </section>
+    </main>
+
+    <footer>© 2025 LMS Produktif • Materi & Praktikum</footer>
+
+    <script>
+        const materiGrid = document.querySelector('.materi-grid');
+        const praktikumGrid = document.querySelector('.praktikum-grid');
+
+        for (let i = 1; i <= 8; i++) {
+            const m = document.createElement('div');
+            m.className = 'materi-card';
+            m.innerHTML = `<h4>Materi ${i}</h4><p>Topik pembelajaran ke-${i}.</p><button>Buka</button>`;
+            materiGrid.appendChild(m);
+
+            const p = document.createElement('div');
+            p.className = 'praktikum-card';
+            p.innerHTML = `<h4>Praktikum ${i}</h4><p>Langkah-langkah praktikum ke-${i}.</p><button>Mulai</button>`;
+            praktikumGrid.appendChild(p);
+        }
+    </script>
+</body>
+
+</html>

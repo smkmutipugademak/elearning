@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Produktif | Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">🎓 LMS Produktif</div>
+        <a href="#" class="btn-logout">Keluar</a>
+    </header>
+
+    <main class="dashboard">
+        <h1>Selamat Datang di LMS Produktif</h1>
+        <p class="subtitle">Pilih kelas dan mata pelajaran untuk memulai pembelajaran</p>
+
+        <!-- PILIH KELAS -->
+        <section id="kelasSection" class="dashboard-grid">
+            <div class="card kelas" data-kelas="X">
+                <h2>Kelas X</h2>
+                <p>Coding, Desain Komunikasi Visual, Informatika</p>
+            </div>
+            <div class="card kelas" data-kelas="XI">
+                <h2>Kelas XI</h2>
+                <p>Pemrograman Dasar, Desain Grafis Percetakan</p>
+            </div>
+            <div class="card kelas" data-kelas="XII">
+                <h2>Kelas XII</h2>
+                <p>Pemrograman Web, Audio Video, Media Interaktif</p>
+            </div>
+        </section>
+
+        <!-- PILIH MAPEL -->
+        <section id="mapelSection" class="hidden">
+            <h2>Pilih Mata Pelajaran</h2>
+            <div id="mapelList" class="dashboard-grid"></div>
+            <button class="btn-back-home" id="backToKelas">← Kembali ke Pilihan Kelas</button>
+        </section>
+
+        <!-- PILIH BAB -->
+        <section id="babSection" class="hidden">
+            <h2>Pilih Latihan Bab</h2>
+            <div id="babList" class="dashboard-grid"></div>
+            <button class="btn-back-home" id="backToMapel">← Kembali ke Pilihan Mapel</button>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>© 2025 LMS Produktif | Versi 1.0</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

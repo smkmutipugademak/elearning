@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LMS Mapel Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a2b5b6f9b4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>LMS Produktif</span>
+        </div>
+        <div class="nav-right">
+            <input type="text" id="search" placeholder="Cari mata pelajaran..." />
+            <button class="btn-profile">
+                <i class="fa-solid fa-user"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTAINER -->
+    <div class="main-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <h3>Kelas</h3>
+            <div class="kelas-selector">
+                <button class="kelas-btn active" data-grade="X">Kelas X</button>
+                <button class="kelas-btn" data-grade="XI">Kelas XI</button>
+                <button class="kelas-btn" data-grade="XII">Kelas XII</button>
+            </div>
+            <hr />
+            <h3>Menu</h3>
+            <ul class="menu-list">
+                <li onclick="goTo('materi.html')"><i class="fa-solid fa-book"></i> Materi</li>
+                <li onclick="goTo('materi.html')"><i class="fa-solid fa-wrench"></i> Praktikum</li>
+                <li onclick="goTo('latihan.html')"><i class="fa-solid fa-pencil"></i> Latihan Soal</li>
+                <li onclick="goTo('tryout.html')"><i class="fa-solid fa-brain"></i> TryOut</li>
+            </ul>
+        </aside>
+
+        <!-- DASHBOARD -->
+        <main class="dashboard">
+            <section class="welcome">
+                <h2>Selamat Datang 👋</h2>
+                <p>Pilih kelas dan mata pelajaran untuk mulai belajar.</p>
+            </section>
+
+            <section class="mapel-section">
+                <h3>Mata Pelajaran</h3>
+                <div class="mapel-grid" id="mapelContainer"></div>
+            </section>
+        </main>
+    </div>
+
+    <footer>© 2025 LMS Produktif — Desain Modern & Responsif</footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

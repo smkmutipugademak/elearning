@@ -1,0 +1,86 @@
+:root {
+    --primary: #007acc;
+    --bg: #f8fafc;
+    --card: #fff;
+    --radius: 10px;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #333;
+}
+
+.header {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 1.5em;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard {
+    max-width: 700px;
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1.5em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-group button {
+    background: #eee;
+    border: none;
+    padding: 0.7em 1.2em;
+    margin: 0.3em;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-group button.active,
+.btn-group button:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1em;
+}
+
+.menu-item {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 1em;
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s, background 0.2s;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+    background: #eaf6ff;
+}
+
+.hidden {
+    display: none;
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    color: #666;
+    font-size: 0.9em;
+}

@@ -1,0 +1,138 @@
+:root {
+    --primary: #0078ff;
+    --secondary: #0a1a2f;
+    --bg: #f4f7fb;
+    --card: #ffffff;
+    --accent: #00b4d8;
+    --radius: 14px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--bg);
+    color: #333;
+    overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #f5f6fa;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #3b82f6;
+  color: white;
+  padding: 15px 20px;
+  font-weight: 600;
+}
+
+.btn-back {
+  background: white;
+  color: #3b82f6;
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.content {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.quiz-container {
+  width: 100%;
+  max-width: 750px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.user-info input, .user-info select {
+  padding: 8px;
+  margin: 6px;
+  width: calc(33% - 12px);
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.question {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 12px 0;
+  transition: background 0.2s;
+}
+.question:hover { background: #f0f4ff; }
+
+.feedback-item {
+  background: #eef2ff;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.feedback-item.benar { border-left: 5px solid #22c55e; }
+.feedback-item.salah { border-left: 5px solid #ef4444; }
+
+#submitQuiz {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #3b82f6;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#submitQuiz:hover { background: #2563eb; }
+
+pre code {
+  display: block;
+  background: #1e293b;
+  color: #f1f5f9;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+img.soal-img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .dashboard {
+        padding: 1em;
+    }
+}

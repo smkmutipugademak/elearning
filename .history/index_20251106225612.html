@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LMS Mapel Produktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>LMS Mapel Produktif</h1>
+        <p>Kelas X · XI · XII</p>
+    </header>
+
+    <section class="dashboard">
+        <div class="card">
+            <h3>Pilih Kelas</h3>
+            <div id="kelas" class="btn-group">
+                <button data-grade="X">Kelas X</button>
+                <button data-grade="XI">Kelas XI</button>
+                <button data-grade="XII">Kelas XII</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Pilih Mata Pelajaran</h3>
+            <select id="mapelSelect">
+                <option value="">-- Pilih Mapel --</option>
+            </select>
+        </div>
+
+        <div id="menu" class="menu hidden">
+            <a href="materi.html?type=teori" class="menu-item">
+                📘 Materi Teori
+            </a>
+            <a href="materi.html?type=praktikum" class="menu-item">
+                🔧 Praktikum
+            </a>
+            <a href="latihan.html" class="menu-item">
+                📝 Latihan Soal
+            </a>
+            <a href="tryout.html" class="menu-item">
+                🧠 TryOut
+            </a>
+        </div>
+    </section>
+
+    <footer>© 2025 LMS Mapel Produktif</footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

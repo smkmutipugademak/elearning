@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-pencil"></i>
+            <span>Latihan Soal</span>
+        </div>
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Kembali
+        </a>
+    </header>
+
+    <main class="content">
+        <section class="quiz-container">
+            <h2>Latihan Pilihan Ganda</h2>
+            <div id="quiz"></div>
+            <button id="submitQuiz">Kirim Jawaban</button>
+            <p id="score"></p>
+        </section>
+    </main>
+
+    <script>
+        const quizData = [
+            { q: "Apa kepanjangan dari PLC?", a: ["Programmable Logic Controller", "Power Line Control", "Program Logic Chip"], correct: 0 },
+            { q: "Simbol resistor pada rangkaian listrik adalah?", a: ["Z", "R", "Ω"], correct: 1 }
+        ];
+
+        const quizContainer = document.getElementById('quiz');
+        const submitBtn = document.getElementById('submitQuiz');
+        const scoreEl = document.getElementById('score');
+
+        quizData.forEach((item, i) => {
+            const div = document.createElement('div');
+            div.className = 'question';
+            div.innerHTML = `<h4>${i + 1}. ${item.q}</h4>` +
+                item.a.map((ans, idx) =>
+                    `<label><input type="radio" name="q${i}" value="${idx}"> ${ans}</label><br>`
+                ).join('');
+            quizContainer.appendChild(div);
+        });
+
+        submitBtn.addEventListener('click', () => {
+            let score = 0;
+            quizData.forEach((item, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && Number(selected.value) === item.correct) score++;
+            });
+            scoreEl.textContent = `Skor Kamu: ${score}/${quizData.length}`;
+        });
+    </script>
+</body>
+
+</html>

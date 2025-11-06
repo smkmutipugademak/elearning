@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Latihan Soal | LMS Produktif</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://kit.fontawesome.com/a2b5b6f9b4.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-pencil"></i>
+            <span>Latihan Soal</span>
+        </div>
+        <a href="index.html" class="btn-back">
+            <i class="fa-solid fa-arrow-left"></i> Dashboard
+        </a>
+    </header>
+
+    <main class="content">
+        <section class="quiz-container">
+            <h2>Latihan Pilihan Ganda</h2>
+
+            <!-- Data siswa -->
+            <div class="user-info">
+                <input type="text" id="nama" placeholder="Nama Lengkap" required />
+                <select id="kelas">
+                    <option value="X">Kelas X</option>
+                    <option value="XI">Kelas XI</option>
+                    <option value="XII">Kelas XII</option>
+                </select>
+                <input type="text" id="mapel" placeholder="Mata Pelajaran" required />
+            </div>
+
+            <div id="quiz"></div>
+
+            <button id="submitQuiz">Kirim Jawaban</button>
+            <p id="score"></p>
+        </section>
+    </main>
+
+    <script>
+        // === Konfigurasi Backend ===
+        const BASE_URL = "https://script.google.com/macros/s/AKfycbyLMS-backend/exec"; // ganti URL backend kamu
+
+        // === Soal Latihan (bisa diganti dinamis dari Google Sheet) ===
+        const quizData = [
+            { q: "Apa kepanjangan dari PLC?", a: ["Programmable Logic Controller", "Power Line Control", "Program Logic Chip"], correct: 0 },
+            { q: "Simbol resistor adalah?", a: ["Z", "R", "Ω"], correct: 1 },
+            { q: "Satuan gaya adalah?", a: ["Newton", "Joule", "Watt"], correct: 0 },
+            { q: "Warna kabel netral di listrik rumah?", a: ["Coklat", "Biru", "Hitam"], correct: 1 },
+            { q: "Sensor suhu menggunakan komponen?", a: ["Thermistor", "LDR", "Potensiometer"], correct: 0 }
+        ];
+
+        const quizContainer = document.getElementById("quiz");
+        const submitBtn = document.getElementById("submitQuiz");
+        const scoreEl = document.getElementById("score");
+
+        // === Render Soal ===
+        quizData.forEach((item, i) => {
+            const div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML =
+                `<h4>${i + 1}. ${item.q}</h4>` +
+                item.a.map(
+                    (ans, idx) => `<label><input type="radio" name="q${i}" value="${idx}"> ${ans}</label><br>`
+                ).join("");
+            quizContainer.appendChild(div);
+        });
+
+        // === Penilaian Otomatis ===
+        submitBtn.addEventListener("click", async () => {
+            const nama = document.getElementById("nama").value.trim();
+            const kelas = document.getElementById("kelas").value;
+            const mapel = document.getElementById("mapel").value.trim();
+
+            if (!nama || !mapel) {
+                alert("Lengkapi nama dan mata pelajaran terlebih dahulu!");
+                return;
+            }
+
+            let benar = 0;
+            quizData.forEach((item, i) => {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && Number(selected.value) === item.correct) benar++;
+            });
+
+            const total = quizData.length;
+            const nilai = Math.round((benar / total) * 100);
+
+            scoreEl.innerHTML = `
+        <div class="result-box">
+          <h3>🎉 Nilai Kamu: ${nilai}</h3>
+          <p>Jawaban benar: ${benar} dari ${total}</p>
+        </div>
+      `;
+
+            // === Simpan ke Google Sheet ===
+            const data = { nama, kelas, mapel, jenis: "Latihan", nilai };
+            const res = await fetch(BASE_URL, {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: { "Content-Type": "application/json" }
+            });
+
+            const result = await res.json();
+            if (result.status === "ok") {
+                alert("✅ Nilai kamu tersimpan di sistem!");
+            } else {
+                alert("❌ Gagal menyimpan nilai!");
+            }
+        });
+    </script>
+</body>
+
+</html>
