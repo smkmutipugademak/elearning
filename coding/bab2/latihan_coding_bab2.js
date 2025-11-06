@@ -582,3 +582,10 @@ toggle.addEventListener('click', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 renderQuiz();
+const backToDashboard = document.querySelector('.btn-back');
+if (backToDashboard) {
+    backToDashboard.addEventListener('click', (e) => {
+        e.preventDefault(); // cegah efek JS lain
+        window.location.href = '../../index.html';
+    });
+}
