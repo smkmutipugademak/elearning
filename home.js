@@ -49,7 +49,7 @@ function showMenu(mapel) {
     const menus = [
         { nama: "Materi Teori", key: "teori" },
         { nama: "Praktikum", key: "praktikum" },
-        { nama: "TryOut", key: "tryout" },
+        { nama: "TryOut Sumatif Akhir Semester (SAS)", key: "tryout" },
         { nama: "Kisi-Kisi", key: "kisi" },
     ];
 
