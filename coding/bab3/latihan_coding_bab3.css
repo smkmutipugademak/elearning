@@ -1,4 +1,3 @@
-/* === BASE STYLE === */
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
@@ -7,8 +6,6 @@ body {
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
-
-/* === DARK MODE === */
 body.dark {
     background: #0f172a;
     color: #e2e8f0;
@@ -30,8 +27,6 @@ body.dark {
 body.dark .navbar {
     background: #1e293b;
 }
-
-/* === TIMER === */
 .timer {
     font-size: 1.1rem;
     font-weight: 600;
@@ -68,15 +63,12 @@ body.dark .btn-back {
 body.dark .btn-back:hover {
     background: #475569;
 }
-
-/* === CONTENT === */
 .content {
     display: flex;
     justify-content: center;
     padding: 40px 10px 80px;
 }
 
-/* === QUIZ CONTAINER === */
 .quiz-container {
     width: 100%;
     max-width: 850px;
@@ -91,7 +83,6 @@ body.dark .quiz-container {
     box-shadow: 0 5px 25px rgba(255, 255, 255, 0.05);
 }
 
-/* === QUESTION BOX === */
 .question {
     background: #f9fafc;
     border-radius: 14px;
@@ -114,8 +105,6 @@ body.dark .question {
 body.dark .question:hover {
     background: #475569;
 }
-
-/* === QUESTION TEXT === */
 .question h4 {
     font-size: 17px;
     margin-bottom: 15px;
@@ -151,7 +140,6 @@ body.dark label:hover {
     background: #475569;
 }
 
-/* === BUTTON === */
 button {
     display: block;
     margin: 35px auto 0;
@@ -176,8 +164,6 @@ button:disabled {
     cursor: not-allowed;
     transform: none;
 }
-
-/* === RESULT BOX === */
 .result-box {
     background: #e0f2fe;
     border-left: 6px solid #0ea5e9;
@@ -194,7 +180,6 @@ body.dark .result-box {
     color: #e2e8f0;
 }
 
-/* === FEEDBACK ITEM === */
 .feedback-item {
     border-radius: 10px;
     padding: 16px 20px;
@@ -215,7 +200,6 @@ body.dark .result-box {
     color: #991b1b;
 }
 
-/* === DARK MODE FIX UNTUK FEEDBACK DAN PEMBAHASAN === */
 body.dark .feedback-item.benar {
     background: #064e3b;
     border-left-color: #22c55e;
@@ -228,7 +212,6 @@ body.dark .feedback-item.salah {
     color: #ffffff;
 }
 
-/* === PEMBAHASAN === */
 .btn-pembahasan {
     background: #e2e8f0;
     color: #1e293b;
@@ -267,7 +250,6 @@ body.dark .pembahasan {
     color: #ffffff;
 }
 
-/* === INFO LATIHAN === */
 .info-latihan {
     text-align: center;
     background: #f9fafb;
@@ -301,8 +283,6 @@ body.dark .info-latihan p {
     color: #94a3b8;
 }
 
-
-/* === FIX TEXT WRAPPING ON SMALL SCREENS === */
 .question h4,
 label {
     word-wrap: break-word;
@@ -322,8 +302,6 @@ label input[type="radio"] {
     margin-top: 4px;
     flex-shrink: 0;
 }
-
-/* === RESPONSIVE DESIGN === */
 
 /* Tablet (≤768px) */
 @media (max-width: 768px) {
