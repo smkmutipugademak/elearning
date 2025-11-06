@@ -1,0 +1,408 @@
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f5f7fb;
+    color: #1e293b;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #2563eb;
+    color: white;
+    padding: 16px 28px;
+    font-weight: 600;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s;
+}
+
+body.dark .navbar {
+    background: #1e293b;
+}
+
+.timer {
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: #1e40af;
+    padding: 8px 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+body.dark .timer {
+    background: #334155;
+}
+
+.btn-back {
+    background: white;
+    color: #2563eb;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.btn-back:hover {
+    background: #e2e8f0;
+}
+
+body.dark .btn-back {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark .btn-back:hover {
+    background: #475569;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding: 40px 10px 80px;
+}
+
+.quiz-container {
+    width: 100%;
+    max-width: 850px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 45px 40px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+body.dark .quiz-container {
+    background: #1e293b;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.05);
+}
+
+.question {
+    background: #f9fafc;
+    border-radius: 14px;
+    padding: 25px 30px;
+    margin-bottom: 30px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+}
+
+.question:hover {
+    background: #f1f5ff;
+    transform: translateY(-2px);
+}
+
+body.dark .question {
+    background: #334155;
+    border-color: #475569;
+}
+
+body.dark .question:hover {
+    background: #475569;
+}
+
+.question h4 {
+    font-size: 17px;
+    margin-bottom: 15px;
+    color: #1e293b;
+}
+
+body.dark .question h4 {
+    color: #e2e8f0;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    font-size: 15px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background 0.2s, transform 0.2s;
+    cursor: pointer;
+    color: inherit;
+}
+
+label:hover {
+    background: #e0ebff;
+    transform: translateX(3px);
+}
+
+body.dark label {
+    color: #e2e8f0;
+}
+
+body.dark label:hover {
+    background: #475569;
+}
+
+button {
+    display: block;
+    margin: 35px auto 0;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.result-box {
+    background: #e0f2fe;
+    border-left: 6px solid #0ea5e9;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 25px 0;
+    text-align: center;
+    color: #1e293b;
+}
+
+body.dark .result-box {
+    background: #1e3a8a;
+    border-left-color: #38bdf8;
+    color: #e2e8f0;
+}
+
+.feedback-item {
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-left: 5px solid transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.feedback-item.benar {
+    border-left-color: #22c55e;
+    background: #f0fdf4;
+    color: #166534;
+}
+
+.feedback-item.salah {
+    border-left-color: #ef4444;
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+body.dark .feedback-item.benar {
+    background: #064e3b;
+    border-left-color: #22c55e;
+    color: #ffffff;
+}
+
+body.dark .feedback-item.salah {
+    background: #451a1a;
+    border-left-color: #ef4444;
+    color: #ffffff;
+}
+
+.btn-pembahasan {
+    background: #e2e8f0;
+    color: #1e293b;
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-pembahasan:hover {
+    background: #cbd5e1;
+}
+
+body.dark .btn-pembahasan {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark .btn-pembahasan:hover {
+    background: #475569;
+}
+
+.pembahasan {
+    display: none;
+    background: #ecfdf5;
+    color: #166534;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 6px;
+}
+
+body.dark .pembahasan {
+    background: #14532d;
+    color: #ffffff;
+}
+
+.info-latihan {
+    text-align: center;
+    background: #f9fafb;
+    border-radius: 14px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.info-latihan h3 {
+    color: #1e3a8a;
+    margin: 0 0 6px 0;
+}
+
+.info-latihan p {
+    color: #555;
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+body.dark .info-latihan {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark .info-latihan h3 {
+    color: #60a5fa;
+}
+
+body.dark .info-latihan p {
+    color: #94a3b8;
+}
+
+.question h4,
+label {
+    word-wrap: break-word;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    line-height: 1.4;
+}
+
+label input[type="radio"] {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .quiz-container {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+
+    .question {
+        padding: 18px;
+        margin-bottom: 20px;
+    }
+
+    .question h4 {
+        font-size: 15px;
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    button {
+        width: 90%;
+        font-size: 15px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .timer {
+        font-size: 0.95rem;
+        padding: 6px 12px;
+    }
+
+    .quiz-container {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .question {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .question h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    label {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .btn-back {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .result-box {
+        font-size: 0.9rem;
+        padding: 14px;
+    }
+
+    .feedback-item {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .btn-pembahasan {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .pembahasan {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .info-latihan {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
