@@ -1,8 +1,9 @@
+/* === BASE STYLE === */
 body {
     margin: 0;
     font-family: "Poppins", sans-serif;
     background: #f5f7fb;
-    color: #333;
+    color: #1e293b;
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
@@ -59,6 +60,15 @@ body.dark .timer {
     background: #e2e8f0;
 }
 
+body.dark .btn-back {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark .btn-back:hover {
+    background: #475569;
+}
+
 /* === CONTENT === */
 .content {
     display: flex;
@@ -70,7 +80,7 @@ body.dark .timer {
 .quiz-container {
     width: 100%;
     max-width: 850px;
-    background: #fff;
+    background: #ffffff;
     border-radius: 18px;
     padding: 45px 40px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
@@ -78,6 +88,7 @@ body.dark .timer {
 
 body.dark .quiz-container {
     background: #1e293b;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.05);
 }
 
 /* === QUESTION BOX === */
@@ -124,6 +135,7 @@ label {
     border-radius: 6px;
     transition: background 0.2s, transform 0.2s;
     cursor: pointer;
+    color: inherit;
 }
 
 label:hover {
@@ -131,8 +143,12 @@ label:hover {
     transform: translateX(3px);
 }
 
+body.dark label {
+    color: #e2e8f0;
+}
+
 body.dark label:hover {
-    background: #334155;
+    background: #475569;
 }
 
 /* === BUTTON === */
@@ -169,16 +185,17 @@ button:disabled {
     border-radius: 12px;
     margin: 25px 0;
     text-align: center;
+    color: #1e293b;
 }
 
 body.dark .result-box {
     background: #1e3a8a;
     border-left-color: #38bdf8;
+    color: #e2e8f0;
 }
 
 /* === FEEDBACK ITEM === */
 .feedback-item {
-    background: #f9fafc;
     border-radius: 10px;
     padding: 16px 20px;
     margin: 20px 0;
@@ -189,11 +206,26 @@ body.dark .result-box {
 .feedback-item.benar {
     border-left-color: #22c55e;
     background: #f0fdf4;
+    color: #166534;
 }
 
 .feedback-item.salah {
     border-left-color: #ef4444;
     background: #fef2f2;
+    color: #991b1b;
+}
+
+/* === DARK MODE FIX UNTUK FEEDBACK DAN PEMBAHASAN === */
+body.dark .feedback-item.benar {
+    background: #064e3b;
+    border-left-color: #22c55e;
+    color: #ffffff;
+}
+
+body.dark .feedback-item.salah {
+    background: #451a1a;
+    border-left-color: #ef4444;
+    color: #ffffff;
 }
 
 /* === PEMBAHASAN === */
@@ -205,6 +237,20 @@ body.dark .result-box {
     border-radius: 6px;
     margin-top: 8px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-pembahasan:hover {
+    background: #cbd5e1;
+}
+
+body.dark .btn-pembahasan {
+    background: #334155;
+    color: #e2e8f0;
+}
+
+body.dark .btn-pembahasan:hover {
+    background: #475569;
 }
 
 .pembahasan {
@@ -214,6 +260,11 @@ body.dark .result-box {
     padding: 10px;
     border-radius: 8px;
     margin-top: 6px;
+}
+
+body.dark .pembahasan {
+    background: #14532d;
+    color: #ffffff;
 }
 
 /* === INFO LATIHAN === */
@@ -237,10 +288,32 @@ body.dark .result-box {
     font-size: 0.95rem;
 }
 
+body.dark .info-latihan {
+    background: #1e293b;
+    color: #e2e8f0;
+}
+
+body.dark .info-latihan h3 {
+    color: #60a5fa;
+}
+
+body.dark .info-latihan p {
+    color: #94a3b8;
+}
+
 /* === RESPONSIVE DESIGN === */
+
+/* Tablet (≤768px) */
 @media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
     .quiz-container {
         padding: 25px 20px;
+        margin: 0 10px;
     }
 
     .question {
@@ -248,13 +321,89 @@ body.dark .result-box {
         margin-bottom: 20px;
     }
 
+    .question h4 {
+        font-size: 15px;
+    }
+
     label {
         font-size: 14px;
     }
 
     button {
-        width: 85%;
+        width: 90%;
         font-size: 15px;
         padding: 10px;
+    }
+}
+
+/* HP Kecil (≤480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .timer {
+        font-size: 0.95rem;
+        padding: 6px 12px;
+    }
+
+    .quiz-container {
+        padding: 20px 15px;
+        border-radius: 12px;
+    }
+
+    .question {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .question h4 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        line-height: 1.4;
+    }
+
+    label {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .btn-back {
+        font-size: 13px;
+        padding: 6px 12px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .result-box {
+        font-size: 0.9rem;
+        padding: 14px;
+    }
+
+    .feedback-item {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .btn-pembahasan {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+
+    .pembahasan {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .info-latihan {
+        padding: 15px;
+        font-size: 0.9rem;
     }
 }
