@@ -3,363 +3,289 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
+    // =================== LEVEL MENENGAH (IF-ELSE) ===================
+
     {
         q: "Apa output dari kode berikut?",
-        code: "x = 10\nif x > 5:\n    print('Besar')\nelse:\n    print('Kecil')",
-        a: ["Besar", "Kecil", "Error", "Tidak ada output"],
+        code: "x = 10\ny = 5\nif x > y:\n    print('A')\nelse:\n    print('B')",
+        a: ["A", "B", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "x = 10, kondisi x > 5 bernilai True, maka blok if dijalankan → cetak 'Besar'."
+        pembahasan: "Karena 10 > 5, maka kondisi benar dan mencetak 'A'."
     },
     {
-        q: "Output dari kode ini?",
-        code: "x = 3\nif x < 5:\n    print('Aman')\nelse:\n    print('Bahaya')",
-        a: ["Aman", "Bahaya", "Error", "Tidak ada output"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 3\nif x == 3:\n    print('Benar')\nelse:\n    print('Salah')",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Karena 3 < 5 True → program cetak 'Aman'."
+        pembahasan: "Kondisi x == 3 terpenuhi, maka mencetak 'Benar'."
     },
     {
-        q: "Apa hasilnya?",
-        code: "nilai = 60\nif nilai >= 70:\n    print('Lulus')\nelse:\n    print('Remedial')",
-        a: ["Lulus", "Remedial", "Error", "Tidak ada output"],
-        correct: 1,
-        pembahasan: "nilai = 60 < 70 → False, maka blok else dijalankan → 'Remedial'."
-    },
-    {
-        q: "Apa hasil output?",
-        code: "angka = -2\nif angka > 0:\n    print('Positif')\nelse:\n    print('Negatif atau Nol')",
-        a: ["Positif", "Negatif atau Nol", "Error", "Tidak ada output"],
-        correct: 1,
-        pembahasan: "angka = -2 → tidak lebih dari 0 → False → cetak 'Negatif atau Nol'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "umur = 20\nif umur >= 17:\n    print('Dewasa')\nelse:\n    print('Anak-anak')",
-        a: ["Dewasa", "Anak-anak", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "20 >= 17 → True → cetak 'Dewasa'."
-    },
-
-    // =================== LEVEL SEDANG ===================
-    {
-        q: "Apa outputnya?",
-        code: "nilai = 80\nif nilai >= 90:\n    print('A')\nelif nilai >= 80:\n    print('B')\nelse:\n    print('C')",
-        a: ["A", "B", "C", "Error"],
-        correct: 1,
-        pembahasan: "nilai 80 tidak >= 90, tapi >= 80 True → cetak 'B'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "x = 4\ny = 2\nif x > y:\n    print('X lebih besar')\nelse:\n    print('Y lebih besar')",
-        a: ["X lebih besar", "Y lebih besar", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "4 > 2 True → cetak 'X lebih besar'."
-    },
-    {
-        q: "Hasilnya apa?",
-        code: "x = 5\ny = 10\nif x * 2 == y:\n    print('Sama')\nelse:\n    print('Beda')",
-        a: ["Sama", "Beda", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x*2 = 10 sama dengan y (10) → True → cetak 'Sama'."
-    },
-    {
-        q: "Output dari kode ini?",
-        code: "angka = 8\nif angka % 2 == 0:\n    print('Genap')\nelse:\n    print('Ganjil')",
-        a: ["Genap", "Ganjil", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "8 % 2 = 0 → True → cetak 'Genap'."
-    },
-    {
-        q: "Output berikut?",
+        q: "Apa output dari kode berikut?",
         code: "x = 7\nif x % 2 == 0:\n    print('Genap')\nelse:\n    print('Ganjil')",
         a: ["Genap", "Ganjil", "Error", "Tidak ada output"],
         correct: 1,
-        pembahasan: "7 % 2 = 1 → False → blok else → cetak 'Ganjil'."
-    },
-    {
-        q: "Hasil kode berikut?",
-        code: "nilai = 50\nif nilai >= 80:\n    print('A')\nelif nilai >= 60:\n    print('B')\nelse:\n    print('C')",
-        a: ["A", "B", "C", "Error"],
-        correct: 2,
-        pembahasan: "nilai=50 tidak >=80, tidak >=60, maka else dijalankan → cetak 'C'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "x = 10\ny = 5\nif x > y and y > 0:\n    print('Benar')\nelse:\n    print('Salah')",
-        a: ["Benar", "Salah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x>y True, y>0 True, keduanya True → `and` menghasilkan True → cetak 'Benar'."
-    },
-    {
-        q: "Apa hasilnya?",
-        code: "x = 10\nif not (x < 5):\n    print('Masuk')\nelse:\n    print('Keluar')",
-        a: ["Masuk", "Keluar", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "`x < 5` False → not(False) = True → cetak 'Masuk'."
-    },
-    {
-        q: "Output berikut?",
-        code: "a = 0\nif a:\n    print('True')\nelse:\n    print('False')",
-        a: ["True", "False", "Error", "Tidak ada output"],
-        correct: 1,
-        pembahasan: "Dalam Python, 0 dianggap False → cetak 'False'."
-    },
-    {
-        q: "Hasil kode berikut?",
-        code: "x = 2\ny = 3\nif x * y == 6:\n    print('Betul')\nelse:\n    print('Salah')",
-        a: ["Betul", "Salah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "2 * 3 = 6 → True → cetak 'Betul'."
-    },
-    {
-        q: "Output kode ini?",
-        code: "x = 5\ny = 2\nif x % y == 0:\n    print('Habis dibagi')\nelse:\n    print('Tidak habis')",
-        a: ["Habis dibagi", "Tidak habis", "Error", "Tidak ada output"],
-        correct: 1,
-        pembahasan: "5 % 2 = 1 → False → cetak 'Tidak habis'."
-    },
-    {
-        q: "Apa hasilnya?",
-        code: "x = 10\ny = 20\nif x != y:\n    print('Tidak sama')\nelse:\n    print('Sama')",
-        a: ["Tidak sama", "Sama", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "10 != 20 True → cetak 'Tidak sama'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "angka = 9\nif angka % 3 == 0:\n    print('Kelipatan 3')\nelse:\n    print('Bukan kelipatan 3')",
-        a: ["Kelipatan 3", "Bukan kelipatan 3", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "9 % 3 = 0 → True → cetak 'Kelipatan 3'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "nilai = 100\nif nilai >= 90:\n    print('A')\nif nilai == 100:\n    print('Sempurna')",
-        a: ["A dan Sempurna", "A", "Sempurna", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Dua kondisi `if` berdiri sendiri, keduanya True → cetak 'A' dan 'Sempurna'."
-    },
-
-    // =================== LEVEL SULIT ===================
-    {
-        q: "Apa hasil dari kode ini?",
-        code: "x = 10\ny = 5\nif x > 5:\n    if y < 10:\n        print('Cocok')\n    else:\n        print('Tidak')",
-        a: ["Cocok", "Tidak", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "`x > 5` True, `y < 10` True → masuk blok dalam → cetak 'Cocok'."
-    },
-    {
-        q: "Output berikut?",
-        code: "x = 4\ny = 8\nif x * 2 == y:\n    if y / 2 == x:\n        print('Benar')\n    else:\n        print('Salah')",
-        a: ["Benar", "Salah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x*2 = 8 True → lanjut, y/2 = 4 sama dengan x → True → cetak 'Benar'."
-    },
-    {
-        q: "Apa hasilnya?",
-        code: "a = 7\nif a > 5:\n    if a % 2 == 1:\n        print('Ganjil >5')\n    else:\n        print('Genap >5')",
-        a: ["Ganjil >5", "Genap >5", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "7 > 5 True dan 7 % 2 = 1 True → cetak 'Ganjil >5'."
-    },
-    {
-        q: "Output berikut?",
-        code: "x = 6\ny = 3\nif (x / y == 2) and (x % y == 0):\n    print('Valid')\nelse:\n    print('Tidak valid')",
-        a: ["Valid", "Tidak valid", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x/y = 2 True, x%y = 0 True, keduanya True → cetak 'Valid'."
-    },
-    {
-        q: "Output dari kode ini?",
-        code: "a = 10\nif a > 5:\n    if a < 15:\n        print('Di tengah')\n    else:\n        print('Besar')\nelse:\n    print('Kecil')",
-        a: ["Di tengah", "Besar", "Kecil", "Error"],
-        correct: 0,
-        pembahasan: "a=10 → a>5 True → masuk blok, a<15 True → cetak 'Di tengah'."
-    },
-    {
-        q: "Apa hasil berikut?",
-        code: "x = 3\ny = 6\nif y / x == 2 and not (y % x):\n    print('Benar')\nelse:\n    print('Salah')",
-        a: ["Benar", "Salah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "`y/x == 2` True, `y % x = 0` berarti False jika dipakai langsung, tapi `not (y % x)` = not(0) = True → cetak 'Benar'."
-    },
-    {
-        q: "Output berikut?",
-        code: "x = 5\ny = 15\nif (x * 3 == y) or (y / x == 2):\n    print('Satu cocok')\nelse:\n    print('Tidak cocok')",
-        a: ["Satu cocok", "Tidak cocok", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "`x*3==y` → 15==15 True → or langsung True → cetak 'Satu cocok'."
-    },
-    {
-        q: "Hasilnya apa?",
-        code: "a = 4\nb = 2\nif a > b:\n    if a % b == 0:\n        print('Kelipatan')\n    else:\n        print('Tidak')\nelse:\n    print('B')",
-        a: ["Kelipatan", "Tidak", "B", "Error"],
-        correct: 0,
-        pembahasan: "4>2 True → masuk dalam, 4%2=0 True → cetak 'Kelipatan'."
-    },
-    {
-        q: "Output dari kode berikut?",
-        code: "nilai = 85\nif nilai >= 80:\n    if nilai < 90:\n        print('B+')\n    else:\n        print('A')",
-        a: ["B+", "A", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "85>=80 True, 85<90 True → cetak 'B+'."
-    },
-    {
-        q: "hasil akhir?",
-        code: "x = 5\ny = 10\nif x * 2 == y and y % x == 0:\n    if y / x == 2:\n        print('Cocok')\n    else:\n        print('Tidak')",
-        a: ["Cocok", "Tidak", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Semua kondisi True → cetak 'Cocok'."
+        pembahasan: "7 tidak habis dibagi 2, maka 'Ganjil'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "x = 10\ny = 5\nif x > y:\n    if x % y == 0:\n        print('Kelipatan')\n    else:\n        print('Tidak Kelipatan')\nelse:\n    print('Y lebih besar')",
-        a: ["Kelipatan", "Tidak Kelipatan", "Y lebih besar", "Error"],
-        correct: 0,
-        pembahasan: "x=10, y=5 → x>y True, x%y=0 True → cetak 'Kelipatan'."
-    },
-    {
-        q: "Apa hasilnya?",
-        code: "x = 12\nif x % 3 == 0:\n    if x % 4 == 0:\n        print('Bisa 3 dan 4')\n    else:\n        print('Hanya 3')\nelse:\n    print('Tidak bisa 3')",
-        a: ["Bisa 3 dan 4", "Hanya 3", "Tidak bisa 3", "Error"],
-        correct: 0,
-        pembahasan: "12 % 3 = 0 dan 12 % 4 = 0 → kedua kondisi True → cetak 'Bisa 3 dan 4'."
-    },
-    {
-        q: "Output berikut?",
-        code: "a = 15\nif a > 10:\n    if a < 20:\n        print('Rentang')\n    else:\n        print('Tinggi')\nelse:\n    print('Rendah')",
-        a: ["Rentang", "Tinggi", "Rendah", "Error"],
-        correct: 0,
-        pembahasan: "a=15 → a>10 True, a<20 True → cetak 'Rentang'."
-    },
-    {
-        q: "Apa hasil dari kode berikut?",
-        code: "x = 9\nif x % 2 == 0:\n    print('Genap')\nelif x % 3 == 0:\n    print('Kelipatan 3')\nelse:\n    print('Lainnya')",
-        a: ["Genap", "Kelipatan 3", "Lainnya", "Error"],
+        code: "x = 10\nif x > 10:\n    print('Lebih')\nelif x == 10:\n    print('Sama')\nelse:\n    print('Kurang')",
+        a: ["Lebih", "Sama", "Kurang", "Error"],
         correct: 1,
-        pembahasan: "9 % 2 != 0 False, 9 % 3 == 0 True → cetak 'Kelipatan 3'."
+        pembahasan: "x == 10 terpenuhi, maka 'Sama'."
     },
     {
-        q: "Output kode ini?",
-        code: "x = 7\ny = 2\nif x > y:\n    if (x + y) % 2 == 1:\n        print('Ganjil')\n    else:\n        print('Genap')",
-        a: ["Ganjil", "Genap", "Error", "Tidak ada output"],
+        q: "Apa output dari kode berikut?",
+        code: "a = 5\nb = 8\nif a < b:\n    print('A')\nif b < 10:\n    print('B')",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar, maka mencetak 'A' lalu 'B'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 4\nif x > 0:\n    print('Positif')\nelse:\n    print('Negatif')",
+        a: ["Positif", "Negatif", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "x+y=9 → ganjil → cetak 'Ganjil'."
+        pembahasan: "x bernilai 4 (>0), maka 'Positif'."
     },
     {
-        q: "Hasil dari kode berikut?",
-        code: "x = 5\ny = 10\nif (x * 2 == y) and (y / x == 2):\n    print('Dua kali lipat')\nelse:\n    print('Tidak cocok')",
-        a: ["Dua kali lipat", "Tidak cocok", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x*2=10 True dan y/x=2 True → cetak 'Dua kali lipat'."
+        q: "Apa output dari kode berikut?",
+        code: "x = -2\nif x >= 0:\n    print('A')\nelse:\n    print('B')",
+        a: ["A", "B", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x negatif, maka kondisi else dijalankan."
     },
     {
-        q: "Output berikut?",
-        code: "x = 5\ny = 8\nif (x < y) or (y < 0):\n    print('Benar')\nelse:\n    print('Salah')",
+        q: "Apa output dari kode berikut?",
+        code: "a = 2\nb = 3\nif a * b == 6:\n    print('Benar')\nelse:\n    print('Salah')",
         a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "`x<y` True → or langsung True → cetak 'Benar'."
+        pembahasan: "2*3 = 6, maka kondisi benar."
     },
     {
-        q: "Output dari kode berikut?",
-        code: "nilai = 95\nif nilai >= 90:\n    if nilai == 100:\n        print('Sempurna')\n    else:\n        print('Hebat')",
-        a: ["Sempurna", "Hebat", "Error", "Tidak ada output"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 10\nif x % 3 == 1:\n    print('A')\nelif x % 3 == 2:\n    print('B')\nelse:\n    print('C')",
+        a: ["A", "B", "C", "Error"],
         correct: 1,
-        pembahasan: "nilai>=90 True tapi tidak ==100 → cetak 'Hebat'."
+        pembahasan: "10 % 3 = 1, sisanya 1 → cetak 'A'."
     },
     {
-        q: "Apa hasilnya?",
-        code: "a = 0\nb = 5\nif not a and b > 0:\n    print('True')\nelse:\n    print('False')",
+        q: "Apa output dari kode berikut?",
+        code: "x = 5\ny = 10\nif x > 2 and y > 5:\n    print('OK')",
+        a: ["OK", "Error", "Tidak ada output", "False"],
+        correct: 0,
+        pembahasan: "Kedua kondisi benar, maka 'OK'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 5\ny = 10\nif x > 2 or y < 5:\n    print('Benar')\nelse:\n    print('Salah')",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "Kondisi pertama sudah benar, maka 'Benar'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 0\nif not x:\n    print('Kosong')",
+        a: ["Kosong", "Error", "False", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "x = 0 dianggap False, jadi not False = True → cetak 'Kosong'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 10\nif x < 0:\n    print('Negatif')\nelse:\n    if x == 0:\n        print('Nol')\n    else:\n        print('Positif')",
+        a: ["Negatif", "Nol", "Positif", "Error"],
+        correct: 2,
+        pembahasan: "x = 10 → masuk else bagian kedua → 'Positif'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 5\nb = 10\nif b % a == 0:\n    print('Bagi')\nelse:\n    print('Tidak')",
+        a: ["Bagi", "Tidak", "Error", "None"],
+        correct: 0,
+        pembahasan: "10 % 5 = 0 → habis dibagi → 'Bagi'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 4\nif x % 2 == 0:\n    print('Genap')\nif x % 4 == 0:\n    print('Kelipatan 4')",
+        a: ["Genap", "Kelipatan 4", "Genap\\nKelipatan 4", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar, keduanya dieksekusi."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 3\nb = 7\nif a * 2 == b:\n    print('Cocok')\nelse:\n    print('Tidak')",
+        a: ["Cocok", "Tidak", "Error", "None"],
+        correct: 1,
+        pembahasan: "3*2 = 6 ≠ 7, maka else dijalankan."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 5\nif x > 10:\n    print('Besar')\nelif x > 3:\n    print('Sedang')\nelse:\n    print('Kecil')",
+        a: ["Besar", "Sedang", "Kecil", "Error"],
+        correct: 1,
+        pembahasan: "x=5 > 3 maka 'Sedang'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 8\nif a % 4 == 0:\n    print('Ya')\nelse:\n    print('Tidak')",
+        a: ["Ya", "Tidak", "Error", "None"],
+        correct: 0,
+        pembahasan: "8 habis dibagi 4 → 'Ya'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 7\nif x % 2 == 0:\n    print('Genap')\nelse:\n    print('Ganjil')",
+        a: ["Genap", "Ganjil", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "7 tidak habis dibagi 2 → 'Ganjil'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 10\nif x > 0:\n    print('A')\nif x > 5:\n    print('B')",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar → 'A' dan 'B'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 9\ny = 3\nif x % y == 0 and x > y:\n    print('OK')\nelse:\n    print('NO')",
+        a: ["OK", "NO", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "9 % 3 == 0 dan 9 > 3 → 'OK'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 0\nif x:\n    print('True')\nelse:\n    print('False')",
+        a: ["True", "False", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x=0 dianggap False dalam if."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 3\nb = 5\nif a + b > 10:\n    print('Besar')\nelse:\n    print('Kecil')",
+        a: ["Besar", "Kecil", "Error", "None"],
+        correct: 1,
+        pembahasan: "3+5=8 <10 → 'Kecil'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = -1\nif x:\n    print('True')\nelse:\n    print('False')",
         a: ["True", "False", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "`not a` = True (karena a=0 dianggap False), b>0 True → True and True → cetak 'True'."
+        pembahasan: "Nilai non-zero dianggap True."
     },
     {
-        q: "Apa output kode berikut?",
-        code: "x = 3\ny = 6\nif x * 2 == y:\n    print('A')\nelif y / 3 == x:\n    print('B')\nelse:\n    print('C')",
-        a: ["A", "B", "C", "Error"],
-        correct: 0,
-        pembahasan: "x*2==6 True → blok if dijalankan, else tidak dieksekusi → cetak 'A'."
-    },
-    {
-        q: "Output berikut?",
-        code: "x = 10\ny = 20\nif (x + y) / 2 > 10:\n    print('Rata-rata tinggi')\nelse:\n    print('Rata-rata rendah')",
-        a: ["Rata-rata tinggi", "Rata-rata rendah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "(10+20)/2=15 >10 → True → cetak 'Rata-rata tinggi'."
-    },
-    {
-        q: "Apa hasil dari kode ini?",
-        code: "angka = 11\nif angka % 2 == 0:\n    print('Genap')\nelif angka % 3 == 0:\n    print('Kelipatan 3')\nelse:\n    print('Lainnya')",
-        a: ["Genap", "Kelipatan 3", "Lainnya", "Error"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 15\nif x % 5 == 0:\n    print('A')\nif x % 3 == 0:\n    print('B')",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
         correct: 2,
-        pembahasan: "11 tidak habis dibagi 2 atau 3 → else → 'Lainnya'."
+        pembahasan: "15 habis dibagi 5 dan 3 → 'A' lalu 'B'."
     },
     {
-        q: "Output dari kode berikut?",
-        code: "x = 5\ny = 15\nif y % x == 0:\n    if y / x == 3:\n        print('Tepat')\n    else:\n        print('Tidak Tepat')",
-        a: ["Tepat", "Tidak Tepat", "Error", "Tidak ada output"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 8\nif x < 5:\n    print('Kecil')\nelif x < 10:\n    print('Sedang')\nelse:\n    print('Besar')",
+        a: ["Kecil", "Sedang", "Besar", "Error"],
+        correct: 1,
+        pembahasan: "x < 10 terpenuhi → 'Sedang'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 5\nif x != 5:\n    print('A')\nelse:\n    print('B')",
+        a: ["A", "B", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x == 5 → kondisi if salah → 'B'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 4\nb = 2\nif a / b == 2:\n    print('Cocok')\nelse:\n    print('Tidak')",
+        a: ["Cocok", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "15%5=0 True, y/x=3 True → cetak 'Tepat'."
+        pembahasan: "4 / 2 = 2 → kondisi benar."
     },
     {
-        q: "Apa hasil kode ini?",
-        code: "x = 2\ny = 8\nif (y % x == 0) and (y / x == 4):\n    print('Pas')\nelse:\n    print('Tidak pas')",
-        a: ["Pas", "Tidak pas", "Error", "Tidak ada output"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 6\nif x % 3 == 0:\n    print('Kelipatan 3')",
+        a: ["Kelipatan 3", "Error", "Tidak ada output", "False"],
         correct: 0,
-        pembahasan: "8%2=0 True, 8/2=4 True → cetak 'Pas'."
+        pembahasan: "6 habis dibagi 3 → 'Kelipatan 3'."
     },
     {
-        q: "Output kode berikut?",
-        code: "a = 10\nif a > 0:\n    if a % 2 == 0:\n        print('Positif Genap')\n    else:\n        print('Positif Ganjil')\nelse:\n    print('Negatif')",
-        a: ["Positif Genap", "Positif Ganjil", "Negatif", "Error"],
+        q: "Apa output dari kode berikut?",
+        code: "x = 10\nif x % 2 == 0 and x % 5 == 0:\n    print('Ya')\nelse:\n    print('Tidak')",
+        a: ["Ya", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "a=10 >0 dan genap → cetak 'Positif Genap'."
+        pembahasan: "10 habis dibagi 2 dan 5 → 'Ya'."
     },
     {
-        q: "Output berikut?",
-        code: "nilai = 65\nif nilai >= 80:\n    print('A')\nelif nilai >= 70:\n    print('B')\nelif nilai >= 60:\n    print('C')\nelse:\n    print('D')",
+        q: "Apa output dari kode berikut?",
+        code: "a = 3\nb = 3\nif a == b:\n    print('Sama')\nelse:\n    print('Beda')",
+        a: ["Sama", "Beda", "Error", "None"],
+        correct: 0,
+        pembahasan: "a dan b sama → 'Sama'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 5\ny = 15\nif y / x == 3:\n    print('OK')",
+        a: ["OK", "Error", "Tidak ada output", "False"],
+        correct: 0,
+        pembahasan: "15/5 = 3 → kondisi benar → cetak 'OK'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 8\nif x % 2 == 0:\n    print('Genap')\nelse:\n    print('Ganjil')",
+        a: ["Genap", "Ganjil", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "8 habis dibagi 2 → 'Genap'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 4\ny = 9\nif (x % 2 == 0 and y % 3 == 0):\n    print('A')\nelse:\n    print('B')",
+        a: ["A", "B", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "4 genap dan 9 habis dibagi 3 → kondisi benar → cetak 'A'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 7\ny = 14\nif y / x == 2:\n    if y % x == 0:\n        print('Benar')\n    else:\n        print('Salah')\nelse:\n    print('Tidak')",
+        a: ["Benar", "Salah", "Tidak", "Error"],
+        correct: 0,
+        pembahasan: "14/7=2 dan 14%7=0 → kedua kondisi benar → 'Benar'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "a = 10\nb = 5\nif a > b:\n    if a - b == 5:\n        print('OK')\n    else:\n        print('X')\nelse:\n    print('NO')",
+        a: ["OK", "X", "NO", "Error"],
+        correct: 0,
+        pembahasan: "10 > 5 dan selisihnya 5 → 'OK'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 3\ny = 5\nz = 7\nif x < y < z:\n    print('Naik')\nelse:\n    print('Turun')",
+        a: ["Naik", "Turun", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "3 < 5 < 7 benar → 'Naik'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "x = 'abc'\nif len(x) == 3 and x[0] == 'a':\n    print('Valid')\nelse:\n    print('Invalid')",
+        a: ["Valid", "Invalid", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "Panjang string 3 dan huruf pertama 'a' → 'Valid'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "nilai = 75\nif nilai >= 90:\n    print('A')\nelif nilai >= 80:\n    print('B')\nelif nilai >= 70:\n    print('C')\nelse:\n    print('D')",
         a: ["A", "B", "C", "D"],
         correct: 2,
-        pembahasan: "65 >=60 True setelah dua kondisi pertama gagal → cetak 'C'."
-    },
-    {
-        q: "Output berikut?",
-        code: "x = 5\nif x > 10:\n    print('A')\nelse:\n    if x > 0:\n        print('B')\n    else:\n        print('C')",
-        a: ["A", "B", "C", "Error"],
-        correct: 1,
-        pembahasan: "x>10 False → masuk else → x>0 True → cetak 'B'."
-    },
-    {
-        q: "Output dari kode ini?",
-        code: "x = -3\nif x > 0:\n    print('Positif')\nelif x == 0:\n    print('Nol')\nelse:\n    print('Negatif')",
-        a: ["Positif", "Nol", "Negatif", "Error"],
-        correct: 2,
-        pembahasan: "x=-3 → if & elif salah → else → cetak 'Negatif'."
-    },
-    {
-        q: "Apa hasilnya?",
-        code: "x = 6\ny = 3\nif (x / y == 2) and not (x % y):\n    print('Benar')\nelse:\n    print('Salah')",
-        a: ["Benar", "Salah", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "x/y=2 True, x%y=0 → not(0)=True → keduanya True → cetak 'Benar'."
-    },
-    {
-        q: "Output terakhir?",
-        code: "a = 9\nb = 3\nif a % b == 0:\n    if (a / b) == 3:\n        print('Cocok')\n    else:\n        print('Tidak cocok')\nelse:\n    print('Bukan kelipatan')",
-        a: ["Cocok", "Tidak cocok", "Bukan kelipatan", "Error"],
-        correct: 0,
-        pembahasan: "9%3=0 True, 9/3=3 True → cetak 'Cocok'."
+        pembahasan: "75 >= 70 tapi < 80 → 'C'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "x = 10\ny = 20\nz = 15\nif (x < y and z > x):\n    if (z < y):\n        print('Di tengah')\n    else:\n        print('Terbesar')\nelse:\n    print('Tidak memenuhi')",
-        a: ["Di tengah", "Terbesar", "Tidak memenuhi", "Error"],
+        code: "x = True\ny = False\nif not y and x:\n    print('Benar')\nelse:\n    print('Salah')",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "x<y True, z>x True → masuk if luar. Dalamnya: z<y True (15<20) → cetak 'Di tengah'."
+        pembahasan: "not False = True dan x True → keduanya benar → 'Benar'."
     }
-
 ];
-
 
 function shuffleArray(arr) {
     const array = [...arr];
