@@ -22,7 +22,27 @@ const mapelPerKelas = {
     ],
 };
 
-const babListData = ["Latihan Bab 1", "Latihan Bab 2", "Latihan Bab 3", "Latihan Bab 4", "Latihan Bab 5", "Latihan Bab 6", "Latihan Bab 7"];
+const babListData = [
+    "Latihan Bab 1",
+    "Latihan Bab 2",
+    "Latihan Bab 3",
+    "Latihan Bab 4",
+    "Latihan Bab 5",
+    "Latihan Bab 6",
+    "Latihan Bab 7",
+];
+
+// === Data Praktikum per Mapel ===
+const praktikumData = {
+    Informatika: ["If Else", "Perulangan", "List dan Tuple", "Fungsi", "Dictionary"],
+    "Desain Komunikasi Visual": ["Adobe Photoshop", "CorelDRAW", "Layouting", "Tipografi"],
+    "Coding": ["Dasar HTML", "Dasar CSS", "Dasar JavaScript"],
+    "Pemrograman Dasar": ["Variabel dan Tipe Data", "Operator", "Percabangan", "Looping"],
+    "Pemrograman Web dan Perangkat Bergerak": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    "Desain Grafis Percetakan": ["Adobe Illustrator", "Percetakan Digital", "Layout Brosur"],
+    "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video", "Mixing Dasar"],
+    "Desain Media Interaktif": ["UI/UX Design", "Prototyping", "Animasi Interaktif"]
+};
 
 // === PILIH KELAS ===
 document.querySelectorAll(".kelas").forEach((card) => {
@@ -49,7 +69,7 @@ function showMenu(mapel) {
     const menus = [
         { nama: "Materi Teori", key: "teori" },
         { nama: "Praktikum", key: "praktikum" },
-        { nama: "TryOut Sumatif Akhir Semester (SAS)", key: "tryout" },
+        { nama: "TryOut", key: "tryout" },
         { nama: "Kisi-Kisi", key: "kisi" },
     ];
 
@@ -59,9 +79,37 @@ function showMenu(mapel) {
         div.innerHTML = `<h3>${menu.nama}</h3><p>${mapel}</p>`;
         div.addEventListener("click", () => {
             if (menu.key === "tryout") showBab(mapel);
+            else if (menu.key === "praktikum") showPraktikum(mapel);
             else alert(`${menu.nama} untuk ${mapel} akan segera tersedia!`);
         });
         menuList.appendChild(div);
+    });
+}
+
+// === PRAKTIKUM ===
+function showPraktikum(mapel) {
+    fadeTransition(menuSection, babSection);
+    babList.innerHTML = "";
+
+    const list = praktikumData[mapel] || ["Belum ada data praktikum."];
+
+    list.forEach((topik) => {
+        const div = document.createElement("div");
+        div.className = "card bab fade-in";
+        div.innerHTML = `<h3>${topik}</h3><p>${mapel}</p>`;
+
+        div.addEventListener("click", () => {
+            const mapelSlug = mapel.toLowerCase().trim().replace(/\s+/g, "_");
+            const topikSlug = topik.toLowerCase().trim().replace(/\s+/g, "_");
+
+            const folderPath = `${mapelSlug}/praktikum/${topikSlug}/`;
+            const targetFile = `${folderPath}praktek_${mapelSlug}_${topikSlug}.html`;
+
+            console.log(`Navigating to: ${targetFile}`);
+            window.location.href = targetFile;
+        });
+
+        babList.appendChild(div);
     });
 }
 
@@ -76,31 +124,20 @@ function showBab(mapel) {
         div.innerHTML = `<h3>${bab}</h3><p>${mapel}</p>`;
 
         div.addEventListener("click", () => {
-            // --- Normalisasi mapel dan bab ---
-            const mapelSlug = mapel
-                .toLowerCase()
-                .trim()
-                .replace(/\s+/g, "_"); // Contoh: "Desain Komunikasi Visual" → "desain_komunikasi_visual"
-
-            // Ambil angka bab (misal dari "Latihan Bab 1" → "1")
+            const mapelSlug = mapel.toLowerCase().trim().replace(/\s+/g, "_");
             const babNumberMatch = bab.match(/\b(\d+)\b/);
-            const babNumber = babNumberMatch ? babNumberMatch[1] : "1"; // default ke 1 kalau tak ada angka
-
-            // Buat slug bab (misal "Bab 1" atau "Proyek Bab 2" → "bab1" atau "bab2")
+            const babNumber = babNumberMatch ? babNumberMatch[1] : "1";
             const babSlug = `bab${babNumber}`;
-
-            // --- Buat path folder dan nama file ---
             const folderPath = `${mapelSlug}/${babSlug}/`;
             const targetFile = `${folderPath}latihan_${mapelSlug}_${babSlug}.html`;
 
-            console.log(`Navigating to: ${targetFile}`); // Debugging (boleh dihapus)
+            console.log(`Navigating to: ${targetFile}`);
             window.location.href = targetFile;
         });
 
         babList.appendChild(div);
     });
 }
-
 
 // === Transisi Halus ===
 function fadeTransition(from, to) {
