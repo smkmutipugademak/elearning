@@ -6,12 +6,10 @@ body {
     line-height: 1.6;
     transition: background 0.3s, color 0.3s;
 }
-
 body.dark {
     background: #0f172a;
     color: #e2e8f0;
 }
-
 .navbar {
     display: flex;
     justify-content: space-between;
