@@ -3,7 +3,6 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH ===================
     {
         q: "Apa output dari kode berikut?",
         code: "x = 10\nif x > 5:\n    print('Besar')\nelse:\n    print('Kecil')",
