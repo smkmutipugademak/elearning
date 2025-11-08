@@ -549,3 +549,11 @@ if (backToDashboard) {
         window.location.href = '../../index.html';
     });
 }
+
+document.querySelector('.btn-back').addEventListener('click', function (e) {
+    e.preventDefault();
+    // Deteksi lokasi root otomatis (3 tingkat ke atas)
+    const current = window.location.href;
+    const newUrl = current.split("/informatika/")[0] + "/index.html";
+    window.location.href = newUrl;
+});
