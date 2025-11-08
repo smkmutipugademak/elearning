@@ -3,7 +3,6 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH: LIST & TUPLE ===================
     {
         q: "Apa tipe data dari [] dalam Python?",
         a: ["List", "Tuple", "Set", "Dictionary"],
