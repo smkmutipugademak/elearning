@@ -3,267 +3,288 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
+    // =================== LEVEL MUDAH (TUPLE DASAR) ===================
     {
-        q: "Apa tipe data dari [] dalam Python?",
-        a: ["List", "Tuple", "Set", "Dictionary"],
+        q: "Apa tipe data dari variabel berikut?",
+        code: "data = (1, 2, 3)",
+        a: ["tuple", "list", "set", "dict"],
         correct: 0,
-        pembahasan: "Tanda [] menunjukkan list kosong."
-    },
-    {
-        q: "Apa tipe data dari () dalam Python?",
-        a: ["List", "Tuple", "Set", "Dictionary"],
-        correct: 1,
-        pembahasan: "Tanda () menunjukkan tuple kosong."
-    },
-    {
-        q: "Bagaimana cara membuat list kosong?",
-        a: ["list = {}", "list = []", "list = ()", "list = ''"],
-        correct: 1,
-        pembahasan: "List kosong dibuat dengan tanda kurung siku []."
-    },
-    {
-        q: "Bagaimana cara membuat tuple dengan satu elemen 'A'?",
-        a: ["('A')", "('A',)", "['A']", "tuple('A')"],
-        correct: 1,
-        pembahasan: "Tuple dengan satu elemen perlu koma di belakang: ('A',)."
+        pembahasan: "Tanda kurung biasa () menandakan tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "a = [1,2,3]\nprint(a[0])",
-        a: ["1", "2", "3", "Error"],
+        code: "data = (10, 20, 30)\nprint(data[0])",
+        a: ["10", "20", "30", "Error"],
         correct: 0,
-        pembahasan: "Indeks 0 mengakses elemen pertama, yaitu 1."
+        pembahasan: "Indeks 0 mengakses elemen pertama tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "buah = ('apel','jeruk','mangga')\nprint(buah[1])",
-        a: ["apel", "jeruk", "mangga", "Error"],
+        code: "data = (1, 2, 3)\nprint(len(data))",
+        a: ["2", "3", "1", "Error"],
         correct: 1,
-        pembahasan: "Indeks 1 berarti elemen kedua yaitu 'jeruk'."
-    },
-    {
-        q: "Apa hasil dari len(['a','b','c'])?",
-        a: ["2", "3", "4", "Error"],
-        correct: 1,
-        pembahasan: "List memiliki tiga elemen → hasilnya 3."
-    },
-    {
-        q: "Fungsi apa yang digunakan untuk menambah elemen di akhir list?",
-        a: ["add()", "append()", "insert()", "extend()"],
-        correct: 1,
-        pembahasan: "append() menambahkan satu elemen di akhir list."
+        pembahasan: "len() menghitung jumlah elemen dalam tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "angka = [1,2,3]\nangka.append(4)\nprint(angka)",
-        a: ["[1,2,3]", "[1,2,3,4]", "[4]", "Error"],
-        correct: 1,
-        pembahasan: "append() menambah elemen 4 di akhir list."
-    },
-    {
-        q: "Apa fungsi dari extend()?",
-        a: ["Menambah satu elemen", "Menambah beberapa elemen", "Menghapus elemen", "Mengurutkan list"],
-        correct: 1,
-        pembahasan: "extend() menambah beberapa elemen sekaligus ke list."
-    },
-    {
-        q: "Apa hasil dari kode berikut?",
-        code: "a = [1,2,3]\na.extend([4,5])\nprint(a)",
-        a: ["[1,2,3,4,5]", "[1,2,3,[4,5]]", "[4,5]", "Error"],
+        code: "data = ()\nprint(len(data))",
+        a: ["0", "1", "Error", "None"],
         correct: 0,
-        pembahasan: "extend() menambah tiap elemen [4,5] ke list a."
+        pembahasan: "Tuple kosong memiliki panjang 0."
     },
     {
-        q: "Fungsi apa untuk menghapus semua isi list?",
-        a: ["remove()", "del", "clear()", "pop()"],
-        correct: 2,
-        pembahasan: "clear() menghapus semua elemen di list."
-    },
-    {
-        q: "Apa hasil dari kode berikut?",
-        code: "angka = [10,20,30]\nangka.pop()\nprint(angka)",
-        a: ["[10,20]", "[10,30]", "[20,30]", "Error"],
+        q: "Bagaimana cara membuat tuple dengan satu elemen?",
+        code: "data = (1,)\nprint(type(data))",
+        a: ["<class 'tuple'>", "<class 'int'>", "<class 'list'>", "Error"],
         correct: 0,
-        pembahasan: "pop() tanpa argumen menghapus elemen terakhir."
+        pembahasan: "Tuple satu elemen harus diakhiri dengan koma: (1,)."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "buah = ('apel','pisang','jeruk')\nprint('pisang' in buah)",
+        code: "data = (1, 2, 3)\nprint(2 in data)",
         a: ["True", "False", "Error", "None"],
         correct: 0,
-        pembahasan: "Operator in mengecek keberadaan elemen di tuple."
-    },
-    {
-        q: "Apa hasil dari tuple(['a','b','c'])?",
-        a: ["('a','b','c')", "['a','b','c']", "('abc')", "Error"],
-        correct: 0,
-        pembahasan: "Fungsi tuple() mengubah list jadi tuple."
-    },
-    {
-        q: "Apakah tuple bisa diubah (mutable)?",
-        a: ["Ya", "Tidak", "Kadang-kadang", "Hanya jika kosong"],
-        correct: 1,
-        pembahasan: "Tuple bersifat immutable, tidak bisa diubah setelah dibuat."
+        pembahasan: "Operator in memeriksa apakah elemen ada di tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "t = (1,2,3)\nprint(t[2])",
+        code: "data = (1, 2, 3)\nprint(data[-1])",
         a: ["1", "2", "3", "Error"],
         correct: 2,
-        pembahasan: "Indeks ke-2 berisi elemen ketiga yaitu 3."
+        pembahasan: "Indeks -1 mengakses elemen terakhir tuple."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (10, 20, 30)\nprint(data[1+1])",
+        a: ["10", "20", "30", "Error"],
+        correct: 2,
+        pembahasan: "1+1=2, jadi elemen di indeks ke-2 adalah 30."
     },
     {
         q: "Bagaimana cara menggabungkan dua tuple?",
-        a: ["t1.append(t2)", "t1 + t2", "t1.extend(t2)", "t1.add(t2)"],
-        correct: 1,
-        pembahasan: "Tuple bisa digabung dengan operator +."
-    },
-    {
-        q: "Apa hasil dari kode berikut?",
-        code: "t = (1,2,3)\nprint(len(t))",
-        a: ["2", "3", "4", "Error"],
-        correct: 1,
-        pembahasan: "Tuple memiliki tiga elemen → len() = 3."
-    },
-    {
-        q: "Bagaimana cara mengubah list menjadi tuple?",
-        a: ["tuple(list)", "list(tuple)", "toTuple()", "convert()"],
+        code: "a = (1, 2)\nb = (3, 4)\nprint(a + b)",
+        a: ["(1, 2, 3, 4)", "(1, 2).append(3,4)", "Error", "['1','2','3','4']"],
         correct: 0,
-        pembahasan: "Gunakan fungsi tuple(list) untuk mengubah list ke tuple."
+        pembahasan: "Operator + digunakan untuk menggabungkan tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "angka = [1,2,3]\nprint(angka[-1])",
+        code: "data = (1, 2)\nprint(data * 2)",
+        a: ["(1, 2, 1, 2)", "(2, 4)", "(1, 1, 2, 2)", "Error"],
+        correct: 0,
+        pembahasan: "Operator * menggandakan isi tuple."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = tuple([1, 2, 3])\nprint(data)",
+        a: ["(1, 2, 3)", "[1, 2, 3]", "{1, 2, 3}", "Error"],
+        correct: 0,
+        pembahasan: "Fungsi tuple() mengubah list menjadi tuple."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nfor i in data:\n    print(i)",
+        a: ["1\\n2\\n3", "123", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "for loop mencetak setiap elemen tuple pada baris baru."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = ('a', 'b', 'c')\nprint(data[1])",
+        a: ["'a'", "'b'", "'c'", "Error"],
+        correct: 1,
+        pembahasan: "Indeks 1 berarti elemen kedua yaitu 'b'."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nprint(type(data))",
+        a: ["<class 'tuple'>", "<class 'list'>", "<class 'set'>", "<class 'dict'>"],
+        correct: 0,
+        pembahasan: "Variabel bertipe tuple akan menghasilkan <class 'tuple'>."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nprint(sum(data))",
+        a: ["6", "3", "Error", "None"],
+        correct: 0,
+        pembahasan: "sum() menjumlahkan semua elemen numerik → 6."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = ('python',) * 3\nprint(data)",
+        a: ["('python', 'python', 'python')", "('python')", "Error", "['python', 'python', 'python']"],
+        correct: 0,
+        pembahasan: "Pengulangan tuple menghasilkan elemen yang sama tiga kali."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, (2, 3))\nprint(data[1][0])",
         a: ["1", "2", "3", "Error"],
-        correct: 2,
-        pembahasan: "Indeks -1 mengambil elemen terakhir yaitu 3."
-    },
-    {
-        q: "Apa hasil dari kode berikut?",
-        code: "buah = ('apel','jeruk','mangga')\nprint(buah[-2])",
-        a: ["apel", "jeruk", "mangga", "Error"],
         correct: 1,
-        pembahasan: "Indeks -2 mengakses elemen kedua dari belakang yaitu 'jeruk'."
-    },
-    {
-        q: "Fungsi apa yang digunakan untuk menghitung jumlah elemen?",
-        a: ["count()", "sum()", "len()", "total()"],
-        correct: 2,
-        pembahasan: "len() digunakan untuk menghitung jumlah elemen."
+        pembahasan: "data[1] adalah tuple (2,3), elemen pertama dari itu adalah 2."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "a = [1,2,3]\nprint(2 in a)",
-        a: ["True", "False", "Error", "None"],
+        code: "data = (1, 2, 3)\nprint(max(data))",
+        a: ["3", "2", "1", "Error"],
         correct: 0,
-        pembahasan: "2 ada di list, jadi hasilnya True."
+        pembahasan: "max() mengembalikan nilai terbesar dari tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "a = ('x','y','z')\nprint('a' in a)",
+        code: "data = (1, 2, 2, 3)\nprint(data.count(2))",
+        a: ["1", "2", "3", "Error"],
+        correct: 1,
+        pembahasan: "count() menghitung berapa kali nilai tertentu muncul."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nprint(4 in data)",
         a: ["True", "False", "Error", "None"],
         correct: 1,
-        pembahasan: "'a' tidak ada dalam tuple ('x','y','z')."
+        pembahasan: "4 tidak ada dalam tuple, jadi hasilnya False."
     },
+
+    // =================== LEVEL MENENGAH–ADVANCED ===================
     {
-        q: "Bagaimana cara membuat tuple dari string 'abc'?",
-        a: ["tuple('abc')", "('abc')", "('a,b,c')", "list('abc')"],
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (10, 20, 30)\na, b, c = data\nprint(a + b + c)",
+        a: ["60", "102030", "Error", "None"],
         correct: 0,
-        pembahasan: "tuple('abc') akan menghasilkan ('a','b','c')."
+        pembahasan: "Tuple dapat di-unpack ke beberapa variabel."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "angka = (5,10,15)\nprint(max(angka))",
+        code: "data = (1, 2, 3, 4)\na, *b = data\nprint(b)",
+        a: ["[2, 3, 4]", "(2, 3, 4)", "[1, 2, 3]", "Error"],
+        correct: 0,
+        pembahasan: "Operator * mengumpulkan sisa elemen menjadi list."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\ndata[0] = 10\nprint(data)",
+        a: ["(10, 2, 3)", "Error", "(1, 2, 3)", "None"],
+        correct: 1,
+        pembahasan: "Tuple bersifat immutable, elemennya tidak bisa diubah."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nnew = data + (4,)\nprint(new)",
+        a: ["(1, 2, 3, 4)", "(1, 2, 3)", "Error", "None"],
+        correct: 0,
+        pembahasan: "Gabungan tuple membuat tuple baru."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (5, 10, 15)\nprint(min(data))",
         a: ["5", "10", "15", "Error"],
-        correct: 2,
-        pembahasan: "max() mengembalikan elemen terbesar → 15."
+        correct: 0,
+        pembahasan: "min() mengembalikan nilai terkecil."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "angka = [2,4,6]\nprint(min(angka))",
-        a: ["2", "4", "6", "Error"],
+        code: "data = ('a', 'b', 'c')\nprint('-'.join(data))",
+        a: ["a-b-c", "('a','b','c')", "Error", "abc"],
         correct: 0,
-        pembahasan: "min() mengembalikan elemen terkecil → 2."
+        pembahasan: "join() dapat menggabungkan elemen string tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "t = (1,)*4\nprint(t)",
-        a: ["(1,1,1,1)", "(4,)", "(1,4)", "Error"],
+        code: "data = (1, (2, (3, 4)))\nprint(data[1][1][0])",
+        a: ["3", "4", "2", "Error"],
         correct: 0,
-        pembahasan: "Mengulang elemen 1 sebanyak 4 kali → (1,1,1,1)."
-    },
-    {
-        q: "Bagaimana cara mengubah tuple menjadi list?",
-        a: ["list(tuple)", "tuple(list)", "convert()", "toList()"],
-        correct: 0,
-        pembahasan: "Gunakan list(tuple) untuk mengubah tuple ke list."
+        pembahasan: "Tuple bertingkat diakses dengan indeks berlapis."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "data = ('A','B','C')\nprint(data[1:])",
-        a: ["('A',)", "('B','C')", "('C',)", "Error"],
-        correct: 1,
-        pembahasan: "Slicing dari indeks 1 menghasilkan ('B','C')."
+        code: "data = (1, 2, 3)\nprint(sum(data) / len(data))",
+        a: ["2.0", "3", "1", "Error"],
+        correct: 0,
+        pembahasan: "Rata-rata = (1+2+3)/3 = 2.0."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "buah = ['apel','mangga']\nbuah.insert(1,'jeruk')\nprint(buah)",
-        a: ["['apel','jeruk','mangga']", "['jeruk','apel','mangga']", "['apel','mangga','jeruk']", "Error"],
+        code: "data = (1, 2, 3)\nprint(all(data))",
+        a: ["True", "False", "Error", "None"],
         correct: 0,
-        pembahasan: "insert(1,'jeruk') menyisipkan di indeks 1."
-    },
-    {
-        q: "Fungsi apa untuk menghitung jumlah kemunculan elemen dalam list?",
-        a: ["len()", "count()", "find()", "total()"],
-        correct: 1,
-        pembahasan: "count() menghitung jumlah kemunculan nilai tertentu."
+        pembahasan: "Semua elemen bukan nol → True."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "a = ['x','y','z']\nprint(a.count('x'))",
-        a: ["1", "0", "2", "Error"],
+        code: "data = (0, 1, 2)\nprint(any(data))",
+        a: ["True", "False", "Error", "None"],
         correct: 0,
-        pembahasan: "count('x') menghitung jumlah 'x' yaitu 1."
-    },
-    {
-        q: "Apakah list dapat berisi tipe data campuran?",
-        a: ["Ya", "Tidak", "Hanya angka", "Hanya string"],
-        correct: 0,
-        pembahasan: "List bisa berisi berbagai tipe data."
+        pembahasan: "Ada elemen non-nol, maka True."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "x = [1,2]\ny = (3,4)\nprint(x + list(y))",
-        a: ["[1,2,3,4]", "(1,2,3,4)", "Error", "[[1,2],[3,4]]"],
+        code: "data = (1, 2, 3, 4)\nprint(data[1:3])",
+        a: ["(2, 3)", "(1, 2, 3)", "(3, 4)", "Error"],
         correct: 0,
-        pembahasan: "list(y) ubah tuple ke list, lalu digabung jadi [1,2,3,4]."
+        pembahasan: "Slice [1:3] mengambil elemen indeks 1 dan 2."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "angka = (1,2,3)\nfor i in angka:\n    print(i, end=' ')",
-        a: ["1 2 3", "(1,2,3)", "Error", "i i i"],
+        code: "data = (1, 2, 3, 4)\nprint(data[::-1])",
+        a: ["(4, 3, 2, 1)", "(1, 2, 3, 4)", "Error", "None"],
         correct: 0,
-        pembahasan: "Perulangan for menampilkan semua elemen tuple."
-    },
-    {
-        q: "Apakah elemen tuple bisa dihapus langsung dengan del?",
-        a: ["Ya", "Tidak", "Kadang-kadang", "Hanya string"],
-        correct: 1,
-        pembahasan: "Elemen tuple tidak bisa dihapus karena immutable."
+        pembahasan: "Step -1 membalik urutan tuple."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "a = (1,2,3)\nprint(type(a))",
-        a: ["<class 'tuple'>", "<class 'list'>", "<class 'set'>", "Error"],
+        code: "data = (x**2 for x in range(3))\nprint(tuple(data))",
+        a: ["(0, 1, 4)", "(1, 4, 9)", "(1, 2, 3)", "Error"],
         correct: 0,
-        pembahasan: "Variabel a bertipe tuple."
+        pembahasan: "Generator dikonversi menjadi tuple berisi kuadrat tiap angka."
     },
     {
         q: "Apa hasil dari kode berikut?",
-        code: "data = list('abc')\nprint(data)",
-        a: ["['a','b','c']", "['abc']", "('a','b','c')", "Error"],
+        code: "data = (1, 2, 3)\nprint(tuple(reversed(data)))",
+        a: ["(3, 2, 1)", "(1, 2, 3)", "Error", "None"],
         correct: 0,
-        pembahasan: "list('abc') memecah string jadi ['a','b','c']."
+        pembahasan: "reversed() membalik urutan elemen tuple."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "a = (1, 2)\nb = (3, 4)\nc = (a, b)\nprint(c)",
+        a: ["((1, 2), (3, 4))", "(1, 2, 3, 4)", "(a, b)", "Error"],
+        correct: 0,
+        pembahasan: "Tuple dapat berisi tuple lain sebagai elemen."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = ('x', 'y', 'z')\nfor i in range(len(data)):\n    print(data[i])",
+        a: ["x\\ny\\nz", "xyz", "Error", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "Loop berdasarkan indeks mencetak tiap elemen tuple."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\nprint(hash(data))",
+        a: ["Bilangan unik", "Error", "None", "0"],
+        correct: 0,
+        pembahasan: "Tuple bersifat hashable, menghasilkan nilai hash unik."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (1, 2, 3)\ntry:\n    data[0] = 9\nexcept TypeError:\n    print('immutable')",
+        a: ["immutable", "Error", "(9,2,3)", "Tidak ada output"],
+        correct: 0,
+        pembahasan: "Tuple tidak dapat diubah; akan memicu TypeError."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "def hitung():\n    return (1, 2, 3)\na, b, c = hitung()\nprint(b)",
+        a: ["2", "1", "3", "Error"],
+        correct: 0,
+        pembahasan: "Fungsi mengembalikan tuple (1,2,3), b = 2."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "data = (True, False, True)\nprint(data.count(True))",
+        a: ["2", "1", "3", "Error"],
+        correct: 0,
+        pembahasan: "count(True) menghitung dua nilai True dalam tuple."
     }
 ];
 
