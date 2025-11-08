@@ -34,7 +34,7 @@ const babListData = [
 
 // === Data Praktikum per Mapel ===
 const praktikumData = {
-    Informatika: ["If Else", "Perulangan", "List dan Tuple", "Fungsi", "Dictionary"],
+    Informatika: ["If Else", "Perulangan","Array", "List dan Tuple", "Fungsi", "Dictionary"],
     "Desain Komunikasi Visual": ["Adobe Photoshop", "CorelDRAW", "Layouting", "Tipografi"],
     "Coding": ["Dasar HTML", "Dasar CSS", "Dasar JavaScript"],
     "Pemrograman Dasar": ["Variabel dan Tipe Data", "Operator", "Percabangan", "Looping"],
