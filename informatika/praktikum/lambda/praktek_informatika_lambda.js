@@ -425,3 +425,111 @@ document.querySelector('.btn-back').addEventListener('click', function (e) {
     const newUrl = current.split("/informatika/")[0] + "/index.html";
     window.location.href = newUrl;
 });
+
+// === FITUR ANTI-NYONTEK ===
+// ======================== 🔒 FITUR ANTI-NYONTEK ULTRA KETAT ========================
+
+// Blok aksi copy/paste/klik kanan/drag
+['contextmenu', 'copy', 'cut', 'paste', 'selectstart', 'dragstart'].forEach(evt => {
+    document.addEventListener(evt, e => e.preventDefault());
+});
+
+// Cegah shortcut mencurigakan
+document.addEventListener('keydown', e => {
+    const blocked = ['F12', 'Escape', 'PrintScreen'];
+    if (
+        blocked.includes(e.key) ||
+        (e.ctrlKey && ['u', 's', 'c', 'x', 'a', 'p', '+', '-', '=', 'r', 't', 'n'].includes(e.key.toLowerCase())) ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+        (e.metaKey && e.key.toLowerCase() === 'p')
+    ) {
+        e.preventDefault();
+        autoEndExam("Shortcut mencurigakan digunakan");
+    }
+});
+
+// 🧩 Deteksi Print Screen (PrtSc/SysRq)
+document.addEventListener('keyup', e => {
+    if (e.key === 'PrintScreen' || e.keyCode === 44) {
+        autoEndExam("Percobaan mengambil screenshot terdeteksi");
+    }
+});
+
+// 🧩 Deteksi clipboard (indikasi screenshot)
+setInterval(() => {
+    navigator.clipboard?.readText?.().then(text => {
+        if (text && text.length > 50 && text.includes("data:image")) {
+            autoEndExam("Screenshot ke clipboard terdeteksi");
+        }
+    }).catch(() => { });
+}, 3000);
+
+// Deteksi keluar tab/minimize
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) autoEndExam("Kamu meninggalkan tab ujian");
+});
+
+// Deteksi fokus/tab baru
+let lastFocusTime = Date.now();
+window.addEventListener("focus", () => {
+    const now = Date.now();
+    if (now - lastFocusTime > 1500) {
+        autoEndExam("Terindikasi membuka tab lain");
+    }
+});
+window.addEventListener("blur", () => {
+    lastFocusTime = Date.now();
+});
+
+// Wajib fullscreen
+function openFullscreen() {
+    const el = document.documentElement;
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+}
+window.addEventListener("load", openFullscreen);
+document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) autoEndExam("Keluar dari mode fullscreen");
+});
+
+// Cegah zoom Ctrl+scroll
+document.addEventListener('wheel', e => {
+    if (e.ctrlKey) e.preventDefault();
+}, { passive: false });
+
+// Disable drag/seleksi
+document.body.style.userSelect = 'none';
+document.body.style.webkitUserSelect = 'none';
+document.body.style.msUserSelect = 'none';
+document.querySelectorAll('*').forEach(el => el.setAttribute('draggable', 'false'));
+
+// Cegah klik kanan
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Deteksi Developer Tools
+setInterval(() => {
+    const start = performance.now();
+    debugger;
+    const delay = performance.now() - start;
+    if (delay > 100) autoEndExam("Developer Tools terdeteksi terbuka");
+}, 1000);
+
+// === Auto End Exam ===
+function autoEndExam(reason) {
+    alert(`❌ Ujian dihentikan karena: ${reason}`);
+    try {
+        submitQuiz();
+    } catch (err) {
+        console.warn("Submit gagal otomatis:", err);
+    }
+    document.exitFullscreen?.();
+    document.body.innerHTML = `
+        <div style="text-align:center;margin-top:120px;font-family:sans-serif;">
+            <h1 style="color:red;">🚫 Ujian Dihentikan</h1>
+            <h3>Alasan: ${reason}</h3>
+            <p>Jawaban kamu sudah otomatis disimpan dan ujian dinyatakan selesai.</p>
+        </div>
+    `;
+}
