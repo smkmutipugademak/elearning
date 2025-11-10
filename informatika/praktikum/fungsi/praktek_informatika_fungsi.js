@@ -42,7 +42,7 @@ const quizData = [
         q: "Apa hasil dari kode berikut?",
         code: "def tambah(x,y):\n    return x+y\nprint(tambah(1,2)+tambah(3,4))",
         a: ["10", "9", "7", "Error"],
-        correct: 1,
+        correct:0,
         pembahasan: "1+2=3 dan 3+4=7, jadi 3+7=10 → hasilnya 10."
     },
     {
