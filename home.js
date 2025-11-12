@@ -34,10 +34,10 @@ const babListData = [
 
 // === Data Praktikum per Mapel ===
 const praktikumData = {
-    Informatika: ["If Else", "Perulangan", "Array", "Tuple", "Fungsi", "Dictionary", "Inheritance", "Abstraction","Polymorphism","Lambda","Tipe Data","Parameter dan Arguments"],
+    Informatika: ["If Else", "Perulangan", "Array", "Tuple", "Fungsi", "Dictionary", "Inheritance", "Abstraction", "Polymorphism", "Lambda", "Tipe Data", "Parameter dan Arguments"],
     "Desain Komunikasi Visual": ["Adobe Photoshop", "CorelDRAW", "Layouting", "Tipografi"],
     "Coding": ["Dasar HTML", "Dasar CSS", "Dasar JavaScript"],
-    "Pemrograman Dasar": ["Variabel dan Tipe Data", "Operator", "Percabangan", "Looping"],
+    "Pemrograman Dasar": ["If Else", "Perulangan", "Array", "Tuple", "Fungsi", "Dictionary", "Inheritance", "Abstraction", "Polymorphism", "Lambda", "Tipe Data", "Parameter dan Arguments"],
     "Pemrograman Web dan Perangkat Bergerak": ["HTML", "CSS", "JavaScript", "Responsive Design"],
     "Desain Grafis Percetakan": ["Adobe Illustrator", "Percetakan Digital", "Layout Brosur"],
     "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video", "Mixing Dasar"],
