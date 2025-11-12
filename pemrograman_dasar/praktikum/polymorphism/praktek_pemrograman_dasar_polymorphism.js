@@ -3,289 +3,188 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH (FOR & WHILE DASAR) ===================
+    // =================== LEVEL MUDAH ===================
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Hai');\n}",
-        a: ["Hai Hai Hai", "Hai", "Error", "Tidak ada output"],
+        code: "class Hewan {\n  suara() {\n    console.log('Hewan bersuara');\n  }\n}\n\nclass Kucing extends Hewan {\n  suara() {\n    console.log('Meong');\n  }\n}\n\nconst obj = new Kucing();\nobj.suara();",
+        a: ["Meong", "Hewan bersuara", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop berjalan 3 kali, mencetak 'Hai' sebanyak 3 kali ke console."
+        pembahasan: "Metode suara() dioverride di subclass Kucing, hasilnya 'Meong'."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  tampil() { console.log('A'); }\n}\nclass B extends A {\n  tampil() { console.log('B'); }\n}\nconst obj = new B();\nobj.tampil();",
+        a: ["B", "A", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop dimulai dari 0 hingga kurang dari 3, sehingga mencetak 0, 1, 2."
+        pembahasan: "Metode tampil() di kelas B menimpa metode A."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log(i);\n}",
-        a: ["1 2 3", "0 1 2", "1 2 3 4", "Error"],
+        q: "Apa hasil kode berikut?",
+        code: "class Burung {\n  suara() { console.log('Cuit'); }\n}\nclass Ayam extends Burung {\n  suara() { console.log('Kukuruyuk'); }\n}\nconst obj = new Ayam();\nobj.suara();",
+        a: ["Kukuruyuk", "Cuit", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop dimulai dari 1 sampai kurang dari 4, menghasilkan 1, 2, 3."
+        pembahasan: "Subclass Ayam menimpa metode suara() dari Burung."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log(i);\n    i++;\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class Bentuk {\n  luas() { console.log('Tidak diketahui'); }\n}\nclass Persegi extends Bentuk {\n  luas() { console.log('Luas = sisi * sisi'); }\n}\n\nconst b = new Persegi();\nb.luas();",
+        a: ["Luas = sisi * sisi", "Tidak diketahui", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop berjalan selama i < 3, sehingga mencetak 0, 1, 2."
+        pembahasan: "Metode luas() pada subclass menimpa metode parent."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let huruf of 'abc') {\n    console.log(huruf);\n}",
-        a: ["a b c", "abc", "a,b,c", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class A {\n  f() { console.log('A'); }\n}\nclass B extends A {}\nnew B().f();",
+        a: ["A", "B", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop berjalan untuk setiap karakter dalam string 'abc'."
+        pembahasan: "Karena B tidak menimpa f(), maka f() dari A dijalankan."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i of [1, 2, 3]) {\n    console.log(i * 2);\n}",
-        a: ["2 4 6", "1 2 3", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class A {\n  halo() { console.log('Halo A'); }\n}\nclass B extends A {\n  halo() { console.log('Halo B'); }\n}\nclass C extends B {}\n\nnew C().halo();",
+        a: ["Halo B", "Halo A", "Error", "None"],
         correct: 0,
-        pembahasan: "Setiap elemen dikali 2 menghasilkan 2, 4, 6."
+        pembahasan: "C mewarisi halo() dari B karena tidak menimpa."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["0 1 2", "0 1 2 3", "1 2 3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class X {\n  tampil() { console.log('X'); }\n}\nclass Y extends X {\n  tampil() { console.log('Y'); }\n}\nconst obj = new X();\nobj.tampil();",
+        a: ["X", "Y", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop berhenti saat i === 3, jadi hanya 0, 1, 2 yang dicetak."
+        pembahasan: "Objek berasal dari kelas X, maka metode dari X yang dipanggil."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 2) continue;\n    console.log(i);\n}",
-        a: ["0 1 3 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class Ayam {\n  suara() { console.log('Kukuruyuk'); }\n}\nclass Sapi {\n  suara() { console.log('Mooo'); }\n}\nfor (const hewan of [new Ayam(), new Sapi()]) {\n  hewan.suara();\n}",
+        a: ["Kukuruyuk\\nMooo", "Mooo\\nKukuruyuk", "Error", "None"],
         correct: 0,
-        pembahasan: "continue melewati nilai 2, jadi mencetak 0, 1, 3, 4."
+        pembahasan: "Dua objek berbeda, keduanya punya metode suara sendiri (duck typing)."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let count = 0;\nwhile (count < 5) {\n    console.log(count);\n    count += 2;\n}",
-        a: ["0 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  cetak() { console.log('A'); }\n}\nclass B extends A {\n  cetak() { console.log('B'); }\n}\nnew A().cetak();\nnew B().cetak();",
+        a: ["A\\nB", "B\\nA", "Error", "None"],
         correct: 0,
-        pembahasan: "count bertambah 2 tiap iterasi → 0, 2, 4."
+        pembahasan: "Keduanya mencetak metode sesuai kelas masing-masing."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 6; i += 2) {\n    console.log(i);\n}",
-        a: ["1 3 5", "2 4 6", "1 2 3 4 5", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "class Binatang {\n  suara() { console.log('Binatang umum'); }\n}\nclass Kucing extends Binatang {\n  suara() { super.suara(); }\n}\nnew Kucing().suara();",
+        a: ["Binatang umum", "Kucing", "Error", "None"],
         correct: 0,
-        pembahasan: "Langkah 2 menghasilkan 1, 3, 5."
+        pembahasan: "super.memanggil versi parent dari metode suara()."
     },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Loop', i);\n}",
-        a: ["Loop 0 Loop 1 Loop 2", "Loop Loop Loop", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "console.log menampilkan teks dan nilai i."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let angka = [2, 4, 6];\nfor (let i of angka) {\n    console.log(i - 1);\n}",
-        a: ["1 3 5", "2 4 6", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "Setiap elemen dikurangi 1 → 1, 3, 5."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i, j);\n    }\n}",
-        a: ["0 0 0 1 1 0 1 1 2 0 2 1", "0 1 2", "0 0 1 1 2 2", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang: i=0→1→2, j=0→1 tiap kali."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 3;\nwhile (i > 0) {\n    console.log(i);\n    i--;\n}",
-        a: ["3 2 1", "1 2 3", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop mundur dari 3 ke 1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    console.log('A');\n}\nconsole.log('B');",
-        a: ["A A B", "A B A", "B A A", "Error"],
-        correct: 0,
-        pembahasan: "'A' dua kali di dalam loop, lalu 'B' di luar loop."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 5) {\n    console.log(x);\n    x += 3;\n}",
-        a: ["1 4", "1 2 3 4", "1 2 4", "Error"],
-        correct: 0,
-        pembahasan: "x naik +3 tiap iterasi → 1, 4."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 4; i++) {\n    if (i % 2 === 0) {\n        console.log(i);\n    }\n}",
-        a: ["0 2", "1 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Cetak hanya bilangan genap → 0, 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["1 2", "1 2 3", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i === 3."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < i; j++) {\n        process.stdout.write('*');\n    }\n    console.log();\n}",
-        a: ["\\n*\\n**", "*\\n**\\n***", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop dalam mencetak segitiga bertingkat bintang."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('A'.repeat(i));\n}",
-        a: ["A AA AAA", "AAA AA A", "A A A", "Error"],
-        correct: 0,
-        pembahasan: "i=1→'A', i=2→'AA', i=3→'AAA'."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 2; i < 8; i += 3) {\n    console.log(i);\n}",
-        a: ["2 5", "2 3 4 5", "2 5 8", "Error"],
-        correct: 0,
-        pembahasan: "Loop dengan langkah 3 menghasilkan 2 dan 5."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i + j);\n    }\n}",
-        a: ["0 1 1 2 2 3", "0 1 2 3 4", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "Kombinasi i+j menghasilkan pola 0,1,1,2,2,3."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let total = 0;\nfor (let i = 1; i < 4; i++) {\n    total += i;\n}\nconsole.log(total);",
-        a: ["6", "10", "3", "Error"],
-        correct: 0,
-        pembahasan: "1 + 2 + 3 = 6."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 4) {\n    i++;\n}\nconsole.log(i);",
-        a: ["4", "3", "5", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i mencapai 4."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) continue;\n    console.log(i);\n}",
-        a: ["0 1 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Melewati angka 3 karena continue."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}\nconsole.log('Selesai');",
-        a: ["0 1 2 Selesai", "0 1 2", "Selesai", "Error"],
-        correct: 0,
-        pembahasan: "Bagian setelah for dijalankan setelah loop selesai."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 0;\nwhile (x < 3) {\n    console.log('Loop', x);\n    x++;\n}\nconsole.log('Done');",
-        a: ["Loop 0 Loop 1 Loop 2 Done", "Loop Done", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop while berakhir normal, lalu cetak 'Done'."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    for (let j = 1; j < 3; j++) {\n        console.log(i * j);\n    }\n}",
-        a: ["1 2 2 4 3 6", "1 2 3 4 5 6", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Perkalian kombinasi i×j menghasilkan 1, 2, 2, 4, 3, 6."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 3; j++) {\n        if (i === j) console.log(i);\n    }\n}",
-        a: ["0 1 2", "0 0 1 1 2 2", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Cetak hanya saat i === j → 0, 1, 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 10) {\n    x *= 2;\n}\nconsole.log(x);",
-        a: ["16", "8", "10", "Error"],
-        correct: 0,
-        pembahasan: "x dikali 2 terus hingga mencapai 16."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 4; i > 0; i--) {\n    console.log(i);\n}",
-        a: ["4 3 2 1", "1 2 3 4", "4 3 2", "Error"],
-        correct: 0,
-        pembahasan: "Loop mundur dari 4 ke 1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) break;\n    console.log(i);\n}",
-        a: ["0", "1", "0 1", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti di i === 1, hanya cetak 0."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = [1, 2, 3];\nfor (let i of x) {\n    if (i % 2 === 0) console.log(i);\n}",
-        a: ["2", "1 2", "1 3", "Error"],
-        correct: 0,
-        pembahasan: "Hanya angka genap (2) yang dicetak."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('*'.repeat(i));\n}",
-        a: ["* ** ***", "*** ** *", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop menghasilkan segitiga bintang bertingkat."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    for (let j = 0; j < 2; j++) {\n        process.stdout.write((i + j) + ' ');\n    }\n}",
-        a: ["0 1 1 2", "1 2 3 4", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "i=0→(0,1), i=1→(1,2)."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log('*');\n    i++;\n}",
-        a: ["* * *", "*", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop while mencetak '*' sebanyak 3 kali."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) continue;\n    console.log('A', i);\n}",
-        a: ["A 0 A 2", "A 0 A 1 A 2", "A 1 A 2", "Error"],
-        correct: 0,
-        pembahasan: "Melewati i === 1, hanya mencetak 0 dan 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 5;\nwhile (x > 0) {\n    x -= 2;\n}\nconsole.log(x);",
-        a: ["-1", "1", "0", "Error"],
-        correct: 0,
-        pembahasan: "x berkurang 2 tiap iterasi → terakhir -1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 1;\nwhile (i <= 3) {\n    console.log(i * i);\n    i++;\n}",
-        a: ["1 4 9", "1 2 3", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Setiap iterasi mencetak kuadrat dari i → 1, 4, 9."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j <= i; j++) {\n        console.log(i + '-' + j);\n    }\n}",
-        a: ["0-0 1-0 1-1 2-0 2-1 2-2", "0-0 1-1 2-2", "0-0 1-0 2-0", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang menghasilkan kombinasi i-j untuk setiap nilai i dan j ≤ i."
-    }
 
+    // =================== LEVEL MENENGAH ===================
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class Bentuk {\n  tampil() { console.log('Bentuk'); }\n}\nclass Persegi extends Bentuk {\n  tampil() { console.log('Persegi'); }\n}\nclass Lingkaran extends Bentuk {\n  tampil() { console.log('Lingkaran'); }\n}\nfor (const x of [new Persegi(), new Lingkaran()]) {\n  x.tampil();\n}",
+        a: ["Persegi\\nLingkaran", "Bentuk\\nBentuk", "Error", "None"],
+        correct: 0,
+        pembahasan: "Setiap objek menjalankan metode tampil() sesuai kelasnya."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  f() { console.log('A'); }\n}\nclass B extends A {\n  f() { console.log('B'); }\n}\nclass C extends A {\n  f() { console.log('C'); }\n}\nfor (const obj of [new A(), new B(), new C()]) {\n  obj.f();\n}",
+        a: ["A\\nB\\nC", "B\\nC\\nA", "C\\nA\\nB", "Error"],
+        correct: 0,
+        pembahasan: "Setiap kelas menimpa f() sesuai definisinya."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class Mobil {\n  jalan() { console.log('Mobil berjalan'); }\n}\nclass Motor extends Mobil {\n  jalan() { console.log('Motor melaju'); }\n}\nconst obj = [new Mobil(), new Motor()];\nfor (const i of obj) i.jalan();",
+        a: ["Mobil berjalan\\nMotor melaju", "Motor melaju\\nMobil berjalan", "Error", "None"],
+        correct: 0,
+        pembahasan: "Setiap objek memanggil metode sendiri."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class A {\n  cetak() { console.log('A'); }\n}\nclass B extends A {\n  cetak() {\n    super.cetak();\n    console.log('B');\n  }\n}\nnew B().cetak();",
+        a: ["A\\nB", "B\\nA", "Error", "None"],
+        correct: 0,
+        pembahasan: "super.cetak() memanggil versi A, lalu print 'B'."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class Orang {\n  bicara() { console.log('Halo'); }\n}\nclass Dosen extends Orang {\n  bicara() { console.log('Selamat datang'); }\n}\nconst obj = new Orang();\nconst obj2 = new Dosen();\nobj.bicara();\nobj2.bicara();",
+        a: ["Halo\\nSelamat datang", "Selamat datang\\nHalo", "Error", "None"],
+        correct: 0,
+        pembahasan: "Setiap objek menggunakan metode versinya sendiri."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class Base {\n  tampil() { console.log('Base'); }\n}\nclass Sub extends Base {\n  tampil() {\n    super.tampil();\n    console.log('Sub');\n  }\n}\nnew Sub().tampil();",
+        a: ["Base\\nSub", "Sub\\nBase", "Error", "None"],
+        correct: 0,
+        pembahasan: "super() memanggil parent sebelum menampilkan 'Sub'."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class A {\n  f() { return 'A'; }\n}\nclass B extends A {\n  f() { return super.f() + 'B'; }\n}\nconsole.log(new B().f());",
+        a: ["AB", "BA", "Error", "None"],
+        correct: 0,
+        pembahasan: "super() memanggil f() dari A lalu menambahkan 'B'."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  nilai() { return 10; }\n}\nclass B extends A {\n  nilai() { return super.nilai() + 5; }\n}\nconsole.log(new B().nilai());",
+        a: ["15", "10", "Error", "None"],
+        correct: 0,
+        pembahasan: "Metode di B menambah hasil metode parent 10 + 5."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class Satu {\n  show() { console.log('Satu'); }\n}\nclass Dua extends Satu {\n  show() { console.log('Dua'); }\n}\nclass Tiga extends Satu {\n  show() { console.log('Tiga'); }\n}\nfor (const obj of [new Satu(), new Dua(), new Tiga()]) obj.show();",
+        a: ["Satu\\nDua\\nTiga", "Tiga\\nDua\\nSatu", "Error", "None"],
+        correct: 0,
+        pembahasan: "Polymorphism: setiap class menjalankan versi show() masing-masing."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  tampil() { console.log('A'); }\n}\nclass B extends A {\n  tampil() { console.log('B'); }\n}\nclass C extends B {\n  tampil() { super.tampil(); }\n}\nnew C().tampil();",
+        a: ["B", "A", "Error", "None"],
+        correct: 0,
+        pembahasan: "super() memanggil metode tampil() milik B."
+    },
+
+    // =================== LEVEL LANJUT ===================
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class X {\n  tampil() { console.log('X'); }\n}\nclass Y extends X {\n  tampil() {\n    super.tampil();\n    console.log('Y');\n  }\n}\nclass Z extends Y {\n  tampil() {\n    super.tampil();\n    console.log('Z');\n  }\n}\nnew Z().tampil();",
+        a: ["X\\nY\\nZ", "Z\\nY\\nX", "Error", "None"],
+        correct: 0,
+        pembahasan: "Pemanggilan bertingkat menggunakan super()."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class A {\n  data() { return 2; }\n}\nclass B extends A {\n  data() { return super.data() * 3; }\n}\nconsole.log(new B().data());",
+        a: ["6", "2", "Error", "None"],
+        correct: 0,
+        pembahasan: "super() memanggil parent (2) lalu dikali 3."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class A {\n  f() { console.log('A'); }\n}\nclass B extends A {\n  f() { console.log('B'); }\n}\nclass C extends B {\n  f() { super.f(); }\n}\nnew C().f();",
+        a: ["B", "A", "Error", "None"],
+        correct: 0,
+        pembahasan: "super().f() memanggil f() milik B."
+    },
+    {
+        q: "Apa hasil kode berikut?",
+        code: "class Hewan {\n  suara() { console.log('Hewan'); }\n}\nclass Anjing extends Hewan {\n  suara() { console.log('Guk'); }\n}\nclass Kucing extends Hewan {\n  suara() { console.log('Meong'); }\n}\nfor (const h of [new Anjing(), new Kucing(), new Hewan()]) h.suara();",
+        a: ["Guk\\nMeong\\nHewan", "Hewan\\nGuk\\nMeong", "Error", "None"],
+        correct: 0,
+        pembahasan: "Polymorphism: setiap class menjalankan versinya sendiri."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "class Base {\n  show() { console.log('Base'); }\n}\nclass Child extends Base {\n  show() {\n    console.log('Child');\n    super.show();\n  }\n}\nnew Child().show();",
+        a: ["Child\\nBase", "Base\\nChild", "Error", "None"],
+        correct: 0,
+        pembahasan: "super() memanggil metode parent setelah child menampilkan pesannya."
+    }
 ];
+
 
 
 

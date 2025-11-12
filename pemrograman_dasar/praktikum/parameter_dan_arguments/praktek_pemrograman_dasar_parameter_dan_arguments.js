@@ -3,288 +3,221 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH (FOR & WHILE DASAR) ===================
+    // =================== LEVEL MUDAH ===================
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Hai');\n}",
-        a: ["Hai Hai Hai", "Hai", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop berjalan 3 kali, mencetak 'Hai' sebanyak 3 kali ke console."
+        code: "function sapa(nama) {\n    console.log('Halo', nama);\n}\n\nsapa('Budi');",
+        a: ["Halo", "nama", "Halo Budi", "Error"],
+        correct: 2,
+        pembahasan: "Fungsi menerima argumen 'Budi' lalu mencetak 'Halo Budi'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Loop dimulai dari 0 hingga kurang dari 3, sehingga mencetak 0, 1, 2."
+        code: "function tambah(a, b) {\n    console.log(a + b);\n}\n\ntambah(2, 3);",
+        a: ["23", "5", "2 + 3", "Error"],
+        correct: 1,
+        pembahasan: "Menjumlahkan 2 + 3 menghasilkan 5."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log(i);\n}",
-        a: ["1 2 3", "0 1 2", "1 2 3 4", "Error"],
+        code: "function cetak(nama = 'Andi') {\n    console.log(nama);\n}\n\ncetak();",
+        a: ["Andi", "Error", "nama", "undefined"],
         correct: 0,
-        pembahasan: "Loop dimulai dari 1 sampai kurang dari 4, menghasilkan 1, 2, 3."
+        pembahasan: "Parameter default digunakan jika tidak ada argumen, jadi mencetak 'Andi'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log(i);\n    i++;\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+        code: "function kali(x, y = 2) {\n    return x * y;\n}\n\nconsole.log(kali(4));",
+        a: ["8", "6", "4", "Error"],
         correct: 0,
-        pembahasan: "Loop berjalan selama i < 3, sehingga mencetak 0, 1, 2."
+        pembahasan: "y bernilai default 2, jadi 4 * 2 = 8."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let huruf of 'abc') {\n    console.log(huruf);\n}",
-        a: ["a b c", "abc", "a,b,c", "Error"],
-        correct: 0,
-        pembahasan: "Loop berjalan untuk setiap karakter dalam string 'abc'."
+        code: "function tampil(nama, umur) {\n    console.log(nama, umur);\n}\n\ntampil('Ayu', 18);",
+        a: ["nama umur", "Ayu 18", "18 Ayu", "Error"],
+        correct: 1,
+        pembahasan: "Argumen diberikan sesuai urutan parameter: 'Ayu' dan 18."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i of [1, 2, 3]) {\n    console.log(i * 2);\n}",
-        a: ["2 4 6", "1 2 3", "Error", "Tidak ada output"],
+        code: "function tambah(a, b) {\n    return a + b;\n}\n\nlet hasil = tambah(5, 10);\nconsole.log(hasil);",
+        a: ["15", "510", "a + b", "Error"],
         correct: 0,
-        pembahasan: "Setiap elemen dikali 2 menghasilkan 2, 4, 6."
+        pembahasan: "Fungsi mengembalikan hasil penjumlahan 5 + 10 = 15."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["0 1 2", "0 1 2 3", "1 2 3", "Error"],
+        code: "function hello() {\n    return 'Hai Dunia';\n}\n\nconsole.log(hello());",
+        a: ["Hai Dunia", "undefined", "hello", "Error"],
         correct: 0,
-        pembahasan: "Loop berhenti saat i === 3, jadi hanya 0, 1, 2 yang dicetak."
+        pembahasan: "Fungsi mengembalikan string 'Hai Dunia' yang dicetak oleh console.log()."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 2) continue;\n    console.log(i);\n}",
-        a: ["0 1 3 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        code: "function total(a, b = 5) {\n    return a + b;\n}\n\nconsole.log(total(3));",
+        a: ["8", "35", "Error", "5"],
         correct: 0,
-        pembahasan: "continue melewati nilai 2, jadi mencetak 0, 1, 3, 4."
+        pembahasan: "Parameter kedua default 5, jadi 3 + 5 = 8."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let count = 0;\nwhile (count < 5) {\n    console.log(count);\n    count += 2;\n}",
-        a: ["0 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        code: "function show(nama, kota = 'Bandung') {\n    console.log(nama, kota);\n}\n\nshow('Rina');",
+        a: ["Rina Bandung", "kota Rina", "Rina", "Error"],
         correct: 0,
-        pembahasan: "count bertambah 2 tiap iterasi → 0, 2, 4."
+        pembahasan: "Default parameter digunakan untuk 'kota', jadi hasilnya 'Rina Bandung'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 6; i += 2) {\n    console.log(i);\n}",
-        a: ["1 3 5", "2 4 6", "1 2 3 4 5", "Error"],
+        code: "function hitung(a, b) {\n    return a - b;\n}\n\nconsole.log(hitung(10, 3));",
+        a: ["7", "13", "-7", "Error"],
         correct: 0,
-        pembahasan: "Langkah 2 menghasilkan 1, 3, 5."
+        pembahasan: "Hasil pengurangan 10 - 3 = 7."
     },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Loop', i);\n}",
-        a: ["Loop 0 Loop 1 Loop 2", "Loop Loop Loop", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "console.log menampilkan teks dan nilai i."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let angka = [2, 4, 6];\nfor (let i of angka) {\n    console.log(i - 1);\n}",
-        a: ["1 3 5", "2 4 6", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "Setiap elemen dikurangi 1 → 1, 3, 5."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i, j);\n    }\n}",
-        a: ["0 0 0 1 1 0 1 1 2 0 2 1", "0 1 2", "0 0 1 1 2 2", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang: i=0→1→2, j=0→1 tiap kali."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 3;\nwhile (i > 0) {\n    console.log(i);\n    i--;\n}",
-        a: ["3 2 1", "1 2 3", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop mundur dari 3 ke 1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    console.log('A');\n}\nconsole.log('B');",
-        a: ["A A B", "A B A", "B A A", "Error"],
-        correct: 0,
-        pembahasan: "'A' dua kali di dalam loop, lalu 'B' di luar loop."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 5) {\n    console.log(x);\n    x += 3;\n}",
-        a: ["1 4", "1 2 3 4", "1 2 4", "Error"],
-        correct: 0,
-        pembahasan: "x naik +3 tiap iterasi → 1, 4."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 4; i++) {\n    if (i % 2 === 0) {\n        console.log(i);\n    }\n}",
-        a: ["0 2", "1 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Cetak hanya bilangan genap → 0, 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["1 2", "1 2 3", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i === 3."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < i; j++) {\n        process.stdout.write('*');\n    }\n    console.log();\n}",
-        a: ["\\n*\\n**", "*\\n**\\n***", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop dalam mencetak segitiga bertingkat bintang."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('A'.repeat(i));\n}",
-        a: ["A AA AAA", "AAA AA A", "A A A", "Error"],
-        correct: 0,
-        pembahasan: "i=1→'A', i=2→'AA', i=3→'AAA'."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 2; i < 8; i += 3) {\n    console.log(i);\n}",
-        a: ["2 5", "2 3 4 5", "2 5 8", "Error"],
-        correct: 0,
-        pembahasan: "Loop dengan langkah 3 menghasilkan 2 dan 5."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i + j);\n    }\n}",
-        a: ["0 1 1 2 2 3", "0 1 2 3 4", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "Kombinasi i+j menghasilkan pola 0,1,1,2,2,3."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let total = 0;\nfor (let i = 1; i < 4; i++) {\n    total += i;\n}\nconsole.log(total);",
-        a: ["6", "10", "3", "Error"],
-        correct: 0,
-        pembahasan: "1 + 2 + 3 = 6."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 4) {\n    i++;\n}\nconsole.log(i);",
-        a: ["4", "3", "5", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i mencapai 4."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) continue;\n    console.log(i);\n}",
-        a: ["0 1 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Melewati angka 3 karena continue."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}\nconsole.log('Selesai');",
-        a: ["0 1 2 Selesai", "0 1 2", "Selesai", "Error"],
-        correct: 0,
-        pembahasan: "Bagian setelah for dijalankan setelah loop selesai."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 0;\nwhile (x < 3) {\n    console.log('Loop', x);\n    x++;\n}\nconsole.log('Done');",
-        a: ["Loop 0 Loop 1 Loop 2 Done", "Loop Done", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop while berakhir normal, lalu cetak 'Done'."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    for (let j = 1; j < 3; j++) {\n        console.log(i * j);\n    }\n}",
-        a: ["1 2 2 4 3 6", "1 2 3 4 5 6", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Perkalian kombinasi i×j menghasilkan 1, 2, 2, 4, 3, 6."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 3; j++) {\n        if (i === j) console.log(i);\n    }\n}",
-        a: ["0 1 2", "0 0 1 1 2 2", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Cetak hanya saat i === j → 0, 1, 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 10) {\n    x *= 2;\n}\nconsole.log(x);",
-        a: ["16", "8", "10", "Error"],
-        correct: 0,
-        pembahasan: "x dikali 2 terus hingga mencapai 16."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 4; i > 0; i--) {\n    console.log(i);\n}",
-        a: ["4 3 2 1", "1 2 3 4", "4 3 2", "Error"],
-        correct: 0,
-        pembahasan: "Loop mundur dari 4 ke 1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) break;\n    console.log(i);\n}",
-        a: ["0", "1", "0 1", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti di i === 1, hanya cetak 0."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = [1, 2, 3];\nfor (let i of x) {\n    if (i % 2 === 0) console.log(i);\n}",
-        a: ["2", "1 2", "1 3", "Error"],
-        correct: 0,
-        pembahasan: "Hanya angka genap (2) yang dicetak."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('*'.repeat(i));\n}",
-        a: ["* ** ***", "*** ** *", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop menghasilkan segitiga bintang bertingkat."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    for (let j = 0; j < 2; j++) {\n        process.stdout.write((i + j) + ' ');\n    }\n}",
-        a: ["0 1 1 2", "1 2 3 4", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "i=0→(0,1), i=1→(1,2)."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log('*');\n    i++;\n}",
-        a: ["* * *", "*", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop while mencetak '*' sebanyak 3 kali."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) continue;\n    console.log('A', i);\n}",
-        a: ["A 0 A 2", "A 0 A 1 A 2", "A 1 A 2", "Error"],
-        correct: 0,
-        pembahasan: "Melewati i === 1, hanya mencetak 0 dan 2."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 5;\nwhile (x > 0) {\n    x -= 2;\n}\nconsole.log(x);",
-        a: ["-1", "1", "0", "Error"],
-        correct: 0,
-        pembahasan: "x berkurang 2 tiap iterasi → terakhir -1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 1;\nwhile (i <= 3) {\n    console.log(i * i);\n    i++;\n}",
-        a: ["1 4 9", "1 2 3", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Setiap iterasi mencetak kuadrat dari i → 1, 4, 9."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j <= i; j++) {\n        console.log(i + '-' + j);\n    }\n}",
-        a: ["0-0 1-0 1-1 2-0 2-1 2-2", "0-0 1-1 2-2", "0-0 1-0 2-0", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang menghasilkan kombinasi i-j untuk setiap nilai i dan j ≤ i."
-    }
 
+    // =================== LEVEL MENENGAH ===================
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function fungsi(a, b, c = 3) {\n    console.log(a + b + c);\n}\n\nfungsi(1, 2);",
+        a: ["3", "6", "Error", "12"],
+        correct: 1,
+        pembahasan: "c menggunakan default 3 → 1 + 2 + 3 = 6."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function test(a, b) {\n    return a * b;\n}\n\nconsole.log(test(2, 4));",
+        a: ["8", "24", "Error", "6"],
+        correct: 0,
+        pembahasan: "Fungsi dikirim argumen sesuai posisi, hasilnya 2 * 4 = 8."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function sapa(nama1, nama2 = 'Budi') {\n    console.log('Hai', nama1, 'dan', nama2);\n}\n\nsapa('Ani');",
+        a: ["Hai Ani dan Budi", "Hai Budi dan Ani", "Error", "Hai Ani"],
+        correct: 0,
+        pembahasan: "Parameter nama2 punya nilai default 'Budi'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function data(...args) {\n    console.log(args);\n}\n\ndata(1, 2, 3);",
+        a: ["[1, 2, 3]", "(1, 2, 3)", "1 2 3", "Error"],
+        correct: 0,
+        pembahasan: "Rest parameter ...args menampung semua argumen sebagai array."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function tampil(obj) {\n    console.log(obj);\n}\n\ntampil({nama: 'Doni', umur: 20});",
+        a: ["{nama: 'Doni', umur: 20}", "['Doni', 20]", "('Doni', 20)", "Error"],
+        correct: 0,
+        pembahasan: "Objek dalam JavaScript ditulis dengan tanda kurung kurawal."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function tampil(...args) {\n    for (let a of args) {\n        process.stdout.write(a + ' ');\n    }\n}\n\ntampil('A', 'B', 'C');",
+        a: ["A B C ", "['A', 'B', 'C']", "('A', 'B', 'C')", "Error"],
+        correct: 0,
+        pembahasan: "Rest parameter dapat diiterasi dengan for-of."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function combine(a, ...args) {\n    console.log(a, args);\n}\n\ncombine(1, 2, 3);",
+        a: ["1 [2, 3]", "1 (2, 3)", "Error", "1 2 3"],
+        correct: 0,
+        pembahasan: "Argumen pertama masuk ke a, sisanya disimpan dalam array args."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function showInfo(info) {\n    for (let key in info) {\n        console.log(key, info[key]);\n    }\n}\n\nshowInfo({nama: 'Ari', umur: 19});",
+        a: ["nama Ari\\numur 19", "('nama', 'Ari')", "Error", "None"],
+        correct: 0,
+        pembahasan: "Loop for-in menampilkan pasangan key dan value dari objek."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function test(x, y = 10) {\n    return x + y;\n}\n\nconsole.log(test(7, 3));",
+        a: ["10", "13", "Error", "7"],
+        correct: 1,
+        pembahasan: "Nilai 7 dan 3 dijumlahkan menghasilkan 10."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function f(x, y, z) {\n    console.log(x, y, z);\n}\n\nlet data = [1, 2, 3];\nf(...data);",
+        a: ["1 2 3", "(1, 2, 3)", "Error", "[1, 2, 3]"],
+        correct: 0,
+        pembahasan: "Operator spread `...` mengekstrak isi array ke parameter satu per satu."
+    },
+
+    // =================== LEVEL LANJUT ===================
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function g(a, b = 2, c = 3) {\n    return a * b + c;\n}\n\nconsole.log(g(2));",
+        a: ["7", "10", "8", "Error"],
+        correct: 0,
+        pembahasan: "a=2, b=2, c=3 → 2×2+3=7."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function fungsi(x, y) {\n    return x / y;\n}\n\nconsole.log(fungsi(10, 2));",
+        a: ["5", "5.0", "Error", "0.5"],
+        correct: 0,
+        pembahasan: "10 / 2 = 5 hasilnya number."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function f(x, y = 2, ...args) {\n    console.log(x, y, args);\n}\n\nf(1, 3, 5, 7);",
+        a: ["1 3 [5, 7]", "1 3 (5, 7)", "Error", "1 3 5 7"],
+        correct: 0,
+        pembahasan: "Argumen ekstra disimpan dalam array args."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function f(a, b, kwargs) {\n    console.log(a, b, kwargs);\n}\n\nf(1, 2, {x: 10, y: 20});",
+        a: ["1 2 {x: 10, y: 20}", "Error", "1 2 (10,20)", "1 2 [10,20]"],
+        correct: 0,
+        pembahasan: "Objek {x:10, y:20} digunakan sebagai argumen ketiga."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function merge(a, b) {\n    return String(a) + String(b);\n}\n\nconsole.log(merge(2, 3));",
+        a: ["23", "5", "Error", "a+b"],
+        correct: 0,
+        pembahasan: "Konversi ke string lalu digabung → '23'."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function f(x, y) {\n    x = x + 1;\n    y = y + 2;\n    return x + y;\n}\n\nconsole.log(f(1, 1));",
+        a: ["5", "3", "4", "Error"],
+        correct: 0,
+        pembahasan: "x jadi 2, y jadi 3 → hasil 5."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function calc(a, b) {\n    return a ** b;\n}\n\nconsole.log(calc(2, 3));",
+        a: ["8", "6", "23", "Error"],
+        correct: 0,
+        pembahasan: "2 pangkat 3 = 8."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function tes(x, y = 5) {\n    return x + y;\n}\n\nconsole.log(tes(5, 10));",
+        a: ["15", "10", "Error", "5"],
+        correct: 0,
+        pembahasan: "Argumen kedua menimpa default-nya, jadi 5+10=15."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function data(a, b, c = 5) {\n    console.log(a, b, c);\n}\n\ndata(1, 2, 3);",
+        a: ["1 2 3", "Error", "1 3 2", "1 c=3 b=2"],
+        correct: 0,
+        pembahasan: "Parameter dikirim sesuai urutan."
+    },
+    {
+        q: "Apa output dari kode berikut?",
+        code: "function hitung(a, b) {\n    return a + b;\n}\n\nconsole.log(hitung(4, 5));",
+        a: ["9", "45", "Error", "5"],
+        correct: 0,
+        pembahasan: "Urutan parameter tidak masalah karena sesuai posisi, hasil 4 + 5 = 9."
+    }
 ];
 
 

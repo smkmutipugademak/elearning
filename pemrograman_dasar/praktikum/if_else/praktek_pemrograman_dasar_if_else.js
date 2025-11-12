@@ -3,290 +3,289 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH (FOR & WHILE DASAR) ===================
+    // =================== LEVEL MENENGAH (IF-ELSE) ===================
+
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Hai');\n}",
-        a: ["Hai Hai Hai", "Hai", "Error", "Tidak ada output"],
+        code: "let x = 10;\nlet y = 5;\nif (x > y) {\n    console.log('A');\n} else {\n    console.log('B');\n}",
+        a: ["A", "B", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Loop berjalan 3 kali, mencetak 'Hai' sebanyak 3 kali ke console."
+        pembahasan: "Karena 10 > 5, maka kondisi benar dan mencetak 'A'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
+        code: "let x = 3;\nif (x === 3) {\n    console.log('Benar');\n} else {\n    console.log('Salah');\n}",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Loop dimulai dari 0 hingga kurang dari 3, sehingga mencetak 0, 1, 2."
+        pembahasan: "Kondisi x === 3 terpenuhi, maka mencetak 'Benar'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log(i);\n}",
-        a: ["1 2 3", "0 1 2", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Loop dimulai dari 1 sampai kurang dari 4, menghasilkan 1, 2, 3."
+        code: "let x = 7;\nif (x % 2 === 0) {\n    console.log('Genap');\n} else {\n    console.log('Ganjil');\n}",
+        a: ["Genap", "Ganjil", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "7 tidak habis dibagi 2, maka 'Ganjil'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log(i);\n    i++;\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Loop berjalan selama i < 3, sehingga mencetak 0, 1, 2."
+        code: "let x = 10;\nif (x > 10) {\n    console.log('Lebih');\n} else if (x === 10) {\n    console.log('Sama');\n} else {\n    console.log('Kurang');\n}",
+        a: ["Lebih", "Sama", "Kurang", "Error"],
+        correct: 1,
+        pembahasan: "x === 10 terpenuhi, maka 'Sama'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let huruf of 'abc') {\n    console.log(huruf);\n}",
-        a: ["a b c", "abc", "a,b,c", "Error"],
-        correct: 0,
-        pembahasan: "Loop berjalan untuk setiap karakter dalam string 'abc'."
+        code: "let a = 5;\nlet b = 8;\nif (a < b) {\n    console.log('A');\n}\nif (b < 10) {\n    console.log('B');\n}",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar, maka mencetak 'A' lalu 'B'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i of [1, 2, 3]) {\n    console.log(i * 2);\n}",
-        a: ["2 4 6", "1 2 3", "Error", "Tidak ada output"],
+        code: "let x = 4;\nif (x > 0) {\n    console.log('Positif');\n} else {\n    console.log('Negatif');\n}",
+        a: ["Positif", "Negatif", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Setiap elemen dikali 2 menghasilkan 2, 4, 6."
+        pembahasan: "x bernilai 4 (>0), maka 'Positif'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["0 1 2", "0 1 2 3", "1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i === 3, jadi hanya 0, 1, 2 yang dicetak."
+        code: "let x = -2;\nif (x >= 0) {\n    console.log('A');\n} else {\n    console.log('B');\n}",
+        a: ["A", "B", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x negatif, maka kondisi else dijalankan."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 2) continue;\n    console.log(i);\n}",
-        a: ["0 1 3 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        code: "let a = 2;\nlet b = 3;\nif (a * b === 6) {\n    console.log('Benar');\n} else {\n    console.log('Salah');\n}",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "continue melewati nilai 2, jadi mencetak 0, 1, 3, 4."
+        pembahasan: "2 * 3 = 6, maka kondisi benar."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let count = 0;\nwhile (count < 5) {\n    console.log(count);\n    count += 2;\n}",
-        a: ["0 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        code: "let x = 10;\nif (x % 3 === 1) {\n    console.log('A');\n} else if (x % 3 === 2) {\n    console.log('B');\n} else {\n    console.log('C');\n}",
+        a: ["A", "B", "C", "Error"],
         correct: 0,
-        pembahasan: "count bertambah 2 tiap iterasi → 0, 2, 4."
+        pembahasan: "10 % 3 = 1 → cetak 'A'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 6; i += 2) {\n    console.log(i);\n}",
-        a: ["1 3 5", "2 4 6", "1 2 3 4 5", "Error"],
+        code: "let x = 5;\nlet y = 10;\nif (x > 2 && y > 5) {\n    console.log('OK');\n}",
+        a: ["OK", "Error", "Tidak ada output", "False"],
         correct: 0,
-        pembahasan: "Langkah 2 menghasilkan 1, 3, 5."
+        pembahasan: "Kedua kondisi benar, maka 'OK'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Loop', i);\n}",
-        a: ["Loop 0 Loop 1 Loop 2", "Loop Loop Loop", "0 1 2", "Error"],
+        code: "let x = 5;\nlet y = 10;\nif (x > 2 || y < 5) {\n    console.log('Benar');\n} else {\n    console.log('Salah');\n}",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "console.log menampilkan teks dan nilai i."
+        pembahasan: "Kondisi pertama sudah benar, maka 'Benar'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let angka = [2, 4, 6];\nfor (let i of angka) {\n    console.log(i - 1);\n}",
-        a: ["1 3 5", "2 4 6", "0 1 2", "Error"],
+        code: "let x = 0;\nif (!x) {\n    console.log('Kosong');\n}",
+        a: ["Kosong", "Error", "False", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Setiap elemen dikurangi 1 → 1, 3, 5."
+        pembahasan: "x = 0 dianggap false, jadi !x bernilai true → cetak 'Kosong'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i, j);\n    }\n}",
-        a: ["0 0 0 1 1 0 1 1 2 0 2 1", "0 1 2", "0 0 1 1 2 2", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang: i=0→1→2, j=0→1 tiap kali."
+        code: "let x = 10;\nif (x < 0) {\n    console.log('Negatif');\n} else {\n    if (x === 0) {\n        console.log('Nol');\n    } else {\n        console.log('Positif');\n    }\n}",
+        a: ["Negatif", "Nol", "Positif", "Error"],
+        correct: 2,
+        pembahasan: "x = 10 → masuk else bagian kedua → 'Positif'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 3;\nwhile (i > 0) {\n    console.log(i);\n    i--;\n}",
-        a: ["3 2 1", "1 2 3", "Error", "Tidak ada output"],
+        code: "let a = 5;\nlet b = 10;\nif (b % a === 0) {\n    console.log('Bagi');\n} else {\n    console.log('Tidak');\n}",
+        a: ["Bagi", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop mundur dari 3 ke 1."
+        pembahasan: "10 % 5 = 0 → habis dibagi → 'Bagi'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    console.log('A');\n}\nconsole.log('B');",
-        a: ["A A B", "A B A", "B A A", "Error"],
-        correct: 0,
-        pembahasan: "'A' dua kali di dalam loop, lalu 'B' di luar loop."
+        code: "let x = 4;\nif (x % 2 === 0) {\n    console.log('Genap');\n}\nif (x % 4 === 0) {\n    console.log('Kelipatan 4');\n}",
+        a: ["Genap", "Kelipatan 4", "Genap\\nKelipatan 4", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar, keduanya dieksekusi."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 5) {\n    console.log(x);\n    x += 3;\n}",
-        a: ["1 4", "1 2 3 4", "1 2 4", "Error"],
-        correct: 0,
-        pembahasan: "x naik +3 tiap iterasi → 1, 4."
+        code: "let a = 3;\nlet b = 7;\nif (a * 2 === b) {\n    console.log('Cocok');\n} else {\n    console.log('Tidak');\n}",
+        a: ["Cocok", "Tidak", "Error", "None"],
+        correct: 1,
+        pembahasan: "3 * 2 = 6 ≠ 7, maka else dijalankan."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 4; i++) {\n    if (i % 2 === 0) {\n        console.log(i);\n    }\n}",
-        a: ["0 2", "1 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Cetak hanya bilangan genap → 0, 2."
+        code: "let x = 5;\nif (x > 10) {\n    console.log('Besar');\n} else if (x > 3) {\n    console.log('Sedang');\n} else {\n    console.log('Kecil');\n}",
+        a: ["Besar", "Sedang", "Kecil", "Error"],
+        correct: 1,
+        pembahasan: "x = 5 > 3 maka 'Sedang'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["1 2", "1 2 3", "1 2 3 4", "Error"],
+        code: "let a = 8;\nif (a % 4 === 0) {\n    console.log('Ya');\n} else {\n    console.log('Tidak');\n}",
+        a: ["Ya", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop berhenti saat i === 3."
+        pembahasan: "8 habis dibagi 4 → 'Ya'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < i; j++) {\n        process.stdout.write('*');\n    }\n    console.log();\n}",
-        a: ["\\n*\\n**", "*\\n**\\n***", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Loop dalam mencetak segitiga bertingkat bintang."
+        code: "let x = 10;\nif (x > 0) {\n    console.log('A');\n}\nif (x > 5) {\n    console.log('B');\n}",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "Kedua kondisi benar → 'A' dan 'B'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('A'.repeat(i));\n}",
-        a: ["A AA AAA", "AAA AA A", "A A A", "Error"],
+        code: "let x = 9;\nlet y = 3;\nif (x % y === 0 && x > y) {\n    console.log('OK');\n} else {\n    console.log('NO');\n}",
+        a: ["OK", "NO", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "i=1→'A', i=2→'AA', i=3→'AAA'."
+        pembahasan: "9 % 3 === 0 dan 9 > 3 → 'OK'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 2; i < 8; i += 3) {\n    console.log(i);\n}",
-        a: ["2 5", "2 3 4 5", "2 5 8", "Error"],
-        correct: 0,
-        pembahasan: "Loop dengan langkah 3 menghasilkan 2 dan 5."
+        code: "let x = 0;\nif (x) {\n    console.log('True');\n} else {\n    console.log('False');\n}",
+        a: ["True", "False", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x = 0 dianggap false dalam if."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i + j);\n    }\n}",
-        a: ["0 1 1 2 2 3", "0 1 2 3 4", "0 1 2", "Error"],
-        correct: 0,
-        pembahasan: "Kombinasi i+j menghasilkan pola 0,1,1,2,2,3."
+        code: "let a = 3;\nlet b = 5;\nif (a + b > 10) {\n    console.log('Besar');\n} else {\n    console.log('Kecil');\n}",
+        a: ["Besar", "Kecil", "Error", "None"],
+        correct: 1,
+        pembahasan: "3 + 5 = 8 < 10 → 'Kecil'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let total = 0;\nfor (let i = 1; i < 4; i++) {\n    total += i;\n}\nconsole.log(total);",
-        a: ["6", "10", "3", "Error"],
+        code: "let x = -1;\nif (x) {\n    console.log('True');\n} else {\n    console.log('False');\n}",
+        a: ["True", "False", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "1 + 2 + 3 = 6."
+        pembahasan: "Nilai non-zero dianggap true."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 4) {\n    i++;\n}\nconsole.log(i);",
-        a: ["4", "3", "5", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i mencapai 4."
+        code: "let x = 15;\nif (x % 5 === 0) {\n    console.log('A');\n}\nif (x % 3 === 0) {\n    console.log('B');\n}",
+        a: ["A", "B", "A\\nB", "Tidak ada output"],
+        correct: 2,
+        pembahasan: "15 habis dibagi 5 dan 3 → 'A' lalu 'B'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) continue;\n    console.log(i);\n}",
-        a: ["0 1 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Melewati angka 3 karena continue."
+        code: "let x = 8;\nif (x < 5) {\n    console.log('Kecil');\n} else if (x < 10) {\n    console.log('Sedang');\n} else {\n    console.log('Besar');\n}",
+        a: ["Kecil", "Sedang", "Besar", "Error"],
+        correct: 1,
+        pembahasan: "x < 10 terpenuhi → 'Sedang'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}\nconsole.log('Selesai');",
-        a: ["0 1 2 Selesai", "0 1 2", "Selesai", "Error"],
-        correct: 0,
-        pembahasan: "Bagian setelah for dijalankan setelah loop selesai."
+        code: "let x = 5;\nif (x !== 5) {\n    console.log('A');\n} else {\n    console.log('B');\n}",
+        a: ["A", "B", "Error", "Tidak ada output"],
+        correct: 1,
+        pembahasan: "x === 5 → kondisi if salah → 'B'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let x = 0;\nwhile (x < 3) {\n    console.log('Loop', x);\n    x++;\n}\nconsole.log('Done');",
-        a: ["Loop 0 Loop 1 Loop 2 Done", "Loop Done", "Error", "Tidak ada output"],
+        code: "let a = 4;\nlet b = 2;\nif (a / b === 2) {\n    console.log('Cocok');\n} else {\n    console.log('Tidak');\n}",
+        a: ["Cocok", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "Loop while berakhir normal, lalu cetak 'Done'."
+        pembahasan: "4 / 2 = 2 → kondisi benar."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    for (let j = 1; j < 3; j++) {\n        console.log(i * j);\n    }\n}",
-        a: ["1 2 2 4 3 6", "1 2 3 4 5 6", "2 4 6", "Error"],
+        code: "let x = 6;\nif (x % 3 === 0) {\n    console.log('Kelipatan 3');\n}",
+        a: ["Kelipatan 3", "Error", "Tidak ada output", "False"],
         correct: 0,
-        pembahasan: "Perkalian kombinasi i×j menghasilkan 1, 2, 2, 4, 3, 6."
+        pembahasan: "6 habis dibagi 3 → 'Kelipatan 3'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 3; j++) {\n        if (i === j) console.log(i);\n    }\n}",
-        a: ["0 1 2", "0 0 1 1 2 2", "Error", "Tidak ada output"],
+        code: "let x = 10;\nif (x % 2 === 0 && x % 5 === 0) {\n    console.log('Ya');\n} else {\n    console.log('Tidak');\n}",
+        a: ["Ya", "Tidak", "Error", "None"],
         correct: 0,
-        pembahasan: "Cetak hanya saat i === j → 0, 1, 2."
+        pembahasan: "10 habis dibagi 2 dan 5 → 'Ya'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 10) {\n    x *= 2;\n}\nconsole.log(x);",
-        a: ["16", "8", "10", "Error"],
+        code: "let a = 3;\nlet b = 3;\nif (a === b) {\n    console.log('Sama');\n} else {\n    console.log('Beda');\n}",
+        a: ["Sama", "Beda", "Error", "None"],
         correct: 0,
-        pembahasan: "x dikali 2 terus hingga mencapai 16."
+        pembahasan: "a dan b sama → 'Sama'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 4; i > 0; i--) {\n    console.log(i);\n}",
-        a: ["4 3 2 1", "1 2 3 4", "4 3 2", "Error"],
+        code: "let x = 5;\nlet y = 15;\nif (y / x === 3) {\n    console.log('OK');\n}",
+        a: ["OK", "Error", "Tidak ada output", "False"],
         correct: 0,
-        pembahasan: "Loop mundur dari 4 ke 1."
+        pembahasan: "15 / 5 = 3 → kondisi benar → cetak 'OK'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) break;\n    console.log(i);\n}",
-        a: ["0", "1", "0 1", "Error"],
+        code: "let x = 4;\nlet y = 9;\nif (x % 2 === 0 && y % 3 === 0) {\n    console.log('A');\n} else {\n    console.log('B');\n}",
+        a: ["A", "B", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Loop berhenti di i === 1, hanya cetak 0."
+        pembahasan: "4 genap dan 9 habis dibagi 3 → kondisi benar → cetak 'A'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let x = [1, 2, 3];\nfor (let i of x) {\n    if (i % 2 === 0) console.log(i);\n}",
-        a: ["2", "1 2", "1 3", "Error"],
+        code: "let x = 7;\nlet y = 14;\nif (y / x === 2) {\n    if (y % x === 0) {\n        console.log('Benar');\n    } else {\n        console.log('Salah');\n    }\n} else {\n    console.log('Tidak');\n}",
+        a: ["Benar", "Salah", "Tidak", "Error"],
         correct: 0,
-        pembahasan: "Hanya angka genap (2) yang dicetak."
+        pembahasan: "14 / 7 = 2 dan 14 % 7 = 0 → kedua kondisi benar → 'Benar'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('*'.repeat(i));\n}",
-        a: ["* ** ***", "*** ** *", "Error", "Tidak ada output"],
+        code: "let a = 10;\nlet b = 5;\nif (a > b) {\n    if (a - b === 5) {\n        console.log('OK');\n    } else {\n        console.log('X');\n    }\n} else {\n    console.log('NO');\n}",
+        a: ["OK", "X", "NO", "Error"],
         correct: 0,
-        pembahasan: "Loop menghasilkan segitiga bintang bertingkat."
+        pembahasan: "10 > 5 dan selisihnya 5 → 'OK'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    for (let j = 0; j < 2; j++) {\n        process.stdout.write((i + j) + ' ');\n    }\n}",
-        a: ["0 1 1 2", "1 2 3 4", "0 1 2 3", "Error"],
+        code: "let x = 3;\nlet y = 5;\nlet z = 7;\nif (x < y && y < z) {\n    console.log('Naik');\n} else {\n    console.log('Turun');\n}",
+        a: ["Naik", "Turun", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "i=0→(0,1), i=1→(1,2)."
+        pembahasan: "3 < 5 < 7 benar → 'Naik'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log('*');\n    i++;\n}",
-        a: ["* * *", "*", "Error", "Tidak ada output"],
+        code: "let x = 'abc';\nif (x.length === 3 && x[0] === 'a') {\n    console.log('Valid');\n} else {\n    console.log('Invalid');\n}",
+        a: ["Valid", "Invalid", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Loop while mencetak '*' sebanyak 3 kali."
+        pembahasan: "Panjang string 3 dan huruf pertama 'a' → 'Valid'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) continue;\n    console.log('A', i);\n}",
-        a: ["A 0 A 2", "A 0 A 1 A 2", "A 1 A 2", "Error"],
-        correct: 0,
-        pembahasan: "Melewati i === 1, hanya mencetak 0 dan 2."
+        code: "let nilai = 75;\nif (nilai >= 90) {\n    console.log('A');\n} else if (nilai >= 80) {\n    console.log('B');\n} else if (nilai >= 70) {\n    console.log('C');\n} else {\n    console.log('D');\n}",
+        a: ["A", "B", "C", "D"],
+        correct: 2,
+        pembahasan: "75 >= 70 tapi < 80 → 'C'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let x = 5;\nwhile (x > 0) {\n    x -= 2;\n}\nconsole.log(x);",
-        a: ["-1", "1", "0", "Error"],
+        code: "let x = true;\nlet y = false;\nif (!y && x) {\n    console.log('Benar');\n} else {\n    console.log('Salah');\n}",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "x berkurang 2 tiap iterasi → terakhir -1."
+        pembahasan: "!false = true dan x true → keduanya benar → 'Benar'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "let i = 1;\nwhile (i <= 3) {\n    console.log(i * i);\n    i++;\n}",
-        a: ["1 4 9", "1 2 3", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Setiap iterasi mencetak kuadrat dari i → 1, 4, 9."
+        code: "let nilai = 75;\nif (nilai >= 90) {\n    console.log('A');\n} else if (nilai >= 80) {\n    console.log('B');\n} else if (nilai >= 70) {\n    console.log('C');\n} else {\n    console.log('D');\n}",
+        a: ["A", "B", "C", "D"],
+        correct: 2,
+        pembahasan: "75 >= 70 tapi < 80 → hasilnya 'C'."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j <= i; j++) {\n        console.log(i + '-' + j);\n    }\n}",
-        a: ["0-0 1-0 1-1 2-0 2-1 2-2", "0-0 1-1 2-2", "0-0 1-0 2-0", "Error"],
+        code: "let x = true;\nlet y = false;\nif (!y && x) {\n    console.log('Benar');\n} else {\n    console.log('Salah');\n}",
+        a: ["Benar", "Salah", "Error", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Loop bersarang menghasilkan kombinasi i-j untuk setiap nilai i dan j ≤ i."
+        pembahasan: "!false = true dan x = true → kondisi benar → cetak 'Benar'."
     }
-
 ];
-
 
 
 function shuffleArray(arr) {
@@ -477,6 +476,7 @@ if (backToDashboard) {
         window.location.href = '../../index.html';
     });
 }
+
 document.querySelector('.btn-back').addEventListener('click', function (e) {
     e.preventDefault();
     // Deteksi lokasi root otomatis (3 tingkat ke atas)
@@ -484,6 +484,7 @@ document.querySelector('.btn-back').addEventListener('click', function (e) {
     const newUrl = current.split("/informatika/")[0] + "/index.html";
     window.location.href = newUrl;
 });
+
 
 // === FITUR ANTI-NYONTEK ===
 // ======================== 🔒 FITUR ANTI-NYONTEK ULTRA KETAT ========================

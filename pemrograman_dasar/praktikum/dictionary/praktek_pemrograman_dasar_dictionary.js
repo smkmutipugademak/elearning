@@ -3,290 +3,292 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL MUDAH (FOR & WHILE DASAR) ===================
+    // =================== LEVEL MUDAH ===================
+
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Hai');\n}",
-        a: ["Hai Hai Hai", "Hai", "Error", "Tidak ada output"],
+        code: "const data = {a: 1, b: 2};\nconsole.log(data['a']);",
+        a: ["1", "2", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Loop berjalan 3 kali, mencetak 'Hai' sebanyak 3 kali ke console."
+        pembahasan: "Akses nilai dari key 'a' menghasilkan 1."
+    },
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {};\nconsole.log(Object.keys(data).length);",
+        a: ["0", "1", "Error", "undefined"],
+        correct: 0,
+        pembahasan: "Object kosong memiliki panjang 0."
     },
     {
         q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Loop dimulai dari 0 hingga kurang dari 3, sehingga mencetak 0, 1, 2."
+        code: "const data = {x: 10};\ndata.y = 20;\nconsole.log(data);",
+        a: ["{x: 10}", "{y: 20}", "{x: 10, y: 20}", "Error"],
+        correct: 2,
+        pembahasan: "Property baru 'y' ditambahkan ke object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log(i);\n}",
-        a: ["1 2 3", "0 1 2", "1 2 3 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log('a' in data);",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Loop dimulai dari 1 sampai kurang dari 4, menghasilkan 1, 2, 3."
+        pembahasan: "Operator 'in' memeriksa keberadaan property."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log(i);\n    i++;\n}",
-        a: ["0 1 2", "1 2 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Loop berjalan selama i < 3, sehingga mencetak 0, 1, 2."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(data['c']);",
+        a: ["1", "2", "undefined", "Error"],
+        correct: 2,
+        pembahasan: "Property 'c' tidak ada, hasilnya undefined."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let huruf of 'abc') {\n    console.log(huruf);\n}",
-        a: ["a b c", "abc", "a,b,c", "Error"],
-        correct: 0,
-        pembahasan: "Loop berjalan untuk setiap karakter dalam string 'abc'."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.keys(data).length);",
+        a: ["1", "2", "3", "Error"],
+        correct: 1,
+        pembahasan: "Object memiliki dua properti."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i of [1, 2, 3]) {\n    console.log(i * 2);\n}",
-        a: ["2 4 6", "1 2 3", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "let data = {x: 10, y: 20};\ndelete data.x;\nconsole.log(data);",
+        a: ["{y: 20}", "{x: 10}", "{}", "Error"],
         correct: 0,
-        pembahasan: "Setiap elemen dikali 2 menghasilkan 2, 4, 6."
+        pembahasan: "Property 'x' dihapus menggunakan delete."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["0 1 2", "0 1 2 3", "1 2 3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.keys(data));",
+        a: ["['a', 'b']", "[1, 2]", "[['a', 1], ['b', 2]]", "Error"],
         correct: 0,
-        pembahasan: "Loop berhenti saat i === 3, jadi hanya 0, 1, 2 yang dicetak."
+        pembahasan: "Object.keys() menampilkan daftar key."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 2) continue;\n    console.log(i);\n}",
-        a: ["0 1 3 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.values(data).reduce((a,b)=>a+b));",
+        a: ["3", "2", "1", "Error"],
         correct: 0,
-        pembahasan: "continue melewati nilai 2, jadi mencetak 0, 1, 3, 4."
+        pembahasan: "Object.values() menghasilkan [1,2], totalnya 3."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let count = 0;\nwhile (count < 5) {\n    console.log(count);\n    count += 2;\n}",
-        a: ["0 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(!('c' in data));",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "count bertambah 2 tiap iterasi → 0, 2, 4."
+        pembahasan: "'c' tidak ada, jadi hasilnya true."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 6; i += 2) {\n    console.log(i);\n}",
-        a: ["1 3 5", "2 4 6", "1 2 3 4 5", "Error"],
-        correct: 0,
-        pembahasan: "Langkah 2 menghasilkan 1, 3, 5."
+        q: "Apa hasil dari kode berikut?",
+        code: "let data = {x: 1};\ndata.x = 99;\nconsole.log(data.x);",
+        a: ["1", "99", "Error", "undefined"],
+        correct: 1,
+        pembahasan: "Nilai property 'x' diganti menjadi 99."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log('Loop', i);\n}",
-        a: ["Loop 0 Loop 1 Loop 2", "Loop Loop Loop", "0 1 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nfor (let k in data) {\n  console.log(k);\n}",
+        a: ["a b", "1 2", "['a',1] ['b',2]", "Error"],
         correct: 0,
-        pembahasan: "console.log menampilkan teks dan nilai i."
+        pembahasan: "Loop for...in iterasi pada key object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let angka = [2, 4, 6];\nfor (let i of angka) {\n    console.log(i - 1);\n}",
-        a: ["1 3 5", "2 4 6", "0 1 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log('a' in data);",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Setiap elemen dikurangi 1 → 1, 3, 5."
+        pembahasan: "Property 'a' ada di object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i, j);\n    }\n}",
-        a: ["0 0 0 1 1 0 1 1 2 0 2 1", "0 1 2", "0 0 1 1 2 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = Object.assign({}, {a: 1, b: 2});\nconsole.log(data);",
+        a: ["{a: 1, b: 2}", "{a: '1', b: '2'}", "Error", "{}"],
         correct: 0,
-        pembahasan: "Loop bersarang: i=0→1→2, j=0→1 tiap kali."
+        pembahasan: "Object.assign() menyalin properti ke object baru."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 3;\nwhile (i > 0) {\n    console.log(i);\n    i--;\n}",
-        a: ["3 2 1", "1 2 3", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1};\nconsole.log(typeof data);",
+        a: ["'object'", "'array'", "'function'", "'set'"],
         correct: 0,
-        pembahasan: "Loop mundur dari 3 ke 1."
+        pembahasan: "Tipe data object adalah 'object'."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    console.log('A');\n}\nconsole.log('B');",
-        a: ["A A B", "A B A", "B A A", "Error"],
-        correct: 0,
-        pembahasan: "'A' dua kali di dalam loop, lalu 'B' di luar loop."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 10, b: 20};\nconsole.log(Math.max(...Object.values(data)));",
+        a: ["10", "20", "a", "Error"],
+        correct: 1,
+        pembahasan: "Nilai terbesar dari [10,20] adalah 20."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 5) {\n    console.log(x);\n    x += 3;\n}",
-        a: ["1 4", "1 2 3 4", "1 2 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.entries(data)[0]);",
+        a: ["['a', 1]", "['b', 2]", "['a','b']", "Error"],
         correct: 0,
-        pembahasan: "x naik +3 tiap iterasi → 1, 4."
+        pembahasan: "Object.entries() mengembalikan pasangan [key, value]."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 4; i++) {\n    if (i % 2 === 0) {\n        console.log(i);\n    }\n}",
-        a: ["0 2", "1 3", "0 1 2 3", "Error"],
-        correct: 0,
-        pembahasan: "Cetak hanya bilangan genap → 0, 2."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {x: 10};\nconsole.log('y' in data);",
+        a: ["true", "false", "Error", "undefined"],
+        correct: 1,
+        pembahasan: "'y' tidak ada di object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 5; i++) {\n    if (i === 3) break;\n    console.log(i);\n}",
-        a: ["1 2", "1 2 3", "1 2 3 4", "Error"],
-        correct: 0,
-        pembahasan: "Loop berhenti saat i === 3."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.values(data)[1]);",
+        a: ["1", "2", "Error", "undefined"],
+        correct: 1,
+        pembahasan: "Elemen kedua dari values adalah 2."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < i; j++) {\n        process.stdout.write('*');\n    }\n    console.log();\n}",
-        a: ["\\n*\\n**", "*\\n**\\n***", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "let data = {a: 1};\ndelete data.a;\nconsole.log(data);",
+        a: ["{}", "{a: 1}", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Loop dalam mencetak segitiga bertingkat bintang."
+        pembahasan: "delete menghapus property 'a' dari object."
+    },
+
+    // =================== LEVEL MENENGAH ===================
+
+    {
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: {x: 5}};\nconsole.log(data.b.x);",
+        a: ["1", "5", "Error", "undefined"],
+        correct: 1,
+        pembahasan: "Mengakses object di dalam object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('A'.repeat(i));\n}",
-        a: ["A AA AAA", "AAA AA A", "A A A", "Error"],
-        correct: 0,
-        pembahasan: "i=1→'A', i=2→'AA', i=3→'AAA'."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1};\nObject.assign(data, {b: 2});\nconsole.log(data);",
+        a: ["{a: 1}", "{a: 1, b: 2}", "Error", "{}"],
+        correct: 1,
+        pembahasan: "Object.assign menambah atau mengganti property."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 2; i < 8; i += 3) {\n    console.log(i);\n}",
-        a: ["2 5", "2 3 4 5", "2 5 8", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const keys = ['x', 'y'];\nconst data = Object.fromEntries(keys.map(k => [k, 0]));\nconsole.log(data);",
+        a: ["{x: 0, y: 0}", "{x: null, y: null}", "{}", "Error"],
         correct: 0,
-        pembahasan: "Loop dengan langkah 3 menghasilkan 2 dan 5."
+        pembahasan: "Object.fromEntries membuat object dengan default value 0."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 2; j++) {\n        console.log(i + j);\n    }\n}",
-        a: ["0 1 1 2 2 3", "0 1 2 3 4", "0 1 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const keys = ['a', 'b'];\nconst vals = [1, 2];\nconst data = Object.fromEntries(keys.map((k,i)=>[k, vals[i]]));\nconsole.log(data);",
+        a: ["{a: 1, b: 2}", "{a: 2, b: 1}", "{}", "Error"],
         correct: 0,
-        pembahasan: "Kombinasi i+j menghasilkan pola 0,1,1,2,2,3."
+        pembahasan: "Menggabungkan dua array jadi pasangan key-value."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let total = 0;\nfor (let i = 1; i < 4; i++) {\n    total += i;\n}\nconsole.log(total);",
-        a: ["6", "10", "3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 10, b: 20};\nObject.values(data).forEach(v => process.stdout.write(v + ' '));",
+        a: ["10 20", "a b", "(a,10) (b,20)", "Error"],
         correct: 0,
-        pembahasan: "1 + 2 + 3 = 6."
+        pembahasan: "Loop menampilkan setiap value."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 4) {\n    i++;\n}\nconsole.log(i);",
-        a: ["4", "3", "5", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {x: 1, y: 2};\nconst doubled = Object.fromEntries(Object.entries(data).map(([k,v]) => [k, v*2]));\nconsole.log(doubled);",
+        a: ["{x: 2, y: 4}", "{x: 1, y: 2}", "Error", "{}"],
         correct: 0,
-        pembahasan: "Loop berhenti saat i mencapai 4."
+        pembahasan: "Object comprehension menggandakan value."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 5; i++) {\n    if (i === 3) continue;\n    console.log(i);\n}",
-        a: ["0 1 2 4", "0 1 2 3 4", "1 2 3 4", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1};\nconst copy = {...data};\ncopy.a = 5;\nconsole.log(data.a);",
+        a: ["1", "5", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Melewati angka 3 karena continue."
+        pembahasan: "Spread operator membuat salinan baru."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    console.log(i);\n}\nconsole.log('Selesai');",
-        a: ["0 1 2 Selesai", "0 1 2", "Selesai", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Math.min(...Object.values(data)));",
+        a: ["1", "2", "a", "Error"],
         correct: 0,
-        pembahasan: "Bagian setelah for dijalankan setelah loop selesai."
+        pembahasan: "Nilai terkecil dari [1,2] adalah 1."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 0;\nwhile (x < 3) {\n    console.log('Loop', x);\n    x++;\n}\nconsole.log('Done');",
-        a: ["Loop 0 Loop 1 Loop 2 Done", "Loop Done", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 5, b: 10};\nconsole.log(Object.values(data).reduce((a,b)=>a+b));",
+        a: ["15", "10", "5", "Error"],
         correct: 0,
-        pembahasan: "Loop while berakhir normal, lalu cetak 'Done'."
+        pembahasan: "Menjumlahkan semua value object menghasilkan 15."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    for (let j = 1; j < 3; j++) {\n        console.log(i * j);\n    }\n}",
-        a: ["1 2 2 4 3 6", "1 2 3 4 5 6", "2 4 6", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nif (!('c' in data)) {\n  console.log('Kosong');\n}",
+        a: ["Kosong", "Error", "undefined", "Tidak ada output"],
         correct: 0,
-        pembahasan: "Perkalian kombinasi i×j menghasilkan 1, 2, 2, 4, 3, 6."
+        pembahasan: "Karena 'c' tidak ada, maka output 'Kosong'."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j < 3; j++) {\n        if (i === j) console.log(i);\n    }\n}",
-        a: ["0 1 2", "0 0 1 1 2 2", "Error", "Tidak ada output"],
-        correct: 0,
-        pembahasan: "Cetak hanya saat i === j → 0, 1, 2."
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: [1,2,3]};\nconsole.log(data.a[1]);",
+        a: ["1", "2", "3", "Error"],
+        correct: 1,
+        pembahasan: "Mengakses elemen ke-2 dari array di dalam object."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 1;\nwhile (x < 10) {\n    x *= 2;\n}\nconsole.log(x);",
-        a: ["16", "8", "10", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: [1,2]};\nconsole.log(Array.isArray(data.a));",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "x dikali 2 terus hingga mencapai 16."
+        pembahasan: "Value bertipe array."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 4; i > 0; i--) {\n    console.log(i);\n}",
-        a: ["4 3 2 1", "1 2 3 4", "4 3 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {x: 10, y: 5};\nconsole.log(Object.values(data).every(v => v > 0));",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Loop mundur dari 4 ke 1."
+        pembahasan: "Semua nilai > 0, maka true."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) break;\n    console.log(i);\n}",
-        a: ["0", "1", "0 1", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconsole.log(Object.values(data).some(v => v > 1));",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "Loop berhenti di i === 1, hanya cetak 0."
+        pembahasan: "Ada nilai lebih besar dari 1, jadi true."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let x = [1, 2, 3];\nfor (let i of x) {\n    if (i % 2 === 0) console.log(i);\n}",
-        a: ["2", "1 2", "1 3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 10, b: 20};\nconsole.log(Object.keys(data).sort());",
+        a: ["['a', 'b']", "['b', 'a']", "[10, 20]", "Error"],
         correct: 0,
-        pembahasan: "Hanya angka genap (2) yang dicetak."
+        pembahasan: "Object.keys() mengembalikan key yang bisa diurutkan."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 1; i < 4; i++) {\n    console.log('*'.repeat(i));\n}",
-        a: ["* ** ***", "*** ** *", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nconst filtered = Object.fromEntries(Object.entries(data).filter(([k,v])=>v>1));\nconsole.log(filtered);",
+        a: ["{b: 2}", "{a: 1}", "{}", "Error"],
         correct: 0,
-        pembahasan: "Loop menghasilkan segitiga bintang bertingkat."
+        pembahasan: "Filter hanya value > 1."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 2; i++) {\n    for (let j = 0; j < 2; j++) {\n        process.stdout.write((i + j) + ' ');\n    }\n}",
-        a: ["0 1 1 2", "1 2 3 4", "0 1 2 3", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: {x: 1}};\nconsole.log('x' in data.a);",
+        a: ["true", "false", "Error", "undefined"],
         correct: 0,
-        pembahasan: "i=0→(0,1), i=1→(1,2)."
+        pembahasan: "Property 'x' ada di dalam object 'a'."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 0;\nwhile (i < 3) {\n    console.log('*');\n    i++;\n}",
-        a: ["* * *", "*", "Error", "Tidak ada output"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {a: 1, b: 2};\nfor (const [k,v] of Object.entries(data)) {\n  process.stdout.write(k + ' ' + v + ' ');\n}",
+        a: ["a 1 b 2", "1 a 2 b", "['a',1]['b',2]", "Error"],
         correct: 0,
-        pembahasan: "Loop while mencetak '*' sebanyak 3 kali."
+        pembahasan: "Menampilkan setiap key dan valuenya."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    if (i === 1) continue;\n    console.log('A', i);\n}",
-        a: ["A 0 A 2", "A 0 A 1 A 2", "A 1 A 2", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = Object.fromEntries(Array.from({length:3}, (_,i)=>[i, i**2]));\nconsole.log(data);",
+        a: ["{0:0, 1:1, 2:4}", "{1:1, 2:2, 3:3}", "Error", "{}"],
         correct: 0,
-        pembahasan: "Melewati i === 1, hanya mencetak 0 dan 2."
+        pembahasan: "Membuat object dengan key angka dan value kuadratnya."
     },
     {
-        q: "Apa output dari kode berikut?",
-        code: "let x = 5;\nwhile (x > 0) {\n    x -= 2;\n}\nconsole.log(x);",
-        a: ["-1", "1", "0", "Error"],
+        q: "Apa hasil dari kode berikut?",
+        code: "const data = {x: 5};\nif (!('y' in data)) data.y = 10;\nconsole.log(data.y);",
+        a: ["10", "5", "Error", "undefined"],
         correct: 0,
-        pembahasan: "x berkurang 2 tiap iterasi → terakhir -1."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "let i = 1;\nwhile (i <= 3) {\n    console.log(i * i);\n    i++;\n}",
-        a: ["1 4 9", "1 2 3", "2 4 6", "Error"],
-        correct: 0,
-        pembahasan: "Setiap iterasi mencetak kuadrat dari i → 1, 4, 9."
-    },
-    {
-        q: "Apa output dari kode berikut?",
-        code: "for (let i = 0; i < 3; i++) {\n    for (let j = 0; j <= i; j++) {\n        console.log(i + '-' + j);\n    }\n}",
-        a: ["0-0 1-0 1-1 2-0 2-1 2-2", "0-0 1-1 2-2", "0-0 1-0 2-0", "Error"],
-        correct: 0,
-        pembahasan: "Loop bersarang menghasilkan kombinasi i-j untuk setiap nilai i dan j ≤ i."
+        pembahasan: "Property baru 'y' ditambah dengan nilai default 10."
     }
-
 ];
-
 
 
 function shuffleArray(arr) {
