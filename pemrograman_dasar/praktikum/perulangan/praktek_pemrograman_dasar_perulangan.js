@@ -2,7 +2,7 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
-const quizDataJS = [
+const quizData = [
     // =================== LEVEL MUDAH (FOR & WHILE DASAR) ===================
     {
         q: "Apa output dari kode berikut?",
@@ -144,8 +144,6 @@ const quizDataJS = [
         correct: 0,
         pembahasan: "i=1→'A', i=2→'AA', i=3→'AAA'."
     },
-
-    // =================== LEVEL MENENGAH ===================
     {
         q: "Apa output dari kode berikut?",
         code: "for (let i = 2; i < 8; i += 3) {\n    console.log(i);\n}",
