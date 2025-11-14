@@ -124,7 +124,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Distribusi adalah proses merilis produk agar dapat digunakan atau dinikmati oleh pengguna."
-    }, {
+    }, 
+    {
     q: "Dalam proses produksi multimedia, dokumen perencanaan atau project plan dibuat untuk merinci jadwal kerja, pembagian tugas, anggaran, perangkat yang dibutuhkan, serta estimasi waktu produksi. Dokumen ini sangat penting agar seluruh tim memiliki arah yang jelas. Dengan demikian, fungsi utama project plan adalah...",
     a: [
         "Menentukan warna dan style visual aplikasi",
@@ -243,7 +244,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Implementasi memastikan produk siap digunakan dan dapat diakses oleh audiens target."
-    }, {
+    },
+    {
     q: "Dalam alur proses produksi multimedia, salah satu dokumen penting adalah spesifikasi teknis (technical specification). Dokumen ini berisi detail teknis seperti format file, resolusi gambar, bitrate audio, ukuran video, hingga software yang digunakan. Spesifikasi teknis dibuat agar seluruh tim mengikuti standar yang sama. Oleh karena itu, tujuan utama dokumen spesifikasi teknis adalah...",
     a: [
         "Menentukan tema warna aplikasi",
@@ -362,7 +364,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Post-mortem penting untuk memperbaiki metode kerja dan meningkatkan kualitas proyek berikutnya."
-    }, {
+    },
+    {
     q: "Dokumentasi produksi multimedia adalah proses mencatat seluruh tahapan, keputusan, perubahan, dan hasil yang terjadi selama pra-produksi, produksi, dan pasca-produksi. Dokumentasi ini penting untuk referensi di masa depan dan untuk memastikan tim memiliki catatan lengkap jika terjadi revisi atau evaluasi. Oleh karena itu, dokumentasi diperlukan untuk...",
     a: [
         "Menghapus riwayat proses kerja",

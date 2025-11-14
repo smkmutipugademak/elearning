@@ -135,8 +135,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Optimalisasi gambar membantu menjaga performa aplikasi tanpa mengorbankan kualitas visual secara signifikan."
-},
-
+   },
     {
         q: "Transisi visual digunakan untuk memberikan efek perpindahan antarhalaman atau antarobjek. Transisi yang baik dapat membantu pengguna memahami pergantian konten tanpa merasa bingung. Namun penggunaannya harus proporsional agar tidak menurunkan performa. Maka transisi visual digunakan untuk...",
         a: [
@@ -149,7 +148,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Transisi memberikan pengalaman lebih natural pada perubahan konten sehingga navigasi terasa mulus."
     },
-
     {
         q: "Salah satu kelebihan multimedia interaktif adalah kemampuan untuk memberikan feedback langsung kepada pengguna, seperti suara klik, perubahan warna tombol, atau animasi singkat setelah pengguna melakukan aksi. Feedback seperti ini penting agar pengguna mengetahui bahwa tindakan mereka diterima oleh sistem. Maka feedback interaktif berfungsi untuk...",
         a: [
@@ -162,7 +160,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Feedback membantu pengguna memahami bahwa interaksi mereka dikenali oleh sistem, meningkatkan kejelasan dan kenyamanan penggunaan."
     },
-
     {
         q: "Audio latar (background music) sering digunakan untuk memperkuat suasana sebuah aplikasi multimedia interaktif, seperti game edukasi atau presentasi digital. Namun penggunaan audio latar harus disesuaikan agar tidak mengganggu fokus pengguna. Oleh karena itu, audio latar digunakan untuk...",
         a: [
@@ -175,7 +172,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Audio latar membantu menciptakan mood tertentu, namun harus dikendalikan volumenya agar tidak mengganggu elemen lainnya."
     },
-
     {
         q: "Dalam pengolahan media, kualitas suara sangat memengaruhi kenyamanan pengguna. Noise atau gangguan suara dapat merusak pengalaman multimedia. Oleh karena itu, proses audio editing seperti noise reduction diperlukan untuk...",
         a: [
@@ -188,7 +184,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Noise reduction membantu meningkatkan kualitas audio sehingga narasi atau efek suara terdengar lebih jelas dan profesional."
     },
-
     {
         q: "Integrasi video dalam multimedia interaktif membutuhkan perhatian pada format, resolusi, dan durasi. Jika video terlalu panjang atau berukuran besar, performa aplikasi dapat terganggu. Oleh karena itu, proses video compression dilakukan untuk...",
         a: [
@@ -201,7 +196,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Video compression menjaga performa aplikasi tetap optimal tanpa mengorbankan kualitas utama dari video."
     },
-
     {
         q: "Dalam multimedia interaktif, timeline sering digunakan pada software pengolah animasi dan video untuk mengatur kapan sebuah objek muncul, bergerak, atau hilang. Timeline sangat penting dalam menjaga sinkronisasi antar elemen. Maka timeline digunakan untuk...",
         a: [
@@ -214,7 +208,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Timeline memungkinkan pengembang mengatur kapan suatu media muncul sehingga sinkronisasi visual dan audio dapat dijaga."
     },
-
     {
         q: "Fade in dan fade out adalah dua jenis transisi audio yang digunakan dalam multimedia interaktif untuk masuk dan keluarnya suara secara bertahap. Teknik ini membuat perubahan audio lebih halus dan alami. Oleh karena itu, penggunaan fade in/out bertujuan untuk...",
         a: [
@@ -227,7 +220,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Fade in/out memberikan kesan profesional dan membantu menghindarkan suara mendadak yang bisa mengganggu pengguna."
     },
-
     {
         q: "SVG (Scalable Vector Graphics) merupakan format gambar vektor yang banyak digunakan dalam multimedia interaktif karena dapat diperbesar tanpa kehilangan kualitas. SVG sangat ringan dan ideal digunakan untuk ikon, ilustrasi, dan animasi sederhana. Maka keuntungan utama SVG adalah...",
         a: [
@@ -240,7 +232,6 @@ quizData.push(
         correct: 2,
         pembahasan: "SVG berbasis vektor sehingga tetap tajam pada berbagai resolusi dan sangat cocok untuk web modern."
     },
-
     {
         q: "Salah satu elemen penting pada multimedia interaktif adalah preloader animation, yaitu animasi yang muncul sebelum halaman atau media dimuat sepenuhnya. Preloader membantu pengguna memahami bahwa proses sedang dilakukan dan bukan error. Dengan demikian, preloader animation berfungsi untuk...",
         a: [
@@ -252,7 +243,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Preloader memberikan informasi bahwa sistem sedang memproses data sehingga meningkatkan kejelasan alur interaksi pengguna."
-    }, {
+    }, 
+    {
     q: "Ketika menggabungkan berbagai media dalam satu aplikasi multimedia interaktif, konsistensi gaya visual sangat penting agar tampilan tidak terlihat campur aduk. Konsistensi ini mencakup penggunaan warna, gaya ilustrasi, penempatan elemen, hingga ritme animasi. Maka menjaga konsistensi visual bertujuan untuk...",
     a: [
         "Menghilangkan variasi media pada aplikasi",
@@ -263,8 +255,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Konsistensi visual membantu pengguna memahami tata letak dan alur aplikasi tanpa kebingungan sehingga meningkatkan pengalaman visual."
-},
-
+    },
     {
         q: "Video background sering digunakan dalam multimedia interaktif untuk memberikan kesan modern dan dinamis. Namun penggunaan video background harus memperhatikan ukuran file dan kontras warna agar tidak mengganggu keterbacaan teks. Maka tujuan utama penggunaan video background adalah...",
         a: [
@@ -277,7 +268,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Video background menambah estetika halaman, tetapi harus dirancang dengan kontras dan optimasi yang baik."
     },
-
     {
         q: "Ketika sebuah aplikasi multimedia interaktif memuat banyak file media sekaligus, loading menjadi proses yang berat. Untuk itu, teknik progressive loading digunakan agar media tampil secara bertahap. Dengan demikian, progressive loading bertujuan untuk...",
         a: [
@@ -290,7 +280,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Progressive loading menjaga halaman tetap responsif karena bagian utama dapat ditampilkan lebih cepat."
     },
-
     {
         q: "Efek hover adalah perubahan visual ketika pengguna mengarahkan kursor ke sebuah elemen, seperti tombol atau ikon. Efek ini biasanya berupa perubahan warna, ukuran, atau animasi singkat. Tujuan utama efek hover adalah...",
         a: [
@@ -303,7 +292,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Efek hover memberi tanda visual bahwa elemen dapat diklik atau berfungsi tertentu, meningkatkan interaktivitas."
     },
-
     {
         q: "Masking adalah teknik dalam multimedia untuk menampilkan sebagian area dari gambar atau video, biasanya dengan bentuk tertentu seperti lingkaran, kotak, atau pola khusus. Masking digunakan untuk menciptakan visual yang lebih kreatif. Maka fungsi utama masking adalah...",
         a: [
@@ -316,7 +304,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Masking memberikan kontrol penuh terhadap area media yang ingin ditampilkan sehingga menciptakan efek visual menarik."
     },
-
     {
         q: "Dalam multimedia interaktif, timeline keyframing digunakan untuk mengontrol perubahan gerakan, posisi, opacity, dan transformasi lain pada animasi. Keyframe menandai titik awal dan akhir perubahan. Oleh karena itu, keyframing berfungsi untuk...",
         a: [
@@ -329,7 +316,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Keyframing memungkinkan pergerakan yang halus dan teratur pada objek animasi."
     },
-
     {
         q: "Efek parallax adalah teknik visual yang membuat elemen latar belakang bergerak lebih lambat dibanding elemen depan, menciptakan ilusi kedalaman. Efek ini sering digunakan pada website modern. Maka tujuan efek parallax adalah...",
         a: [
@@ -342,7 +328,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Parallax memberikan efek kedalaman tiga dimensi sehingga tampilan lebih menarik dan dinamis."
     },
-
     {
         q: "Hotspot dalam multimedia interaktif adalah area tertentu yang dapat diklik untuk menampilkan informasi tambahan seperti gambar, teks, atau video. Hotspot sering digunakan pada aplikasi edukasi atau tur virtual. Berdasarkan fungsinya, hotspot digunakan untuk...",
         a: [
@@ -355,7 +340,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Hotspot memberikan pengalaman interaktif kepada pengguna dengan menyediakan informasi tambahan pada area tertentu."
     },
-
     {
         q: "Audio sprite adalah teknik menggabungkan banyak efek suara pendek ke dalam satu file audio besar untuk mengurangi jumlah permintaan (request) ke server. Teknik ini sangat berguna untuk aplikasi web atau game berbasis browser. Maka audio sprite digunakan untuk...",
         a: [
@@ -368,7 +352,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Audio sprite mengurangi load time serta meningkatkan efisiensi server karena hanya satu file yang perlu dimuat."
     },
-
     {
         q: "Ketika menggabungkan media, pengembang harus memperhatikan kompatibilitas browser terhadap format media tertentu. Misalnya beberapa browser tidak mendukung format video tertentu. Maka memastikan kompatibilitas media bertujuan untuk...",
         a: [
@@ -380,7 +363,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Kompatibilitas memastikan pengalaman pengguna tetap konsisten di berbagai platform."
-    }, {
+    },
+    {
     q: "Dalam proses penggabungan berbagai media, salah satu elemen yang penting adalah kontrol playback. Pada video atau audio, kontrol seperti play, pause, stop, volume, dan fullscreen memberi pengguna kebebasan untuk menentukan sendiri bagaimana mereka ingin menikmati konten. Dengan demikian, kontrol playback diperlukan untuk...",
     a: [
         'Menghilangkan interaksi pengguna sepenuhnya',
@@ -391,8 +375,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Kontrol playback memberikan pengalaman interaktif yang fleksibel dan nyaman bagi pengguna."
-},
-
+   },
     {
         q: "Ambient sound atau suara latar lingkungan sering digunakan dalam multimedia interaktif untuk menciptakan suasana tertentu. Contohnya suara hutan, ombak pantai, atau suasana kota. Suara ini ditujukan untuk memperkuat nuansa visual yang ditampilkan. Berdasarkan fungsinya, ambient sound digunakan untuk...",
         a: [
@@ -405,7 +388,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Ambient sound memperkaya atmosfer aplikasi dan membuat pengalaman lebih imersif."
     },
-
     {
         q: "Dalam multimedia interaktif, animasi micro-interaction digunakan pada elemen kecil seperti tombol, ikon, atau notifikasi untuk memberikan respons cepat terhadap aksi pengguna. Micro-interaction sangat penting untuk menunjukkan status atau feedback. Maka fungsi utama micro-interaction adalah...",
         a: [
@@ -418,7 +400,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Micro-interaction memperjelas respon dari sistem sehingga meningkatkan kepuasan dan pemahaman pengguna."
     },
-
     {
         q: "Chroma key adalah teknik penggabungan media yang memungkinkan penggantian latar belakang menggunakan warna tertentu, biasanya warna hijau atau biru. Teknik ini banyak digunakan dalam video interaktif, film, dan presentasi digital. Maka tujuan utama chroma key adalah...",
         a: [
@@ -431,7 +412,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Chroma key memudahkan integrasi objek dengan latar digital lain untuk menghasilkan visual kompleks."
     },
-
     {
         q: "Storyboard animasi sering digunakan saat menggabungkan berbagai media dalam satu alur visual. Storyboard membantu merencanakan kapan gambar muncul, kapan animasi berjalan, dan kapan audio harus dimainkan. Fungsi storyboard terutama adalah...",
         a: [
@@ -444,7 +424,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Storyboard membuat alur produksi menjadi lebih terorganisir sehingga meminimalisir kesalahan pada proses penggabungan media."
     },
-
     {
         q: "Subtitle atau teks terjemahan sering ditambahkan pada video dalam multimedia interaktif untuk membantu pengguna memahami konten, terutama jika video menggunakan bahasa asing. Selain itu, subtitle juga bermanfaat bagi pengguna tunarungu. Dari fungsinya, subtitle digunakan untuk...",
         a: [
@@ -457,7 +436,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Subtitle meningkatkan aksesibilitas serta membantu pengguna memahami dialog atau narasi video."
     },
-
     {
         q: "Pre-rendered animation adalah animasi yang dibuat sebelumnya dan kemudian digabungkan ke dalam multimedia interaktif sebagai file video atau gambar berurutan. Animasi jenis ini biasanya lebih detail dibanding animasi real-time. Dengan demikian, pre-rendered animation digunakan untuk...",
         a: [
@@ -470,7 +448,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Pre-rendered animation memungkinkan penggunaan animasi berkualitas tinggi tanpa membebani performa aplikasi."
     },
-
     {
         q: "Pada aplikasi multimedia, blending mode digunakan untuk mencampur dua lapisan gambar atau video sehingga menghasilkan efek visual tertentu, seperti overlay, multiply, atau screen. Teknik ini banyak digunakan dalam desain grafis dan video editing. Maka tujuan blending mode adalah...",
         a: [
@@ -483,7 +460,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Blending mode memberikan efek visual kreatif yang tidak dapat dicapai dengan satu lapisan saja."
     },
-
     {
         q: "Dalam multimedia interaktif, audio dan video sering memerlukan proses normalisasi, yaitu menyamakan tingkat volume pada seluruh bagian konten agar tidak ada bagian yang terlalu keras atau terlalu pelan. Maka normalisasi audio dilakukan untuk...",
         a: [
@@ -496,7 +472,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Normalisasi membuat audio lebih konsisten sehingga pengguna tidak terganggu oleh perubahan volume yang ekstrem."
     },
-
     {
         q: "Setelah semua media digabungkan, tahap akhir yang sangat penting adalah usability testing, yaitu proses menguji apakah multimedia interaktif mudah digunakan, dipahami, dan memberikan pengalaman yang baik. Maka usability testing bertujuan untuk...",
         a: [
