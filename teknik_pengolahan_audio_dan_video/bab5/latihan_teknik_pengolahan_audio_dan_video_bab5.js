@@ -2,6 +2,8 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
+var quizData = quizData || [];
+
 quizData.push(
     {
         q: "Dalam pengembangan multimedia interaktif berbasis web, penerapan style atau gaya visual sangat penting untuk menciptakan konsistensi antarelemen. Style mencakup penggunaan warna, tipografi, icon, layout, serta ritme visual sehingga keseluruhan halaman tampak rapi dan mudah dipahami. Oleh karena itu, style dalam multimedia interaktif berfungsi untuk...",
@@ -122,7 +124,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Efektivitas multimedia memastikan pesan utama tersampaikan secara optimal."
-    }, {
+    },
+    {
     q: "Dalam multimedia interaktif berbasis web, salah satu aspek penting dalam style adalah hierarki visual yang membantu pengguna mengetahui informasi mana yang paling penting. Hierarki visual dapat dibentuk melalui ukuran teks, warna, kontras, jarak, hingga posisi elemen. Oleh karena itu, hierarki visual digunakan untuk...",
     a: [
         "Menyembunyikan elemen penting pada halaman",
@@ -133,8 +136,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Hierarki visual memandu mata pengguna sehingga mereka memahami informasi dengan lebih cepat dan akurat."
-},
-
+   },
     {
         q: "White space atau ruang kosong adalah bagian penting dalam style desain web. White space bukan area yang terbuang, melainkan elemen desain yang berguna untuk memberi ruang antar objek sehingga tampilan lebih rapi dan mudah dibaca. Maka penggunaan white space diperlukan untuk...",
         a: [
@@ -147,7 +149,6 @@ quizData.push(
         correct: 1,
         pembahasan: "White space membantu fokus visual, meningkatkan estetika, dan membuat konten lebih rapi."
     },
-
     {
         q: "Responsivitas adalah kemampuan tampilan web menyesuaikan ukuran layar perangkat seperti smartphone, tablet, dan desktop. Style responsif menggunakan grid, persentase, breakpoint, dan media query. Fungsi utama desain responsif dalam multimedia interaktif adalah...",
         a: [
@@ -160,7 +161,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Desain responsif memastikan pengalaman pengguna optimal di semua jenis perangkat."
     },
-
     {
         q: "Evaluasi navigasi dilakukan untuk mengetahui apakah pengguna dapat berpindah halaman dengan mudah. Navigasi yang buruk menyebabkan pengguna tersesat dan keluar dari aplikasi. Oleh karena itu, evaluasi navigasi dilakukan untuk...",
         a: [
@@ -173,7 +173,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Navigasi yang baik menjadi fondasi pengalaman pengguna yang efektif."
     },
-
     {
         q: "Animasi dalam style web digunakan untuk memperhalus perpindahan antar elemen, menambah kesan interaktif, dan memberikan feedback. Namun, animasi juga harus dipakai secara bijak agar tidak mengganggu. Maka animasi dalam multimedia interaktif berfungsi untuk...",
         a: [
@@ -186,7 +185,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Animasi membantu memperjelas interaksi tanpa mengganggu fokus utama."
     },
-
     {
         q: "Kontras merupakan elemen visual dalam style yang membantu membedakan elemen penting dari yang kurang penting. Kontras dapat ditingkatkan melalui warna, ukuran, ketebalan font, dan bentuk. Oleh karena itu, kontras digunakan untuk...",
         a: [
@@ -199,7 +197,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Kontras yang tepat membuat informasi penting mudah terlihat dan meningkatkan keterbacaan."
     },
-
     {
         q: "Salah satu aspek evaluasi multimedia adalah kinerja (performance), yakni kecepatan loading, ukuran file media, dan efisiensi pemanggilan data. Jika kinerja buruk, pengguna akan meninggalkan aplikasi. Evaluasi performance bertujuan untuk...",
         a: [
@@ -212,7 +209,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Kinerja mempengaruhi kenyamanan pengguna secara langsung sehingga perlu dioptimalkan."
     },
-
     {
         q: "User testing atau pengujian dengan pengguna dilakukan untuk melihat bagaimana pengguna nyata berinteraksi dengan aplikasi. Hasil user testing dapat menunjukkan masalah yang tidak terlihat oleh pengembang. User testing bertujuan untuk...",
         a: [
@@ -225,7 +221,6 @@ quizData.push(
         correct: 1,
         pembahasan: "User testing memberikan data nyata sehingga pengembang dapat memperbaiki pengalaman pengguna."
     },
-
     {
         q: "Aksesibilitas (accessibility) adalah aspek penting dalam evaluasi multimedia agar aplikasi dapat digunakan oleh semua orang, termasuk penyandang disabilitas. Contohnya penggunaan teks alternatif (alt text), kontras yang cukup, dan navigasi keyboard. Maka evaluasi aksesibilitas diperlukan untuk...",
         a: [
@@ -238,7 +233,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Aksesibilitas membuat aplikasi lebih universal dan inklusif bagi seluruh pengguna."
     },
-
     {
         q: "Consistency check dilakukan untuk memastikan bahwa setiap halaman memiliki style yang tidak berubah-ubah secara drastis. Ketidakkonsistenan dapat membuat pengguna bingung dan menurunkan kredibilitas aplikasi. Consistency check bertujuan untuk...",
         a: [
@@ -250,7 +244,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Konsistensi memberikan pengalaman yang stabil sehingga pengguna merasa lebih percaya dan nyaman."
-    }, {
+    },
+    {
     q: "Wireframe adalah sketsa sederhana dari halaman web yang menunjukkan struktur dasar seperti posisi teks, gambar, tombol, serta navigasi tanpa detail visual. Dalam proses pengembangan multimedia interaktif, wireframe digunakan pada tahap awal desain untuk memastikan struktur halaman sudah sesuai sebelum diberi warna dan style. Maka fungsi utama wireframe adalah...",
     a: [
         "Membuat versi akhir halaman web lengkap dengan animasi",
@@ -261,8 +256,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Wireframe membantu tim memahami tata letak dan fungsi halaman sebelum masuk ke style dan visualisasi."
-},
-
+   },
     {
         q: "Prototype adalah versi percobaan dari aplikasi yang biasanya sudah dapat diuji oleh pengguna. Prototype sering digunakan untuk menguji alur navigasi, tampilan, serta interaksi sebelum aplikasi dikembangkan sepenuhnya. Dengan demikian, tujuan penggunaan prototype dalam evaluasi adalah...",
         a: [
@@ -275,7 +269,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Prototype membantu mengidentifikasi masalah lebih awal sehingga pengembangan lebih efisien."
     },
-
     {
         q: "Gesture-based interaction seperti swipe, drag, pinch, dan tap sangat penting pada aplikasi multimedia berbasis perangkat mobile. Evaluasi gesture dilakukan untuk memastikan pengguna dapat melakukan interaksi secara alami dan intuitif. Oleh karena itu, evaluasi gesture diperlukan untuk...",
         a: [
@@ -288,7 +281,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Gesture yang jelas dan responsif meningkatkan kenyamanan penggunaan pada perangkat mobile."
     },
-
     {
         q: "Visual feedback adalah respon visual yang muncul ketika pengguna melakukan sebuah aksi, seperti tombol berubah warna saat diklik atau icon bergetar saat terjadi kesalahan. Feedback seperti ini sangat penting dalam multimedia interaktif. Fungsi utama visual feedback adalah...",
         a: [
@@ -301,7 +293,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Feedback memastikan pengguna memahami bahwa aksinya terdeteksi oleh sistem."
     },
-
     {
         q: "Dalam evaluasi aplikasi berbasis web, readability atau keterbacaan adalah aspek penting untuk memastikan teks mudah dipahami. Faktor seperti ukuran font, jenis font, kontras warna, dan jarak antarbaris memengaruhi readability. Maka tujuan evaluasi readability adalah...",
         a: [
@@ -314,7 +305,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Readability penting agar informasi dapat dipahami dengan cepat tanpa membebani mata."
     },
-
     {
         q: "Testing kompatibilitas dilakukan untuk memastikan aplikasi dapat berjalan dengan baik pada berbagai browser seperti Chrome, Firefox, Edge, dan Safari. Setiap browser dapat menampilkan style secara berbeda. Dengan demikian, tujuan compatibility testing adalah...",
         a: [
@@ -327,7 +317,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Compatibility testing memastikan aplikasi tetap berfungsi dengan baik tanpa batasan browser."
     },
-
     {
         q: "Evaluasi interaksi pengguna juga mencakup penilaian tentang seberapa cepat pengguna dapat menyelesaikan tugas tertentu dalam aplikasi. Jika waktu yang dibutuhkan terlalu lama, maka alurnya perlu diperbaiki. Maka pengukuran task completion time dilakukan untuk...",
         a: [
@@ -340,7 +329,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Task completion time memberi gambaran apakah alur interaksi sudah sederhana dan efektif."
     },
-
     {
         q: "User satisfaction merupakan salah satu faktor evaluasi yang menilai tingkat kepuasan pengguna terhadap tampilan, navigasi, respons sistem, dan kenyamanan penggunaan. Evaluasi kepuasan pengguna bertujuan untuk...",
         a: [
@@ -353,7 +341,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Kepuasan pengguna dapat menentukan keberhasilan aplikasi dalam jangka panjang."
     },
-
     {
         q: "Dalam evaluasi style multimedia, estetika visual dinilai untuk mengetahui apakah tampilan aplikasi terlihat profesional, rapi, dan menarik. Jika style buruk, pengguna dapat kehilangan minat meskipun fungsi aplikasi berjalan baik. Maka evaluasi estetika bertujuan untuk...",
         a: [
@@ -366,7 +353,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Estetika yang baik menarik perhatian pengguna dan meningkatkan pengalaman visual."
     },
-
     {
         q: "Error prevention adalah prinsip usability yang bertujuan mencegah pengguna melakukan kesalahan. Contohnya adalah validasi input, peringatan sebelum menghapus data, dan penjelasan sebelum menjalankan aksi berisiko. Maka tujuan error prevention adalah...",
         a: [
@@ -378,7 +364,8 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Error prevention membantu pengguna terhindar dari kesalahan yang tidak disengaja."
-    }, {
+    }, 
+    {
     q: "Dalam evaluasi multimedia interaktif, konsistensi penggunaan ikon sangat penting. Ikon yang berbeda untuk fungsi yang sama dapat membuat pengguna bingung. Misalnya, ikon 'save' yang berbeda-beda di setiap halaman akan menurunkan kejelasan fungsi aplikasi. Oleh karena itu, konsistensi ikon diperlukan untuk...",
     a: [
         "Membuat pengguna menebak fungsi ikon secara acak",
@@ -389,8 +376,7 @@ quizData.push(
     ],
     correct: 1,
     pembahasan: "Ikon yang konsisten mempermudah pengguna mengenali fungsi tanpa perlu membaca teks."
-},
-
+    },
     {
         q: "Loading time atau waktu muat halaman menjadi salah satu komponen evaluasi kinerja (performance). Jika sebuah halaman memuat dalam waktu lebih dari 3–5 detik, banyak pengguna cenderung meninggalkannya. Oleh karena itu, optimasi loading time bertujuan untuk...",
         a: [
@@ -403,7 +389,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Loading time yang cepat meningkatkan user retention dan pengalaman penggunaan."
     },
-
     {
         q: "Dalam evaluasi aksesibilitas, penggunaan ALT text pada gambar sangat penting terutama bagi pengguna tunanetra yang menggunakan screen reader. ALT text berfungsi untuk menjelaskan isi gambar secara verbal. Maka ALT text digunakan untuk...",
         a: [
@@ -416,7 +401,6 @@ quizData.push(
         correct: 1,
         pembahasan: "ALT text meningkatkan aksesibilitas dengan memberikan deskripsi bagi pengguna berkebutuhan khusus."
     },
-
     {
         q: "Breadcrumb navigation merupakan komponen navigasi yang menunjukkan posisi pengguna dalam struktur halaman, misalnya Home > Produk > Detail Produk. Breadcrumb sangat membantu terutama pada aplikasi dengan banyak halaman. Fungsi breadcrumb dalam evaluasi navigasi adalah...",
         a: [
@@ -429,7 +413,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Breadcrumb membantu pengguna memahami struktur dan lokasi mereka di dalam aplikasi."
     },
-
     {
         q: "Error message atau pesan kesalahan harus dirancang dengan jelas dan informatif. Pesan yang tidak jelas seperti 'Error 004' tidak membantu pengguna memahami apa yang harus dilakukan. Oleh karena itu, error message yang baik harus...",
         a: [
@@ -442,7 +425,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Pesan kesalahan yang jelas membantu pengguna segera memperbaiki tindakan."
     },
-
     {
         q: "Call to Action (CTA) seperti 'Daftar Sekarang', 'Mulai', atau 'Kirim' harus terlihat jelas dalam tampilan web karena memiliki fungsi penting dalam mengarahkan pengguna melakukan aksi tertentu. Evaluasi CTA diperlukan untuk mengetahui apakah tombol tersebut...",
         a: [
@@ -455,7 +437,6 @@ quizData.push(
         correct: 1,
         pembahasan: "CTA yang baik meningkatkan interaksi dan konversi pengguna."
     },
-
     {
         q: "Salah satu aspek penting evaluasi style adalah alignment, yaitu keselarasan tata letak mulai dari teks, gambar, hingga tombol. Alignment yang buruk membuat tampilan terlihat berantakan. Maka evaluasi alignment bertujuan untuk...",
         a: [
@@ -468,7 +449,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Alignment yang baik menciptakan tampilan yang profesional dan memudahkan proses membaca."
     },
-
     {
         q: "Skala prioritas dalam style web berkaitan dengan menentukan elemen mana yang harus lebih menonjol dibandingkan yang lain, misalnya headline lebih besar dari teks biasa. Evaluasi skala prioritas diperlukan untuk...",
         a: [
@@ -481,7 +461,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Skala prioritas membuat informasi utama langsung terlihat dan mudah dipahami."
     },
-
     {
         q: "Mobile-first design adalah pendekatan desain yang memulai pembuatan style tampilan dari ukuran layar kecil terlebih dahulu sebelum diperluas ke layar besar. Pendekatan ini sangat efektif mengoptimalkan responsivitas. Maka mobile-first design digunakan untuk...",
         a: [
@@ -494,7 +473,6 @@ quizData.push(
         correct: 1,
         pembahasan: "Mobile-first memastikan performa dan kenyamanan terbaik di perangkat yang paling banyak digunakan."
     },
-
     {
         q: "Dalam evaluasi keseluruhan, aspek user flow atau aliran pengguna sangat penting. User flow menggambarkan jalur yang dilalui pengguna dari satu halaman ke halaman lainnya untuk menyelesaikan tujuan tertentu, seperti mendaftar atau membeli produk. Evaluasi user flow bertujuan untuk...",
         a: [
