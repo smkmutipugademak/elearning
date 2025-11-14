@@ -40,7 +40,7 @@ const praktikumData = {
     "Pemrograman Dasar": ["If Else", "Perulangan", "Array", "Tuple", "Fungsi", "Dictionary", "Inheritance", "Abstraction", "Polymorphism", "Lambda", "Tipe Data", "Parameter dan Arguments"],
     "Pemrograman Web dan Perangkat Bergerak": ["HTML", "CSS", "JavaScript", "Responsive Design"],
     "Desain Grafis Percetakan": ["Adobe Illustrator", "Percetakan Digital", "Layout Brosur"],
-    "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video", "Mixing Dasar"],
+    "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video"],
     "Desain Media Interaktif": ["UI/UX Design", "Prototyping", "Animasi Interaktif"]
 };
 

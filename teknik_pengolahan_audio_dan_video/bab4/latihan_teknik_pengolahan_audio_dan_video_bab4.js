@@ -2,6 +2,8 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
+var quizData = quizData || [];
+
 quizData.push(
     {
         q: "Dalam pembuatan multimedia interaktif, proses penggabungan berbagai elemen seperti gambar, audio, animasi, dan video menjadi bagian penting untuk menciptakan pengalaman pengguna yang menarik. Integrasi elemen-elemen ini harus dilakukan secara harmonis agar informasi dapat tersampaikan dengan efektif. Maka penggabungan media dalam multimedia interaktif bertujuan untuk...",

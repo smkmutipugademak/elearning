@@ -2,6 +2,8 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
+var quizData = quizData || [];
+
 quizData.push(
     {
         q: "Dalam pengoperasian aplikasi multimedia interaktif berbasis web, keberadaan elemen navigasi merupakan bagian penting agar pengguna dapat berpindah dari satu halaman ke halaman lainnya secara mudah. Tanpa navigasi yang jelas, pengguna akan kesulitan menemukan konten yang mereka butuhkan. Berdasarkan fungsi utamanya, navigasi pada website digunakan untuk...",

@@ -2,6 +2,8 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
+var quizData = quizData || [];
+
 quizData.push(
     {
         q: "Dalam proses produksi konten multimedia berbasis video, kamera video memiliki peran yang sangat penting karena merupakan alat utama yang digunakan untuk menangkap peristiwa dalam bentuk gambar bergerak. Tanpa kamera, tidak mungkin sebuah produksi video dapat dihasilkan secara visual. Berdasarkan fungsi utamanya tersebut, kamera video digunakan untuk...",
@@ -122,18 +124,19 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Video digital dapat diolah dengan software editing tanpa proses konversi analog terlebih dahulu."
-    }, {
-    q: "Dalam pengambilan gambar bergerak, pencahayaan memegang peranan yang sangat penting karena menentukan seberapa jelas objek dapat terlihat dalam rekaman. Cahaya yang tidak memadai akan menghasilkan gambar gelap dan penuh noise, sementara cahaya berlebihan dapat menyebabkan overexposure. Oleh karena itu, pencahayaan yang baik diperlukan agar kamera dapat menangkap gambar dengan kualitas optimal. Berdasarkan hal tersebut, fungsi utama pencahayaan dalam proses perekaman adalah...",
-    a: [
-        "Memberikan efek warna tertentu pada gambar",
-        "Membantu kamera menangkap gambar dengan jelas dan optimal",
-        "Membuat gambar tampak lebih gelap untuk kesan dramatis",
-        "Mengubah resolusi video agar lebih stabil",
-        "Menghilangkan bayangan sepenuhnya dari objek"
-    ],
-    correct: 1,
-    pembahasan: "Pencahayaan yang baik sangat penting agar sensor kamera dapat menangkap detail objek dengan jelas tanpa noise atau hilangnya informasi visual."
-},
+    },
+    {
+        q: "Dalam pengambilan gambar bergerak, pencahayaan memegang peranan yang sangat penting karena menentukan seberapa jelas objek dapat terlihat dalam rekaman. Cahaya yang tidak memadai akan menghasilkan gambar gelap dan penuh noise, sementara cahaya berlebihan dapat menyebabkan overexposure. Oleh karena itu, pencahayaan yang baik diperlukan agar kamera dapat menangkap gambar dengan kualitas optimal. Berdasarkan hal tersebut, fungsi utama pencahayaan dalam proses perekaman adalah...",
+        a: [
+            "Memberikan efek warna tertentu pada gambar",
+            "Membantu kamera menangkap gambar dengan jelas dan optimal",
+            "Membuat gambar tampak lebih gelap untuk kesan dramatis",
+            "Mengubah resolusi video agar lebih stabil",
+            "Menghilangkan bayangan sepenuhnya dari objek"
+        ],
+        correct: 1,
+        pembahasan: "Pencahayaan yang baik sangat penting agar sensor kamera dapat menangkap detail objek dengan jelas tanpa noise atau hilangnya informasi visual."
+    },
     {
         q: "Shutter speed adalah salah satu pengaturan penting dalam kamera yang berfungsi mengontrol durasi sensor menerima cahaya. Pengaturan ini sangat memengaruhi tampilan objek yang bergerak. Jika shutter speed terlalu lambat, gerakan objek dapat menjadi blur, sedangkan shutter speed cepat membuat gerakan tampak membeku. Oleh karena itu, shutter speed adalah...",
         a: [
@@ -241,18 +244,19 @@ quizData.push(
         ],
         correct: 2,
         pembahasan: "Tilt shot digunakan untuk menyorot objek tinggi atau memberikan dinamika visual dari atas ke bawah atau sebaliknya."
-    }, {
-    q: "Dalam dunia sinematografi, komposisi gambar berperan sangat penting untuk menciptakan visual yang menarik dan mampu mengarahkan perhatian penonton pada subjek utama. Salah satu aturan komposisi yang paling populer adalah rule of thirds, di mana bingkai gambar dibagi menjadi sembilan bagian menggunakan dua garis horizontal dan dua garis vertikal. Dengan demikian, rule of thirds adalah teknik komposisi yang digunakan untuk...",
-    a: [
-        "Membagi objek menjadi dua bagian simetris",
-        "Menempatkan subjek pada titik perpotongan garis agar tampak lebih menarik",
-        "Menghapus latar belakang objek secara otomatis",
-        "Meningkatkan ketajaman gambar melalui fokus manual",
-        "Menentukan resolusi video secara otomatis"
-    ],
-    correct: 1,
-    pembahasan: "Rule of thirds membantu menciptakan komposisi yang lebih seimbang dan menarik dengan menempatkan objek pada titik-titik strategis."
-},
+    },
+    {
+        q: "Dalam dunia sinematografi, komposisi gambar berperan sangat penting untuk menciptakan visual yang menarik dan mampu mengarahkan perhatian penonton pada subjek utama. Salah satu aturan komposisi yang paling populer adalah rule of thirds, di mana bingkai gambar dibagi menjadi sembilan bagian menggunakan dua garis horizontal dan dua garis vertikal. Dengan demikian, rule of thirds adalah teknik komposisi yang digunakan untuk...",
+        a: [
+            "Membagi objek menjadi dua bagian simetris",
+            "Menempatkan subjek pada titik perpotongan garis agar tampak lebih menarik",
+            "Menghapus latar belakang objek secara otomatis",
+            "Meningkatkan ketajaman gambar melalui fokus manual",
+            "Menentukan resolusi video secara otomatis"
+        ],
+        correct: 1,
+        pembahasan: "Rule of thirds membantu menciptakan komposisi yang lebih seimbang dan menarik dengan menempatkan objek pada titik-titik strategis."
+    },
     {
         q: "Dalam proses perekaman video, stabilisasi menjadi hal yang sangat penting karena gerakan tangan yang tidak stabil dapat menyebabkan rekaman terlihat goyah dan tidak profesional. Salah satu alat yang umum digunakan untuk menghasilkan gerakan kamera yang lembut adalah stabilizer atau gimbal. Dengan demikian, fungsi utama stabilizer adalah...",
         a: [
@@ -360,18 +364,19 @@ quizData.push(
         ],
         correct: 1,
         pembahasan: "Shot list membantu memastikan semua kebutuhan gambar diambil dengan lengkap dan sesuai rencana produksi."
-    }, {
-    q: "Dalam proses perekaman video, exposure merupakan elemen paling dasar yang menentukan seberapa terang atau gelap hasil rekaman. Exposure dipengaruhi oleh tiga faktor utama, yaitu shutter speed, aperture, dan ISO. Pengaturan yang tidak tepat dapat menghasilkan gambar terlalu terang (overexposed) atau terlalu gelap (underexposed), sehingga mengurangi kualitas visual. Oleh karena itu, exposure dalam pengambilan gambar bergerak adalah...",
-    a: [
-        "Proses memperbesar objek secara optik",
-        "Jumlah cahaya yang masuk ke sensor kamera selama perekaman",
-        "Teknik menentukan warna gambar secara manual",
-        "Mode otomatis untuk mengatur komposisi",
-        "Kadence suara yang masuk ke mikrofon"
-    ],
-    correct: 1,
-    pembahasan: "Exposure menentukan intensitas cahaya yang diterima sensor kamera; keseimbangan exposure sangat penting untuk menghasilkan gambar yang jelas dan profesional."
-},
+    },
+    {
+        q: "Dalam proses perekaman video, exposure merupakan elemen paling dasar yang menentukan seberapa terang atau gelap hasil rekaman. Exposure dipengaruhi oleh tiga faktor utama, yaitu shutter speed, aperture, dan ISO. Pengaturan yang tidak tepat dapat menghasilkan gambar terlalu terang (overexposed) atau terlalu gelap (underexposed), sehingga mengurangi kualitas visual. Oleh karena itu, exposure dalam pengambilan gambar bergerak adalah...",
+        a: [
+            "Proses memperbesar objek secara optik",
+            "Jumlah cahaya yang masuk ke sensor kamera selama perekaman",
+            "Teknik menentukan warna gambar secara manual",
+            "Mode otomatis untuk mengatur komposisi",
+            "Kadence suara yang masuk ke mikrofon"
+        ],
+        correct: 1,
+        pembahasan: "Exposure menentukan intensitas cahaya yang diterima sensor kamera; keseimbangan exposure sangat penting untuk menghasilkan gambar yang jelas dan profesional."
+    },
     {
         q: "Lighting atau tata cahaya dalam pengambilan gambar bergerak melibatkan pengaturan lampu untuk menciptakan suasana tertentu. Salah satu metode populer adalah three-point lighting yang terdiri dari key light, fill light, dan back light. Teknik ini digunakan secara luas dalam produksi film, wawancara, dan video profesional. Dengan demikian, tujuan dari three-point lighting adalah...",
         a: [
@@ -481,6 +486,7 @@ quizData.push(
         pembahasan: "Focal length memengaruhi sudut pandang serta seberapa besar objek terlihat dalam rekaman."
     }
 );
+
 
 
 function shuffleArray(arr) {

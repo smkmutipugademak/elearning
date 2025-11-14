@@ -2,6 +2,8 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
+var quizData = quizData || [];
+
 quizData.push(
     {
         q: "Dalam pengembangan multimedia interaktif berbasis web, penerapan style atau gaya visual sangat penting untuk menciptakan konsistensi antarelemen. Style mencakup penggunaan warna, tipografi, icon, layout, serta ritme visual sehingga keseluruhan halaman tampak rapi dan mudah dipahami. Oleh karena itu, style dalam multimedia interaktif berfungsi untuk...",
