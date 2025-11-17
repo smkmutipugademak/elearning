@@ -41,7 +41,7 @@ const praktikumData = {
     "Pemrograman Web dan Perangkat Bergerak": ["HTML", "CSS", "JavaScript", "Responsive Design"],
     "Desain Grafis Percetakan": ["CorelDRAW", "Adobe Illustrator", "Adobe Photoshop"],
     "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video"],
-    "Desain Media Interaktif": ["UIUX Design", "Prototyping", "Animasi Interaktif"]
+    "Desain Media Interaktif": ["UIUX Design", "Prototyping", "A
 };
 
 // === PILIH KELAS ===
@@ -55,7 +55,7 @@ document.querySelectorAll(".kelas").forEach((card) => {
             const div = document.createElement("div");
             div.className = "card mapel fade-in";
             div.innerHTML = `<h3>${mapel}</h3><p>Kelas ${kelas}</p>`;
-            div.addEventListener("click", () => showMenu(mapel));
+  nimasi Interaktif"]          div.addEventListener("click", () => showMenu(mapel));
             mapelList.appendChild(div);
         });
     });
