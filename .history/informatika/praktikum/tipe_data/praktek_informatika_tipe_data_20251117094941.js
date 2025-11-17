@@ -14,13 +14,7 @@ const quizData = [
     {
         q: "Apa tipe data dari nilai 10.5?",
         code: "x = 10.5\nprint(type(x))",
-        a: [
-            "<class 'float'>",
-            "<class 'int'>",
-            "<class 'str'>",
-            "<class 'bool'>",
-            "Tidak ada jawaban yang benar"
-        ],
+        a: ["<class 'float'>", "<class 'int'>", "<class 'str'>", "<class 'bool'>"],
         correct: 0,
         pembahasan: "10.5 memiliki desimal, jadi bertipe float."
     },

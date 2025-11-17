@@ -1,3 +1,4 @@
+
 function shuffleArray(arr) {
     const array = [...arr];
     for (let i = array.length - 1; i > 0; i--) {
@@ -23,14 +24,14 @@ function renderQuiz() {
         const div = document.createElement("div");
         div.className = "question";
 
-        let html = `<h4>${i + 1}. ${escapeHTML(item.q)}</h4>`;
+        let html = `<h4>${i + 1}. ${item.q}</h4>`;
         if (item.img) html += `<img src="${item.img}" class="soal-img"/>`;
-        if (item.code) html += `<pre><code class="language-js">${escapeHTML(item.code)}</code></pre>`;
+        if (item.code) html += `<pre><code class="language-js">${item.code}</code></pre>`;
 
         html += item.shuffledAnswers.map((ans, idx) => `
       <label>
         <input type="radio" name="q${i}" value="${idx}">
-        ${String.fromCharCode(65 + idx)}. ${escapeHTML(ans.text)}
+        ${String.fromCharCode(65 + idx)}. ${ans.text}
       </label>
     `).join("");
 
@@ -112,8 +113,8 @@ function submitQuiz() {
         <h4>${i + 1}. ${item.q}</h4>
         ${item.img ? `<img src="${item.img}" class="soal-img"/>` : ""}
         ${item.code ? `<pre><code class="language-js">${item.code}</code></pre>` : ""}
-        <p><b>Jawaban kamu:</b> ${yourAns ? escapeHTML(yourAns.text) : "Tidak dijawab"}</p>
-        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${escapeHTML(correctAns.text)}</span></p>
+        <p><b>Jawaban kamu:</b> ${yourAns ? yourAns.text : "Tidak dijawab"}</p>
+        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${correctAns.text}</span></p>
         <button class="btn-pembahasan" onclick="togglePembahasan(this)">👁️ Lihat Pembahasan</button>
         <div class="pembahasan"><b>Pembahasan:</b> ${item.pembahasan}</div>
       </div>
@@ -179,6 +180,14 @@ toggle.addEventListener('click', () => {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 });
 renderQuiz();
+const backToDashboard = document.querySelector('.btn-back');
+if (backToDashboard) {
+    backToDashboard.addEventListener('click', (e) => {
+        e.preventDefault(); // cegah efek JS lain
+        window.location.href = '../../index.html';
+    });
+}
+
 // === FITUR ANTI-NYONTEK ===
 // ======================== 🔒 FITUR ANTI-NYONTEK ULTRA KETAT ========================
 
@@ -285,12 +294,4 @@ function autoEndExam(reason) {
             <p>Jawaban kamu sudah otomatis disimpan dan ujian dinyatakan selesai.</p>
         </div>
     `;
-}
-function escapeHTML(str) {
-    return str
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
 }

@@ -112,8 +112,8 @@ function submitQuiz() {
         <h4>${i + 1}. ${item.q}</h4>
         ${item.img ? `<img src="${item.img}" class="soal-img"/>` : ""}
         ${item.code ? `<pre><code class="language-js">${item.code}</code></pre>` : ""}
-        <p><b>Jawaban kamu:</b> ${yourAns ? escapeHTML(yourAns.text) : "Tidak dijawab"}</p>
-        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${escapeHTML(correctAns.text)}</span></p>
+        <p><b>Jawaban kamu:</b> ${yourAns ? yourAns.text : "Tidak dijawab"}</p>
+        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${correctAns.text}</span></p>
         <button class="btn-pembahasan" onclick="togglePembahasan(this)">👁️ Lihat Pembahasan</button>
         <div class="pembahasan"><b>Pembahasan:</b> ${item.pembahasan}</div>
       </div>

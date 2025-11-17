@@ -23,7 +23,8 @@ const quizData = [
         ],
         correct: 0,
         pembahasan: "10.5 memiliki desimal, jadi bertipe float."
-    },
+    }
+
     {
         q: "Apa tipe data dari 'Halo Dunia'?",
         code: "x = 'Halo Dunia'\nprint(type(x))",
