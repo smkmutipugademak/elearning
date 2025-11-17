@@ -1,0 +1,666 @@
+let randomizedQuiz = [];
+let timerInterval;
+let timeRemaining = 0; // in seconds
+
+const quizData = [
+    {
+        q: "JOIN dalam SQL digunakan untuk?",
+        a: [
+            "Menggabungkan dua atau lebih tabel berdasarkan kolom yang berhubungan",
+            "Menghapus data dari dua tabel sekaligus",
+            "Menyalin isi tabel ke tabel lain",
+            "Membuat tabel baru dari query"
+        ],
+        correct: 0,
+        pembahasan: "JOIN digunakan untuk mengambil data dari beberapa tabel yang memiliki kolom relasi yang sama."
+    },
+    {
+        q: "JOIN tanpa JOIN statement disebut juga sebagai?",
+        a: ["Implicit Join", "Explicit Join", "Outer Join", "Self Join"],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement disebut Implicit Join karena menggunakan WHERE, bukan ON."
+    },
+    {
+        q: "Klausa yang digunakan untuk menyatakan kondisi penggabungan tabel pada JOIN tanpa JOIN statement adalah?",
+        a: ["WHERE", "ON", "GROUP BY", "HAVING"],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement menggunakan klausa WHERE untuk menghubungkan dua tabel."
+    },
+    {
+        q: "Tanda pemisah antara tabel pada JOIN tanpa JOIN statement adalah?",
+        a: [",", ";", "AND", "OR"],
+        correct: 0,
+        pembahasan: "Antara nama tabel dipisahkan dengan koma (,) sebelum klausa WHERE."
+    },
+    {
+        q: "Sintaks dasar JOIN tanpa JOIN statement adalah?",
+        a: [
+            "SELECT ... FROM tabel1, tabel2 WHERE tabel1.key = tabel2.key",
+            "SELECT ... INNER JOIN tabel2 ON tabel1.key = tabel2.key",
+            "SELECT ... LEFT JOIN tabel2 ON tabel1.key = tabel2.key",
+            "SELECT ... RIGHT JOIN tabel2"
+        ],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement menulis daftar tabel dipisahkan koma dan kondisi di WHERE."
+    },
+    {
+        q: "Kegunaan klausa WHERE dalam JOIN tanpa JOIN statement adalah?",
+        a: [
+            "Menentukan kondisi penggabungan antar tabel",
+            "Menghapus duplikat data",
+            "Menentukan urutan hasil query",
+            "Mengelompokkan data"
+        ],
+        correct: 0,
+        pembahasan: "WHERE berfungsi menyatakan hubungan antar kolom pada tabel yang di-join."
+    },
+    {
+        q: "Apa yang terjadi jika klausa WHERE dihilangkan dalam JOIN tanpa JOIN statement?",
+        a: [
+            "Akan menghasilkan cross join (setiap kombinasi baris dari kedua tabel)",
+            "Query error",
+            "Tidak menampilkan data",
+            "Hanya menampilkan satu baris"
+        ],
+        correct: 0,
+        pembahasan: "Tanpa kondisi WHERE, semua kombinasi baris kedua tabel akan ditampilkan (cross join)."
+    },
+    {
+        q: "JOIN tanpa JOIN statement termasuk jenis?",
+        a: ["Implicit Join", "Cross Join", "Natural Join", "Outer Join"],
+        correct: 0,
+        pembahasan: "Disebut Implicit Join karena penggabungannya dilakukan di WHERE, bukan dengan JOIN eksplisit."
+    },
+    {
+        q: "JOIN eksplisit menggunakan klausa?",
+        a: ["JOIN ... ON ...", "WHERE ...", "GROUP BY ...", "ORDER BY ..."],
+        correct: 0,
+        pembahasan: "JOIN eksplisit menggunakan kata kunci JOIN dan ON untuk menyatakan relasi antar tabel."
+    },
+    {
+        q: "Perbedaan utama antara Implicit Join dan Explicit Join adalah?",
+        a: [
+            "Implicit Join menggunakan WHERE, Explicit Join menggunakan ON",
+            "Implicit Join menggunakan HAVING, Explicit Join menggunakan GROUP BY",
+            "Implicit Join lebih cepat dari Explicit Join",
+            "Explicit Join tidak bisa memakai kondisi tambahan"
+        ],
+        correct: 0,
+        pembahasan: "Implicit Join memakai WHERE, sedangkan Explicit Join memakai ON untuk kondisi relasi."
+    },
+    {
+        q: "Perintah berikut adalah contoh JOIN tanpa JOIN statement:",
+        a: [
+            "SELECT * FROM dosen a, mahasiswa b WHERE a.id_dosen = b.id_dosen;",
+            "SELECT * FROM dosen INNER JOIN mahasiswa ON a.id_dosen = b.id_dosen;",
+            "SELECT * FROM dosen LEFT JOIN mahasiswa;",
+            "SELECT * FROM mahasiswa CROSS JOIN dosen;"
+        ],
+        correct: 0,
+        pembahasan: "Contoh JOIN tanpa JOIN statement menggunakan koma dan kondisi WHERE."
+    },
+    {
+        q: "JOIN tanpa JOIN statement menggunakan alias tabel seperti a dan b untuk?",
+        a: [
+            "Mempersingkat penulisan nama tabel",
+            "Membuat tabel baru",
+            "Menghapus data dari tabel",
+            "Mengurutkan data secara alfabet"
+        ],
+        correct: 0,
+        pembahasan: "Alias digunakan agar penulisan field antar tabel menjadi lebih singkat dan jelas."
+    },
+    {
+        q: "Kondisi utama agar JOIN menghasilkan data yang benar adalah?",
+        a: [
+            "Kedua tabel memiliki kolom yang berhubungan (key)",
+            "Kedua tabel memiliki jumlah kolom yang sama",
+            "Kedua tabel memiliki nama kolom yang sama",
+            "Tabel pertama lebih besar dari tabel kedua"
+        ],
+        correct: 0,
+        pembahasan: "JOIN membutuhkan kolom penghubung (key) agar relasi antar tabel dapat dilakukan."
+    },
+    {
+        q: "Kelebihan JOIN tanpa JOIN statement adalah?",
+        a: [
+            "Penulisan query lebih sederhana",
+            "Lebih cepat dari JOIN eksplisit",
+            "Menampilkan data otomatis tanpa kondisi",
+            "Tidak membutuhkan alias"
+        ],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement mudah ditulis karena tidak membutuhkan kata kunci JOIN."
+    },
+    {
+        q: "Kelemahan JOIN tanpa JOIN statement adalah?",
+        a: [
+            "Sulit dibaca jika tabel yang digabung banyak",
+            "Tidak dapat menggunakan kondisi tambahan",
+            "Hanya dapat digunakan di MySQL",
+            "Tidak mendukung WHERE"
+        ],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement menjadi sulit dipahami untuk query yang kompleks."
+    },
+    {
+        q: "Hasil dari query JOIN ditentukan oleh?",
+        a: [
+            "Kondisi relasi antara kolom pada klausa WHERE atau ON",
+            "Jumlah tabel yang diakses",
+            "Jumlah field yang dipilih",
+            "Urutan tabel di FROM"
+        ],
+        correct: 0,
+        pembahasan: "JOIN akan menghasilkan data yang cocok berdasarkan kondisi relasi antar tabel."
+    },
+    {
+        q: "Jika dua tabel tidak memiliki relasi dan tetap di-join, maka hasilnya adalah?",
+        a: [
+            "Cross Join",
+            "Inner Join",
+            "Left Join",
+            "Full Join"
+        ],
+        correct: 0,
+        pembahasan: "Tanpa kondisi relasi, hasilnya adalah cross join (kombinasi semua baris)."
+    },
+    {
+        q: "Fungsi FROM pada JOIN adalah?",
+        a: [
+            "Menentukan tabel-tabel yang akan digabungkan",
+            "Menentukan kolom hasil output",
+            "Menyaring data hasil query",
+            "Mengurutkan hasil query"
+        ],
+        correct: 0,
+        pembahasan: "FROM menentukan tabel yang menjadi sumber data JOIN."
+    },
+    {
+        q: "Fungsi SELECT dalam query JOIN adalah?",
+        a: [
+            "Menentukan kolom apa yang ingin ditampilkan dari hasil gabungan tabel",
+            "Menentukan relasi antara dua tabel",
+            "Menyaring data berdasarkan kondisi tertentu",
+            "Menambah baris baru ke tabel"
+        ],
+        correct: 0,
+        pembahasan: "SELECT digunakan untuk menentukan field yang ingin ditampilkan dari hasil JOIN."
+    },
+    {
+        q: "Klausa tambahan seperti AND dalam JOIN digunakan untuk?",
+        a: [
+            "Menambah kondisi filter tambahan",
+            "Menghapus kondisi utama",
+            "Membuat tabel baru",
+            "Mengubah urutan data"
+        ],
+        correct: 0,
+        pembahasan: "AND menambahkan syarat tambahan pada kondisi JOIN."
+    },
+    {
+        q: "Jika dua tabel memiliki field yang sama namanya, cara menghindari ambigu adalah?",
+        a: [
+            "Menggunakan alias tabel sebelum nama kolom",
+            "Menghapus field yang sama",
+            "Mengganti nama tabel",
+            "Tidak bisa dihindari"
+        ],
+        correct: 0,
+        pembahasan: "Gunakan alias, misalnya a.id_dosen dan b.id_dosen untuk membedakan kolom dengan nama sama."
+    },
+    {
+        q: "JOIN antara tabel DOSEN dan MAHASISWA berdasarkan ID_DOSEN menghasilkan relasi?",
+        a: [
+            "One to Many",
+            "Many to One",
+            "One to One",
+            "Many to Many"
+        ],
+        correct: 0,
+        pembahasan: "Satu dosen membimbing banyak mahasiswa, sehingga relasinya One to Many."
+    },
+    {
+        q: "Kondisi a.id_dosen = b.id_dosen menunjukkan bahwa?",
+        a: [
+            "Kolom ID_DOSEN di kedua tabel memiliki nilai yang sama",
+            "Tabel dosen dan mahasiswa memiliki jumlah baris sama",
+            "Semua data dosen akan ditampilkan",
+            "Semua data mahasiswa akan dihapus"
+        ],
+        correct: 0,
+        pembahasan: "Kondisi tersebut menunjukkan hubungan relasional antar kolom ID_DOSEN pada dua tabel."
+    },
+    {
+        q: "Untuk menampilkan hanya data dengan ID_DOSEN tertentu, digunakan klausa?",
+        a: ["AND", "OR", "GROUP BY", "ORDER BY"],
+        correct: 0,
+        pembahasan: "Klausa AND ditambahkan di akhir kondisi WHERE untuk memfilter hasil."
+    },
+    {
+        q: "JOIN tanpa JOIN statement menghasilkan hasil yang sama dengan?",
+        a: ["INNER JOIN", "LEFT JOIN", "FULL JOIN", "RIGHT JOIN"],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement menghasilkan hasil setara dengan INNER JOIN."
+    },
+    {
+        q: "Perintah SELECT * FROM dosen, mahasiswa; tanpa WHERE akan menghasilkan?",
+        a: [
+            "Cross join semua baris kedua tabel",
+            "Error syntax",
+            "Tidak ada hasil",
+            "Hanya baris pertama"
+        ],
+        correct: 0,
+        pembahasan: "Tanpa WHERE, query akan menghasilkan kombinasi semua baris dari kedua tabel (cross join)."
+    },
+    {
+        q: "Manakah pernyataan berikut yang benar tentang JOIN tanpa JOIN statement?",
+        a: [
+            "Menggunakan koma untuk memisahkan tabel dan WHERE untuk relasi",
+            "Menggunakan JOIN ... ON",
+            "Menggunakan HAVING untuk relasi tabel",
+            "Tidak memerlukan kondisi relasi"
+        ],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement menulis tabel dengan koma dan relasi di WHERE."
+    },
+    {
+        q: "Dalam query SELECT b.nim, b.nama, a.id_dosen FROM dosen a, mahasiswa b WHERE a.id_dosen=b.id_dosen; huruf a dan b menunjukkan?",
+        a: ["Alias tabel", "Nama kolom", "Nama database", "Primary key"],
+        correct: 0,
+        pembahasan: "a dan b digunakan sebagai alias tabel untuk mempersingkat penulisan nama tabel."
+    },
+    {
+        q: "Manakah contoh kondisi JOIN yang benar?",
+        a: [
+            "a.id_dosen = b.id_dosen",
+            "a.nama = b.ipk",
+            "a.alamat > b.ipk",
+            "a.id_dosen != b.id_dosen"
+        ],
+        correct: 0,
+        pembahasan: "Kondisi JOIN menggunakan kolom relasi yang sama, yaitu ID_DOSEN."
+    },
+    {
+        q: "Jika tabel pertama memiliki 5 baris dan tabel kedua memiliki 4 baris tanpa kondisi WHERE, hasilnya adalah?",
+        a: ["20 baris", "9 baris", "5 baris", "4 baris"],
+        correct: 0,
+        pembahasan: "Tanpa WHERE, terjadi cross join, menghasilkan 5 x 4 = 20 baris."
+    },
+    {
+        q: "Fungsi utama JOIN adalah?",
+        a: [
+            "Menggabungkan data dari beberapa tabel yang berhubungan",
+            "Menghapus data ganda dari tabel",
+            "Membuat salinan tabel",
+            "Mengubah struktur tabel"
+        ],
+        correct: 0,
+        pembahasan: "JOIN digunakan untuk mengambil data yang berhubungan antar tabel."
+    },
+    {
+        q: "JOIN tanpa JOIN statement dapat digunakan pada?",
+        a: ["MySQL, Oracle, dan SQL Server", "Hanya di MongoDB", "Hanya di Excel", "Hanya di PostgreSQL"],
+        correct: 0,
+        pembahasan: "JOIN tanpa JOIN statement didukung di semua DBMS SQL utama."
+    },
+    {
+        q: "Kapan sebaiknya JOIN eksplisit lebih dipilih daripada JOIN tanpa JOIN statement?",
+        a: [
+            "Saat query melibatkan banyak tabel",
+            "Saat hanya ada satu tabel",
+            "Saat tidak ada foreign key",
+            "Saat tidak menggunakan klausa WHERE"
+        ],
+        correct: 0,
+        pembahasan: "JOIN eksplisit lebih jelas dan mudah dibaca untuk query dengan banyak tabel."
+    },
+    {
+        q: "JOIN tanpa JOIN statement termasuk jenis query?",
+        a: ["Query relasional", "Query agregasi", "Query manipulasi data", "Query subquery"],
+        correct: 0,
+        pembahasan: "JOIN adalah bentuk query relasional untuk menggabungkan tabel."
+    },
+    {
+        q: "Apa yang dimaksud dengan cross join?",
+        a: [
+            "Kombinasi semua baris dari dua tabel tanpa kondisi WHERE",
+            "Gabungan berdasarkan key yang sama",
+            "Gabungan tabel dengan kondisi ON",
+            "Penggabungan dengan kondisi LEFT JOIN"
+        ],
+        correct: 0,
+        pembahasan: "Cross join terjadi jika tidak ada kondisi relasi pada klausa WHERE."
+    },
+    {
+        q: "Manakah pernyataan yang benar tentang hasil JOIN?",
+        a: [
+            "Jumlah baris hasil tergantung pada kondisi relasi antar tabel",
+            "Jumlah baris hasil selalu sama dengan jumlah tabel",
+            "JOIN selalu menghasilkan data unik",
+            "JOIN hanya menampilkan kolom yang sama"
+        ],
+        correct: 0,
+        pembahasan: "Jumlah baris hasil tergantung dari kecocokan nilai relasi antar tabel."
+    },
+    {
+        q: "Kapan JOIN tanpa JOIN statement menghasilkan hasil kosong?",
+        a: [
+            "Jika tidak ada nilai yang cocok pada kolom relasi",
+            "Jika tabel tidak memiliki primary key",
+            "Jika jumlah kolom berbeda",
+            "Jika tabel tidak memiliki data sama sekali"
+        ],
+        correct: 0,
+        pembahasan: "Jika tidak ada nilai yang cocok pada kolom relasi, hasil JOIN menjadi kosong."
+    },
+    {
+        q: "Tujuan utama penggunaan JOIN adalah?",
+        a: [
+            "Mengambil data yang relevan dari beberapa tabel secara bersamaan",
+            "Menghapus duplikat data",
+            "Mengubah tipe data kolom",
+            "Menambahkan indeks baru"
+        ],
+        correct: 0,
+        pembahasan: "JOIN memungkinkan pengambilan data dari beberapa tabel sekaligus berdasarkan hubungan antar kolom."
+    }
+];
+
+function shuffleArray(arr) {
+    const array = [...arr];
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function renderQuiz() {
+    const quizContainer = document.getElementById("quiz");
+    quizContainer.innerHTML = "";
+
+    randomizedQuiz = shuffleArray(quizData).map(item => ({
+        ...item,
+        shuffledAnswers: shuffleArray(item.a.map((text, idx) => ({
+            text,
+            isCorrect: idx === item.correct
+        })))
+    }));
+
+    randomizedQuiz.forEach((item, i) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        let html = `<h4>${i + 1}. ${item.q}</h4>`;
+        if (item.img) html += `<img src="${item.img}" class="soal-img"/>`;
+        if (item.code) html += `<pre><code class="language-js">${item.code}</code></pre>`;
+
+        html += item.shuffledAnswers.map((ans, idx) => `
+      <label>
+        <input type="radio" name="q${i}" value="${idx}">
+        ${String.fromCharCode(65 + idx)}. ${ans.text}
+      </label>
+    `).join("");
+
+        div.innerHTML = html;
+        quizContainer.appendChild(div);
+    });
+
+    hljs.highlightAll();
+    updateSubmitState();
+    document.querySelectorAll("input[type='radio']").forEach(input =>
+        input.addEventListener("change", updateSubmitState)
+    );
+
+    // Set timer dinamis: 1 menit per soal
+    startTimer(randomizedQuiz.length * 60);
+}
+
+function updateSubmitState() {
+    const total = randomizedQuiz.length;
+    let answered = 0;
+    for (let i = 0; i < total; i++) {
+        if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+    }
+    document.getElementById("submitQuiz").disabled = answered !== total;
+}
+
+function startTimer(seconds) {
+    clearInterval(timerInterval);
+    timeRemaining = seconds;
+    updateTimerDisplay();
+
+    timerInterval = setInterval(() => {
+        timeRemaining--;
+        updateTimerDisplay();
+
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            alert("⏰ Waktu habis! Jawaban akan dikirim otomatis.");
+            submitQuiz();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const timer = document.getElementById("timer");
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    timer.textContent = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    // Reset class warna
+    timer.classList.remove("warning", "danger");
+
+    // Ganti warna jika waktu hampir habis
+    if (timeRemaining <= 60) {
+        timer.classList.add("danger"); // merah
+    } else if (timeRemaining <= 180) {
+        timer.classList.add("warning"); // oranye
+    }
+}
+
+document.getElementById("submitQuiz").addEventListener("click", () => submitQuiz());
+
+function submitQuiz() {
+    clearInterval(timerInterval);
+
+    let benar = 0;
+    let feedback = "";
+
+    randomizedQuiz.forEach((item, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : null;
+        const correctAns = item.shuffledAnswers.find(a => a.isCorrect);
+        const yourAns = selected ? item.shuffledAnswers[selectedIndex] : null;
+        const isCorrect = yourAns && yourAns.isCorrect;
+        if (isCorrect) benar++;
+
+        feedback += `
+      <div class="feedback-item ${isCorrect ? 'benar' : 'salah'}">
+        <h4>${i + 1}. ${item.q}</h4>
+        ${item.img ? `<img src="${item.img}" class="soal-img"/>` : ""}
+        ${item.code ? `<pre><code class="language-js">${item.code}</code></pre>` : ""}
+        <p><b>Jawaban kamu:</b> ${yourAns ? yourAns.text : "Tidak dijawab"}</p>
+        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${correctAns.text}</span></p>
+        <button class="btn-pembahasan" onclick="togglePembahasan(this)">👁️ Lihat Pembahasan</button>
+        <div class="pembahasan"><b>Pembahasan:</b> ${item.pembahasan}</div>
+      </div>
+    `;
+    });
+
+    const total = randomizedQuiz.length;
+    const nilai = Math.round((benar / total) * 100);
+
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("submitQuiz").style.display = "none";
+    document.getElementById("ulangQuiz").style.display = "block";
+    document.getElementById("timer").textContent = "⏱️ Selesai";
+
+    document.getElementById("result").innerHTML = `
+    <div class="result-box">
+      <h3>🎯 Nilai Kamu: ${nilai}</h3>
+      <p>Benar: ${benar} / ${total}</p>
+      <button id="lihatPembahasan" style="margin-top:15px;">📘 Lihat Hasil & Pembahasan</button>
+    </div>
+  `;
+
+    const pembahasanDiv = document.getElementById("hasilPembahasan");
+    pembahasanDiv.innerHTML = `<h3>Hasil & Pembahasan:</h3>${feedback}`;
+
+    document.getElementById("lihatPembahasan").addEventListener("click", () => {
+        pembahasanDiv.style.display = "block";
+        document.getElementById("lihatPembahasan").style.display = "none";
+    });
+}
+
+
+function togglePembahasan(btn) {
+    const pembahasan = btn.nextElementSibling;
+    const visible = pembahasan.style.display === "block";
+    pembahasan.style.display = visible ? "none" : "block";
+    btn.textContent = visible ? "👁️ Lihat Pembahasan" : "🙈 Sembunyikan Pembahasan";
+}
+
+document.getElementById("ulangQuiz").addEventListener("click", () => {
+    document.getElementById("quiz").style.display = "block";
+    document.getElementById("submitQuiz").style.display = "block";
+    document.getElementById("ulangQuiz").style.display = "none";
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("hasilPembahasan").innerHTML = "";
+    document.getElementById("hasilPembahasan").style.display = "none";
+    renderQuiz();
+});
+
+// === DARK MODE TOGGLE ===
+const toggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+}
+
+toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+renderQuiz();
+const backToDashboard = document.querySelector('.btn-back');
+if (backToDashboard) {
+    backToDashboard.addEventListener('click', (e) => {
+        e.preventDefault(); // cegah efek JS lain
+        window.location.href = '../../index.html';
+    });
+}
+
+// === FITUR ANTI-NYONTEK ===
+// ======================== 🔒 FITUR ANTI-NYONTEK ULTRA KETAT ========================
+
+// Blok aksi copy/paste/klik kanan/drag
+['contextmenu', 'copy', 'cut', 'paste', 'selectstart', 'dragstart'].forEach(evt => {
+    document.addEventListener(evt, e => e.preventDefault());
+});
+
+// Cegah shortcut mencurigakan
+document.addEventListener('keydown', e => {
+    const blocked = ['F12', 'Escape', 'PrintScreen'];
+    if (
+        blocked.includes(e.key) ||
+        (e.ctrlKey && ['u', 's', 'c', 'x', 'a', 'p', '+', '-', '=', 'r', 't', 'n'].includes(e.key.toLowerCase())) ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+        (e.metaKey && e.key.toLowerCase() === 'p')
+    ) {
+        e.preventDefault();
+        autoEndExam("Shortcut mencurigakan digunakan");
+    }
+});
+
+// 🧩 Deteksi Print Screen (PrtSc/SysRq)
+document.addEventListener('keyup', e => {
+    if (e.key === 'PrintScreen' || e.keyCode === 44) {
+        autoEndExam("Percobaan mengambil screenshot terdeteksi");
+    }
+});
+
+// 🧩 Deteksi clipboard (indikasi screenshot)
+setInterval(() => {
+    navigator.clipboard?.readText?.().then(text => {
+        if (text && text.length > 50 && text.includes("data:image")) {
+            autoEndExam("Screenshot ke clipboard terdeteksi");
+        }
+    }).catch(() => { });
+}, 3000);
+
+// Deteksi keluar tab/minimize
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) autoEndExam("Kamu meninggalkan tab ujian");
+});
+
+// Deteksi fokus/tab baru
+let lastFocusTime = Date.now();
+window.addEventListener("focus", () => {
+    const now = Date.now();
+    if (now - lastFocusTime > 1500) {
+        autoEndExam("Terindikasi membuka tab lain");
+    }
+});
+window.addEventListener("blur", () => {
+    lastFocusTime = Date.now();
+});
+
+// Wajib fullscreen
+function openFullscreen() {
+    const el = document.documentElement;
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+}
+window.addEventListener("load", openFullscreen);
+document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) autoEndExam("Keluar dari mode fullscreen");
+});
+
+// Cegah zoom Ctrl+scroll
+document.addEventListener('wheel', e => {
+    if (e.ctrlKey) e.preventDefault();
+}, { passive: false });
+
+// Disable drag/seleksi
+document.body.style.userSelect = 'none';
+document.body.style.webkitUserSelect = 'none';
+document.body.style.msUserSelect = 'none';
+document.querySelectorAll('*').forEach(el => el.setAttribute('draggable', 'false'));
+
+// Cegah klik kanan
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Deteksi Developer Tools
+setInterval(() => {
+    const start = performance.now();
+    debugger;
+    const delay = performance.now() - start;
+    if (delay > 100) autoEndExam("Developer Tools terdeteksi terbuka");
+}, 1000);
+
+// === Auto End Exam ===
+function autoEndExam(reason) {
+    alert(`❌ Ujian dihentikan karena: ${reason}`);
+    try {
+        submitQuiz();
+    } catch (err) {
+        console.warn("Submit gagal otomatis:", err);
+    }
+    document.exitFullscreen?.();
+    document.body.innerHTML = `
+        <div style="text-align:center;margin-top:120px;font-family:sans-serif;">
+            <h1 style="color:red;">🚫 Ujian Dihentikan</h1>
+            <h3>Alasan: ${reason}</h3>
+            <p>Jawaban kamu sudah otomatis disimpan dan ujian dinyatakan selesai.</p>
+        </div>
+    `;
+}
