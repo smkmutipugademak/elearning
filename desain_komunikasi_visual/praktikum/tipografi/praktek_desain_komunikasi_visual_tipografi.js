@@ -1,0 +1,483 @@
+let randomizedQuiz = [];
+let timerInterval;
+let timeRemaining = 0;
+
+const quizData = [
+    // =================== LEVEL DASAR (BASIC) ===================
+    {
+        q: "Apa yang dimaksud dengan tipografi?",
+        a: ["Seni mengatur huruf dan teks", "Seni menggambar objek", "Teknik mencetak kertas", "Proses mengedit video"],
+        correct: 0,
+        pembahasan: "Tipografi adalah seni dan teknik mengatur huruf agar teks mudah dibaca dan menarik."
+    },
+    {
+        q: "Huruf kapital disebut juga...",
+        a: ["Uppercase", "Lowercase", "Body text", "Kerning"],
+        correct: 0,
+        pembahasan: "Uppercase adalah huruf kapital."
+    },
+    {
+        q: "Huruf kecil disebut...",
+        a: ["Lowercase", "Uppercase", "Display font", "Kerning"],
+        correct: 0,
+        pembahasan: "Lowercase adalah huruf kecil dalam tipografi."
+    },
+    {
+        q: "Font yang memiliki kait pada ujung huruf disebut...",
+        a: ["Serif", "Sans Serif", "Script", "Display"],
+        correct: 0,
+        pembahasan: "Serif memiliki garis kecil (kait) pada ujung huruf."
+    },
+    {
+        q: "Font tanpa kait pada ujung huruf adalah...",
+        a: ["Sans Serif", "Serif", "Script", "Blackletter"],
+        correct: 0,
+        pembahasan: "Sans Serif tidak memiliki serif (kait)."
+    },
+    {
+        q: "Jarak antar huruf disebut...",
+        a: ["Kerning", "Leading", "Tracking", "Spacing"],
+        correct: 0,
+        pembahasan: "Kerning adalah jarak antar huruf secara spesifik."
+    },
+    {
+        q: "Jarak antar baris teks disebut...",
+        a: ["Leading", "Kerning", "Weight", "Tracking"],
+        correct: 0,
+        pembahasan: "Leading adalah jarak vertikal antar baris."
+    },
+    {
+        q: "Jarak antar kelompok huruf dalam satu kata disebut...",
+        a: ["Tracking", "Kerning", "Leading", "Spacing"],
+        correct: 0,
+        pembahasan: "Tracking mengatur jarak huruf secara keseluruhan."
+    },
+    {
+        q: "Teks yang rata kiri dan kanan disebut...",
+        a: ["Justify", "Align Left", "Align Right", "Center"],
+        correct: 0,
+        pembahasan: "Justify membuat teks rata kiri dan kanan."
+    },
+    {
+        q: "Jenis huruf Script memiliki ciri...",
+        a: ["Seperti tulisan tangan", "Berkait tajam", "Kotak dan tebal", "Font teknis"],
+        correct: 0,
+        pembahasan: "Script menyerupai tulisan tangan yang mengalir."
+    },
+
+    // =================== LEVEL MENENGAH (MEDIUM) ===================
+    {
+        q: "Kontras dalam tipografi berfungsi untuk...",
+        a: ["Membedakan elemen agar mudah dibaca", "Membuat warna lebih terang", "Mengatur layout", "Memberi efek bayangan"],
+        correct: 0,
+        pembahasan: "Kontras memudahkan pembaca membedakan elemen."
+    },
+    {
+        q: "Weight pada font menunjukkan...",
+        a: ["Ketebalan huruf", "Jarak baris", "Ukuran huruf", "Lebar huruf"],
+        correct: 0,
+        pembahasan: "Weight adalah tingkat ketebalan font."
+    },
+    {
+        q: "Jenis huruf monospace memiliki ciri...",
+        a: ["Setiap huruf memiliki lebar yang sama", "Huruf miring", "Seperti tulisan tangan", "Jumlah serif lebih banyak"],
+        correct: 0,
+        pembahasan: "Monospace memiliki lebar huruf yang seragam."
+    },
+    {
+        q: "Tujuan utama tipografi adalah...",
+        a: ["Meningkatkan keterbacaan dan estetika", "Memberi efek 3D", "Mengatur ukuran file", "Mengatur transparansi"],
+        correct: 0,
+        pembahasan: "Tipografi mengatur teks agar mudah dibaca dan menarik."
+    },
+    {
+        q: "Hierarchy dalam tipografi membantu...",
+        a: ["Menunjukkan tingkat pentingnya informasi", "Menambah warna", "Memperbesar file", "Mengatur resolusi"],
+        correct: 0,
+        pembahasan: "Hierarchy membantu pembaca mengetahui informasi paling penting."
+    },
+    {
+        q: "Font Display biasanya digunakan untuk...",
+        a: ["Judul besar", "Isi paragraf panjang", "Catatan kaki", "Kode program"],
+        correct: 0,
+        pembahasan: "Display dipakai untuk headline, bukan paragraf panjang."
+    },
+    {
+        q: "Alignment yang umum digunakan pada paragraf adalah...",
+        a: ["Left Align", "Right Align", "Center", "Outline"],
+        correct: 0,
+        pembahasan: "Left Align paling sering digunakan untuk paragraf."
+    },
+    {
+        q: "Legibility dalam tipografi berarti...",
+        a: ["Kemudahan mengenali bentuk huruf", "Kerapihan layout", "Tekstur halaman", "Kesesuaian warna"],
+        correct: 0,
+        pembahasan: "Legibility menyangkut seberapa mudah huruf dikenali."
+    },
+    {
+        q: "Readability adalah...",
+        a: ["Kemudahan membaca teks panjang", "Pemilihan warna terbaik", "Mengedit bentuk huruf", "Menggabungkan paragraf"],
+        correct: 0,
+        pembahasan: "Readability tentang seberapa nyaman membaca teks yang panjang."
+    },
+    {
+        q: "Font pairing berarti...",
+        a: ["Menggabungkan dua font yang serasi", "Menyalin font", "Membuat font baru", "Mendownload font"],
+        correct: 0,
+        pembahasan: "Font pairing adalah teknik mencocokkan dua jenis font."
+    },
+
+    // =================== LEVEL LANJUT (ADVANCED) ===================
+    {
+        q: "Optical kerning berarti...",
+        a: ["Pengaturan jarak huruf otomatis berdasarkan bentuk huruf", "Pengaturan manual jarak baris", "Mengubah tebal tipis huruf", "Menentukan proporsi huruf"],
+        correct: 0,
+        pembahasan: "Optical kerning menghitung jarak berdasarkan bentuk huruf."
+    },
+    {
+        q: "Tracking yang terlalu lebar dapat menyebabkan...",
+        a: ["Teks sulit dibaca", "Huruf menjadi tebal", "Teks semakin gelap", "Kontras menurun"],
+        correct: 0,
+        pembahasan: "Tracking yang terlalu besar membuat pembaca kehilangan fokus."
+    },
+    {
+        q: "Leading yang terlalu kecil menyebabkan...",
+        a: ["Teks terlihat sempit dan sulit dibaca", "Teks terlalu panjang", "Font menjadi tebal", "Jumlah karakter berkurang"],
+        correct: 0,
+        pembahasan: "Leading kecil membuat baris teks saling berhimpitan."
+    },
+    {
+        q: "X-height pada font adalah...",
+        a: ["Tinggi huruf kecil seperti 'x'", "Tinggi huruf kapital", "Jarak huruf", "Ketebalan huruf"],
+        correct: 0,
+        pembahasan: "X-height adalah tinggi huruf kecil tanpa ascender/descender."
+    },
+    {
+        q: "Ascender adalah...",
+        a: ["Bagian huruf kecil yang naik di atas x-height", "Bagian huruf yang turun ke bawah", "Huruf kapital", "Huruf condong ke kanan"],
+        correct: 0,
+        pembahasan: "Ascender ada pada huruf seperti b, d, h."
+    },
+    {
+        q: "Descender adalah...",
+        a: ["Bagian huruf kecil yang turun di bawah baseline", "Bagian huruf kapital", "Huruf dekoratif", "Huruf tebal"],
+        correct: 0,
+        pembahasan: "Contohnya pada huruf g, p, q."
+    },
+    {
+        q: "Overshoot pada huruf berarti...",
+        a: ["Huruf melampaui garis untuk terlihat optis seimbang", "Huruf terlalu besar", "Tracking berlebihan", "Huruf terlalu tipis"],
+        correct: 0,
+        pembahasan: "Overshoot membuat bentuk melengkung tampak seimbang secara visual."
+    },
+    {
+        q: "Proses memilih kombinasi font disebut...",
+        a: ["Font pairing", "Font editing", "Font mapping", "Font baselineing"],
+        correct: 0,
+        pembahasan: "Font pairing penting untuk menciptakan harmoni visual."
+    },
+    {
+        q: "Font variable (Variable Font) memungkinkan...",
+        a: ["Perubahan weight, width, dan style dalam satu file font", "Huruf berubah warna otomatis", "Font menjadi animasi", "Font hanya untuk judul"],
+        correct: 0,
+        pembahasan: "Variable font lebih fleksibel dan hemat ukuran file."
+    },
+    {
+        q: "Grid tipografi digunakan untuk...",
+        a: ["Menata layout teks agar rapi dan konsisten", "Mengatur ukuran gambar", "Membuat efek", "Mengubah warna teks"],
+        correct: 0,
+        pembahasan: "Grid memudahkan penataan layout yang rapi."
+    }
+];
+
+
+
+function shuffleArray(arr) {
+    const array = [...arr];
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
+function renderQuiz() {
+    const quizContainer = document.getElementById("quiz");
+    quizContainer.innerHTML = "";
+
+    randomizedQuiz = shuffleArray(quizData).map(item => ({
+        ...item,
+        shuffledAnswers: shuffleArray(item.a.map((text, idx) => ({
+            text,
+            isCorrect: idx === item.correct
+        })))
+    }));
+
+    randomizedQuiz.forEach((item, i) => {
+        const div = document.createElement("div");
+        div.className = "question";
+
+        let html = `<h4>${i + 1}. ${item.q}</h4>`;
+        if (item.img) html += `<img src="${item.img}" class="soal-img"/>`;
+        if (item.code) html += `<pre><code class="language-js">${item.code}</code></pre>`;
+
+        html += item.shuffledAnswers.map((ans, idx) => `
+      <label>
+        <input type="radio" name="q${i}" value="${idx}">
+        ${String.fromCharCode(65 + idx)}. ${ans.text}
+      </label>
+    `).join("");
+
+        div.innerHTML = html;
+        quizContainer.appendChild(div);
+    });
+
+    hljs.highlightAll();
+    updateSubmitState();
+    document.querySelectorAll("input[type='radio']").forEach(input =>
+        input.addEventListener("change", updateSubmitState)
+    );
+
+    // Set timer dinamis: 1 menit per soal
+    startTimer(randomizedQuiz.length * 60);
+}
+
+function updateSubmitState() {
+    const total = randomizedQuiz.length;
+    let answered = 0;
+    for (let i = 0; i < total; i++) {
+        if (document.querySelector(`input[name="q${i}"]:checked`)) answered++;
+    }
+    document.getElementById("submitQuiz").disabled = answered !== total;
+}
+
+function startTimer(seconds) {
+    clearInterval(timerInterval);
+    timeRemaining = seconds;
+    updateTimerDisplay();
+
+    timerInterval = setInterval(() => {
+        timeRemaining--;
+        updateTimerDisplay();
+
+        if (timeRemaining <= 0) {
+            clearInterval(timerInterval);
+            alert("⏰ Waktu habis! Jawaban akan dikirim otomatis.");
+            submitQuiz();
+        }
+    }, 1000);
+}
+
+function updateTimerDisplay() {
+    const timer = document.getElementById("timer");
+    const minutes = Math.floor(timeRemaining / 60);
+    const seconds = timeRemaining % 60;
+    timer.textContent = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+    // Reset class warna
+    timer.classList.remove("warning", "danger");
+
+    // Ganti warna jika waktu hampir habis
+    if (timeRemaining <= 60) {
+        timer.classList.add("danger"); // merah
+    } else if (timeRemaining <= 180) {
+        timer.classList.add("warning"); // oranye
+    }
+}
+
+document.getElementById("submitQuiz").addEventListener("click", () => submitQuiz());
+
+function submitQuiz() {
+    clearInterval(timerInterval);
+
+    let benar = 0;
+    let feedback = "";
+
+    randomizedQuiz.forEach((item, i) => {
+        const selected = document.querySelector(`input[name="q${i}"]:checked`);
+        const selectedIndex = selected ? Number(selected.value) : null;
+        const correctAns = item.shuffledAnswers.find(a => a.isCorrect);
+        const yourAns = selected ? item.shuffledAnswers[selectedIndex] : null;
+        const isCorrect = yourAns && yourAns.isCorrect;
+        if (isCorrect) benar++;
+
+        feedback += `
+      <div class="feedback-item ${isCorrect ? 'benar' : 'salah'}">
+        <h4>${i + 1}. ${item.q}</h4>
+        ${item.img ? `<img src="${item.img}" class="soal-img"/>` : ""}
+        ${item.code ? `<pre><code class="language-js">${item.code}</code></pre>` : ""}
+        <p><b>Jawaban kamu:</b> ${yourAns ? yourAns.text : "Tidak dijawab"}</p>
+        <p><b>Jawaban benar:</b> <span class="jawaban-benar">${correctAns.text}</span></p>
+        <button class="btn-pembahasan" onclick="togglePembahasan(this)">👁️ Lihat Pembahasan</button>
+        <div class="pembahasan"><b>Pembahasan:</b> ${item.pembahasan}</div>
+      </div>
+    `;
+    });
+
+    const total = randomizedQuiz.length;
+    const nilai = Math.round((benar / total) * 100);
+
+    document.getElementById("quiz").style.display = "none";
+    document.getElementById("submitQuiz").style.display = "none";
+    document.getElementById("ulangQuiz").style.display = "block";
+    document.getElementById("timer").textContent = "⏱️ Selesai";
+
+    document.getElementById("result").innerHTML = `
+    <div class="result-box">
+      <h3>🎯 Nilai Kamu: ${nilai}</h3>
+      <p>Benar: ${benar} / ${total}</p>
+      <button id="lihatPembahasan" style="margin-top:15px;">📘 Lihat Hasil & Pembahasan</button>
+    </div>
+  `;
+
+    const pembahasanDiv = document.getElementById("hasilPembahasan");
+    pembahasanDiv.innerHTML = `<h3>Hasil & Pembahasan:</h3>${feedback}`;
+
+    document.getElementById("lihatPembahasan").addEventListener("click", () => {
+        pembahasanDiv.style.display = "block";
+        document.getElementById("lihatPembahasan").style.display = "none";
+    });
+}
+
+
+function togglePembahasan(btn) {
+    const pembahasan = btn.nextElementSibling;
+    const visible = pembahasan.style.display === "block";
+    pembahasan.style.display = visible ? "none" : "block";
+    btn.textContent = visible ? "👁️ Lihat Pembahasan" : "🙈 Sembunyikan Pembahasan";
+}
+
+document.getElementById("ulangQuiz").addEventListener("click", () => {
+    document.getElementById("quiz").style.display = "block";
+    document.getElementById("submitQuiz").style.display = "block";
+    document.getElementById("ulangQuiz").style.display = "none";
+    document.getElementById("result").innerHTML = "";
+    document.getElementById("hasilPembahasan").innerHTML = "";
+    document.getElementById("hasilPembahasan").style.display = "none";
+    renderQuiz();
+});
+
+// === DARK MODE TOGGLE ===
+const toggle = document.getElementById('darkModeToggle');
+const body = document.body;
+
+if (localStorage.getItem('theme') === 'dark') {
+    body.classList.add('dark');
+    toggle.textContent = '☀️';
+}
+
+toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    const isDark = body.classList.contains('dark');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+renderQuiz();
+
+// === FITUR ANTI-NYONTEK ===
+// ======================== 🔒 FITUR ANTI-NYONTEK ULTRA KETAT ========================
+
+// Blok aksi copy/paste/klik kanan/drag
+['contextmenu', 'copy', 'cut', 'paste', 'selectstart', 'dragstart'].forEach(evt => {
+    document.addEventListener(evt, e => e.preventDefault());
+});
+
+// Cegah shortcut mencurigakan
+document.addEventListener('keydown', e => {
+    const blocked = ['F12', 'Escape', 'PrintScreen'];
+    if (
+        blocked.includes(e.key) ||
+        (e.ctrlKey && ['u', 's', 'c', 'x', 'a', 'p', '+', '-', '=', 'r', 't', 'n'].includes(e.key.toLowerCase())) ||
+        (e.ctrlKey && e.shiftKey && ['i', 'j', 'c'].includes(e.key.toLowerCase())) ||
+        (e.metaKey && e.key.toLowerCase() === 'p')
+    ) {
+        e.preventDefault();
+        autoEndExam("Shortcut mencurigakan digunakan");
+    }
+});
+
+// 🧩 Deteksi Print Screen (PrtSc/SysRq)
+document.addEventListener('keyup', e => {
+    if (e.key === 'PrintScreen' || e.keyCode === 44) {
+        autoEndExam("Percobaan mengambil screenshot terdeteksi");
+    }
+});
+
+// 🧩 Deteksi clipboard (indikasi screenshot)
+setInterval(() => {
+    navigator.clipboard?.readText?.().then(text => {
+        if (text && text.length > 50 && text.includes("data:image")) {
+            autoEndExam("Screenshot ke clipboard terdeteksi");
+        }
+    }).catch(() => { });
+}, 3000);
+
+// Deteksi keluar tab/minimize
+document.addEventListener("visibilitychange", () => {
+    if (document.hidden) autoEndExam("Kamu meninggalkan tab ujian");
+});
+
+// Deteksi fokus/tab baru
+let lastFocusTime = Date.now();
+window.addEventListener("focus", () => {
+    const now = Date.now();
+    if (now - lastFocusTime > 1500) {
+        autoEndExam("Terindikasi membuka tab lain");
+    }
+});
+window.addEventListener("blur", () => {
+    lastFocusTime = Date.now();
+});
+
+// Wajib fullscreen
+function openFullscreen() {
+    const el = document.documentElement;
+    if (el.requestFullscreen) el.requestFullscreen();
+    else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+    else if (el.mozRequestFullScreen) el.mozRequestFullScreen();
+    else if (el.msRequestFullscreen) el.msRequestFullscreen();
+}
+window.addEventListener("load", openFullscreen);
+document.addEventListener("fullscreenchange", () => {
+    if (!document.fullscreenElement) autoEndExam("Keluar dari mode fullscreen");
+});
+
+// Cegah zoom Ctrl+scroll
+document.addEventListener('wheel', e => {
+    if (e.ctrlKey) e.preventDefault();
+}, { passive: false });
+
+// Disable drag/seleksi
+document.body.style.userSelect = 'none';
+document.body.style.webkitUserSelect = 'none';
+document.body.style.msUserSelect = 'none';
+document.querySelectorAll('*').forEach(el => el.setAttribute('draggable', 'false'));
+
+// Cegah klik kanan
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Deteksi Developer Tools
+setInterval(() => {
+    const start = performance.now();
+    debugger;
+    const delay = performance.now() - start;
+    if (delay > 100) autoEndExam("Developer Tools terdeteksi terbuka");
+}, 1000);
+
+// === Auto End Exam ===
+function autoEndExam(reason) {
+    alert(`❌ Ujian dihentikan karena: ${reason}`);
+    try {
+        submitQuiz();
+    } catch (err) {
+        console.warn("Submit gagal otomatis:", err);
+    }
+    document.exitFullscreen?.();
+    document.body.innerHTML = `
+        <div style="text-align:center;margin-top:120px;font-family:sans-serif;">
+            <h1 style="color:red;">🚫 Ujian Dihentikan</h1>
+            <h3>Alasan: ${reason}</h3>
+            <p>Jawaban kamu sudah otomatis disimpan dan ujian dinyatakan selesai.</p>
+        </div>
+    `;
+}
