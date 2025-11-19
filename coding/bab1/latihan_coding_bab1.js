@@ -132,8 +132,8 @@ const quizData = [
     {
         q: "Tabel siswa pada contoh memiliki field berikut, kecuali?",
         a: ["Nim", "Nama", "Wali", "Alamat", "KodeDosen"],
-        correct: 3,
-        pembahasan: "Tabel siswa berisi Nim, Nama, dan Wali — tidak memiliki kolom Alamat."
+        correct: 4,
+        pembahasan: "Tabel siswa berisi Nim, Nama, dan Wali — tidak memiliki kolom Kode Dosen."
     },
     {
         q: "Tabel wali memiliki field berikut, kecuali?",
