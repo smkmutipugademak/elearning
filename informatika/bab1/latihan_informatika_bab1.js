@@ -4,11 +4,11 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa pengertian informatika?",
+        q: "Ilmu yang mempelajari pengolahan informasi secara sistematis disebut …",
         a: [
             "Ilmu tentang mesin dan teknologi",
             "Ilmu tentang komputer dan perangkat keras",
-            "Ilmu yang mempelajari pengolahan informasi secara sistematis",
+            "Informatika",
             "Teknologi untuk hiburan",
             "Ilmu yang mempelajari perilaku manusia"
         ],
@@ -16,351 +16,303 @@ const quizData = [
         pembahasan: "Informatika adalah ilmu yang mempelajari bagaimana informasi diolah, dikelola, dan disampaikan secara sistematis."
     },
     {
-        q: "Apa tujuan utama informatika dalam kehidupan?",
+        q: "Penggunaan informatika dalam kehidupan bertujuan untuk …",
         a: [
-            "Untuk membuat hiburan",
-            "Untuk menyimpan data saja",
-            "Untuk membantu pengambilan keputusan berdasarkan data",
-            "Untuk menciptakan mesin otomatis",
-            "Untuk memproduksi perangkat keras"
+            "Membuat hiburan",
+            "Menyimpan data saja",
+            "Mendukung pengambilan keputusan berdasarkan data",
+            "Menciptakan mesin otomatis",
+            "Memproduksi perangkat keras"
         ],
         correct: 2,
         pembahasan: "Informatika digunakan untuk mengolah data sehingga menjadi informasi yang membantu pengambilan keputusan."
     },
     {
-        q: "Apa yang dimaksud dengan sistem informasi?",
+        q: "Sistem yang mengelola, memproses, dan menyajikan data untuk mendukung kegiatan organisasi disebut …",
         a: [
-            "Sistem untuk menyimpan informasi",
-            "Sistem untuk mengelola, memproses, dan menyajikan data",
-            "Sistem untuk mendistribusikan perangkat keras",
-            "Sistem untuk hiburan digital",
-            "Sistem keamanan komputer"
+            "Sistem penyimpanan informasi",
+            "Sistem informasi",
+            "Sistem distribusi perangkat keras",
+            "Sistem hiburan digital",
+            "Sistem keamanan data"
         ],
         correct: 1,
         pembahasan: "Sistem informasi adalah kumpulan komponen yang bekerja sama untuk memproses dan menyajikan data."
     },
     {
-        q: "Apa yang dimaksud dengan infografik?",
+        q: "Penyajian informasi atau data dalam bentuk visual yang menarik dan mudah dipahami disebut …",
         a: [
-            "Informasi dalam bentuk teks",
-            "Data yang dicetak di media",
-            "Informasi yang disajikan dalam bentuk visual",
-            "Informasi digital yang sulit diakses",
+            "Informasi berbasis teks",
+            "Data cetak",
+            "Infografik",
+            "Informasi digital terbatas",
             "Informasi berbasis audio"
         ],
         correct: 2,
-        pembahasan: "Infografik adalah cara menyajikan informasi atau data dalam bentuk visual yang menarik dan mudah dipahami."
+        pembahasan: "Infografik menyajikan informasi secara visual sehingga mudah dipahami."
     },
     {
-        q: "Apa manfaat utama dari infografik?",
+        q: "Penggunaan infografik terutama bermanfaat untuk …",
         a: [
             "Mempermudah membaca teks panjang",
             "Meningkatkan pemahaman melalui visualisasi",
             "Meningkatkan kemampuan membaca data",
             "Menyulitkan akses data",
-            "Membatasi akses ke data"
+            "Membatasi akses informasi"
         ],
         correct: 1,
-        pembahasan: "Infografik digunakan untuk menyampaikan informasi secara visual sehingga lebih mudah dipahami."
+        pembahasan: "Infografik menyampaikan informasi secara visual sehingga lebih mudah dipahami."
     },
     {
-        q: "Apa fungsi utama dari teknologi cloud computing?",
+        q: "Teknologi yang memungkinkan penyimpanan dan akses data melalui internet adalah …",
         a: [
-            "Menyimpan data secara fisik",
-            "Mengakses dan menyimpan data melalui internet",
-            "Mempercepat pemrosesan perangkat keras",
-            "Membantu dalam penulisan program",
-            "Mengamankan perangkat keras"
+            "Penyimpanan fisik",
+            "Cloud computing",
+            "Pemrosesan perangkat keras",
+            "Teknologi pemrograman",
+            "Enkripsi perangkat"
         ],
         correct: 1,
         pembahasan: "Cloud computing memungkinkan pengguna menyimpan dan mengakses data secara daring tanpa perangkat penyimpanan fisik."
     },
     {
-        q: "Apa yang dimaksud dengan algoritma?",
+        q: "Serangkaian langkah logis yang digunakan untuk memecahkan masalah secara sistematis disebut …",
         a: [
-            "Proses pengolahan data",
-            "Serangkaian langkah logis untuk memecahkan masalah",
-            "Perangkat keras untuk komputer",
-            "Informasi yang sudah diproses",
-            "Kode program untuk desain"
+            "Pemrosesan data",
+            "Algoritma",
+            "Perangkat keras komputer",
+            "Informasi terolah",
+            "Kode desain"
         ],
         correct: 1,
-        pembahasan: "Algoritma adalah langkah-langkah logis yang digunakan untuk menyelesaikan masalah secara sistematis."
+        pembahasan: "Algoritma adalah langkah-langkah logis untuk menyelesaikan masalah."
     },
     {
-        q: "Apa yang menjadi tujuan utama dari big data?",
+        q: "Teknologi yang memproses dan menyimpan kumpulan data berukuran besar secara efisien disebut …",
         a: [
-            "Untuk memvisualisasikan data kecil",
-            "Untuk menyimpan data besar dan memprosesnya",
-            "Untuk menghancurkan data",
-            "Untuk mengurangi jumlah data",
-            "Untuk menghasilkan grafik otomatis"
+            "Visualisasi data",
+            "Big data",
+            "Penghancuran data",
+            "Reduksi data",
+            "Grafik otomatis"
         ],
         correct: 1,
-        pembahasan: "Big data adalah teknologi yang memungkinkan pengolahan data berukuran besar secara efisien."
+        pembahasan: "Big data memungkinkan pengelolaan data dalam jumlah besar."
     },
     {
-        q: "Apa yang dimaksud dengan user interface?",
+        q: "Bagian dari sistem yang menjadi penghubung antara pengguna dan perangkat lunak disebut …",
         a: [
-            "Desain perangkat keras",
-            "Antarmuka antara pengguna dan sistem",
-            "Sistem penyimpanan data",
-            "Aplikasi pengolahan data",
-            "Tampilan visual komputer"
+            "Perangkat keras",
+            "Antarmuka pengguna (User Interface)",
+            "Sistem penyimpanan",
+            "Aplikasi data",
+            "Visual tampilan komputer"
         ],
         correct: 1,
-        pembahasan: "User interface adalah bagian dari sistem yang menjadi jembatan antara pengguna dengan perangkat lunak."
+        pembahasan: "User interface adalah jembatan interaksi antara pengguna dan sistem."
     },
     {
-        q: "Apa manfaat dari kolaborasi dalam informatika?",
+        q: "Bekerja bersama dalam sebuah tim untuk mencapai tujuan bersama dalam informatika disebut …",
         a: [
-            "Mempermudah pekerjaan dalam tim",
-            "Memecahkan masalah individu",
-            "Membantu kerja individu",
-            "Meningkatkan efisiensi perangkat keras",
-            "Mengurangi penggunaan perangkat lunak"
+            "Kolaborasi",
+            "Pemecahan masalah individu",
+            "Kerja mandiri",
+            "Optimasi perangkat keras",
+            "Pengurangan perangkat lunak"
         ],
         correct: 0,
-        pembahasan: "Kolaborasi memungkinkan anggota tim bekerja bersama secara efisien untuk mencapai tujuan bersama."
-    },
-    {
-        q: "Apa yang dimaksud dengan data mining?",
+        pembahasan: "Kolaborasi memungkinkan kerja tim lebih efisien dalam pengembangan teknologi."
+    }, {
+        q: "Proses menganalisis kumpulan data besar untuk menemukan pola dan informasi penting disebut …",
         a: [
-            "Pengumpulan data dalam format kecil",
-            "Proses menganalisis data besar untuk menemukan pola dan informasi",
-            "Penyimpanan data dalam cloud",
-            "Pemusnahan data yang tidak berguna",
-            "Penulisan data baru secara otomatis"
+            "Pengumpulan data kecil",
+            "Data mining",
+            "Penyimpanan data cloud",
+            "Penghapusan data",
+            "Pembuatan data otomatis"
         ],
         correct: 1,
-        pembahasan: "Data mining adalah proses mencari pola dan informasi penting dari kumpulan data besar."
+        pembahasan: "Data mining adalah proses menemukan pola dari kumpulan data dalam jumlah besar."
     },
     {
-        q: "Apa yang menjadi keunggulan teknologi digital?",
+        q: "Teknologi digital membantu kehidupan modern terutama dalam hal …",
         a: [
             "Mengurangi informasi",
             "Mempercepat komunikasi dan akses informasi",
-            "Meningkatkan ketergantungan pada teknologi",
-            "Menghapus kebutuhan manual",
-            "Menciptakan data yang tidak akurat"
+            "Menambah ketergantungan teknologi",
+            "Menghapus pekerjaan manual",
+            "Menciptakan data tidak akurat"
         ],
         correct: 1,
-        pembahasan: "Teknologi digital membantu meningkatkan efisiensi dan akses informasi secara cepat."
+        pembahasan: "Teknologi digital meningkatkan efisiensi komunikasi dan akses informasi."
     },
     {
-        q: "Apa tujuan utama dari pendidikan informatika?",
+        q: "Pendidikan informatika bertujuan untuk …",
         a: [
-            "Membuat perangkat keras baru",
-            "Memahami dan mengelola informasi secara efektif",
+            "Membuat perangkat keras",
+            "Mengelola dan memahami informasi secara efektif",
             "Meningkatkan konsumsi teknologi",
             "Mengurangi penggunaan data",
-            "Mengembangkan permainan digital"
+            "Menghasilkan lebih banyak game"
         ],
         correct: 1,
-        pembahasan: "Pendidikan informatika bertujuan untuk memberikan pemahaman tentang pengolahan, pengelolaan, dan penyampaian informasi secara efisien."
+        pembahasan: "Pendidikan informatika fokus pada pemahaman pengolahan dan pengelolaan informasi."
     },
     {
-        q: "Apa yang dimaksud dengan teknologi kecerdasan buatan (AI)?",
+        q: "Teknologi yang meniru cara manusia berpikir dalam menyelesaikan tugas secara cerdas adalah …",
         a: [
-            "Teknologi yang menggantikan manusia",
-            "Teknologi yang dirancang untuk melakukan tugas manusia secara cerdas",
-            "Sistem yang hanya menyimpan data",
-            "Alat untuk menyimpan informasi manual",
-            "Teknologi yang tidak membutuhkan perangkat keras"
+            "Pengganti manusia sepenuhnya",
+            "Kecerdasan buatan (AI)",
+            "Sistem penyimpanan data",
+            "Alat pencatat informasi manual",
+            "Teknologi tanpa perangkat keras"
         ],
         correct: 1,
-        pembahasan: "AI adalah teknologi yang dirancang untuk meniru kemampuan manusia dalam menyelesaikan masalah secara cerdas."
+        pembahasan: "AI menirukan cara manusia menyelesaikan tugas secara cerdas."
     },
     {
-        q: "Apa peran utama dari teknologi IoT (Internet of Things)?",
+        q: "Teknologi yang menghubungkan berbagai perangkat untuk saling berbagi data melalui internet disebut …",
         a: [
-            "Menghubungkan perangkat melalui internet untuk berbagi data",
-            "Menghapus data yang tidak diperlukan",
-            "Menyediakan perangkat keras baru",
-            "Mengurangi biaya perangkat lunak",
-            "Membatasi akses internet"
+            "Internet of Things (IoT)",
+            "Penghapusan data",
+            "Distribusi perangkat keras",
+            "Pengurangan biaya jaringan",
+            "Pemblokiran akses internet"
         ],
         correct: 0,
-        pembahasan: "IoT memungkinkan perangkat saling terhubung dan berbagi data melalui internet untuk meningkatkan efisiensi."
+        pembahasan: "IoT menghubungkan perangkat agar dapat berkomunikasi dan berbagi data."
     },
     {
-        q: "Apa fungsi utama dari program perangkat lunak?",
+        q: "Perangkat lunak pada komputer berfungsi untuk …",
         a: [
-            "Untuk mendesain perangkat keras",
-            "Untuk menjalankan fungsi spesifik di komputer",
-            "Untuk menyimpan informasi",
-            "Untuk menciptakan jaringan internet",
-            "Untuk mengontrol perangkat fisik"
+            "Mendesain perangkat keras",
+            "Menjalankan fungsi spesifik pada komputer",
+            "Menyimpan informasi manual",
+            "Menciptakan jaringan internet",
+            "Mengontrol arus listrik"
         ],
         correct: 1,
-        pembahasan: "Perangkat lunak dirancang untuk menjalankan tugas tertentu pada perangkat komputer."
+        pembahasan: "Software dirancang menjalankan tugas tertentu pada perangkat."
     },
     {
-        q: "Apa manfaat dari presentasi digital?",
+        q: "Presentasi digital digunakan untuk …",
         a: [
-            "Mempercepat komunikasi dengan visualisasi",
+            "Menyampaikan informasi secara visual kepada audiens",
             "Mengurangi penggunaan teknologi",
-            "Meningkatkan ketergantungan pada komputer",
+            "Menghapus data lama",
             "Membatasi kreativitas",
-            "Menghapus kebutuhan akan data"
+            "Menyimpan informasi manual"
         ],
         correct: 0,
-        pembahasan: "Presentasi digital membantu menyampaikan informasi dengan visualisasi yang menarik sehingga lebih mudah dipahami."
+        pembahasan: "Presentasi digital membantu menyampaikan informasi dengan visualisasi yang menarik."
     },
     {
-        q: "Apa yang dimaksud dengan istilah 'template' dalam desain grafis?",
+        q: "Format dasar desain yang dapat digunakan kembali dan dimodifikasi sesuai kebutuhan disebut …",
         a: [
-            "Struktur dasar desain yang dapat disesuaikan",
-            "Alat untuk menyimpan data",
-            "Proses mencetak data secara otomatis",
-            "Perangkat keras untuk komputer",
-            "Sistem pengelolaan data manual"
+            "Template",
+            "Penyimpanan data",
+            "Pencetakan otomatis",
+            "Perangkat lunak dasar",
+            "Sistem manual"
         ],
         correct: 0,
-        pembahasan: "Template adalah format dasar yang dapat digunakan untuk mempercepat proses desain."
+        pembahasan: "Template mempercepat proses pembuatan desain."
     },
     {
-        q: "Apa peran utama dari teknologi pengolahan data?",
+        q: "Teknologi pengolahan data membantu …",
         a: [
-            "Membuat informasi menjadi lebih terorganisir",
-            "Mengurangi data yang tidak perlu",
+            "Mengorganisasi informasi agar lebih terstruktur",
+            "Mengurangi data tidak perlu",
+            "Menyimpan data manual",
             "Membatasi penggunaan informasi",
-            "Menyimpan data secara manual",
-            "Membuat desain perangkat keras"
+            "Membuat perangkat keras"
         ],
         correct: 0,
-        pembahasan: "Teknologi pengolahan data membantu menyusun dan menyajikan data dengan cara yang lebih terstruktur."
+        pembahasan: "Pengolahan data membantu menyajikan informasi secara terorganisir."
     },
     {
-        q: "Apa tujuan dari analisis data?",
+        q: "Analisis data dilakukan untuk …",
         a: [
             "Meningkatkan penjualan produk",
-            "Menyediakan wawasan untuk pengambilan keputusan",
+            "Memberikan wawasan bagi pengambilan keputusan",
             "Mengurangi kebutuhan teknologi",
-            "Menghilangkan data lama",
+            "Menghapus data lama",
             "Membatasi akses informasi"
         ],
         correct: 1,
-        pembahasan: "Analisis data bertujuan untuk memberikan informasi yang bermanfaat dalam pengambilan keputusan."
+        pembahasan: "Analisis data memberikan informasi penting untuk keputusan yang tepat."
     },
     {
-        q: "Apa yang dimaksud dengan sistem operasi?",
+        q: "Perangkat lunak yang mengatur fungsi dasar komputer dan mengelola perangkat keras disebut …",
         a: [
             "Perangkat keras komputer",
-            "Perangkat lunak yang mengelola fungsi dasar komputer",
-            "Alat untuk menyimpan data",
-            "Teknologi untuk mendesain perangkat",
-            "Aplikasi untuk hiburan digital"
+            "Sistem operasi",
+            "Penyimpanan data",
+            "Perangkat desain",
+            "Aplikasi hiburan"
         ],
         correct: 1,
-        pembahasan: "Sistem operasi adalah perangkat lunak yang mengatur dan mengelola fungsi dasar perangkat komputer."
+        pembahasan: "Sistem operasi mengelola fungsi dasar komputer."
     },
     {
-        q: "Apa manfaat utama dari teknologi keamanan data?",
+        q: "Teknologi keamanan data digunakan untuk …",
         a: [
             "Melindungi informasi dari akses tidak sah",
             "Membatasi penggunaan data",
-            "Menghapus informasi yang lama",
+            "Menghapus data lama",
             "Menyimpan data di perangkat keras",
-            "Membuat salinan data"
+            "Menggandakan informasi"
         ],
         correct: 0,
-        pembahasan: "Teknologi keamanan data digunakan untuk melindungi informasi dari potensi ancaman dan akses yang tidak sah."
+        pembahasan: "Keamanan data menjaga informasi dari ancaman dan penyalahgunaan."
     },
     {
-        q: "Apa itu 'user interface' dalam konteks komputer?",
+        q: "Antarmuka visual yang menjadi media interaksi pengguna dengan perangkat lunak disebut …",
         a: [
-            "Sistem operasi yang tidak terlihat",
-            "Antarmuka pengguna untuk berinteraksi dengan perangkat lunak",
-            "Program untuk desain visual",
-            "Perangkat keras untuk komputer",
-            "Data yang disimpan di cloud"
+            "Sistem operasi tersembunyi",
+            "User interface",
+            "Program visual",
+            "Perangkat keras",
+            "Data cloud"
         ],
         correct: 1,
-        pembahasan: "User interface adalah antarmuka visual yang memungkinkan pengguna berinteraksi dengan perangkat lunak."
+        pembahasan: "UI adalah antarmuka interaksi antara pengguna dan sistem."
     },
     {
-        q: "Apa yang dimaksud dengan istilah 'cloud computing'?",
+        q: "Teknologi penyimpanan dan akses data melalui internet tanpa ruang penyimpanan fisik disebut …",
         a: [
-            "Teknologi penyimpanan data di perangkat keras",
-            "Teknologi penyimpanan data melalui internet",
-            "Sistem penyimpanan data manual",
-            "Aplikasi untuk membuat infografik",
-            "Sistem keamanan perangkat"
+            "Penyimpanan perangkat",
+            "Cloud computing",
+            "Sistem manual",
+            "Aplikasi desain grafis",
+            "Keamanan perangkat"
         ],
         correct: 1,
-        pembahasan: "Cloud computing adalah teknologi penyimpanan dan akses data melalui internet tanpa perangkat keras fisik."
+        pembahasan: "Cloud memungkinkan akses data secara online."
     },
     {
-        q: "Apa yang dimaksud dengan desain grafis?",
+        q: "Pembuatan visual yang menarik untuk menyampaikan informasi secara efektif disebut …",
         a: [
-            "Proses mencetak dokumen",
-            "Proses menciptakan visual yang menarik",
-            "Teknologi untuk menyimpan informasi",
-            "Alat untuk menciptakan data manual",
-            "Perangkat keras untuk komputer"
+            "Pencetakan dokumen",
+            "Desain grafis",
+            "Penyimpanan informasi",
+            "Pengolahan data manual",
+            "Pembuatan perangkat keras"
         ],
         correct: 1,
-        pembahasan: "Desain grafis adalah proses menciptakan visual yang menarik untuk menyampaikan informasi secara efektif."
+        pembahasan: "Desain grafis membuat visual yang efektif untuk komunikasi."
     },
     {
-        q: "Apa manfaat utama dari teknologi infografik?",
+        q: "Infografik terutama digunakan untuk …",
         a: [
             "Meningkatkan konsumsi data",
             "Menyampaikan informasi secara visual dan mudah dipahami",
             "Menghapus data lama",
-            "Membuat data menjadi tidak terbaca",
+            "Membuat data tidak terbaca",
             "Menyimpan data manual"
         ],
         correct: 1,
-        pembahasan: "Infografik digunakan untuk menyampaikan informasi dengan visualisasi menarik sehingga lebih mudah dipahami."
-    },
-    {
-        q: "Apa yang dimaksud dengan proses 'komputasi'?",
-        a: [
-            "Penyimpanan data di perangkat keras",
-            "Proses pengolahan data secara otomatis dengan komputer",
-            "Menghapus data yang tidak diperlukan",
-            "Desain perangkat lunak baru",
-            "Membatasi akses internet"
-        ],
-        correct: 1,
-        pembahasan: "Komputasi adalah proses otomatisasi pengolahan data dengan bantuan komputer untuk meningkatkan efisiensi."
-    },
-    {
-        q: "Apa tujuan dari teknologi jaringan komputer?",
-        a: [
-            "Meningkatkan keamanan data",
-            "Menghubungkan beberapa perangkat untuk berbagi data",
-            "Membuat perangkat keras baru",
-            "Menyimpan data secara manual",
-            "Menghapus informasi lama"
-        ],
-        correct: 1,
-        pembahasan: "Teknologi jaringan komputer bertujuan untuk menghubungkan perangkat yang berbeda sehingga memungkinkan berbagi data dan informasi."
-    },
-    {
-        q: "Apa itu 'programming' dalam informatika?",
-        a: [
-            "Proses mendesain perangkat keras",
-            "Proses menulis dan mengembangkan kode untuk aplikasi atau perangkat lunak",
-            "Proses penyimpanan data manual",
-            "Proses mencetak dokumen secara otomatis",
-            "Teknologi untuk membuat infografik"
-        ],
-        correct: 1,
-        pembahasan: "Programming adalah proses menulis, menguji, dan mengembangkan kode yang digunakan dalam perangkat lunak dan aplikasi komputer."
-    },
-    {
-        q: "Apa fungsi utama dari perangkat lunak 'presentasi digital'?",
-        a: [
-            "Menyimpan informasi manual",
-            "Membuat visualisasi informasi untuk disajikan kepada audiens",
-            "Mengurangi penggunaan perangkat keras",
-            "Membatasi akses data",
-            "Menghapus informasi lama"
-        ],
-        correct: 1,
-        pembahasan: "Perangkat lunak presentasi digital dirancang untuk membantu pengguna membuat dan menyajikan informasi secara visual dengan cara yang lebih menarik dan efektif."
+        pembahasan: "Infografik menyampaikan data agar lebih cepat dipahami."
     }
 ];
+
