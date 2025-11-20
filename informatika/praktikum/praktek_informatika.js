@@ -57,39 +57,39 @@ function updateSubmitState() {
     document.getElementById("submitQuiz").disabled = answered !== total;
 }
 
-function startTimer(seconds) {
-    clearInterval(timerInterval);
-    timeRemaining = seconds;
-    updateTimerDisplay();
+// function startTimer(seconds) {
+//     clearInterval(timerInterval);
+//     timeRemaining = seconds;
+//     updateTimerDisplay();
 
-    timerInterval = setInterval(() => {
-        timeRemaining--;
-        updateTimerDisplay();
+//     timerInterval = setInterval(() => {
+//         timeRemaining--;
+//         updateTimerDisplay();
 
-        if (timeRemaining <= 0) {
-            clearInterval(timerInterval);
-            alert("⏰ Waktu habis! Jawaban akan dikirim otomatis.");
-            submitQuiz();
-        }
-    }, 1000);
-}
+//         if (timeRemaining <= 0) {
+//             clearInterval(timerInterval);
+//             alert("⏰ Waktu habis! Jawaban akan dikirim otomatis.");
+//             submitQuiz();
+//         }
+//     }, 1000);
+// }
 
-function updateTimerDisplay() {
-    const timer = document.getElementById("timer");
-    const minutes = Math.floor(timeRemaining / 60);
-    const seconds = timeRemaining % 60;
-    timer.textContent = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+// function updateTimerDisplay() {
+//     const timer = document.getElementById("timer");
+//     const minutes = Math.floor(timeRemaining / 60);
+//     const seconds = timeRemaining % 60;
+//     timer.textContent = `⏱️ ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 
-    // Reset class warna
-    timer.classList.remove("warning", "danger");
+//     // Reset class warna
+//     timer.classList.remove("warning", "danger");
 
-    // Ganti warna jika waktu hampir habis
-    if (timeRemaining <= 60) {
-        timer.classList.add("danger"); // merah
-    } else if (timeRemaining <= 180) {
-        timer.classList.add("warning"); // oranye
-    }
-}
+//     // Ganti warna jika waktu hampir habis
+//     if (timeRemaining <= 60) {
+//         timer.classList.add("danger"); // merah
+//     } else if (timeRemaining <= 180) {
+//         timer.classList.add("warning"); // oranye
+//     }
+// }
 
 document.getElementById("submitQuiz").addEventListener("click", () => submitQuiz());
 
