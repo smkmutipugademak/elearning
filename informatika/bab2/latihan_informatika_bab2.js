@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa yang dimaksud dengan berpikir komputasional?",
+        q: "Apa yang dimaksud dengan berpikir komputasional adalah ………",
         a: [
             "Berpikir abstrak untuk menyelesaikan masalah",
             "Berpikir logis dengan menggunakan komputer",
@@ -16,13 +16,13 @@ const quizData = [
         pembahasan: "Berpikir komputasional adalah proses sistematis untuk menyelesaikan masalah dengan pendekatan logis dan analitis."
     },
     {
-        q: "Langkah pertama dalam berpikir komputasional adalah:",
+        q: "Langkah pertama dalam berpikir komputasional adalah ………",
         a: ["Validasi data", "Abstraksi", "Evaluasi hasil", "Menentukan masalah", "Pengorganisasian data"],
         correct: 3,
         pembahasan: "Langkah pertama adalah mengenali dan mendefinisikan masalah."
     },
     {
-        q: "Apa fungsi utama dari algoritma dalam berpikir komputasional?",
+        q: "Fungsi utama dari algoritma dalam berpikir komputasional adalah ………",
         a: [
             "Membuat sistem kerja lebih rumit",
             "Menyederhanakan proses penyelesaian masalah",
@@ -34,7 +34,7 @@ const quizData = [
         pembahasan: "Algoritma menyederhanakan dan mengefisienkan langkah penyelesaian masalah."
     },
     {
-        q: "Istilah 'Abstraksi' dalam berpikir komputasional merujuk pada:",
+        q: "Istilah 'Abstraksi' dalam berpikir komputasional merujuk pada ………",
         a: [
             "Menyelesaikan masalah kecil terlebih dahulu",
             "Memfokuskan pada hal-hal penting",
@@ -46,13 +46,13 @@ const quizData = [
         pembahasan: "Abstraksi adalah memfokuskan perhatian pada elemen penting dari masalah."
     },
     {
-        q: "Salah satu algoritma sorting yang efisien untuk data yang tidak terlalu besar adalah:",
+        q: "Salah satu algoritma sorting yang efisien untuk data tidak terlalu besar adalah ………",
         a: ["Merge Sort", "Bubble Sort", "Quick Sort", "Selection Sort", "Binary Sort"],
         correct: 1,
         pembahasan: "Bubble sort cocok untuk dataset kecil meskipun kurang efisien untuk data besar."
     },
     {
-        q: "Apa prinsip utama dari algoritma 'Quick Sort'?",
+        q: "Prinsip utama dari algoritma 'Quick Sort' adalah ………",
         a: [
             "Membagi data menjadi dua bagian berdasarkan pivot",
             "Menyusun data dari yang terkecil hingga terbesar",
@@ -64,19 +64,19 @@ const quizData = [
         pembahasan: "Quick Sort menggunakan pivot untuk membagi data menjadi dua bagian."
     },
     {
-        q: "Struktur data 'Stack' bekerja berdasarkan prinsip:",
+        q: "Struktur data 'Stack' bekerja berdasarkan prinsip ………",
         a: ["FIFO", "LIFO", "Sorting prioritas", "Mencari elemen terkecil", "Menyimpan data terurut"],
         correct: 1,
         pembahasan: "Stack bekerja dengan prinsip LIFO."
     },
     {
-        q: "Struktur data 'Queue' bekerja berdasarkan prinsip:",
+        q: "Struktur data 'Queue' bekerja berdasarkan prinsip ………",
         a: ["LIFO", "FIFO", "Sorting ukuran", "Menyimpan paralel", "Membagi kelompok"],
         correct: 1,
         pembahasan: "Queue bekerja dengan prinsip FIFO."
     },
     {
-        q: "Apa fungsi utama dari mesin pencari (search engine)?",
+        q: "Fungsi utama dari mesin pencari (search engine) adalah ………",
         a: [
             "Membuka website otomatis",
             "Menyimpan data pengguna",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Mesin pencari membantu pengguna menemukan informasi dengan kata kunci."
     },
     {
-        q: "Proses 'Indexing' dalam mesin pencari bertujuan untuk:",
+        q: "Proses 'Indexing' dalam mesin pencari bertujuan untuk ………",
         a: [
             "Membuat daftar prioritas",
             "Mengorganisasi data terstruktur",
@@ -100,13 +100,13 @@ const quizData = [
         pembahasan: "Indexing menyimpan konten website agar mudah ditemukan."
     },
     {
-        q: "Tahap 'Crawling' pada mesin pencari melibatkan:",
+        q: "Tahap 'Crawling' pada mesin pencari melibatkan ………",
         a: ["Pengumpulan data dari website", "Pemberian peringkat", "Penentuan relevansi", "Penyimpanan data", "Penyaringan informasi"],
         correct: 0,
         pembahasan: "Crawling mengumpulkan data dari berbagai website."
     },
     {
-        q: "Evaluasi informasi digital melibatkan:",
+        q: "Evaluasi informasi digital melibatkan ………",
         a: [
             "Memeriksa akurasi informasi",
             "Menentukan relevansi berdasarkan popularitas",
@@ -118,7 +118,7 @@ const quizData = [
         pembahasan: "Evaluasi informasi digital berfokus pada akurasi dan kredibilitas sumber."
     },
     {
-        q: "Langkah pertama mencegah penyebaran hoaks adalah:",
+        q: "Langkah pertama mencegah penyebaran hoaks adalah ………",
         a: [
             "Melaporkan berita",
             "Membaca berita terpercaya",
@@ -130,7 +130,7 @@ const quizData = [
         pembahasan: "Memeriksa judul membantu mengenali berita palsu."
     },
     {
-        q: "Dalam berpikir komputasional, 'Decomposition' berarti:",
+        q: "Dalam berpikir komputasional, 'Decomposition' berarti ………",
         a: [
             "Membagi masalah menjadi bagian kecil",
             "Menggunakan data untuk prediksi",
@@ -142,7 +142,7 @@ const quizData = [
         pembahasan: "Decomposition memecah masalah besar menjadi bagian kecil."
     },
     {
-        q: "Apa yang dimaksud dengan Binary Searching?",
+        q: "Binary Searching adalah metode untuk ………",
         a: [
             "Mencari data tak terstruktur",
             "Membagi dataset menjadi dua",
@@ -154,7 +154,7 @@ const quizData = [
         pembahasan: "Binary Search mencari dengan membagi dataset menjadi dua."
     },
     {
-        q: "Fungsi utama 'Ranking' dalam mesin pencari adalah:",
+        q: "Fungsi utama 'Ranking' dalam mesin pencari adalah ………",
         a: [
             "Prioritas berdasarkan popularitas",
             "Mengelompokkan data",
@@ -166,7 +166,7 @@ const quizData = [
         pembahasan: "Ranking mengurutkan hasil pencarian berdasarkan relevansi."
     },
     {
-        q: "Konsep 'Greedy Algorithm' digunakan untuk:",
+        q: "Konsep 'Greedy Algorithm' digunakan untuk ………",
         a: [
             "Memilih solusi optimal di setiap langkah",
             "Membagi masalah menjadi bagian kecil",
@@ -178,19 +178,19 @@ const quizData = [
         pembahasan: "Greedy Algorithm memilih solusi terbaik di setiap langkah."
     },
     {
-        q: "Metode sorting yang menggabungkan dua list terurut adalah:",
+        q: "Metode sorting yang menggabungkan dua list terurut adalah ………",
         a: ["Merge Sort", "Quick Sort", "Bubble Sort", "Selection Sort", "Binary Sort"],
         correct: 0,
         pembahasan: "Merge Sort menggabungkan dua list terurut menjadi satu."
     },
     {
-        q: "Operasi untuk menambahkan elemen pada Stack adalah:",
+        q: "Operasi untuk menambahkan elemen pada Stack adalah ………",
         a: ["Push", "Pop", "Enqueue", "Dequeue", "Insert"],
         correct: 0,
         pembahasan: "Push menambahkan elemen ke atas stack."
     },
     {
-        q: "Operasi 'Dequeue' pada Queue berarti:",
+        q: "Operasi 'Dequeue' pada Queue berarti ………",
         a: [
             "Menambahkan elemen",
             "Menghapus elemen depan",
@@ -202,7 +202,7 @@ const quizData = [
         pembahasan: "Dequeue menghapus elemen bagian depan."
     },
     {
-        q: "Tujuan utama berpikir komputasional adalah:",
+        q: "Tujuan utama berpikir komputasional adalah ………",
         a: [
             "Menghafal data",
             "Menciptakan solusi inovatif secara logis",
@@ -214,7 +214,7 @@ const quizData = [
         pembahasan: "Berpikir komputasional menciptakan solusi logis dan inovatif."
     },
     {
-        q: "Proses abstraksi bertujuan untuk:",
+        q: "Proses abstraksi bertujuan untuk ………",
         a: [
             "Memvalidasi data",
             "Menyelesaikan semua data sekaligus",
@@ -226,7 +226,7 @@ const quizData = [
         pembahasan: "Abstraksi menyaring informasi dan fokus pada hal penting."
     },
     {
-        q: "Mengapa algoritma penting?",
+        q: "Mengapa algoritma penting ………",
         a: [
             "Mempermudah implementasi solusi",
             "Memakan lebih banyak waktu",
@@ -238,7 +238,7 @@ const quizData = [
         pembahasan: "Algoritma membantu mempermudah penyelesaian masalah."
     },
     {
-        q: "Prinsip struktur data Queue adalah:",
+        q: "Prinsip struktur data Queue adalah ………",
         a: [
             "Pertama masuk terakhir keluar",
             "Terakhir masuk terakhir keluar",
@@ -250,7 +250,7 @@ const quizData = [
         pembahasan: "Queue menggunakan prinsip FIFO."
     },
     {
-        q: "Binary Search hanya dapat diterapkan pada:",
+        q: "Binary Search hanya dapat diterapkan pada ………",
         a: [
             "Data string",
             "Data tidak terurut",
@@ -262,7 +262,7 @@ const quizData = [
         pembahasan: "Binary Search hanya efektif pada data yang telah diurutkan."
     },
     {
-        q: "Tahap 'Crawling' dalam mesin pencari dilakukan untuk:",
+        q: "Tahap 'Crawling' dalam mesin pencari dilakukan untuk ………",
         a: [
             "Mengurutkan data",
             "Mengindeks konten",
@@ -274,7 +274,7 @@ const quizData = [
         pembahasan: "Crawling mengumpulkan data dari internet."
     },
     {
-        q: "Validasi data dilakukan untuk:",
+        q: "Validasi data dilakukan untuk ………",
         a: [
             "Membuat data mudah diakses",
             "Memastikan data sesuai format",
@@ -286,7 +286,7 @@ const quizData = [
         pembahasan: "Validasi memastikan input sesuai format."
     },
     {
-        q: "Proses Ranking dalam mesin pencari digunakan untuk:",
+        q: "Proses Ranking dalam mesin pencari digunakan untuk ………",
         a: [
             "Mengurutkan hasil berdasarkan relevansi",
             "Menyaring informasi wilayah",
@@ -298,13 +298,13 @@ const quizData = [
         pembahasan: "Ranking mengurutkan hasil pencarian menurut relevansi."
     },
     {
-        q: "Operasi 'Push' dalam stack digunakan untuk:",
+        q: "Operasi 'Push' dalam stack digunakan untuk ………",
         a: ["Menghapus elemen", "Menambah elemen", "Mengambil elemen bawah", "Mengurutkan", "Menyalin"],
         correct: 1,
         pembahasan: "Push menambahkan elemen ke stack."
     },
     {
-        q: "Manfaat utama validasi data adalah:",
+        q: "Manfaat utama validasi data adalah ………",
         a: [
             "Mengurangi risiko kesalahan input",
             "Mempercepat pengolahan data",
@@ -316,7 +316,7 @@ const quizData = [
         pembahasan: "Validasi mengurangi risiko kesalahan."
     },
     {
-        q: "Decomposition bertujuan untuk:",
+        q: "Decomposition bertujuan untuk ………",
         a: [
             "Membuat masalah rumit",
             "Membagi masalah besar",
@@ -328,13 +328,13 @@ const quizData = [
         pembahasan: "Decomposition memecah masalah besar menjadi bagian kecil."
     },
     {
-        q: "Tahap terakhir dalam berpikir komputasional adalah:",
+        q: "Tahap terakhir dalam berpikir komputasional adalah ………",
         a: ["Abstraksi", "Validasi", "Pengumpulan data", "Evaluasi solusi", "Perancangan algoritma"],
         correct: 3,
         pembahasan: "Tahap terakhir adalah evaluasi solusi."
     },
     {
-        q: "Quick Sort menggunakan metode:",
+        q: "Quick Sort menggunakan metode ………",
         a: [
             "Penyusunan elemen",
             "Pembagian data memakai pivot",
@@ -346,7 +346,7 @@ const quizData = [
         pembahasan: "Quick Sort membagi data menggunakan pivot."
     },
     {
-        q: "Proses Lookup membantu untuk:",
+        q: "Proses Lookup membantu untuk ………",
         a: [
             "Menemukan data khusus di database",
             "Mengurutkan data",
@@ -358,7 +358,7 @@ const quizData = [
         pembahasan: "Lookup mencari data spesifik dalam database."
     },
     {
-        q: "Manfaat utama abstraksi adalah:",
+        q: "Manfaat utama abstraksi adalah ………",
         a: [
             "Mengurangi informasi yang tidak relevan",
             "Menambah data",
@@ -370,4 +370,5 @@ const quizData = [
         pembahasan: "Abstraksi memfokuskan informasi penting."
     }
 ];
+
 
