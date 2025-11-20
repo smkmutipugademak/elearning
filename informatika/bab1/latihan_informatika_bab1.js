@@ -313,6 +313,53 @@ const quizData = [
         ],
         correct: 1,
         pembahasan: "Infografik menyampaikan data agar lebih cepat dipahami."
-    }
+    },{
+    q: "Proses menemukan dan memperbaiki kesalahan dalam kode program disebut …",
+    a: [
+        "Coding ulang",
+        "Debugging",
+        "Penyimpanan data",
+        "Optimasi perangkat keras",
+        "Desain antarmuka"
+    ],
+    correct: 1,
+    pembahasan: "Debugging adalah proses mencari dan memperbaiki error (bug) dalam kode program."
+},
+{
+    q: "Teknologi yang memungkinkan perangkat saling berkomunikasi dan bertukar data melalui internet disebut …",
+    a: [
+        "Internet of Things",
+        "Komputasi manual",
+        "Visualisasi data",
+        "Jaringan internal tertutup",
+        "Pemrosesan teks"
+    ],
+    correct: 0,
+    pembahasan: "IoT menghubungkan perangkat agar dapat berkomunikasi melalui jaringan internet."
+},
+{
+    q: "Bahasa pemrograman yang berjalan pada browser dan digunakan untuk membuat halaman web interaktif adalah …",
+    a: [
+        "JavaScript",
+        "Python",
+        "SQL",
+        "C++",
+        "Java"
+    ],
+    correct: 0,
+    pembahasan: "JavaScript bekerja langsung di browser dan membuat website dinamis serta interaktif."
+},
+{
+    q: "Penyimpanan data jangka panjang pada komputer umumnya menggunakan media seperti …",
+    a: [
+        "RAM",
+        "Cache",
+        "Hard Disk",
+        "Register",
+        "CPU"
+    ],
+    correct: 2,
+    pembahasan: "Hard Disk berfungsi sebagai penyimpanan permanen untuk data dan aplikasi."
+}
 ];
 
