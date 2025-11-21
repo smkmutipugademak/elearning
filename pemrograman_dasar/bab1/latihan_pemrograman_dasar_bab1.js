@@ -1,0 +1,366 @@
+let randomizedQuiz = [];
+let timerInterval;
+let timeRemaining = 0;
+
+const quizData = [
+    {
+        q: "JavaScript adalah bahasa pemrograman yang digunakan terutama untuk...",
+        a: [
+            "Pengolahan basis data sisi server",
+            "Pemrograman sistem operasi",
+            "Pengembangan interaksi pada halaman web",
+            "Desain grafis dan animasi 3D",
+            "Pengembangan aplikasi desktop berbasis C++"
+        ],
+        correct: 2,
+        pembahasan: "JavaScript digunakan untuk membuat halaman web menjadi interaktif pada sisi client/browser."
+    },
+    {
+        q: "Perintah untuk menampilkan output ke konsol pada JavaScript adalah...",
+        a: [
+            "print()",
+            "console.print()",
+            "echo()",
+            "console.log()",
+            "document.write()"
+        ],
+        correct: 3,
+        pembahasan: "console.log() digunakan untuk debugging dengan menampilkan pesan ke konsol browser."
+    },
+    {
+        q: "Tipe data berikut yang merupakan tipe data primitif di JavaScript adalah...",
+        a: [
+            "Object, Array, Function",
+            "String, Boolean, Number",
+            "Form, DOM, Window",
+            "Thread, Process, Pointer",
+            "File, Stream, Task"
+        ],
+        correct: 1,
+        pembahasan: "Tipe data primitif: string, number, boolean, null, undefined, bigint, symbol."
+    },
+    {
+        q: "Kata kunci yang digunakan untuk mendeklarasikan variabel yang dapat diubah nilainya adalah...",
+        a: [
+            "static",
+            "val",
+            "const",
+            "let",
+            "define"
+        ],
+        correct: 3,
+        pembahasan: "let digunakan untuk variabel yang nilainya dapat berubah."
+    },
+    {
+        q: "Operator yang digunakan untuk pengecekan kesetaraan nilai sekaligus tipe data dalam JavaScript adalah...",
+        a: [
+            "==",
+            "=",
+            "===",
+            "<=>",
+            "!="
+        ],
+        correct: 2,
+        pembahasan: "=== membandingkan nilai dan tipe data secara strict."
+    },
+    {
+        q: "Fungsi di JavaScript dapat dibuat menggunakan kata kunci...",
+        a: [
+            "function",
+            "method",
+            "func",
+            "def",
+            "lambda"
+        ],
+        correct: 0,
+        pembahasan: "function digunakan untuk membuat fungsi standar di JavaScript."
+    },
+    {
+        q: "Dalam JavaScript, array ditandai dengan penggunaan tanda...",
+        a: [
+            "{}",
+            "()",
+            "[]",
+            "<>",
+            "||"
+        ],
+        correct: 2,
+        pembahasan: "Array menggunakan tanda kurung siku, contoh: let data = [1,2,3];"
+    },
+    {
+        q: "Nilai 'undefined' dalam JavaScript menunjukkan bahwa...",
+        a: [
+            "Variabel tidak ada",
+            "Variabel memiliki tipe data string kosong",
+            "Variabel belum memiliki nilai",
+            "Variabel bernilai null",
+            "Variabel tidak valid secara syntax"
+        ],
+        correct: 2,
+        pembahasan: "undefined berarti variabel ada tetapi belum diberi nilai."
+    },
+    {
+        q: "Method untuk menambah elemen ke akhir array adalah...",
+        a: [
+            "push()",
+            "add()",
+            "insert()",
+            "append()",
+            "extend()"
+        ],
+        correct: 0,
+        pembahasan: "push() menambahkan elemen ke akhir array."
+    },
+    {
+        q: "Statement yang digunakan untuk percabangan kondisi pada JavaScript adalah...",
+        a: [
+            "switch",
+            "case",
+            "if",
+            "ternary",
+            "Semua benar"
+        ],
+        correct: 4,
+        pembahasan: "JavaScript mendukung percabangan dengan if, switch, dan operator ternary."
+    },
+    {
+        q: "Loop yang biasa digunakan untuk iterasi array adalah...",
+        a: [
+            "while",
+            "for",
+            "for...of",
+            "foreach",
+            "repeat"
+        ],
+        correct: 2,
+        pembahasan: "for...of digunakan untuk looping nilai dalam array."
+    },
+    {
+        q: "DOM dalam JavaScript adalah singkatan dari...",
+        a: [
+            "Document Opacity Mode",
+            "Data Object Manager",
+            "Document Object Model",
+            "Data Oriented Method",
+            "Default Output Machine"
+        ],
+        correct: 2,
+        pembahasan: "DOM adalah antarmuka yang memungkinkan JavaScript memanipulasi elemen HTML."
+    },
+    {
+        q: "Perintah untuk mengambil elemen berdasarkan ID pada DOM adalah...",
+        a: [
+            "querySelector('#id')",
+            "getElementByTag('id')",
+            "select('#id')",
+            "fetchElement('id')",
+            "document.element('id')"
+        ],
+        correct: 0,
+        pembahasan: "querySelector dapat menyeleksi elemen menggunakan selector CSS."
+    },
+    {
+        q: "Event yang dipicu saat pengguna mengklik elemen adalah...",
+        a: [
+            "onhover",
+            "onpress",
+            "onclick",
+            "onload",
+            "onsubmit"
+        ],
+        correct: 2,
+        pembahasan: "onclick memicu fungsi saat elemen diklik."
+    },
+    {
+        q: "JSON digunakan dalam JavaScript untuk...",
+        a: [
+            "Mengatur gaya tampilan",
+            "Pertukaran data dalam format teks terstruktur",
+            "Menghias elemen CSS",
+            "Membuat animasi",
+            "Mengatur routing server"
+        ],
+        correct: 1,
+        pembahasan: "JSON adalah format data yang umum digunakan untuk pertukaran data."
+    },
+    {
+        q: "Method untuk mengubah objek menjadi string JSON adalah...",
+        a: [
+            "JSON.stringify()",
+            "JSON.parse()",
+            "toJSON()",
+            "encodeJSON()",
+            "objectToString()"
+        ],
+        correct: 0,
+        pembahasan: "stringify mengubah object menjadi string JSON."
+    },
+    {
+        q: "Keyword 'this' dalam JavaScript mengacu pada...",
+        a: [
+            "Variabel global",
+            "Objek yang sedang aktif",
+            "Objek kelas parent",
+            "Window selalu",
+            "Null secara default"
+        ],
+        correct: 1,
+        pembahasan: "this merujuk pada objek yang memanggil fungsi tersebut."
+    },
+    {
+        q: "Fitur yang memungkinkan function diperlakukan sebagai variabel disebut...",
+        a: [
+            "Functional Programming",
+            "First-class Function",
+            "Class-based Function",
+            "Linear Execution",
+            "Strict Mode"
+        ],
+        correct: 1,
+        pembahasan: "JavaScript memperlakukan fungsi sebagai first-class citizen."
+    },
+    {
+        q: "Sintaks arrow function ditulis menggunakan tanda...",
+        a: [
+            "=>",
+            "::",
+            "<>",
+            "->",
+            "::>"
+        ],
+        correct: 0,
+        pembahasan: "Arrow function menggunakan tanda =>."
+    },
+    {
+        q: "Callback function adalah...",
+        a: [
+            "Fungsi yang tidak mengembalikan nilai",
+            "Fungsi bawaan sistem",
+            "Fungsi yang dikirim sebagai argumen ke fungsi lain",
+            "Fungsi yang hanya berjalan di server",
+            "Fungsi yang tidak bisa diubah"
+        ],
+        correct: 2,
+        pembahasan: "Callback adalah fungsi yang dipanggil oleh fungsi lain."
+    },
+    {
+        q: "Sebuah block try-catch digunakan dalam JavaScript untuk...",
+        a: [
+            "Membuat objek",
+            "Menjalankan fungsi secara paralel",
+            "Menangani error runtime",
+            "Memformat data JSON",
+            "Membuat variabel"
+        ],
+        correct: 2,
+        pembahasan: "try-catch digunakan untuk menangani error saat eksekusi."
+    },
+    {
+        q: "Promise dalam JavaScript digunakan untuk...",
+        a: [
+            "Mengatur gaya teks",
+            "Menangani operasi asynchronous",
+            "Membuat objek kelas",
+            "Menghapus variabel",
+            "Membuat event click"
+        ],
+        correct: 1,
+        pembahasan: "Promise membantu menangani proses async seperti fetch API."
+    },
+    {
+        q: "Status *resolved* pada Promise berarti...",
+        a: [
+            "Sedang menunggu proses",
+            "Gagal dijalankan",
+            "Berhasil diselesaikan",
+            "Tidak pernah dieksekusi",
+            "Menjalankan fungsi ulang"
+        ],
+        correct: 2,
+        pembahasan: "Resolve berarti promise selesai dengan hasil sukses."
+    },
+    {
+        q: "Method bawaan untuk melakukan HTTP request di browser adalah...",
+        a: [
+            "fetch()",
+            "require()",
+            "connect()",
+            "ajax()",
+            "request()"
+        ],
+        correct: 0,
+        pembahasan: "fetch() digunakan untuk mengambil resource melalui HTTP."
+    },
+    {
+        q: "Keyword 'async' digunakan untuk...",
+        a: [
+            "Membuat fungsi berjalan sinkron",
+            "Menandai fungsi yang mengembalikan promise",
+            "Menghentikan perulangan",
+            "Mengubah tipe data",
+            "Mengambil elemen HTML"
+        ],
+        correct: 1,
+        pembahasan: "async membuat fungsi otomatis mengembalikan Promise."
+    },
+    {
+        q: "Perintah 'return' digunakan untuk...",
+        a: [
+            "Mengakhiri fungsi dan mengembalikan nilai",
+            "Mengulang fungsi",
+            "Menghapus variabel",
+            "Mengonversi data ke JSON",
+            "Memanggil fungsi callback"
+        ],
+        correct: 0,
+        pembahasan: "return mengakhiri eksekusi fungsi dan mengembalikan nilai."
+    },
+    {
+        q: "Method array yang digunakan untuk menghasilkan array baru tanpa mengubah array asli adalah...",
+        a: [
+            "push()",
+            "splice()",
+            "map()",
+            "sort()",
+            "pop()"
+        ],
+        correct: 2,
+        pembahasan: "map menghasilkan array baru tanpa mengubah data original."
+    },
+    {
+        q: "Metode yang digunakan untuk memulai eksekusi ketika halaman selesai dimuat adalah...",
+        a: [
+            "onload",
+            "onclick",
+            "onstart",
+            "onready",
+            "init()"
+        ],
+        correct: 0,
+        pembahasan: "onload dijalankan setelah halaman selesai dimuat."
+    },
+    {
+        q: "Variabel yang dideklarasikan dengan const berarti...",
+        a: [
+            "Nilai dapat berubah tetapi tipe tidak",
+            "Nilai tidak dapat diubah setelah dideklarasikan",
+            "Dapat digunakan sebelum deklarasi",
+            "Hanya berlaku di global scope",
+            "Tersedia hanya di strict mode"
+        ],
+        correct: 1,
+        pembahasan: "const bersifat immutable (nilai tetap)."
+    },
+    {
+        q: "Perintah JavaScript dapat ditempatkan di dalam HTML menggunakan tag...",
+        a: [
+            "<script>",
+            "<code>",
+            "<run>",
+            "<js>",
+            "<java>"
+        ],
+        correct: 0,
+        pembahasan: "JavaScript di-embed dalam HTML menggunakan tag <script>."
+    }
+];
