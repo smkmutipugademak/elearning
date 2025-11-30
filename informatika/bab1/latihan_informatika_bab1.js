@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Ilmu yang mempelajari pengolahan informasi secara sistematis disebut …",
+        q: "Ilmu yang mempelajari pengolahan informasi secara sistematis disebut ....",
         a: [
             "Ilmu tentang mesin dan teknologi",
             "Ilmu tentang komputer dan perangkat keras",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Informatika adalah ilmu yang mempelajari bagaimana informasi diolah, dikelola, dan disampaikan secara sistematis."
     },
     {
-        q: "Penggunaan informatika dalam kehidupan bertujuan untuk …",
+        q: "Penggunaan informatika dalam kehidupan bertujuan untuk ....",
         a: [
             "Membuat hiburan",
             "Menyimpan data saja",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "Informatika digunakan untuk mengolah data sehingga menjadi informasi yang membantu pengambilan keputusan."
     },
     {
-        q: "Sistem yang mengelola, memproses, dan menyajikan data untuk mendukung kegiatan organisasi disebut …",
+        q: "Sistem yang mengelola, memproses, dan menyajikan data untuk mendukung kegiatan organisasi disebut ....",
         a: [
             "Sistem penyimpanan informasi",
             "Sistem informasi",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Sistem informasi adalah kumpulan komponen yang bekerja sama untuk memproses dan menyajikan data."
     },
     {
-        q: "Penyajian informasi atau data dalam bentuk visual yang menarik dan mudah dipahami disebut …",
+        q: "Penyajian informasi atau data dalam bentuk visual yang menarik dan mudah dipahami disebut ....",
         a: [
             "Informasi berbasis teks",
             "Data cetak",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "Infografik menyajikan informasi secara visual sehingga mudah dipahami."
     },
     {
-        q: "Penggunaan infografik terutama bermanfaat untuk …",
+        q: "Penggunaan infografik terutama bermanfaat untuk ....",
         a: [
             "Mempermudah membaca teks panjang",
             "Meningkatkan pemahaman melalui visualisasi",
@@ -64,7 +64,7 @@ const quizData = [
         pembahasan: "Infografik menyampaikan informasi secara visual sehingga lebih mudah dipahami."
     },
     {
-        q: "Teknologi yang memungkinkan penyimpanan dan akses data melalui internet adalah …",
+        q: "Teknologi yang memungkinkan penyimpanan dan akses data melalui internet adalah ....",
         a: [
             "Penyimpanan fisik",
             "Cloud computing",
@@ -76,7 +76,7 @@ const quizData = [
         pembahasan: "Cloud computing memungkinkan pengguna menyimpan dan mengakses data secara daring tanpa perangkat penyimpanan fisik."
     },
     {
-        q: "Serangkaian langkah logis yang digunakan untuk memecahkan masalah secara sistematis disebut …",
+        q: "Serangkaian langkah logis yang digunakan untuk memecahkan masalah secara sistematis disebut ....",
         a: [
             "Pemrosesan data",
             "Algoritma",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Algoritma adalah langkah-langkah logis untuk menyelesaikan masalah."
     },
     {
-        q: "Teknologi yang memproses dan menyimpan kumpulan data berukuran besar secara efisien disebut …",
+        q: "Teknologi yang memproses dan menyimpan kumpulan data berukuran besar secara efisien disebut ....",
         a: [
             "Visualisasi data",
             "Big data",
@@ -100,7 +100,7 @@ const quizData = [
         pembahasan: "Big data memungkinkan pengelolaan data dalam jumlah besar."
     },
     {
-        q: "Bagian dari sistem yang menjadi penghubung antara pengguna dan perangkat lunak disebut …",
+        q: "Bagian dari sistem yang menjadi penghubung antara pengguna dan perangkat lunak disebut ....",
         a: [
             "Perangkat keras",
             "Antarmuka pengguna (User Interface)",
@@ -112,7 +112,7 @@ const quizData = [
         pembahasan: "User interface adalah jembatan interaksi antara pengguna dan sistem."
     },
     {
-        q: "Bekerja bersama dalam sebuah tim untuk mencapai tujuan bersama dalam informatika disebut …",
+        q: "Bekerja bersama dalam sebuah tim untuk mencapai tujuan bersama dalam informatika disebut ....",
         a: [
             "Kolaborasi",
             "Pemecahan masalah individu",
@@ -122,8 +122,9 @@ const quizData = [
         ],
         correct: 0,
         pembahasan: "Kolaborasi memungkinkan kerja tim lebih efisien dalam pengembangan teknologi."
-    }, {
-        q: "Proses menganalisis kumpulan data besar untuk menemukan pola dan informasi penting disebut …",
+    },
+    {
+        q: "Proses menganalisis kumpulan data besar untuk menemukan pola dan informasi penting disebut ....",
         a: [
             "Pengumpulan data kecil",
             "Data mining",
@@ -135,7 +136,7 @@ const quizData = [
         pembahasan: "Data mining adalah proses menemukan pola dari kumpulan data dalam jumlah besar."
     },
     {
-        q: "Teknologi digital membantu kehidupan modern terutama dalam hal …",
+        q: "Teknologi digital membantu kehidupan modern terutama dalam hal ....",
         a: [
             "Mengurangi informasi",
             "Mempercepat komunikasi dan akses informasi",
@@ -147,7 +148,7 @@ const quizData = [
         pembahasan: "Teknologi digital meningkatkan efisiensi komunikasi dan akses informasi."
     },
     {
-        q: "Pendidikan informatika bertujuan untuk …",
+        q: "Pendidikan informatika bertujuan untuk ....",
         a: [
             "Membuat perangkat keras",
             "Mengelola dan memahami informasi secara efektif",
@@ -159,7 +160,7 @@ const quizData = [
         pembahasan: "Pendidikan informatika fokus pada pemahaman pengolahan dan pengelolaan informasi."
     },
     {
-        q: "Teknologi yang meniru cara manusia berpikir dalam menyelesaikan tugas secara cerdas adalah …",
+        q: "Teknologi yang meniru cara manusia berpikir dalam menyelesaikan tugas secara cerdas adalah ....",
         a: [
             "Pengganti manusia sepenuhnya",
             "Kecerdasan buatan (AI)",
@@ -171,7 +172,7 @@ const quizData = [
         pembahasan: "AI menirukan cara manusia menyelesaikan tugas secara cerdas."
     },
     {
-        q: "Teknologi yang menghubungkan berbagai perangkat untuk saling berbagi data melalui internet disebut …",
+        q: "Teknologi yang menghubungkan berbagai perangkat untuk saling berbagi data melalui internet disebut ....",
         a: [
             "Internet of Things (IoT)",
             "Penghapusan data",
@@ -183,7 +184,7 @@ const quizData = [
         pembahasan: "IoT menghubungkan perangkat agar dapat berkomunikasi dan berbagi data."
     },
     {
-        q: "Perangkat lunak pada komputer berfungsi untuk …",
+        q: "Perangkat lunak pada komputer berfungsi untuk ....",
         a: [
             "Mendesain perangkat keras",
             "Menjalankan fungsi spesifik pada komputer",
@@ -195,7 +196,7 @@ const quizData = [
         pembahasan: "Software dirancang menjalankan tugas tertentu pada perangkat."
     },
     {
-        q: "Presentasi digital digunakan untuk …",
+        q: "Presentasi digital digunakan untuk ....",
         a: [
             "Menyampaikan informasi secara visual kepada audiens",
             "Mengurangi penggunaan teknologi",
@@ -207,7 +208,7 @@ const quizData = [
         pembahasan: "Presentasi digital membantu menyampaikan informasi dengan visualisasi yang menarik."
     },
     {
-        q: "Format dasar desain yang dapat digunakan kembali dan dimodifikasi sesuai kebutuhan disebut …",
+        q: "Format dasar desain yang dapat digunakan kembali dan dimodifikasi sesuai kebutuhan disebut ....",
         a: [
             "Template",
             "Penyimpanan data",
@@ -219,7 +220,7 @@ const quizData = [
         pembahasan: "Template mempercepat proses pembuatan desain."
     },
     {
-        q: "Teknologi pengolahan data membantu …",
+        q: "Teknologi pengolahan data membantu ....",
         a: [
             "Mengorganisasi informasi agar lebih terstruktur",
             "Mengurangi data tidak perlu",
@@ -231,7 +232,7 @@ const quizData = [
         pembahasan: "Pengolahan data membantu menyajikan informasi secara terorganisir."
     },
     {
-        q: "Analisis data dilakukan untuk …",
+        q: "Analisis data dilakukan untuk ....",
         a: [
             "Meningkatkan penjualan produk",
             "Memberikan wawasan bagi pengambilan keputusan",
@@ -243,7 +244,7 @@ const quizData = [
         pembahasan: "Analisis data memberikan informasi penting untuk keputusan yang tepat."
     },
     {
-        q: "Perangkat lunak yang mengatur fungsi dasar komputer dan mengelola perangkat keras disebut …",
+        q: "Perangkat lunak yang mengatur fungsi dasar komputer dan mengelola perangkat keras disebut ....",
         a: [
             "Perangkat keras komputer",
             "Sistem operasi",
@@ -255,7 +256,7 @@ const quizData = [
         pembahasan: "Sistem operasi mengelola fungsi dasar komputer."
     },
     {
-        q: "Teknologi keamanan data digunakan untuk …",
+        q: "Teknologi keamanan data digunakan untuk ....",
         a: [
             "Melindungi informasi dari akses tidak sah",
             "Membatasi penggunaan data",
@@ -267,7 +268,7 @@ const quizData = [
         pembahasan: "Keamanan data menjaga informasi dari ancaman dan penyalahgunaan."
     },
     {
-        q: "Antarmuka visual yang menjadi media interaksi pengguna dengan perangkat lunak disebut …",
+        q: "Antarmuka visual yang menjadi media interaksi pengguna dengan perangkat lunak disebut ....",
         a: [
             "Sistem operasi tersembunyi",
             "User interface",
@@ -279,7 +280,7 @@ const quizData = [
         pembahasan: "UI adalah antarmuka interaksi antara pengguna dan sistem."
     },
     {
-        q: "Teknologi penyimpanan dan akses data melalui internet tanpa ruang penyimpanan fisik disebut …",
+        q: "Teknologi penyimpanan dan akses data melalui internet tanpa ruang penyimpanan fisik disebut ....",
         a: [
             "Penyimpanan perangkat",
             "Cloud computing",
@@ -291,7 +292,7 @@ const quizData = [
         pembahasan: "Cloud memungkinkan akses data secara online."
     },
     {
-        q: "Pembuatan visual yang menarik untuk menyampaikan informasi secara efektif disebut …",
+        q: "Pembuatan visual yang menarik untuk menyampaikan informasi secara efektif disebut ....",
         a: [
             "Pencetakan dokumen",
             "Desain grafis",
@@ -303,7 +304,7 @@ const quizData = [
         pembahasan: "Desain grafis membuat visual yang efektif untuk komunikasi."
     },
     {
-        q: "Infografik terutama digunakan untuk …",
+        q: "Infografik terutama digunakan untuk ....",
         a: [
             "Meningkatkan konsumsi data",
             "Menyampaikan informasi secara visual dan mudah dipahami",
@@ -313,53 +314,54 @@ const quizData = [
         ],
         correct: 1,
         pembahasan: "Infografik menyampaikan data agar lebih cepat dipahami."
-    },{
-    q: "Proses menemukan dan memperbaiki kesalahan dalam kode program disebut …",
-    a: [
-        "Coding ulang",
-        "Debugging",
-        "Penyimpanan data",
-        "Optimasi perangkat keras",
-        "Desain antarmuka"
-    ],
-    correct: 1,
-    pembahasan: "Debugging adalah proses mencari dan memperbaiki error (bug) dalam kode program."
-},
-{
-    q: "Teknologi yang memungkinkan perangkat saling berkomunikasi dan bertukar data melalui internet disebut …",
-    a: [
-        "Internet of Things",
-        "Komputasi manual",
-        "Visualisasi data",
-        "Jaringan internal tertutup",
-        "Pemrosesan teks"
-    ],
-    correct: 0,
-    pembahasan: "IoT menghubungkan perangkat agar dapat berkomunikasi melalui jaringan internet."
-},
-{
-    q: "Bahasa pemrograman yang berjalan pada browser dan digunakan untuk membuat halaman web interaktif adalah …",
-    a: [
-        "JavaScript",
-        "Python",
-        "SQL",
-        "C++",
-        "Java"
-    ],
-    correct: 0,
-    pembahasan: "JavaScript bekerja langsung di browser dan membuat website dinamis serta interaktif."
-},
-{
-    q: "Penyimpanan data jangka panjang pada komputer umumnya menggunakan media seperti …",
-    a: [
-        "RAM",
-        "Cache",
-        "Hard Disk",
-        "Register",
-        "CPU"
-    ],
-    correct: 2,
-    pembahasan: "Hard Disk berfungsi sebagai penyimpanan permanen untuk data dan aplikasi."
-}
+    },
+    {
+        q: "Proses menemukan dan memperbaiki kesalahan dalam kode program disebut ....",
+        a: [
+            "Coding ulang",
+            "Debugging",
+            "Penyimpanan data",
+            "Optimasi perangkat keras",
+            "Desain antarmuka"
+        ],
+        correct: 1,
+        pembahasan: "Debugging adalah proses mencari dan memperbaiki error (bug) dalam kode program."
+    },
+    {
+        q: "Teknologi yang memungkinkan perangkat saling berkomunikasi dan bertukar data melalui internet disebut ....",
+        a: [
+            "Internet of Things",
+            "Komputasi manual",
+            "Visualisasi data",
+            "Jaringan internal tertutup",
+            "Pemrosesan teks"
+        ],
+        correct: 0,
+        pembahasan: "IoT menghubungkan perangkat agar dapat berkomunikasi melalui jaringan internet."
+    },
+    {
+        q: "Bahasa pemrograman yang berjalan pada browser dan digunakan untuk membuat halaman web interaktif adalah ....",
+        a: [
+            "JavaScript",
+            "Python",
+            "SQL",
+            "C++",
+            "Java"
+        ],
+        correct: 0,
+        pembahasan: "JavaScript bekerja langsung di browser dan membuat website dinamis serta interaktif."
+    },
+    {
+        q: "Penyimpanan data jangka panjang pada komputer umumnya menggunakan media seperti ....",
+        a: [
+            "RAM",
+            "Cache",
+            "Hard Disk",
+            "Register",
+            "CPU"
+        ],
+        correct: 2,
+        pembahasan: "Hard Disk berfungsi sebagai penyimpanan permanen untuk data dan aplikasi."
+    }
 ];
 
