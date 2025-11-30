@@ -3,7 +3,6 @@ let timerInterval;
 let timeRemaining = 0;
 
 const quizData = [
-    // =================== LEVEL DASAR (BASIC) ===================
     {
         q: "Tool yang digunakan untuk memilih dan memindahkan objek di CorelDRAW...",
         a: ["Pick Tool", "Shape Tool", "Crop Tool", "Zoom Tool", "Freehand Tool"],
