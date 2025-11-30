@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa yang dimaksud dengan sketsa?",
+        q: "Sketsa merupakan rancangan awal berupa gambar garis besar yang digunakan untuk ………",
         a: [
             "Gambar yang detail dan selesai",
             "Rancangan awal berupa gambar garis besar",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Sketsa adalah gambar kasar berupa garis besar atau rancangan awal dari suatu gambar yang belum selesai."
     },
     {
-        q: "Unsur utama dalam sketsa adalah...",
+        q: "Unsur utama yang digunakan dalam pembuatan sketsa terdiri dari ………",
         a: [
             "Warna dan bentuk",
             "Garis dan bidang",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "Garis dan bidang adalah unsur utama yang membentuk rancangan awal dalam sketsa."
     },
     {
-        q: "Apa tujuan utama membuat sketsa sebelum menggambar atau melukis?",
+        q: "Tujuan utama membuat sketsa sebelum menggambar atau melukis adalah untuk ………",
         a: [
             "Mempercepat proses menggambar",
             "Memberikan struktur awal dan meminimalkan kesalahan",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Sketsa memberikan struktur awal dan meminimalkan kesalahan saat menggambar."
     },
     {
-        q: "Jenis sketsa yang menggunakan garis besar dan cepat untuk menangkap ide disebut...",
+        q: "Jenis sketsa yang menggunakan garis besar secara cepat untuk menangkap ide disebut ………",
         a: [
             "Sketsa detail",
             "Sketsa studi",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "Sketsa cepat dibuat dengan garis besar sederhana untuk menangkap ide dengan cepat."
     },
     {
-        q: "Fungsi sketsa antara lain adalah...",
+        q: "Fungsi sketsa antara lain adalah untuk ………",
         a: [
             "Menambah warna pada gambar",
             "Membantu pelukis memahami tema gambar",
@@ -64,7 +64,7 @@ const quizData = [
         pembahasan: "Sketsa membantu memberikan gambaran awal mengenai tema gambar kepada pelukis."
     },
     {
-        q: "Apa yang dimaksud dengan ilustrasi?",
+        q: "Ilustrasi merupakan gambar yang digunakan untuk ………",
         a: [
             "Gambar detail untuk mencetak",
             "Gambar yang menjelaskan atau menerangkan suatu konsep",
@@ -76,19 +76,13 @@ const quizData = [
         pembahasan: "Ilustrasi adalah gambar yang bertujuan menjelaskan atau menerangkan suatu konsep atau cerita."
     },
     {
-        q: "Kata 'ilustrasi' berasal dari bahasa...",
-        a: [
-            "Yunani",
-            "Latin",
-            "Inggris",
-            "Jerman",
-            "Perancis"
-        ],
+        q: "Istilah ilustrasi berasal dari bahasa ………",
+        a: ["Yunani", "Latin", "Inggris", "Jerman", "Perancis"],
         correct: 1,
         pembahasan: "Istilah ilustrasi berasal dari bahasa Latin 'illustrare' yang berarti menjelaskan."
     },
     {
-        q: "Ilustrasi memiliki fungsi utama sebagai...",
+        q: "Fungsi utama ilustrasi dalam media visual adalah sebagai ………",
         a: [
             "Elemen dekoratif saja",
             "Penjelas teks atau cerita",
@@ -100,7 +94,7 @@ const quizData = [
         pembahasan: "Fungsi utama ilustrasi adalah menjelaskan atau memberikan gambaran visual terhadap teks."
     },
     {
-        q: "Dalam menggambar ilustrasi manusia, diperlukan pemahaman tentang...",
+        q: "Menggambar ilustrasi manusia membutuhkan pemahaman tentang ………",
         a: [
             "Proporsi dan anatomi tubuh",
             "Komposisi warna",
@@ -112,7 +106,7 @@ const quizData = [
         pembahasan: "Menggambar ilustrasi manusia memerlukan pemahaman proporsi dan anatomi agar realistis."
     },
     {
-        q: "Apa tujuan utama menggambar ilustrasi binatang?",
+        q: "Tujuan utama menggambar ilustrasi binatang adalah untuk ………",
         a: [
             "Menonjolkan keindahan bentuk",
             "Memberikan gambaran tentang proporsi dan anatomi binatang",
@@ -124,7 +118,7 @@ const quizData = [
         pembahasan: "Ilustrasi binatang bertujuan menjelaskan proporsi dan anatomi binatang secara visual."
     },
     {
-        q: "Unsur utama dalam gambar ilustrasi adalah...",
+        q: "Unsur utama dalam gambar ilustrasi terdiri dari ………",
         a: [
             "Dimensi dan bentuk",
             "Garis, warna, dan bidang",
@@ -136,7 +130,7 @@ const quizData = [
         pembahasan: "Garis, warna, dan bidang adalah unsur dasar untuk membentuk ilustrasi."
     },
     {
-        q: "Langkah pertama dalam menggambar ilustrasi adalah...",
+        q: "Langkah pertama dalam menggambar ilustrasi adalah menentukan ………",
         a: [
             "Pewarnaan",
             "Sketsa awal",
@@ -148,7 +142,7 @@ const quizData = [
         pembahasan: "Langkah pertama adalah menentukan gagasan atau ide dari ilustrasi."
     },
     {
-        q: "Apa yang dimaksud dengan tahap pewarnaan dalam ilustrasi?",
+        q: "Tahap pewarnaan dalam ilustrasi merupakan proses untuk ………",
         a: [
             "Membuat garis besar gambar",
             "Menambahkan warna sesuai tema dan gaya",
@@ -160,7 +154,7 @@ const quizData = [
         pembahasan: "Pewarnaan adalah proses menambahkan warna sesuai tema dan gaya gambar."
     },
     {
-        q: "Contoh media yang digunakan dalam menggambar sketsa adalah...",
+        q: "Media yang umum digunakan untuk membuat sketsa adalah ………",
         a: [
             "Tablet grafis",
             "Kertas dan pensil",
@@ -172,7 +166,7 @@ const quizData = [
         pembahasan: "Media paling umum untuk sketsa adalah kertas dan pensil."
     },
     {
-        q: "Apa tujuan utama membuat kerangka gambar dalam sketsa?",
+        q: "Tujuan utama membuat kerangka gambar dalam sketsa adalah untuk ………",
         a: [
             "Menambahkan elemen estetis",
             "Membuat gambar langsung selesai",
@@ -184,7 +178,7 @@ const quizData = [
         pembahasan: "Kerangka gambar memberikan struktur awal agar proses menggambar lebih mudah."
     },
     {
-        q: "Ilustrasi dapat digunakan sebagai...",
+        q: "Ilustrasi sering digunakan sebagai ………",
         a: [
             "Elemen utama dalam desain",
             "Penjelas visual dalam buku atau majalah",
@@ -196,7 +190,7 @@ const quizData = [
         pembahasan: "Ilustrasi sering digunakan sebagai pelengkap dan penjelas visual dalam buku atau majalah."
     },
     {
-        q: "Proporsi dalam gambar manusia berarti...",
+        q: "Proporsi dalam gambar manusia berarti ………",
         a: [
             "Penyesuaian ukuran bagian tubuh sesuai keseluruhan",
             "Penambahan detail pada tubuh",
@@ -208,7 +202,7 @@ const quizData = [
         pembahasan: "Proporsi adalah perbandingan ukuran bagian tubuh terhadap keseluruhan."
     },
     {
-        q: "Dalam menggambar ilustrasi tumbuhan, langkah yang dilakukan adalah...",
+        q: "Menggambar ilustrasi tumbuhan dilakukan dengan cara ………",
         a: [
             "Menggambar detail setiap daun",
             "Membuat kesan bentuk secara sederhana atau detail",
@@ -220,7 +214,7 @@ const quizData = [
         pembahasan: "Ilustrasi tumbuhan dapat digambar sederhana atau sangat detail sesuai kebutuhan."
     },
     {
-        q: "Menggambar benda dalam ilustrasi biasanya bertujuan untuk...",
+        q: "Menggambar benda dalam ilustrasi bertujuan untuk ………",
         a: [
             "Menambah dekorasi",
             "Melengkapi cerita atau pesan visual",
@@ -232,7 +226,7 @@ const quizData = [
         pembahasan: "Menggambar benda bertujuan melengkapi cerita atau pesan visual."
     },
     {
-        q: "Langkah terakhir dalam menggambar ilustrasi adalah...",
+        q: "Langkah terakhir dalam menggambar ilustrasi adalah tahap ………",
         a: [
             "Sketsa awal",
             "Pewarnaan",
