@@ -243,8 +243,6 @@ const quizData = [
     correct: 0,
     pembahasan: "Publish to PDF menyimpan desain dengan pengaturan profesional untuk percetakan."
 },
-
-// =================== LEVEL LANJUT (ADVANCED) ===================
 {
     q: "Fungsi PowerTRACE untuk mengubah bitmap menjadi vektor dengan kontrol detail...",
     a: ["Mengubah bitmap menjadi vektor dengan kontrol detail", "Mengubah warna bitmap", "Menambah efek 3D", "Menambahkan bayangan", "Membuat transparansi"],
