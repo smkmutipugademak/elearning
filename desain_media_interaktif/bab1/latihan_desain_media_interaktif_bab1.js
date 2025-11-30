@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa definisi multimedia menurut Hofstetter?",
+        q: "Definisi multimedia menurut Hofstetter adalah penggunaan komputer untuk menyajikan dan menggabungkan teks, suara, gambar, animasi, dan video ………",
         a: [
             "Penggunaan perangkat keras untuk mengolah data",
             "Penggunaan komputer untuk menyajikan dan menggabungkan teks, suara, gambar, animasi, dan video",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Menurut Hofstetter, multimedia adalah penggunaan komputer untuk menyajikan berbagai elemen seperti teks, suara, gambar, animasi, dan video."
     },
     {
-        q: "Apa yang dimaksud dengan teks dalam elemen multimedia?",
+        q: "Teks dalam elemen multimedia merupakan elemen dasar yang paling mudah dimengerti oleh pengguna ………",
         a: [
             "Media yang paling kompleks",
             "Elemen dasar yang paling mudah dimengerti",
@@ -28,13 +28,13 @@ const quizData = [
         pembahasan: "Teks adalah elemen dasar multimedia yang paling mudah dipahami masyarakat."
     },
     {
-        q: "Apa jenis grafik yang paling umum digunakan dalam multimedia?",
+        q: "Jenis grafik yang paling umum digunakan dalam multimedia adalah ………",
         a: ["Raster dan vektor", "Bitmap dan audio", "Animasi dan teks", "MIDI dan video", "Raster dan analog"],
         correct: 0,
         pembahasan: "Grafik dalam multimedia biasanya berupa grafik raster (bitmap) dan grafik vektor."
     },
     {
-        q: "Apa fungsi utama audio dalam multimedia?",
+        q: "Fungsi utama audio dalam multimedia adalah menambah dimensi suara untuk mendukung informasi visual ………",
         a: [
             "Menyediakan efek visual",
             "Meningkatkan estetika tampilan",
@@ -46,31 +46,37 @@ const quizData = [
         pembahasan: "Audio memberikan dimensi suara untuk mendukung informasi visual."
     },
     {
-        q: "Elemen multimedia yang digunakan untuk menggambarkan gerakan adalah...",
+        q: "Elemen multimedia yang digunakan untuk menggambarkan gerakan adalah ………",
         a: ["Teks", "Grafik", "Audio", "Animasi", "Video"],
         correct: 3,
         pembahasan: "Animasi menggambarkan gerakan melalui rangkaian frame."
     },
     {
-        q: "Tujuan utama multimedia interaktif adalah...",
-        a: ["Membuat presentasi menarik", "Memberikan hiburan", "Meningkatkan interaksi antara pengguna dan konten", "Mempermudah pengolahan data", "Mengganti metode komunikasi tradisional"],
+        q: "Tujuan utama multimedia interaktif adalah meningkatkan interaksi antara pengguna dan konten ………",
+        a: [
+            "Membuat presentasi menarik",
+            "Memberikan hiburan",
+            "Meningkatkan interaksi antara pengguna dan konten",
+            "Mempermudah pengolahan data",
+            "Mengganti metode komunikasi tradisional"
+        ],
         correct: 2,
         pembahasan: "Multimedia interaktif fokus meningkatkan interaksi pengguna dengan konten."
     },
     {
-        q: "Teknologi yang memungkinkan suara disimpan secara digital adalah...",
+        q: "Teknologi yang memungkinkan suara disimpan secara digital disebut ………",
         a: ["MIDI", "CD-ROM", "File Compression", "Digital Audio", "Bitmap"],
         correct: 3,
         pembahasan: "Digital Audio memungkinkan perekaman dan penyimpanan suara dalam format digital."
     },
     {
-        q: "Apa yang dimaksud dengan hypertext?",
+        q: "Hypertext merupakan teks yang memiliki tautan ke lokasi informasi lain ………",
         a: ["Teks untuk animasi", "Teks dengan tautan ke lokasi lain", "Teks menjadi gambar", "Teks 3D", "Teks bergerak"],
         correct: 1,
         pembahasan: "Hypertext menghubungkan teks dengan lokasi informasi lain melalui link."
     },
     {
-        q: "Manfaat utama animasi dalam multimedia adalah...",
+        q: "Manfaat utama animasi dalam multimedia adalah menyampaikan informasi secara dinamis dan visual ………",
         a: [
             "Memberikan hiburan saja",
             "Menyampaikan informasi secara dinamis dan visual",
@@ -82,7 +88,7 @@ const quizData = [
         pembahasan: "Animasi menyampaikan informasi dengan cara dinamis dan menarik."
     },
     {
-        q: "Peran utama video dalam multimedia adalah...",
+        q: "Peran utama video dalam multimedia adalah menyampaikan informasi melalui gambar bergerak ………",
         a: [
             "Menyediakan elemen suara",
             "Memberikan efek estetis",
@@ -94,13 +100,13 @@ const quizData = [
         pembahasan: "Video menyampaikan informasi melalui gambar bergerak."
     },
     {
-        q: "Yang termasuk multimedia content production adalah...",
+        q: "Kategori multimedia content production meliputi film, tutorial, dan animasi ………",
         a: ["Televisi, radio, game", "Film, tutorial, animasi", "Internet, cetak, CD-ROM", "Gambar, suara, teks", "Audio, grafik, video"],
         correct: 1,
         pembahasan: "Film, tutorial, dan animasi adalah bagian dari multimedia content production."
     },
     {
-        q: "Apa yang dimaksud dengan multimedia non-linear?",
+        q: "Multimedia non-linear memungkinkan pengguna bebas menavigasi konten ………",
         a: [
             "Memiliki struktur tertentu",
             "Pengguna bebas menavigasi konten",
@@ -112,37 +118,49 @@ const quizData = [
         pembahasan: "Multimedia non-linear memungkinkan navigasi bebas."
     },
     {
-        q: "Kelebihan multimedia interaktif dalam pendidikan adalah...",
+        q: "Kelebihan multimedia interaktif dalam pendidikan adalah membuat siswa aktif dalam belajar ………",
         a: ["Menggantikan guru", "Membuat siswa aktif dalam belajar", "Mengurangi waktu belajar", "Mengganti buku cetak", "Meningkatkan biaya"],
         correct: 1,
         pembahasan: "Multimedia interaktif membuat siswa lebih aktif."
     },
     {
-        q: "Manfaat multimedia dalam industri hiburan adalah...",
+        q: "Manfaat multimedia dalam industri hiburan adalah mengembangkan efek visual untuk film dan animasi ………",
         a: ["Membuat video saja", "Mengembangkan efek visual untuk film dan animasi", "Mempercepat produksi film", "Menghilangkan perangkat keras", "Mengurangi audio"],
         correct: 1,
         pembahasan: "Multimedia digunakan untuk efek visual dalam film dan animasi."
     },
     {
-        q: "Elemen utama pembuatan multimedia adalah...",
+        q: "Elemen utama dalam pembuatan multimedia terdiri dari teks, audio, grafik, video, dan animasi ………",
         a: ["Kamera dan mikrofon", "Teks, audio, grafik, video, animasi", "Internet dan televisi", "Software dan hardware", "CD-ROM dan USB"],
         correct: 1,
         pembahasan: "Ada lima elemen utama: teks, audio, grafik, video, dan animasi."
     },
     {
-        q: "Tujuan utama multimedia dalam bisnis adalah...",
-        a: ["Mengurangi biaya produksi", "Presentasi menarik", "Mengganti media cetak", "Membuat perusahaan modern", "Meningkatkan interaksi konsumen"],
+        q: "Tujuan multimedia dalam bisnis adalah meningkatkan interaksi konsumen ………",
+        a: [
+            "Mengurangi biaya produksi",
+            "Presentasi menarik",
+            "Mengganti media cetak",
+            "Membuat perusahaan modern",
+            "Meningkatkan interaksi konsumen"
+        ],
         correct: 4,
         pembahasan: "Multimedia meningkatkan interaksi dengan konsumen."
     },
     {
-        q: "Manfaat multimedia dalam bidang kesehatan adalah...",
-        a: ["Mengurangi alat medis", "Menggantikan perangkat tradisional", "Mengurangi biaya perawatan", "Meningkatkan interaksi pasien-dokter", "Membatasi informasi"],
+        q: "Manfaat multimedia dalam bidang kesehatan adalah meningkatkan interaksi pasien-dokter ………",
+        a: [
+            "Mengurangi alat medis",
+            "Menggantikan perangkat tradisional",
+            "Mengurangi biaya perawatan",
+            "Meningkatkan interaksi pasien-dokter",
+            "Membatasi informasi"
+        ],
         correct: 3,
         pembahasan: "Multimedia meningkatkan komunikasi antara pasien dan dokter."
     },
     {
-        q: "Apa yang dimaksud dengan MIDI?",
+        q: "MIDI merupakan format suara berkapasitas kecil ………",
         a: [
             "Suara digital berkualitas tinggi",
             "Format file video",
@@ -154,7 +172,7 @@ const quizData = [
         pembahasan: "MIDI adalah format suara berukuran kecil."
     },
     {
-        q: "Perbedaan multimedia linier dan non-linier adalah...",
+        q: "Perbedaan multimedia linier dan non-linier adalah linier mengikuti alur tetap sedangkan non-linier bebas dinavigasi ………",
         a: [
             "Linier hanya teks",
             "Linier mengikuti alur tetap, non-linier bebas dinavigasi",
@@ -166,7 +184,7 @@ const quizData = [
         pembahasan: "Linier = alur tetap; non-linier = bebas navigasi."
     },
     {
-        q: "Apa yang dimaksud multimedia communication?",
+        q: "Multimedia communication menggunakan media massa seperti TV dan radio untuk menyampaikan informasi ………",
         a: [
             "Media massa seperti TV dan radio untuk informasi",
             "Kombinasi teks dan gambar",
@@ -178,7 +196,7 @@ const quizData = [
         pembahasan: "Multimedia communication menggunakan media massa seperti TV, radio, dan internet."
     },
     {
-        q: "Manfaat multimedia di bidang teknik adalah...",
+        q: "Manfaat multimedia di bidang teknik adalah membuat simulasi untuk pelatihan dan desain ………",
         a: [
             "Mengurangi pelatihan",
             "Membuat simulasi untuk pelatihan dan desain",
@@ -190,7 +208,7 @@ const quizData = [
         pembahasan: "Multimedia digunakan untuk simulasi teknik."
     },
     {
-        q: "Kelebihan elemen grafik dalam multimedia adalah...",
+        q: "Kelebihan elemen grafik dalam multimedia adalah menyampaikan informasi sulit secara visual ………",
         a: [
             "Mengganti semua teks",
             "Menyampaikan informasi sulit secara visual",
@@ -202,7 +220,7 @@ const quizData = [
         pembahasan: "Grafik menyampaikan informasi yang sulit dijelaskan dengan kata-kata."
     },
     {
-        q: "Peran animasi dalam multimedia interaktif adalah...",
+        q: "Peran animasi dalam multimedia interaktif adalah memberikan visualisasi gerakan ………",
         a: [
             "Menambah ukuran file",
             "Mengganti teks dan grafik",
@@ -214,7 +232,7 @@ const quizData = [
         pembahasan: "Animasi memberikan visualisasi gerakan."
     },
     {
-        q: "Apa yang dimaksud multimedia content production?",
+        q: "Multimedia content production merupakan penggunaan berbagai media untuk menghasilkan informasi atau hiburan ………",
         a: [
             "Produksi teks dan grafik",
             "Penggunaan berbagai media untuk informasi atau hiburan",
@@ -226,7 +244,7 @@ const quizData = [
         pembahasan: "Content production = menghasilkan konten multimedia."
     },
     {
-        q: "Fungsi utama teks dalam multimedia adalah...",
+        q: "Fungsi utama teks dalam multimedia adalah sebagai media utama penyampaian informasi ………",
         a: [
             "Elemen pendukung",
             "Media utama menyampaikan informasi",
@@ -238,13 +256,13 @@ const quizData = [
         pembahasan: "Teks menyampaikan informasi inti."
     },
     {
-        q: "Elemen multimedia yang berfungsi menyampaikan informasi dengan suara adalah...",
+        q: "Elemen multimedia yang berfungsi menyampaikan informasi dengan suara adalah ………",
         a: ["Teks", "Grafik", "Audio", "Video", "Animasi"],
         correct: 2,
         pembahasan: "Audio digunakan untuk narasi, musik, dan efek."
     },
     {
-        q: "Perbedaan multimedia content production dan communication adalah...",
+        q: "Perbedaan antara multimedia content production dan communication adalah production menghasilkan konten, communication menyebarkan konten ………",
         a: [
             "Production fokus publikasi, communication pada distribusi",
             "Production menghasilkan konten, communication menyebarkan konten",
@@ -256,7 +274,7 @@ const quizData = [
         pembahasan: "Content production membuat konten; communication menyebarkannya."
     },
     {
-        q: "Manfaat utama animasi dalam multimedia adalah...",
+        q: "Animasi dalam multimedia berfungsi menjelaskan konsep kompleks melalui gerakan ………",
         a: [
             "Mempercepat presentasi",
             "Menjelaskan konsep kompleks dengan gerakan",
@@ -268,7 +286,7 @@ const quizData = [
         pembahasan: "Animasi menjelaskan konsep melalui visualisasi gerakan."
     },
     {
-        q: "Karakteristik multimedia linier adalah...",
+        q: "Karakteristik multimedia linier adalah informasi disajikan berurutan tanpa kontrol pengguna ………",
         a: [
             "User mengontrol urutan",
             "Informasi disajikan berurutan tanpa kontrol pengguna",
@@ -280,7 +298,7 @@ const quizData = [
         pembahasan: "Multimedia linier berjalan otomatis tanpa kontrol pengguna."
     },
     {
-        q: "Mengapa multimedia penting dalam pendidikan?",
+        q: "Multimedia penting dalam pendidikan karena mempermudah penyampaian informasi dengan berbagai media ………",
         a: [
             "Menggantikan guru",
             "Menyederhanakan belajar",
