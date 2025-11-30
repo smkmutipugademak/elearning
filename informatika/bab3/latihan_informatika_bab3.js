@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa tujuan utama integrasi antar aplikasi Microsoft Office?",
+        q: "Apa tujuan utama integrasi antar aplikasi Microsoft Office adalah ………",
         a: [
             "Memisahkan data dalam format yang berbeda",
             "Menyederhanakan pengelolaan file terpisah",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Integrasi antar aplikasi bertujuan menyatukan data untuk mempermudah dan meningkatkan efisiensi kerja."
     },
     {
-        q: "Apa langkah pertama dalam transfer data dari Excel ke Word?",
+        q: "Langkah pertama dalam transfer data dari Excel ke Word adalah ………",
         a: [
             "Menyalin file secara manual",
             "Menggunakan fitur Paste Special",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "Langkah pertama adalah menggunakan Paste Special untuk transfer data yang benar."
     },
     {
-        q: "Fitur 'Paste Special' memungkinkan pengguna untuk:",
+        q: "Fitur 'Paste Special' memungkinkan pengguna untuk ………",
         a: [
             "Mengedit tabel langsung dari Excel di Word",
             "Mengonversi tabel menjadi gambar",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Paste Special memungkinkan objek Excel tetap bisa diedit di Word."
     },
     {
-        q: "Transfer object secara linking berarti:",
+        q: "Transfer object secara linking berarti ………",
         a: [
             "Data disalin permanen ke file baru",
             "Data dihubungkan ke file sumber",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "Linking menghubungkan data sehingga perubahan di file sumber ikut berubah."
     },
     {
-        q: "Fungsi 'Create from File' pada Microsoft Office digunakan untuk:",
+        q: "Fungsi 'Create from File' pada Microsoft Office adalah ………",
         a: [
             "Membuat dokumen baru",
             "Menghubungkan file eksternal",
@@ -64,7 +64,7 @@ const quizData = [
         pembahasan: "'Create from File' digunakan untuk menyisipkan atau menghubungkan file eksternal."
     },
     {
-        q: "Apa manfaat utama transfer data secara embedding?",
+        q: "Manfaat utama transfer data secara embedding adalah ………",
         a: [
             "Data terhubung dengan file sumber",
             "Data dapat dimodifikasi langsung di dokumen tujuan",
@@ -76,7 +76,7 @@ const quizData = [
         pembahasan: "Embedding memungkinkan data diedit langsung dari dokumen tujuan."
     },
     {
-        q: "Apa yang dimaksud dengan fitur integrasi dalam aplikasi perkantoran?",
+        q: "Yang dimaksud dengan fitur integrasi dalam aplikasi perkantoran adalah ………",
         a: [
             "Penggunaan fitur tambahan",
             "Penyatuan komponen aplikasi",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Integrasi berarti penyatuan fitur atau data antar aplikasi."
     },
     {
-        q: "Apa yang dimaksud dengan 'sharing database'?",
+        q: "Yang dimaksud dengan 'sharing database' adalah ………",
         a: [
             "Mengirimkan data otomatis",
             "Membaca data langsung dari satu database",
@@ -100,7 +100,7 @@ const quizData = [
         pembahasan: "Sharing database memungkinkan aplikasi membaca data dari tabel yang sama."
     },
     {
-        q: "Fungsi utama integrasi file transfer adalah:",
+        q: "Fungsi utama integrasi file transfer adalah ………",
         a: [
             "Menyimpan data otomatis",
             "Menyusun data",
@@ -112,7 +112,7 @@ const quizData = [
         pembahasan: "File transfer adalah proses manual memindahkan data antar aplikasi."
     },
     {
-        q: "Langkah terakhir saat transfer tabel dari Excel ke Word dengan Paste Special adalah:",
+        q: "Langkah terakhir transfer tabel dari Excel ke Word dengan Paste Special adalah ………",
         a: [
             "Klik tombol OK",
             "Memilih tabel di Excel",
@@ -124,7 +124,7 @@ const quizData = [
         pembahasan: "Langkah terakhir adalah mengonfirmasi dengan tombol OK."
     },
     {
-        q: "Apa fungsi opsi 'Microsoft Excel Worksheet Object' di Paste Special?",
+        q: "Fungsi opsi 'Microsoft Excel Worksheet Object' di Paste Special adalah ………",
         a: [
             "Menampilkan tabel sebagai gambar",
             "Menyisipkan tabel yang dapat diedit",
@@ -136,7 +136,7 @@ const quizData = [
         pembahasan: "Opsi ini memungkinkan tabel Excel tetap bisa diedit dalam Word."
     },
     {
-        q: "Apa yang dimaksud dengan 'Integrasi Antar Aplikasi'?",
+        q: "Yang dimaksud dengan 'Integrasi Antar Aplikasi' adalah ………",
         a: [
             "Penggabungan fitur tambahan",
             "Penyatuan data untuk mendukung produktivitas",
@@ -148,7 +148,7 @@ const quizData = [
         pembahasan: "Integrasi aplikasi bertujuan menyatukan data dan fitur untuk efisiensi kerja."
     },
     {
-        q: "Apa yang terjadi jika data sumber diubah saat menggunakan linking?",
+        q: "Yang terjadi jika data sumber diubah saat menggunakan linking adalah ………",
         a: [
             "Data tujuan tidak berubah",
             "File sumber terhapus",
@@ -160,7 +160,7 @@ const quizData = [
         pembahasan: "Linking membuat data saling terhubung sehingga otomatis berubah."
     },
     {
-        q: "Fungsi 'Preview Result' pada Mail Merge adalah:",
+        q: "Fungsi 'Preview Result' pada Mail Merge adalah ………",
         a: [
             "Menampilkan hasil sebelum dikirim",
             "Menyimpan data sementara",
@@ -172,7 +172,7 @@ const quizData = [
         pembahasan: "Preview Result digunakan untuk melihat hasil Mail Merge."
     },
     {
-        q: "Perbedaan utama embedding dan linking adalah:",
+        q: "Perbedaan utama embedding dan linking adalah ………",
         a: [
             "Embedding memperbarui otomatis",
             "Linking menyisipkan permanen",
@@ -184,7 +184,7 @@ const quizData = [
         pembahasan: "Embedding bersifat independen dari file sumber."
     },
     {
-        q: "Dalam Mail Merge, langkah pertama menghubungkan data adalah:",
+        q: "Dalam Mail Merge, langkah pertama menghubungkan data adalah ………",
         a: [
             "Membuka file tujuan",
             "Memilih file sumber data",
@@ -196,7 +196,7 @@ const quizData = [
         pembahasan: "Langkah pertama adalah memilih file sumber data."
     },
     {
-        q: "Apa yang dimaksud dengan 'automatic table of contents' di Word?",
+        q: "Automatic table of contents di Word berarti ………",
         a: [
             "Daftar isi manual",
             "Daftar isi berdasarkan heading",
@@ -208,7 +208,7 @@ const quizData = [
         pembahasan: "Table of contents otomatis dibuat berdasarkan heading."
     },
     {
-        q: "Langkah terakhir membuat daftar isi otomatis adalah:",
+        q: "Langkah terakhir membuat daftar isi otomatis adalah ………",
         a: [
             "Menambah hyperlink",
             "Klik 'Insert Table of Contents'",
@@ -220,7 +220,7 @@ const quizData = [
         pembahasan: "Daftar isi ditambahkan melalui Insert Table of Contents."
     },
     {
-        q: "Fungsi fitur Hyperlink di Word adalah:",
+        q: "Fungsi fitur Hyperlink di Word adalah ………",
         a: [
             "Menghubungkan dokumen ke file atau website lain",
             "Menyisipkan gambar",
@@ -232,7 +232,7 @@ const quizData = [
         pembahasan: "Hyperlink menghubungkan dokumen dengan file atau web."
     },
     {
-        q: "Keunggulan utama integrasi antar aplikasi Office adalah:",
+        q: "Keunggulan utama integrasi antar aplikasi Office adalah ………",
         a: [
             "Menghapus kebutuhan penyimpanan",
             "Mengurangi waktu transfer data",
@@ -244,7 +244,7 @@ const quizData = [
         pembahasan: "Integrasi aplikasi mempercepat proses transfer data."
     },
     {
-        q: "Apa yang dimaksud dengan 'File Transfer'?",
+        q: "Yang dimaksud dengan 'File Transfer' adalah ………",
         a: [
             "Menghapus data sumber",
             "Mengirim data antar aplikasi",
@@ -256,7 +256,7 @@ const quizData = [
         pembahasan: "File transfer adalah proses pengiriman data antar aplikasi."
     },
     {
-        q: "Dalam integrasi aplikasi, mekanisme 'messaging' digunakan untuk:",
+        q: "Dalam integrasi aplikasi, mekanisme 'messaging' digunakan untuk ………",
         a: [
             "Mengirim data sebagai pesan antar aplikasi",
             "Memisah data menjadi kecil",
@@ -268,7 +268,7 @@ const quizData = [
         pembahasan: "Messaging membuat aplikasi saling bertukar pesan."
     },
     {
-        q: "Cara membuat Table of Contents yang benar adalah:",
+        q: "Cara membuat Table of Contents yang benar adalah ………",
         a: [
             "Menambah heading manual",
             "Menggunakan fitur Insert Table of Contents",
@@ -280,7 +280,7 @@ const quizData = [
         pembahasan: "Daftar isi otomatis dibuat melalui menu References."
     },
     {
-        q: "Perbedaan Paste dan Paste Special adalah:",
+        q: "Perbedaan Paste dan Paste Special adalah ………",
         a: [
             "Paste hanya teks",
             "Paste Special memilih format tempel",
@@ -292,7 +292,7 @@ const quizData = [
         pembahasan: "Paste Special memungkinkan memilih format tertentu."
     },
     {
-        q: "Dalam Mail Merge, fungsi 'Use Existing List' adalah:",
+        q: "Dalam Mail Merge, fungsi 'Use Existing List' adalah ………",
         a: [
             "Membuat daftar baru",
             "Menghubungkan ke file data yang sudah ada",
@@ -304,7 +304,7 @@ const quizData = [
         pembahasan: "Use Existing List menghubungkan Word dengan daftar data yang sudah ada."
     },
     {
-        q: "Apa yang dimaksud dengan Embedding?",
+        q: "Yang dimaksud dengan Embedding adalah ………",
         a: [
             "Menyisipkan data tanpa koneksi ke sumber",
             "Membuat data hanya diakses aplikasi tertentu",
@@ -316,7 +316,7 @@ const quizData = [
         pembahasan: "Embedding membuat data berdiri sendiri tanpa bergantung file sumber."
     },
     {
-        q: "Fungsi utama fitur Insert Object adalah:",
+        q: "Fungsi utama fitur Insert Object adalah ………",
         a: [
             "Menyisipkan data dari Excel",
             "Membuat tabel baru",
@@ -328,7 +328,7 @@ const quizData = [
         pembahasan: "Insert Object menyisipkan data dari aplikasi lain seperti Excel."
     },
     {
-        q: "Langkah melihat hasil Mail Merge sebelum dicetak adalah:",
+        q: "Langkah melihat hasil Mail Merge sebelum dicetak adalah ………",
         a: [
             "Klik Preview Results",
             "Simpan dokumen",
@@ -340,7 +340,7 @@ const quizData = [
         pembahasan: "Preview Results menampilkan hasil sebelum dicetak."
     },
     {
-        q: "Keunggulan hyperlink adalah:",
+        q: "Keunggulan hyperlink adalah ………",
         a: [
             "Mengakses file atau website dari dokumen",
             "Menyisipkan file tanpa pengaruh ukuran",
@@ -352,7 +352,7 @@ const quizData = [
         pembahasan: "Hyperlink mempermudah akses ke sumber lain."
     },
     {
-        q: "Fungsi utama 'Select Recipients' adalah:",
+        q: "Fungsi utama 'Select Recipients' adalah ………",
         a: [
             "Memilih data yang akan diintegrasikan",
             "Menambah data baru",
@@ -364,3 +364,4 @@ const quizData = [
         pembahasan: "Select Recipients digunakan untuk memilih data yang akan dipakai dalam Mail Merge."
     }
 ];
+
