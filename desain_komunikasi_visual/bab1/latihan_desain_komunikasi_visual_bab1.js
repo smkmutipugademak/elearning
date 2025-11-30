@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa yang dimaksud dengan technopreneur?",
+        q: "Pernyataan yang tepat tentang technopreneur adalah ....",
         a: [
             "Orang yang bekerja di bidang teknologi tanpa risiko",
             "Wirausahawan yang memanfaatkan teknologi modern untuk bisnis",
@@ -13,10 +13,10 @@ const quizData = [
             "Pekerja lepas di bidang desain grafis"
         ],
         correct: 1,
-        pembahasan: "Technopreneur adalah wirausahawan yang menggunakan teknologi sebagai solusi inovatif dalam bisnis mereka."
+        pembahasan: "Technopreneur adalah wirausahawan yang menggunakan teknologi sebagai solusi inovatif dalam bisnis."
     },
     {
-        q: "Tujuan utama technopreneurship adalah...",
+        q: "Tujuan utama technopreneurship adalah ....",
         a: [
             "Meningkatkan konsumsi produk teknologi",
             "Menciptakan solusi inovatif untuk masalah sosial dan bisnis",
@@ -25,10 +25,10 @@ const quizData = [
             "Hanya untuk mendapatkan keuntungan semata"
         ],
         correct: 1,
-        pembahasan: "Technopreneurship bertujuan menciptakan dampak positif melalui inovasi teknologi yang memecahkan masalah nyata."
+        pembahasan: "Technopreneurship fokus menciptakan dampak positif melalui inovasi teknologi."
     },
     {
-        q: "Contoh technopreneur terkenal adalah...",
+        q: "Contoh technopreneur terkenal adalah ....",
         a: [
             "Bill Gates dan Steve Jobs",
             "Walt Disney dan JK Rowling",
@@ -37,10 +37,10 @@ const quizData = [
             "Albert Einstein dan Leonardo Da Vinci"
         ],
         correct: 0,
-        pembahasan: "Bill Gates (Microsoft) dan Steve Jobs (Apple) adalah contoh technopreneur yang sukses memanfaatkan teknologi untuk inovasi bisnis."
+        pembahasan: "Bill Gates dan Steve Jobs merupakan technopreneur sukses di bidang teknologi informasi."
     },
     {
-        q: "Apa manfaat utama dari technopreneurship bagi masyarakat?",
+        q: "Manfaat utama technopreneurship bagi masyarakat adalah ....",
         a: [
             "Mengurangi kemiskinan melalui penciptaan lapangan kerja",
             "Meningkatkan ketergantungan pada teknologi asing",
@@ -49,10 +49,10 @@ const quizData = [
             "Menyediakan teknologi mahal"
         ],
         correct: 0,
-        pembahasan: "Technopreneurship menciptakan lapangan kerja baru melalui inovasi, sehingga membantu mengurangi angka pengangguran."
+        pembahasan: "Technopreneurship menciptakan lapangan kerja baru melalui inovasi."
     },
     {
-        q: "Apa yang menjadi fokus utama technopreneur?",
+        q: "Fokus utama technopreneur adalah ....",
         a: [
             "Teknologi informasi dan komunikasi",
             "Produksi makanan",
@@ -61,10 +61,10 @@ const quizData = [
             "Kerajinan tradisional"
         ],
         correct: 0,
-        pembahasan: "Technopreneur fokus pada pengembangan teknologi, seperti teknologi informasi,komunikasi, dan internet."
+        pembahasan: "Technopreneur berfokus pada teknologi seperti IT, komunikasi, dan internet."
     },
     {
-        q: "Langkah pertama menjadi technopreneur adalah...",
+        q: "Langkah pertama menjadi technopreneur adalah ....",
         a: [
             "Membeli alat teknologi",
             "Menghindari risiko",
@@ -73,10 +73,10 @@ const quizData = [
             "Mengandalkan tim sepenuhnya"
         ],
         correct: 2,
-        pembahasan: "Ide kreatif dan inovatif menjadi dasar technopreneurship karena menentukan arah bisnis yang akan dibangun."
+        pembahasan: "Ide kreatif menentukan arah bisnis technopreneurship."
     },
     {
-        q: "Profesi yang termasuk dalam technopreneur di bidang DKV adalah...",
+        q: "Profesi yang termasuk technopreneur di bidang DKV adalah ....",
         a: [
             "Dokter",
             "Ilustrator",
@@ -85,10 +85,10 @@ const quizData = [
             "Guru"
         ],
         correct: 1,
-        pembahasan: "Ilustrator adalah salah satu profesi yang dapat digeluti oleh lulusan DKV sebagai technopreneur."
+        pembahasan: "Ilustrator DKV dapat menjadi technopreneur melalui karya digital."
     },
     {
-        q: "Apa manfaat diversifikasi bisnis dalam technopreneurship?",
+        q: "Manfaat diversifikasi bisnis dalam technopreneurship adalah ....",
         a: [
             "Meningkatkan fokus pada satu produk saja",
             "Mengurangi potensi inovasi",
@@ -97,10 +97,10 @@ const quizData = [
             "Membatasi jangkauan teknologi"
         ],
         correct: 2,
-        pembahasan: "Diversifikasi membantu technopreneur mengurangi risiko dan meningkatkan peluang keberhasilan di berbagai sektor."
+        pembahasan: "Diversifikasi mengurangi risiko dan memperluas peluang bisnis."
     },
     {
-        q: "Salah satu alasan technopreneurship penting bagi ekonomi adalah...",
+        q: "Salah satu alasan technopreneurship penting bagi ekonomi adalah ....",
         a: [
             "Menjaga ketergantungan pada produk impor",
             "Membatasi inovasi",
@@ -109,10 +109,10 @@ const quizData = [
             "Membatasi diversifikasi bisnis"
         ],
         correct: 2,
-        pembahasan: "Technopreneurship membuka lapangan kerja baru, yang berdampak positif pada pengurangan pengangguran."
+        pembahasan: "Technopreneurship membuka pekerjaan baru sehingga menurunkan pengangguran."
     },
     {
-        q: "Apa saja alat yang dibutuhkan untuk memulai bisnis desain grafis?",
+        q: "Alat yang dibutuhkan untuk memulai bisnis desain grafis adalah ....",
         a: [
             "Alat pertanian",
             "Software desain dan perangkat keras",
@@ -121,10 +121,10 @@ const quizData = [
             "Alat olahraga"
         ],
         correct: 1,
-        pembahasan: "Bisnis desain grafis membutuhkan alat seperti komputer, software desain (Photoshop,Illustrator), dan perangkat pendukung lainnya."
+        pembahasan: "Desain grafis membutuhkan komputer, software desain, dan perangkat pendukung."
     },
     {
-        q: "Technopreneurship tidak hanya menciptakan produk, tetapi juga...",
+        q: "Technopreneurship tidak hanya menciptakan produk, tetapi juga ....",
         a: [
             "Inovasi berkelanjutan",
             "Konsumsi tinggi",
@@ -133,10 +133,10 @@ const quizData = [
             "Perdagangan bebas"
         ],
         correct: 0,
-        pembahasan: "Technopreneurship berfokus pada inovasi yang dapat berkembang secara berkelanjutan untuk memenuhi kebutuhan pasar."
+        pembahasan: "Technopreneurship berfokus pada inovasi berkelanjutan untuk pasar."
     },
     {
-        q: "Apa tujuan utama pemasaran dalam bisnis desain grafis?",
+        q: "Tujuan utama pemasaran dalam bisnis desain grafis adalah ....",
         a: [
             "Meningkatkan konsumsi produk lokal",
             "Memperluas jangkauan klien dan pelanggan",
@@ -145,10 +145,10 @@ const quizData = [
             "Menghilangkan persaingan"
         ],
         correct: 1,
-        pembahasan: "Pemasaran bertujuan untuk memperkenalkan jasa atau produk kepada audiens yang lebih luas, meningkatkan peluang bisnis."
+        pembahasan: "Pemasaran memperluas jangkauan audiens dan meningkatkan peluang bisnis."
     },
     {
-        q: "Apa perbedaan utama antara animator dan ilustrator?",
+        q: "Perbedaan utama antara animator dan ilustrator adalah ....",
         a: [
             "Animator membuat gambar bergerak, ilustrator membuat gambar statis",
             "Animator lebih fokus pada seni, ilustrator pada teknologi",
@@ -157,10 +157,10 @@ const quizData = [
             "Animator hanya bekerja di studio film"
         ],
         correct: 0,
-        pembahasan: "Animator menciptakan gambar bergerak untuk video atau animasi, sementara ilustrator menciptakan gambar statis untuk berbagai kebutuhan."
+        pembahasan: "Animator membuat animasi; ilustrator membuat gambar statis."
     },
     {
-        q: "Apa fungsi legalitas bisnis dalam technopreneurship?",
+        q: "Fungsi legalitas bisnis dalam technopreneurship adalah ....",
         a: [
             "Menghindari pajak",
             "Melindungi bisnis secara hukum",
@@ -169,10 +169,10 @@ const quizData = [
             "Meningkatkan biaya operasional"
         ],
         correct: 1,
-        pembahasan: "Legalitas memastikan bahwa bisnis beroperasi sesuai aturan hukum, sehingga terlindungi dari masalah hukum di kemudian hari."
+        pembahasan: "Legalitas melindungi bisnis dari risiko hukum."
     },
     {
-        q: "Apa kelebihan desainer grafis dengan latar belakang karier mapan?",
+        q: "Kelebihan desainer grafis dengan karier mapan adalah ....",
         a: [
             "Memiliki banyak alat dan sumber daya",
             "Hanya bisa bekerja sendiri",
@@ -181,10 +181,10 @@ const quizData = [
             "Membatasi pilihan proyek"
         ],
         correct: 0,
-        pembahasan: "Desainer grafis dengan latar belakang mapan biasanya memiliki sumber daya seperti perangkat lunak, pengalaman, dan jaringan yang luas."
+        pembahasan: "Desainer mapan punya pengalaman, jaringan, dan alat lengkap."
     },
     {
-        q: "Apa tujuan membuat daftar klien potensial dalam bisnis desain grafis?",
+        q: "Tujuan membuat daftar klien potensial dalam bisnis desain grafis adalah ....",
         a: [
             "Membatasi proyek ke klien tertentu",
             "Menyusun strategi pemasaran dan mendapatkan peluang baru",
@@ -193,22 +193,22 @@ const quizData = [
             "Menentukan harga mahal"
         ],
         correct: 1,
-        pembahasan: "Daftar klien potensial membantu technopreneur menyusun strategi yang lebih efektif untuk mencapai target pasar."
+        pembahasan: "Daftar klien potensial membantu penyusunan strategi pemasaran."
     },
     {
-        q: "Apa langkah penting dalam membangun relasi bisnis yang potensial?",
+        q: "Langkah penting dalam membangun relasi bisnis yang potensial adalah ....",
         a: [
             "Membatasi komunikasi hanya dengan satu klien",
             "Menggunakan waktu untuk memperluas jaringan dan koneksi",
             "Menghindari kerjasama dengan pihak lain",
-            "Fokus pada satu jenis layanan tanpa diversifikasi",
-            "Menghindari penggunaan teknologi komunikasi"
+            "Fokus pada satu jenis layanan",
+            "Menghindari teknologi komunikasi"
         ],
         correct: 1,
-        pembahasan: "Membangun relasi bisnis memerlukan usaha untuk memperluas jaringan dan koneksi,karena hal ini dapat membuka peluang baru untuk kolaborasi dan proyek."
+        pembahasan: "Relasi bisnis dibangun melalui jaringan yang luas."
     },
     {
-        q: "Mengapa technopreneurship penting dalam bidang seni dan desain?",
+        q: "Pentingnya technopreneurship dalam bidang seni dan desain adalah ....",
         a: [
             "Mengurangi kreativitas dalam proyek",
             "Memberikan solusi kreatif berbasis teknologi",
@@ -217,30 +217,30 @@ const quizData = [
             "Menyederhanakan semua konsep desain"
         ],
         correct: 1,
-        pembahasan: "Technopreneurship di bidang seni membantu menciptakan solusi kreatif melalui teknologi, seperti animasi digital, desain grafis, dan media interaktif."
+        pembahasan: "Technopreneurship menciptakan solusi kreatif seperti desain digital dan animasi."
     },
     {
-        q: "Apa yang perlu dipertimbangkan dalam menetapkan harga jasa desain grafis?",
+        q: "Hal yang perlu dipertimbangkan dalam menetapkan harga jasa desain grafis adalah ....",
         a: [
             "Harga sembarang tanpa analisis pasar",
             "Kompetisi, kebutuhan klien, dan biaya produksi",
-            "Menghindari proyek dengan nilai rendah",
+            "Menghindari proyek bernilai rendah",
             "Fokus hanya pada keuntungan besar",
-            "Menentukan harga tanpa mempertimbangkan persaingan"
+            "Menentukan harga tanpa mempertimbangkan pasar"
         ],
         correct: 1,
-        pembahasan: "Menetapkan harga harus mempertimbangkan faktor kompetisi, kebutuhan klien, dan biaya produksi agar tetap kompetitif dan menguntungkan."
+        pembahasan: "Harga harus disesuaikan dengan biaya, kompetisi, dan kebutuhan klien."
     },
     {
-        q: "Apa strategi pemasaran yang baik untuk technopreneur di bidang desain grafis?",
+        q: "Strategi pemasaran yang baik untuk technopreneur di bidang desain grafis adalah ....",
         a: [
-            "Membuat materi pemasaran yang sesuai dengan target audiens",
+            "Membuat materi pemasaran sesuai target audiens",
             "Hanya mengandalkan klien lama",
             "Menghindari platform digital",
-            "Fokus hanya pada pemasaran cetak",
+            "Fokus pada pemasaran cetak saja",
             "Tidak memperhatikan kebutuhan audiens"
         ],
         correct: 0,
-        pembahasan: "Strategi pemasaran yang efektif harus relevan dengan kebutuhan target audiens,menggunakan platform digital dan tradisional untuk menjangkau lebih banyak klien."
+        pembahasan: "Materi pemasaran harus sesuai target dan memanfaatkan platform digital."
     }
 ];
