@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Apa yang dimaksud dengan grafik bitmap?",
+        q: "Grafik bitmap merupakan grafik yang berbasis ………",
         a: [
             "Grafik berbasis garis",
             "Grafik berbasis pixel",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Bitmap adalah grafik berbasis pixel, di mana setiap pixel memiliki warna dan posisi tertentu."
     },
     {
-        q: "Program apa yang digunakan untuk mengolah grafik bitmap?",
+        q: "Program yang digunakan untuk mengolah grafik bitmap adalah ………",
         a: [
             "CorelDraw",
             "Adobe Illustrator",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "Paint adalah program sederhana yang digunakan untuk mengolah grafik bitmap."
     },
     {
-        q: "Ciri khas utama grafik bitmap adalah...",
+        q: "Ciri khas utama grafik bitmap adalah ………",
         a: [
             "Resolusi tinggi",
             "Terbentuk dari kumpulan titik warna",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Gambar bitmap terbentuk dari kumpulan titik warna atau pixel."
     },
     {
-        q: "Apa fungsi utama Adobe Photoshop?",
+        q: "Fungsi utama Adobe Photoshop adalah ………",
         a: [
             "Membuat animasi",
             "Mengedit foto",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "Photoshop adalah software pengedit foto dan manipulasi gambar bitmap."
     },
     {
-        q: "Apa kelemahan utama dari grafik bitmap?",
+        q: "Kelemahan utama dari grafik bitmap adalah ………",
         a: [
             "Tidak bisa diubah ukurannya",
             "Menggunakan titik warna terbatas",
@@ -64,7 +64,7 @@ const quizData = [
         pembahasan: "Bitmap akan pecah atau blur jika diperbesar karena pixel menjadi terlihat."
     },
     {
-        q: "Software Corel PhotoPaint digunakan untuk...",
+        q: "Software Corel PhotoPaint digunakan untuk ………",
         a: [
             "Desain berbasis vektor",
             "Membuat model 3D",
@@ -76,7 +76,7 @@ const quizData = [
         pembahasan: "Corel PhotoPaint adalah software pengolah gambar berbasis bitmap."
     },
     {
-        q: "Istilah untuk menyebut ukuran resolusi dalam grafik bitmap adalah...",
+        q: "Istilah untuk menyebut ukuran resolusi dalam grafik bitmap adalah ………",
         a: [
             "Intensity",
             "Resolution",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Resolusi menunjukkan jumlah pixel dalam area tertentu."
     },
     {
-        q: "Fungsi toolbox dalam Adobe Photoshop adalah...",
+        q: "Fungsi toolbox dalam Adobe Photoshop adalah ………",
         a: [
             "Mengatur layer",
             "Menyimpan file",
@@ -100,7 +100,7 @@ const quizData = [
         pembahasan: "Toolbox berisi alat seperti Move Tool, Brush Tool, Eraser, dan lainnya."
     },
     {
-        q: "Apa langkah pertama dalam menjalankan Photoshop?",
+        q: "Langkah pertama dalam menjalankan Photoshop adalah ………",
         a: [
             "Membuka dokumen baru",
             "Menyalakan komputer",
@@ -112,7 +112,7 @@ const quizData = [
         pembahasan: "Langkah awal adalah menyalakan komputer dan membuka aplikasi Photoshop."
     },
     {
-        q: "Proses mengubah gambar vektor menjadi bitmap disebut...",
+        q: "Proses mengubah gambar vektor menjadi bitmap disebut ………",
         a: [
             "Rasterisasi",
             "Vectorisasi",
@@ -124,7 +124,7 @@ const quizData = [
         pembahasan: "Rasterisasi adalah proses mengubah gambar vektor menjadi bitmap."
     },
     {
-        q: "Software Paint biasanya digunakan untuk...",
+        q: "Software Paint biasanya digunakan untuk ………",
         a: [
             "Mengedit foto tingkat lanjut",
             "Mengolah grafik vektor",
@@ -136,7 +136,7 @@ const quizData = [
         pembahasan: "Paint digunakan untuk kegiatan menggambar sederhana."
     },
     {
-        q: "Gambar bitmap ideal digunakan untuk...",
+        q: "Gambar bitmap ideal digunakan untuk ………",
         a: [
             "Logo besar",
             "Foto dengan detail halus",
@@ -148,7 +148,7 @@ const quizData = [
         pembahasan: "Bitmap cocok untuk gambar detail tinggi seperti foto."
     },
     {
-        q: "Kelebihan utama Adobe Photoshop adalah...",
+        q: "Kelebihan utama Adobe Photoshop adalah ………",
         a: [
             "Gratis diunduh",
             "Mendukung semua format",
@@ -160,7 +160,7 @@ const quizData = [
         pembahasan: "Photoshop unggul dalam editing foto tingkat profesional."
     },
     {
-        q: "Untuk keluar dari Photoshop, shortcut yang digunakan adalah...",
+        q: "Shortcut untuk keluar dari Photoshop adalah ………",
         a: [
             "Ctrl + Z",
             "Ctrl + W",
@@ -172,7 +172,7 @@ const quizData = [
         pembahasan: "Alt + F4 menutup aplikasi."
     },
     {
-        q: "Perangkat lunak berikut yang mendukung pengolahan gambar bitmap, kecuali...",
+        q: "Perangkat lunak berikut yang mendukung pengolahan gambar bitmap, kecuali ………",
         a: [
             "Paint",
             "Adobe Photoshop",
@@ -184,7 +184,7 @@ const quizData = [
         pembahasan: "Notepad bukan software pengolah gambar."
     },
     {
-        q: "Titik-titik warna yang membentuk gambar disebut...",
+        q: "Titik-titik warna yang membentuk gambar disebut ………",
         a: [
             "Resolusi",
             "Raster",
@@ -196,7 +196,7 @@ const quizData = [
         pembahasan: "Pixel adalah elemen terkecil penyusun gambar bitmap."
     },
     {
-        q: "Apa kekurangan utama Paint dibandingkan Photoshop?",
+        q: "Kekurangan utama Paint dibandingkan Photoshop adalah ………",
         a: [
             "Tidak mendukung teks",
             "Terbatas untuk pengeditan sederhana",
@@ -208,7 +208,7 @@ const quizData = [
         pembahasan: "Paint hanya mampu mengedit gambar dalam tingkat dasar."
     },
     {
-        q: "Salah satu contoh file gambar berbasis bitmap adalah...",
+        q: "Salah satu contoh format file gambar berbasis bitmap adalah ………",
         a: [
             ".svg",
             ".psd",
@@ -220,7 +220,7 @@ const quizData = [
         pembahasan: "PNG adalah format gambar bitmap."
     },
     {
-        q: "Corel PhotoPaint biasanya digunakan bersama dengan...",
+        q: "Corel PhotoPaint biasanya digunakan bersama dengan ………",
         a: [
             "CorelDRAW",
             "Photoshop",
@@ -232,7 +232,7 @@ const quizData = [
         pembahasan: "Corel PhotoPaint adalah pendamping CorelDRAW untuk mengolah bitmap."
     },
     {
-        q: "Bagaimana cara mengatur resolusi gambar di Photoshop?",
+        q: "Cara mengatur resolusi gambar di Photoshop dilakukan melalui ………",
         a: [
             "Menu Filter",
             "Menu Image > Image Size",
