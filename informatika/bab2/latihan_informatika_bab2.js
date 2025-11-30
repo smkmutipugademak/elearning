@@ -17,7 +17,13 @@ const quizData = [
     },
     {
         q: "Langkah pertama dalam berpikir komputasional adalah ………",
-        a: ["Validasi data", "Abstraksi", "Evaluasi hasil", "Menentukan masalah", "Pengorganisasian data"],
+        a: [
+            "Validasi data",
+            "Abstraksi",
+            "Evaluasi hasil",
+            "Menentukan masalah",
+            "Pengorganisasian data"
+        ],
         correct: 3,
         pembahasan: "Langkah pertama adalah mengenali dan mendefinisikan masalah."
     },
@@ -47,7 +53,13 @@ const quizData = [
     },
     {
         q: "Salah satu algoritma sorting yang efisien untuk data tidak terlalu besar adalah ………",
-        a: ["Merge Sort", "Bubble Sort", "Quick Sort", "Selection Sort", "Binary Sort"],
+        a: [
+            "Merge Sort",
+            "Bubble Sort",
+            "Quick Sort",
+            "Selection Sort",
+            "Binary Sort"
+        ],
         correct: 1,
         pembahasan: "Bubble sort cocok untuk dataset kecil meskipun kurang efisien untuk data besar."
     },
@@ -65,13 +77,25 @@ const quizData = [
     },
     {
         q: "Struktur data 'Stack' bekerja berdasarkan prinsip ………",
-        a: ["FIFO", "LIFO", "Sorting prioritas", "Mencari elemen terkecil", "Menyimpan data terurut"],
+        a: [
+            "FIFO",
+            "LIFO",
+            "Sorting prioritas",
+            "Mencari elemen terkecil",
+            "Menyimpan data terurut"
+        ],
         correct: 1,
         pembahasan: "Stack bekerja dengan prinsip LIFO."
     },
     {
         q: "Struktur data 'Queue' bekerja berdasarkan prinsip ………",
-        a: ["LIFO", "FIFO", "Sorting ukuran", "Menyimpan paralel", "Membagi kelompok"],
+        a: [
+            "LIFO",
+            "FIFO",
+            "Sorting ukuran",
+            "Menyimpan paralel",
+            "Membagi kelompok"
+        ],
         correct: 1,
         pembahasan: "Queue bekerja dengan prinsip FIFO."
     },
@@ -101,7 +125,13 @@ const quizData = [
     },
     {
         q: "Tahap 'Crawling' pada mesin pencari melibatkan ………",
-        a: ["Pengumpulan data dari website", "Pemberian peringkat", "Penentuan relevansi", "Penyimpanan data", "Penyaringan informasi"],
+        a: [
+            "Pengumpulan data dari website",
+            "Pemberian peringkat",
+            "Penentuan relevansi",
+            "Penyimpanan data",
+            "Penyaringan informasi"
+        ],
         correct: 0,
         pembahasan: "Crawling mengumpulkan data dari berbagai website."
     },
@@ -179,13 +209,25 @@ const quizData = [
     },
     {
         q: "Metode sorting yang menggabungkan dua list terurut adalah ………",
-        a: ["Merge Sort", "Quick Sort", "Bubble Sort", "Selection Sort", "Binary Sort"],
+        a: [
+            "Merge Sort",
+            "Quick Sort",
+            "Bubble Sort",
+            "Selection Sort",
+            "Binary Sort"
+        ],
         correct: 0,
         pembahasan: "Merge Sort menggabungkan dua list terurut menjadi satu."
     },
     {
         q: "Operasi untuk menambahkan elemen pada Stack adalah ………",
-        a: ["Push", "Pop", "Enqueue", "Dequeue", "Insert"],
+        a: [
+            "Push",
+            "Pop",
+            "Enqueue",
+            "Dequeue",
+            "Insert"
+        ],
         correct: 0,
         pembahasan: "Push menambahkan elemen ke atas stack."
     },
@@ -299,7 +341,13 @@ const quizData = [
     },
     {
         q: "Operasi 'Push' dalam stack digunakan untuk ………",
-        a: ["Menghapus elemen", "Menambah elemen", "Mengambil elemen bawah", "Mengurutkan", "Menyalin"],
+        a: [
+            "Menghapus elemen",
+            "Menambah elemen",
+            "Mengambil elemen bawah",
+            "Mengurutkan",
+            "Menyalin"
+        ],
         correct: 1,
         pembahasan: "Push menambahkan elemen ke stack."
     },
@@ -329,7 +377,13 @@ const quizData = [
     },
     {
         q: "Tahap terakhir dalam berpikir komputasional adalah ………",
-        a: ["Abstraksi", "Validasi", "Pengumpulan data", "Evaluasi solusi", "Perancangan algoritma"],
+        a: [
+            "Abstraksi",
+            "Validasi",
+            "Pengumpulan data",
+            "Evaluasi solusi",
+            "Perancangan algoritma"
+        ],
         correct: 3,
         pembahasan: "Tahap terakhir adalah evaluasi solusi."
     },
@@ -370,5 +424,3 @@ const quizData = [
         pembahasan: "Abstraksi memfokuskan informasi penting."
     }
 ];
-
-
