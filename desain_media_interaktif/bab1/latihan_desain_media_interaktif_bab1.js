@@ -213,7 +213,7 @@ const quizData = [
             "Mengganti semua teks",
             "Menyampaikan informasi sulit secara visual",
             "Membuat konten kompleks",
-            "Meningkatkan kapasitas penyimpanan",
+            "Meningingkatkan kapasitas penyimpanan",
             "Mempercepat pembuatan konten"
         ],
         correct: 1,
@@ -310,3 +310,4 @@ const quizData = [
         pembahasan: "Multimedia mempermudah penyampaian informasi dengan kombinasi media."
     }
 ];
+
