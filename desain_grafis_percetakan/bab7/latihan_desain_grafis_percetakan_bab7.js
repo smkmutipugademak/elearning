@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Grafis bitmap menggunakan struktur data yang terdiri dari...",
+        q: "Grafis bitmap menggunakan struktur data yang terdiri dari ………",
         a: [
             "Garis dan kurva",
             "Formula matematika",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Bitmap adalah gambar yang terbentuk dari titik-titik berwarna atau pixel yang membentuk citra visual."
     },
     {
-        q: "Keuntungan utama grafis vektor dibandingkan bitmap adalah...",
+        q: "Keuntungan utama grafis vektor dibandingkan bitmap adalah ………",
         a: [
             "Ukuran file lebih besar",
             "Proses komputasi lebih cepat",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "Grafis vektor tidak pecah saat diperbesar karena berbasis formula matematika."
     },
     {
-        q: "Program aplikasi berikut yang termasuk pengolah grafis bitmap adalah...",
+        q: "Program aplikasi berikut yang termasuk pengolah grafis bitmap adalah ………",
         a: [
             "CorelDraw",
             "Adobe Illustrator",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Paint, GIMP, dan Photoshop adalah pengolah bitmap. CorelDraw dan Illustrator juga dapat mengolah bitmap meskipun utama vektor."
     },
     {
-        q: "Teknik fotografi untuk menangkap objek bergerak dengan efek blur pada latar belakang disebut...",
+        q: "Teknik fotografi untuk menangkap objek bergerak dengan efek blur pada latar belakang disebut ………",
         a: [
             "Zooming",
             "Panning",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "Panning menjaga objek tetap fokus namun membuat latar belakang blur."
     },
     {
-        q: "Ciri utama grafis bitmap adalah...",
+        q: "Ciri utama grafis bitmap adalah ………",
         a: [
             "File berbasis garis",
             "File berbasis pixel",
@@ -64,7 +64,7 @@ const quizData = [
         pembahasan: "Bitmap dibangun dari banyak pixel sehingga sangat bergantung pada resolusi."
     },
     {
-        q: "Software pengolah grafis vektor adalah...",
+        q: "Software pengolah grafis vektor adalah ………",
         a: [
             "Corel PhotoPaint",
             "Adobe Photoshop",
@@ -76,7 +76,7 @@ const quizData = [
         pembahasan: "Adobe Illustrator adalah software pemrosesan grafis vektor."
     },
     {
-        q: "Faktor paling penting dalam fotografi adalah...",
+        q: "Faktor paling penting dalam fotografi adalah ………",
         a: [
             "Kamera",
             "Cahaya",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Cahaya menentukan hasil kualitas foto secara keseluruhan."
     },
     {
-        q: "Format file berikut yang bukan berbasis bitmap adalah...",
+        q: "Format file berikut yang bukan berbasis bitmap adalah ………",
         a: [
             "JPEG",
             "PNG",
@@ -100,7 +100,7 @@ const quizData = [
         pembahasan: "SVG adalah format grafis vektor."
     },
     {
-        q: "Perbedaan utama bitmap dan vektor adalah...",
+        q: "Perbedaan utama bitmap dan vektor adalah ………",
         a: [
             "Bitmap memiliki ukuran file kecil",
             "Vektor berbasis pixel",
@@ -112,7 +112,7 @@ const quizData = [
         pembahasan: "Grafis vektor tetap tajam dalam berbagai ukuran karena skalanya tidak bergantung pixel."
     },
     {
-        q: "Program yang paling cocok untuk membuat desain logo adalah...",
+        q: "Program yang paling cocok untuk membuat desain logo adalah ………",
         a: [
             "Paint",
             "Adobe Illustrator",
@@ -124,7 +124,7 @@ const quizData = [
         pembahasan: "Logo ideal dibuat dengan vektor, sehingga Adobe Illustrator paling sesuai."
     },
     {
-        q: "Format file berikut termasuk file vektor adalah...",
+        q: "Format file berikut termasuk file vektor adalah ………",
         a: [
             "JPEG",
             "PNG",
@@ -136,7 +136,7 @@ const quizData = [
         pembahasan: "SVG adalah format file berbasis vektor."
     },
     {
-        q: "Teknik fotografi untuk mendapatkan fokus ruang tajam adalah...",
+        q: "Teknik fotografi untuk mendapatkan fokus ruang tajam adalah ………",
         a: [
             "Zooming",
             "Depth of Field",
@@ -148,7 +148,7 @@ const quizData = [
         pembahasan: "Depth of Field mengatur ruang tajam pada objek foto."
     },
     {
-        q: "Keunggulan grafis vektor adalah...",
+        q: "Keunggulan grafis vektor adalah ………",
         a: [
             "Ukuran file kecil",
             "Kualitas rendah",
@@ -160,7 +160,7 @@ const quizData = [
         pembahasan: "File vektor kecil karena hanya menyimpan rumus matematika."
     },
     {
-        q: "Software berikut tidak termasuk pengolah grafis bitmap...",
+        q: "Software berikut tidak termasuk pengolah grafis bitmap ………",
         a: [
             "Corel PhotoPaint",
             "GIMP",
@@ -172,7 +172,7 @@ const quizData = [
         pembahasan: "Adobe Illustrator adalah software vektor."
     },
     {
-        q: "Kelemahan utama grafik bitmap adalah...",
+        q: "Kelemahan utama grafik bitmap adalah ………",
         a: [
             "Ukuran file besar",
             "Tidak bergantung resolusi",
@@ -184,7 +184,7 @@ const quizData = [
         pembahasan: "Bitmap menggunakan pixel sehingga ukuran file besar dan mudah pecah."
     },
     {
-        q: "Software yang cocok digunakan untuk mengedit foto adalah...",
+        q: "Software yang cocok digunakan untuk mengedit foto adalah ………",
         a: [
             "CorelDraw",
             "Adobe Photoshop",
@@ -196,7 +196,7 @@ const quizData = [
         pembahasan: "Photoshop adalah software edit foto profesional."
     },
     {
-        q: "Teknik fotografi untuk menangkap gerakan lambat adalah...",
+        q: "Teknik fotografi untuk menangkap gerakan lambat adalah ………",
         a: [
             "Stop Action",
             "Slow Motion",
@@ -208,7 +208,7 @@ const quizData = [
         pembahasan: "Slow Motion digunakan untuk menangkap gerakan lambat."
     },
     {
-        q: "Resolusi gambar bitmap diukur dalam satuan...",
+        q: "Resolusi gambar bitmap diukur dalam satuan ………",
         a: [
             "Format file",
             "Panjang dan lebar",
@@ -220,7 +220,7 @@ const quizData = [
         pembahasan: "Resolusi bitmap diukur berdasarkan pixel per inch."
     },
     {
-        q: "Pengaturan ruang tajam dipengaruhi oleh...",
+        q: "Pengaturan ruang tajam dipengaruhi oleh ………",
         a: [
             "ISO kamera",
             "Focal length",
@@ -232,7 +232,7 @@ const quizData = [
         pembahasan: "Focal length sangat memengaruhi depth of field."
     },
     {
-        q: "File grafis bitmap cocok digunakan untuk...",
+        q: "File grafis bitmap cocok digunakan untuk ………",
         a: [
             "Logo",
             "Foto",
