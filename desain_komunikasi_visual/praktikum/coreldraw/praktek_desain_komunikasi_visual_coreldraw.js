@@ -122,32 +122,32 @@ const quizData = [
         a: ["Mengatur layer dan urutan objek", "Menambah warna", "Membuat teks", "Menyimpan dokumen", "Menghapus objek"],
         correct: 0,
         pembahasan: "Object Manager digunakan untuk mengatur posisi dan layer objek dalam dokumen."
-    },// =================== LEVEL MENENGAH (MEDIUM) ===================
-{
+    },
+    {
     q: "Fitur untuk membuat efek timbul pada tepi objek...",
     a: ["Bevel Tool", "Extrude Tool", "Blend Tool", "Contour Tool", "Drop Shadow Tool"],
     correct: 0,
     pembahasan: "Bevel Tool membuat efek tepi timbul (emboss) pada objek."
-},
-{
+    },
+    {
     q: "Fungsi Extrude Tool untuk memberi efek kedalaman pada objek...",
     a: ["Membuat efek 3D pada objek", "Membuat efek transparansi", "Menyalin warna", "Membuat pola", "Membuat bayangan"],
     correct: 0,
     pembahasan: "Extrude Tool memberikan efek kedalaman (3D) pada objek atau teks."
-},
-{
+    },
+    {
     q: "Tool untuk membuat bayangan dinamis di bawah objek...",
     a: ["Drop Shadow Tool", "Lens Tool", "Transparency Tool", "Contour Tool", "Blend Tool"],
     correct: 0,
     pembahasan: "Drop Shadow Tool menciptakan bayangan realistis di bawah objek."
-},
-{
+    },
+    {
     q: "Fungsi Contour Tool untuk menambah garis lapisan di dalam atau luar objek...",
     a: ["Menambah garis lapisan di dalam/luar objek", "Menghapus garis luar", "Mengatur node", "Mewarnai objek", "Mengubah bentuk"],
     correct: 0,
     pembahasan: "Contour Tool digunakan untuk membuat garis berlapis dari tepi objek."
-},
-{
+    },
+    {
     q: "Tool untuk memberi efek cahaya atau pembesaran pada objek...",
     a: ["Lens Tool", "Transparency Tool", "Blend Tool", "Extrude Tool", "Fountain Fill"],
     correct: 0,
