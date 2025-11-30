@@ -4,7 +4,7 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Software pengolah gambar berikut yang tidak termasuk perangkat lunak berbasis vektor adalah:",
+        q: "Software pengolah gambar berikut yang tidak termasuk perangkat lunak berbasis vektor adalah ………",
         a: [
             "CorelDraw",
             "Adobe Illustrator",
@@ -16,7 +16,7 @@ const quizData = [
         pembahasan: "Adobe Photoshop adalah perangkat lunak berbasis bitmap, bukan vektor."
     },
     {
-        q: "Fungsi utama CorelDraw adalah:",
+        q: "Fungsi utama CorelDraw adalah ………",
         a: [
             "Mengedit foto",
             "Mengolah gambar vektor",
@@ -28,7 +28,7 @@ const quizData = [
         pembahasan: "CorelDraw dirancang untuk membuat dan mengolah gambar berbasis vektor."
     },
     {
-        q: "Keunggulan Adobe Illustrator dibandingkan CorelDraw adalah:",
+        q: "Keunggulan Adobe Illustrator dibandingkan CorelDraw adalah ………",
         a: [
             "Tidak memakan memori besar",
             "Fitur desain grafis yang sangat lengkap",
@@ -40,7 +40,7 @@ const quizData = [
         pembahasan: "Adobe Illustrator memiliki fitur desain grafis yang sangat lengkap untuk industri profesional."
     },
     {
-        q: "GIMP adalah software yang bersifat:",
+        q: "GIMP merupakan software yang bersifat ………",
         a: [
             "Berbayar",
             "Open-source",
@@ -52,7 +52,7 @@ const quizData = [
         pembahasan: "GIMP adalah software gratis dan open-source."
     },
     {
-        q: "Software pengolah gambar yang paling sering digunakan untuk desain grafis profesional adalah:",
+        q: "Software pengolah gambar yang paling sering digunakan untuk desain grafis profesional adalah ………",
         a: [
             "Paint",
             "Adobe Illustrator",
@@ -61,10 +61,10 @@ const quizData = [
             "Adobe Photoshop"
         ],
         correct: 1,
-        pembahasan: "Adobe Illustrator merupakan standar industri untuk desain berbasiskan vektor."
+        pembahasan: "Adobe Illustrator merupakan standar industri untuk desain berbasis vektor."
     },
     {
-        q: "Efek Blend pada CorelDraw digunakan untuk:",
+        q: "Efek Blend pada CorelDraw digunakan untuk ………",
         a: [
             "Membuat gradasi warna",
             "Memberi bayangan pada objek",
@@ -76,7 +76,7 @@ const quizData = [
         pembahasan: "Efek Blend menciptakan transisi atau efek 3D antara dua objek."
     },
     {
-        q: "Langkah pertama untuk memulai CorelDraw adalah:",
+        q: "Langkah pertama untuk memulai CorelDraw adalah ………",
         a: [
             "Membuat dokumen baru",
             "Memilih template",
@@ -88,7 +88,7 @@ const quizData = [
         pembahasan: "Langkah awal adalah menyalakan komputer dan membuka aplikasi CorelDraw."
     },
     {
-        q: "Keunggulan utama CorelDraw dibandingkan Adobe Illustrator adalah:",
+        q: "Keunggulan utama CorelDraw dibandingkan Adobe Illustrator adalah ………",
         a: [
             "Fitur lengkap",
             "Kemampuan tracing otomatis",
@@ -100,7 +100,7 @@ const quizData = [
         pembahasan: "CorelDraw dikenal memiliki antarmuka yang lebih mudah dipahami pemula."
     },
     {
-        q: "Langkah terakhir dalam membuat dokumen di CorelDraw adalah:",
+        q: "Langkah terakhir dalam membuat dokumen di CorelDraw adalah ………",
         a: [
             "Menyimpan file",
             "Menambahkan efek",
@@ -112,7 +112,7 @@ const quizData = [
         pembahasan: "Langkah terakhir adalah menyimpan dokumen."
     },
     {
-        q: "Adobe Photoshop lebih dikenal untuk:",
+        q: "Adobe Photoshop lebih dikenal untuk ………",
         a: [
             "Desain berbasis vektor",
             "Edit foto dan bitmap",
@@ -124,7 +124,7 @@ const quizData = [
         pembahasan: "Photoshop digunakan untuk mengedit foto dan gambar bitmap."
     },
     {
-        q: "Perangkat lunak yang didistribusikan secara gratis dan open-source adalah:",
+        q: "Perangkat lunak yang didistribusikan secara gratis dan open-source adalah ………",
         a: [
             "CorelDraw",
             "GIMP",
@@ -136,7 +136,7 @@ const quizData = [
         pembahasan: "GIMP adalah software gratis dan open-source."
     },
     {
-        q: "Fitur Drop Shadow pada CorelDraw digunakan untuk:",
+        q: "Fitur Drop Shadow pada CorelDraw digunakan untuk ………",
         a: [
             "Memberi bayangan pada objek",
             "Membuat gradasi warna",
@@ -148,7 +148,7 @@ const quizData = [
         pembahasan: "Drop Shadow digunakan untuk menambahkan bayangan pada objek."
     },
     {
-        q: "Efek Distort pada CorelDraw memungkinkan pengguna untuk:",
+        q: "Efek Distort pada CorelDraw memungkinkan pengguna untuk ………",
         a: [
             "Membuat bayangan",
             "Memutar objek",
@@ -160,7 +160,7 @@ const quizData = [
         pembahasan: "Distort digunakan untuk mengubah bentuk objek menjadi lebih dinamis dan abstrak."
     },
     {
-        q: "Untuk membuat dokumen baru di CorelDraw, kita perlu memilih:",
+        q: "Untuk membuat dokumen baru di CorelDraw, pengguna perlu memilih ………",
         a: [
             "Open graphic",
             "New document",
@@ -172,7 +172,7 @@ const quizData = [
         pembahasan: "Membuat dokumen baru dilakukan melalui opsi 'New document'."
     },
     {
-        q: "Kelemahan utama dari GIMP adalah:",
+        q: "Kelemahan utama GIMP adalah ………",
         a: [
             "Tidak mendukung open-source",
             "Tidak mendukung format vektor",
@@ -181,10 +181,10 @@ const quizData = [
             "Tidak dapat digunakan di Mac OS"
         ],
         correct: 2,
-        pembahasan: "GIMP hanya mendukung 8 bits per-channel, sehingga kedalaman warnanya terbatas."
+        pembahasan: "GIMP hanya mendukung 8 bits per-channel sehingga kedalaman warnanya terbatas."
     },
     {
-        q: "CorelDraw mendukung fitur berikut, kecuali:",
+        q: "CorelDraw mendukung berbagai fitur berikut, kecuali ………",
         a: [
             "Membuat logo",
             "Mengedit foto",
@@ -196,7 +196,7 @@ const quizData = [
         pembahasan: "CorelDraw tidak digunakan untuk membuat animasi."
     },
     {
-        q: "Untuk menyimpan dokumen di CorelDraw, langkah yang benar adalah:",
+        q: "Untuk menyimpan dokumen di CorelDraw, langkah yang benar adalah ………",
         a: [
             "File > Save",
             "Edit > Save",
@@ -208,7 +208,7 @@ const quizData = [
         pembahasan: "Dokumen disimpan melalui menu File > Save."
     },
     {
-        q: "Efek Contour pada CorelDraw berfungsi untuk:",
+        q: "Efek Contour pada CorelDraw digunakan untuk ………",
         a: [
             "Memberikan garis tepi pada objek",
             "Membuat objek transparan",
@@ -220,7 +220,7 @@ const quizData = [
         pembahasan: "Contour menambahkan garis tepi pada objek, baik ke dalam maupun ke luar."
     },
     {
-        q: "Adobe Photoshop dikenal sebagai:",
+        q: "Adobe Photoshop dikenal sebagai software yang digunakan untuk ………",
         a: [
             "Software vektor",
             "Software foto dan bitmap",
@@ -232,7 +232,7 @@ const quizData = [
         pembahasan: "Photoshop digunakan untuk pengeditan foto dan grafik bitmap."
     },
     {
-        q: "Shortcut untuk keluar dari CorelDraw adalah:",
+        q: "Shortcut untuk keluar dari CorelDraw adalah ………",
         a: [
             "Ctrl + S",
             "Ctrl + Z",
