@@ -38,7 +38,7 @@ const praktikumData = {
     "Desain Komunikasi Visual": ["Adobe Photoshop", "CorelDRAW", "Layouting", "Tipografi"],
     "Coding": ["Dasar HTML", "Dasar CSS", "Dasar JavaScript"],
     "Pemrograman Dasar": ["If Else", "Perulangan", "Array", "Tuple", "Fungsi", "Dictionary", "Inheritance", "Abstraction", "Polymorphism", "Lambda", "Tipe Data", "Parameter dan Arguments"],
-    "Pemrograman Web dan Perangkat Bergerak": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    "Pemrograman Web dan Perangkat Bergerak": ["Basic", "CSS", "JavaScript", "Responsive Design"],
     "Desain Grafis Percetakan": ["CorelDRAW", "Adobe Illustrator", "Adobe Photoshop"],
     "Teknik Pengolahan Audio dan Video": ["Editing Audio", "Editing Video"],
     "Desain Media Interaktif": ["UIUX Design", "Prototyping", "Animasi Interaktif"]
