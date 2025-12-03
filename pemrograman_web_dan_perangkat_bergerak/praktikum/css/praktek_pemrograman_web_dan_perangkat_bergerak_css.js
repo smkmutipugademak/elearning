@@ -4,189 +4,183 @@ let timeRemaining = 0;
 
 const quizData = [
     {
-        q: "Kepanjangan dari CSS adalah....",
-        a: ["Cascading Style Sheets", "Creative Style System", "Computer Style Selector", "Coded Style Syntax", "Common Style Sheet"],
-        correct: 0,
-        pembahasan: "CSS adalah singkatan dari Cascading Style Sheets."
-    },
-    {
-        q: "Properti CSS yang digunakan untuk mengubah warna teks adalah....",
-        a: ["font-color", "color", "text-color", "text-style", "font-style"],
-        correct: 1,
-        pembahasan: "color digunakan untuk mengubah warna teks."
-    },
-    {
-        q: "Properti CSS untuk mengubah ukuran font adalah....",
-        a: ["font-style", "text-size", "font-size", "size", "text-style"],
+        q: "Fungsi utama JavaScript dalam pemrograman web adalah....",
+        a: ["Mengatur struktur halaman", "Memberi gaya tampilan", "Menambah interaktivitas", "Menyimpan data di server", "Membuat database"],
         correct: 2,
-        pembahasan: "font-size mengatur ukuran teks."
+        pembahasan: "JavaScript digunakan untuk membuat halaman web menjadi interaktif."
     },
     {
-        q: "Cara menambahkan CSS eksternal adalah....",
-        a: ["<style src='style.css'>", "<css link='style.css'>", "<link rel='stylesheet' href='style.css'>", "<import css='style.css'>", "<script src='style.css'>"],
+        q: "Perintah untuk menampilkan teks di console adalah....",
+        a: ["print()", "echo()", "console.log()", "show()", "write()"],
         correct: 2,
-        pembahasan: "CSS eksternal dihubungkan memakai <link rel='stylesheet' … >."
+        pembahasan: "console.log() digunakan untuk debugging."
     },
     {
-        q: "Selector yang digunakan untuk memilih elemen berdasarkan id adalah....",
-        a: [".idname", "#idname", "id:idname", "id(name)", "@idname"],
-        correct: 1,
-        pembahasan: "Id menggunakan tanda #."
-    },
-    {
-        q: "Selector untuk memilih elemen berdasarkan class adalah....",
-        a: ["#", ".", "*", "&", "$"],
-        correct: 1,
-        pembahasan: "Class menggunakan simbol titik (.)."
-    },
-    {
-        q: "Properti untuk memberi warna latar belakang adalah....",
-        a: ["background", "bg-color", "background-color", "color-background", "canvas-color"],
-        correct: 2,
-        pembahasan: "background-color digunakan untuk warna latar."
-    },
-    {
-        q: "Perintah CSS untuk membuat teks menjadi tebal adalah....",
-        a: ["font-weight: bold;", "font-style: bold;", "text-bold: true;", "font-bold: yes;", "text-weight: bold;"],
-        correct: 0,
-        pembahasan: "font-weight mengatur ketebalan teks."
-    },
-    {
-        q: "Properti untuk membuat sudut elemen menjadi membulat adalah....",
-        a: ["border", "border-style", "border-color", "border-radius", "border-circle"],
+        q: "Cara membuat variabel di JavaScript adalah....",
+        a: ["var x = 10;", "let x = 10;", "const x = 10;", "Semua benar", "make x = 10;"],
         correct: 3,
-        pembahasan: "border-radius digunakan untuk membuat sudut melengkung."
+        pembahasan: "Ketiga cara tersebut valid untuk membuat variabel."
     },
     {
-        q: "Kegunaan utama dari CSS adalah....",
-        a: ["Struktur halaman", "Interaksi program", "Tampilan dan gaya halaman", "Database", "Logika server"],
+        q: "Fungsi JavaScript yang berjalan ketika tombol diklik biasanya ditulis di....",
+        a: ["onclick", "onpress", "onhover", "onstart", "onchange"],
+        correct: 0,
+        pembahasan: "onclick digunakan untuk event klik."
+    },
+    {
+        q: "Perintah untuk mengambil elemen berdasarkan id adalah....",
+        a: ["getElement('id')", "query('#id')", "document.getElementById()", "document.id()", "get.id()"],
         correct: 2,
-        pembahasan: "CSS berfungsi untuk memperindah tampilan."
+        pembahasan: "document.getElementById() mengambil elemen berdasarkan id."
     },
     {
-        q: "Properti untuk memberi jarak di luar elemen adalah....",
-        a: ["padding", "margin", "border", "gap", "spacing"],
+        q: "Tipe data array ditandai dengan....",
+        a: ["{}", "[]", "<>", "()", "//"],
         correct: 1,
-        pembahasan: "Margin adalah jarak luar elemen."
+        pembahasan: "Array menggunakan tanda kurung siku []."
     },
     {
-        q: "Properti untuk memberi jarak di dalam elemen adalah....",
-        a: ["padding", "margin", "space", "distance", "inner-spacing"],
+        q: "Keluaran dari perintah typeof 'Hello' adalah....",
+        a: ["string", "text", "word", "character", "undefined"],
         correct: 0,
-        pembahasan: "Padding adalah jarak dalam elemen."
+        pembahasan: "typeof mengembalikan tipe data, yaitu string."
     },
     {
-        q: "Fungsi dari perintah display: flex; adalah....",
-        a: ["Menghapus elemen", "Membuat layout menjadi responsif dengan flexbox", "Membuat teks tebal", "Mengatur warna background", "Mengatur jenis font"],
+        q: "Operator perbandingan yang memeriksa nilai dan tipe adalah....",
+        a: ["==", "!=", "===", "~=", "<=>"],
+        correct: 2,
+        pembahasan: "=== membandingkan tipe dan nilai."
+    },
+    {
+        q: "Fungsi JSON.parse() digunakan untuk....",
+        a: ["Mengubah JSON menjadi object", "Mengubah object menjadi JSON", "Memvalidasi JSON", "Menjalankan JSON", "Menghapus JSON"],
+        correct: 0,
+        pembahasan: "JSON.parse() mengubah string JSON ke object."
+    },
+    {
+        q: "Event yang terjadi saat halaman selesai dimuat adalah....",
+        a: ["onload", "onready", "onopen", "onstart", "onclose"],
+        correct: 0,
+        pembahasan: "onload dijalankan ketika halaman sudah selesai dimuat."
+    },
+    {
+        q: "Cara membuat fungsi dalam JavaScript adalah....",
+        a: ["function myFunc() {}", "def myFunc() {}", "func myFunc() {}", "create function myFunc()", "method myFunc() {}"],
+        correct: 0,
+        pembahasan: "JavaScript memakai keyword function."
+    },
+    {
+        q: "Metode array untuk menambah data di akhir adalah....",
+        a: ["push()", "pop()", "shift()", "add()", "insert()"],
+        correct: 0,
+        pembahasan: "push() menambah elemen di belakang array."
+    },
+    {
+        q: "Metode yang digunakan untuk menghapus elemen terakhir array adalah....",
+        a: ["remove()", "pop()", "shift()", "delete()", "drop()"],
         correct: 1,
-        pembahasan: "Flexbox digunakan untuk membuat tata letak fleksibel."
+        pembahasan: "pop() menghapus elemen terakhir."
     },
     {
-        q: "Perintah untuk mengatur posisi teks di tengah adalah....",
-        a: ["text-align: center;", "align: center;", "center-text: true;", "position: center;", "content: center;"],
-        correct: 0,
-        pembahasan: "text-align digunakan untuk rata kiri/kanan/tengah."
-    },
-    {
-        q: "Properti untuk menghilangkan garis bawah pada link adalah....",
-        a: ["text-decoration: none;", "underline: false;", "border: none;", "line: remove;", "text-style: no-line;"],
-        correct: 0,
-        pembahasan: "text-decoration mengatur garis teks, termasuk underline."
-    },
-    {
-        q: "Sintaks penulisan komentar pada CSS adalah....",
-        a: ["", "// komentar", "/* komentar */", "# komentar", "-- komentar"],
-        correct: 2,
-        pembahasan: "Komentar CSS memakai /* … */."
-    },
-    {
-        q: "Properti CSS untuk mengatur jarak antar huruf adalah....",
-        a: ["letter-spacing", "word-spacing", "text-gap", "space-letter", "character-gap"],
-        correct: 0,
-        pembahasan: "letter-spacing mengatur jarak antar huruf."
-    },
-    {
-        q: "Properti CSS yang mengatur tinggi baris adalah....",
-        a: ["line-height", "height-line", "text-height", "row-size", "line-spacing"],
-        correct: 0,
-        pembahasan: "line-height mengatur tinggi baris teks."
-    },
-    {
-        q: "Perintah untuk mengatur gambar sebagai background adalah....",
-        a: ["background-img", "background-image", "image-bg", "img-background", "wallpaper"],
+        q: "Perintah untuk mengubah isi elemen HTML adalah....",
+        a: ["element.value", "element.innerHTML", "element.changeText", "element.update", "element.content"],
         correct: 1,
-        pembahasan: "background-image digunakan untuk gambar latar."
+        pembahasan: "innerHTML digunakan untuk mengubah isi elemen."
     },
     {
-        q: "Nilai display yang membuat elemen berada dalam satu baris dan ukurannya bisa diatur adalah....",
-        a: ["block", "inline", "inline-block", "flex", "grid"],
+        q: "querySelector('#judul') berarti memilih elemen berdasarkan....",
+        a: ["tag", "class", "id", "nama file", "atribut"],
         correct: 2,
-        pembahasan: "inline-block adalah gabungan inline dan block."
+        pembahasan: "# menunjukkan selector id."
     },
     {
-        q: "Properti untuk mengatur bayangan elemen adalah....",
-        a: ["shadow", "element-shadow", "box-shadow", "border-shadow", "drop-shadow"],
-        correct: 2,
-        pembahasan: "box-shadow untuk membuat efek bayangan kotak."
-    },
-    {
-        q: "Perintah untuk membuat teks miring adalah....",
-        a: ["font-mirror", "text-italic", "font-style: italic;", "italic: true;", "text-decoration: italic;"],
-        correct: 2,
-        pembahasan: "font-style mengatur gaya tulisan seperti italic."
-    },
-    {
-        q: "Selector * pada CSS digunakan untuk adalah....",
-        a: ["Memilih elemen tertentu", "Memilih id", "Memilih semua elemen", "Memilih class", "Memilih elemen root"],
-        correct: 2,
-        pembahasan: "* disebut universal selector."
-    },
-    {
-        q: "Properti untuk mengatur border menjadi putus-putus adalah....",
-        a: ["border: dashed;", "border-line: dot;", "border-type: cut;", "border-style: broken;", "border-decoration: dash;"],
-        correct: 0,
-        pembahasan: "border-style dapat menggunakan dashed, dotted, solid."
-    },
-    {
-        q: "Fungsi dari properti z-index adalah....",
-        a: ["Mengubah ukuran elemen", "Mengatur urutan tumpukan elemen (layering)", "Mengubah warna elemen", "Mengatur teks", "Mengatur transparansi"],
+        q: "Fungsi preventDefault() digunakan untuk....",
+        a: ["Mencegah error", "Mencegah aksi default event", "Menghapus event", "Mencegah submit form", "Mempercepat loading"],
         correct: 1,
-        pembahasan: "z-index mengatur layer elemen (mana yang di depan/belakang)."
+        pembahasan: "preventDefault() menghentikan perilaku bawaan."
     },
     {
-        q: "Perintah untuk membuat elemen diposisikan secara absolut adalah....",
-        a: ["position: fixed;", "position: relative;", "position: absolute;", "position: center;", "position: static;"],
-        correct: 2,
-        pembahasan: "absolute membuat elemen bisa diposisikan bebas."
-    },
-    {
-        q: "Fungsi dari perintah flex-direction: column; adalah....",
-        a: ["Menjadikan isi flex satu baris", "Menghilangkan elemen", "Mengatur item flex menjadi kolom (vertikal)", "Mengatur warna elemen", "Mengatur jarak antar kolom"],
-        correct: 2,
-        pembahasan: "flex-direction mengatur arah susunan item."
-    },
-    {
-        q: "Unit CSS yang bersifat relatif terhadap ukuran font adalah....",
-        a: ["px", "cm", "em", "mm", "pt"],
-        correct: 2,
-        pembahasan: "em relatif terhadap ukuran font induk."
-    },
-    {
-        q: "Properti untuk memberi efek transisi adalah....",
-        a: ["animation", "transition", "transform", "fade", "movement"],
+        q: "Hasil dari operasi 5 + '5' adalah....",
+        a: ["10", "55", "Error", "NaN", "25"],
         correct: 1,
-        pembahasan: "transition digunakan untuk animasi perubahan halus."
+        pembahasan: "String + number menghasilkan penggabungan string."
     },
     {
-        q: "Fungsi dari perintah transform: scale(1.2); adalah....",
-        a: ["Memiringkan elemen", "Mengubah warna elemen", "Membesarkan elemen 20%", "Mengatur opacity elemen", "Menggeser elemen"],
-        correct: 2,
-        pembahasan: "scale memperbesar atau memperkecil ukuran elemen."
-    },
-    {
-        q: "Properti CSS yang digunakan untuk mengatur transparansi adalah....",
-        a: ["opacity", "transparent", "alpha", "visibility", "clarity"],
+        q: "Hasil dari operasi 5 == '5' adalah....",
+        a: ["true", "false", "Error", "undefined", "null"],
         correct: 0,
-        pembahasan: "opacity mengatur tingkat transparansi elemen."
+        pembahasan: "== membandingkan nilai tanpa tipe."
+    },
+    {
+        q: "Untuk membuat pop-up alert digunakan....",
+        a: ["show()", "alert()", "popup()", "display()", "notify()"],
+        correct: 1,
+        pembahasan: "alert() menampilkan kotak pesan sederhana."
+    },
+    {
+        q: "Fungsi setInterval() digunakan untuk....",
+        a: ["Menjalankan kode sekali", "Menjalankan kode berulang dalam interval waktu", "Menunda eksekusi kode", "Menghentikan proses", "Menghapus interval"],
+        correct: 1,
+        pembahasan: "setInterval menjalankan fungsi secara berkala."
+    },
+    {
+        q: "Fungsi yang menunda eksekusi kode adalah....",
+        a: ["wait()", "delay()", "timeout()", "setTimeout()", "pause()"],
+        correct: 3,
+        pembahasan: "setTimeout menunda eksekusi dalam milidetik."
+    },
+    {
+        q: "DOM adalah singkatan dari....",
+        a: ["Document Object Model", "Digital Object Module", "Data Object Manager", "Document Operation Mode", "Disk Operating Mechanism"],
+        correct: 0,
+        pembahasan: "DOM merepresentasikan struktur halaman web."
+    },
+    {
+        q: "Fungsi addEventListener() digunakan untuk....",
+        a: ["Menghapus event", "Menambahkan event handler", "Membuat halaman baru", "Menutup browser", "Mengubah style elemen"],
+        correct: 1,
+        pembahasan: "addEventListener() menambahkan event pada elemen."
+    },
+    {
+        q: "Perintah untuk mengecek panjang array adalah....",
+        a: ["array.size()", "array.length", "array.count()", "array.total()", "array.height"],
+        correct: 1,
+        pembahasan: "length berisi jumlah elemen array."
+    },
+    {
+        q: "Fungsi yang digunakan untuk mengecek apakah suatu nilai bukan angka adalah....",
+        a: ["isNotNumber()", "isNaN()", "checkNaN()", "NaN()", "isInteger()"],
+        correct: 1,
+        pembahasan: "isNaN() mengecek apakah nilai bukan angka."
+    },
+    {
+        q: "Kata kunci untuk kondisi percabangan adalah....",
+        a: ["while", "if", "for", "switch", "loop"],
+        correct: 1,
+        pembahasan: "if digunakan untuk percabangan."
+    },
+    {
+        q: "Keluaran dari Boolean(0) adalah....",
+        a: ["true", "false", "undefined", "NaN", "null"],
+        correct: 1,
+        pembahasan: "0 dianggap sebagai nilai false."
+    },
+    {
+        q: "Method array untuk menggabungkan elemen menjadi string adalah....",
+        a: ["join()", "link()", "merge()", "implode()", "concat()"],
+        correct: 0,
+        pembahasan: "join() menggabungkan array menjadi string."
+    },
+    {
+        q: "Symbol {} dalam JavaScript digunakan untuk membuat....",
+        a: ["Array", "Object", "Function", "Loop", "String"],
+        correct: 1,
+        pembahasan: "Curly braces {} membuat object literal."
+    },
+    {
+        q: "Fungsi return dalam sebuah fungsi adalah....",
+        a: ["Menghentikan program", "Mengembalikan nilai", "Menghapus variabel", "Memanggil fungsi lain", "Menambah parameter"],
+        correct: 1,
+        pembahasan: "return mengembalikan nilai dari fungsi."
     }
 ];
