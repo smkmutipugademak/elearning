@@ -256,4 +256,57 @@ const quizData = [
         pembahasan: "Teks menyampaikan informasi inti."
     },
     {
-        q: "Elemen multimedia yang
+        q: "Elemen multimedia yang berfungsi menyampaikan informasi dengan suara adalah ......",
+        a: ["Teks", "Grafik", "Audio", "Video", "Animasi"],
+        correct: 2,
+        pembahasan: "Audio digunakan untuk narasi, musik, dan efek."
+    },
+    {
+        q: "Perbedaan antara multimedia content production dan communication adalah ......",
+        a: [
+            "Production fokus publikasi, communication pada distribusi",
+            "Production menghasilkan konten, communication menyebarkan konten",
+            "Production hanya teks, communication video",
+            "Production media cetak, communication digital",
+            "Production untuk promosi, communication untuk edukasi"
+        ],
+        correct: 1,
+        pembahasan: "Content production membuat konten; communication menyebarkannya."
+    },
+    {
+        q: "Animasi dalam multimedia berfungsi menjelaskan konsep kompleks melalui ......",
+        a: [
+            "Percepatan slide presentasi",
+            "Gerakan visual",
+            "Penggantian teks",
+            "Pengurangan interaktivitas",
+            "Penyederhanaan konten"
+        ],
+        correct: 1,
+        pembahasan: "Animasi menjelaskan konsep melalui visualisasi gerakan."
+    },
+    {
+        q: "Karakteristik multimedia linier adalah ......",
+        a: [
+            "User mengontrol urutan konten",
+            "Informasi disajikan berurutan tanpa kontrol pengguna",
+            "Menggunakan animasi sebagai unsur utama",
+            "Audio sebagai unsur utama",
+            "Tidak membutuhkan hardware khusus"
+        ],
+        correct: 1,
+        pembahasan: "Multimedia linier berjalan otomatis tanpa kontrol pengguna."
+    },
+    {
+        q: "Multimedia penting dalam pendidikan karena ......",
+        a: [
+            "Dapat menggantikan guru",
+            "Menyederhanakan kurikulum belajar",
+            "Mempermudah penyampaian informasi dengan berbagai media",
+            "Mengurangi waktu belajar di kelas",
+            "Mengurangi biaya sekolah siswa"
+        ],
+        correct: 2,
+        pembahasan: "Multimedia mempermudah penyampaian informasi dengan kombinasi media."
+    }
+];
