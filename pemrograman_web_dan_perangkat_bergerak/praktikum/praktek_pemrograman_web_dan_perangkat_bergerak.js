@@ -23,9 +23,20 @@ function renderQuiz() {
         const div = document.createElement("div");
         div.className = "question";
 
+        // Render Judul Soal (escapeHTML agar aman)
         let html = `<h4>${i + 1}. ${escapeHTML(item.q)}</h4>`;
+        
+        // Render Gambar
         if (item.img) html += `<img src="${item.img}" class="soal-img"/>`;
-        if (item.code) html += `<pre><code class="language-js">${escapeHTML(item.code)}</code></pre>`;
+        
+        // --- BAGIAN INI DIPERBAIKI ---
+        // Cek apakah ada properti 'lang' di data, jika tidak ada default ke 'javascript'
+        if (item.code) {
+            const lang = item.lang ? item.lang : 'javascript'; 
+            // class="language-html" atau "language-xml" diperlukan agar tag <div> berwarna benar
+            html += `<pre><code class="language-${lang}">${escapeHTML(item.code)}</code></pre>`;
+        }
+        // -----------------------------
 
         html += item.shuffledAnswers.map((ans, idx) => `
       <label>
@@ -38,16 +49,19 @@ function renderQuiz() {
         quizContainer.appendChild(div);
     });
 
-    hljs.highlightAll();
+    // Jalankan highlight.js
+    if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+    }
+    
     updateSubmitState();
     document.querySelectorAll("input[type='radio']").forEach(input =>
         input.addEventListener("change", updateSubmitState)
     );
 
-    // Set timer dinamis: 1 menit per soal
-    startTimer(randomizedQuiz.length * 60);
+    // Set timer (aktifkan kembali jika perlu)
+    // startTimer(randomizedQuiz.length * 60);
 }
-
 function updateSubmitState() {
     const total = randomizedQuiz.length;
     let answered = 0;
@@ -287,6 +301,7 @@ renderQuiz();
 //     `;
 // }
 function escapeHTML(str) {
+    if (!str) return str; // Cek jika string kosong
     return str
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
