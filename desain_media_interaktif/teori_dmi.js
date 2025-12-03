@@ -1,4 +1,12 @@
-
+function escapeHtml(text) {
+    if (!text) return text;
+    return text
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
 function shuffleArray(arr) {
     const array = [...arr];
     for (let i = array.length - 1; i > 0; i--) {
@@ -12,10 +20,11 @@ function renderQuiz() {
     const quizContainer = document.getElementById("quiz");
     quizContainer.innerHTML = "";
 
+    // Acak soal
     randomizedQuiz = shuffleArray(quizData).map(item => ({
         ...item,
         shuffledAnswers: shuffleArray(item.a.map((text, idx) => ({
-            text,
+            text: escapeHtml(text), // Aman jika jawaban mengandung kode HTML
             isCorrect: idx === item.correct
         })))
     }));
@@ -24,29 +33,43 @@ function renderQuiz() {
         const div = document.createElement("div");
         div.className = "question";
 
-        let html = `<h4>${i + 1}. ${item.q}</h4>`;
+        // Render Judul Soal
+        let html = `<h4>${i + 1}. ${escapeHtml(item.q)}</h4>`;
+        
+        // Render Gambar jika ada
         if (item.img) html += `<img src="${item.img}" class="soal-img"/>`;
-        if (item.code) html += `<pre><code class="language-js">${item.code}</code></pre>`;
+        
+        // Render Kode jika ada (Perbaikan disini)
+        if (item.code) {
+            // Tentukan bahasa, default ke 'html' jika tidak diset, atau 'javascript'
+            const langClass = item.lang ? `language-${item.lang}` : 'language-html'; 
+            html += `<pre><code class="${langClass}">${escapeHtml(item.code)}</code></pre>`;
+        }
 
+        // Render Pilihan Jawaban
         html += item.shuffledAnswers.map((ans, idx) => `
-      <label>
-        <input type="radio" name="q${i}" value="${idx}">
-        ${String.fromCharCode(65 + idx)}. ${ans.text}
-      </label>
-    `).join("");
+            <label>
+                <input type="radio" name="q${i}" value="${idx}">
+                ${String.fromCharCode(65 + idx)}. ${ans.text}
+            </label>
+        `).join("");
 
         div.innerHTML = html;
         quizContainer.appendChild(div);
     });
 
-    hljs.highlightAll();
+    // Jalankan syntax highlighter (pastikan library highlight.js sudah terpasang di HTML)
+    if (typeof hljs !== 'undefined') {
+        hljs.highlightAll();
+    }
+
     updateSubmitState();
     document.querySelectorAll("input[type='radio']").forEach(input =>
         input.addEventListener("change", updateSubmitState)
     );
 
-    // Set timer dinamis: 1 menit per soal
-    startTimer(randomizedQuiz.length * 60);
+    // Set timer (aktifkan jika diperlukan)
+    // startTimer(randomizedQuiz.length * 60);
 }
 
 function updateSubmitState() {
