@@ -1,7 +1,7 @@
 let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
-const quizData =[
+const quizData = [
     {
         q: "Adobe Premiere Pro adalah salah satu software editing video profesional yang digunakan untuk membuat, memotong, dan menyusun video. Premiere Pro banyak dipilih karena...",
         a: [
@@ -361,63 +361,124 @@ const quizData =[
         ],
         correct: 1,
         pembahasan: "Ultra Key digunakan untuk menghapus background hijau."
-    }, {
-    q: "Tool apakah yang digunakan untuk memotong klip secara presisi tanpa memindahkan posisi klip lainnya di timeline?",
-    a: ["Selection Tool", "Razor Tool", "Slip Tool", "Ripple Edit Tool"],
-    correct: 1,
-    pembahasan: "Razor Tool digunakan untuk memotong klip tepat di titik yang dipilih tanpa memengaruhi klip lain."
-},
+    },
+    {
+        q: "Tool apakah yang digunakan untuk memotong klip secara presisi tanpa memindahkan posisi klip lainnya di timeline?",
+        a: [
+            "Selection Tool",
+            "Razor Tool",
+            "Slip Tool",
+            "Ripple Edit Tool",
+            "Hand Tool"
+        ],
+        correct: 1,
+        pembahasan: "Razor Tool digunakan untuk memotong klip tepat di titik yang dipilih tanpa memengaruhi klip lain."
+    },
     {
         q: "Tool yang digunakan untuk menggeser isi klip tanpa mengubah durasi atau posisi klip di timeline adalah...",
-        a: ["Slide Tool", "Slip Tool", "Track Select Tool", "Rate Stretch Tool"],
+        a: [
+            "Slide Tool",
+            "Slip Tool",
+            "Track Select Tool",
+            "Rate Stretch Tool",
+            "Razor Tool"
+        ],
         correct: 1,
         pembahasan: "Slip Tool menggeser isi klip (in-out) tanpa memindahkan posisi dan panjang klip di timeline."
     },
     {
         q: "Tool yang digunakan untuk mempercepat atau memperlambat durasi klip adalah...",
-        a: ["Ripple Edit Tool", "Rate Stretch Tool", "Track Select Tool", "Rolling Edit Tool"],
+        a: [
+            "Ripple Edit Tool",
+            "Rate Stretch Tool",
+            "Track Select Tool",
+            "Rolling Edit Tool",
+            "Hand Tool"
+        ],
         correct: 1,
         pembahasan: "Rate Stretch Tool mengubah durasi klip sekaligus mengatur speed-nya."
     },
     {
         q: "Jika ingin menggeser seluruh klip pada satu track maju atau mundur sekaligus, tool yang digunakan adalah...",
-        a: ["Ripple Edit Tool", "Slide Tool", "Track Select Forward Tool", "Rolling Edit Tool"],
+        a: [
+            "Ripple Edit Tool",
+            "Slide Tool",
+            "Track Select Forward Tool",
+            "Rolling Edit Tool",
+            "Pen Tool"
+        ],
         correct: 2,
         pembahasan: "Track Select Forward Tool memilih semua klip di sebelah kanan playhead dalam satu klik."
     },
     {
         q: "Tool apakah yang memungkinkan mengedit titik masuk dan keluar dua klip sekaligus tanpa mengubah panjang total timeline?",
-        a: ["Ripple Edit Tool", "Rolling Edit Tool", "Slip Tool", "Selection Tool"],
+        a: [
+            "Ripple Edit Tool",
+            "Rolling Edit Tool",
+            "Slip Tool",
+            "Selection Tool",
+            "Type Tool"
+        ],
         correct: 1,
         pembahasan: "Rolling Edit Tool memodifikasi edit point antara dua klip tanpa memengaruhi durasi keseluruhan."
     },
     {
         q: "Efek apa yang digunakan untuk menstabilkan video yang goyang di Premiere Pro?",
-        a: ["Transform", "Warp Stabilizer", "Lens Distortion", "Directional Blur"],
+        a: [
+            "Transform",
+            "Warp Stabilizer",
+            "Lens Distortion",
+            "Directional Blur",
+            "Ultra Key"
+        ],
         correct: 1,
         pembahasan: "Warp Stabilizer digunakan untuk menstabilkan footage yang bergetar atau shaky."
     },
     {
         q: "Panel apa yang digunakan untuk mengatur warna, kontras, highlight, shadow, dan tone video?",
-        a: ["Audio Track Mixer", "Effect Controls", "Lumetri Color", "Metadata"],
+        a: [
+            "Audio Track Mixer",
+            "Effect Controls",
+            "Lumetri Color",
+            "Metadata",
+            "Essential Graphics"
+        ],
         correct: 2,
         pembahasan: "Lumetri Color menyediakan kontrol koreksi warna secara lengkap."
     },
     {
         q: "Jika ingin membuat transisi manual dengan mengatur opacity secara keyframe, panel mana yang harus digunakan?",
-        a: ["Lumetri Color", "Effect Controls", "Source Monitor", "Program Monitor"],
+        a: [
+            "Lumetri Color",
+            "Effect Controls",
+            "Source Monitor",
+            "Program Monitor",
+            "Timeline"
+        ],
         correct: 1,
         pembahasan: "Effect Controls digunakan untuk mengatur keyframe opacity, posisi, skala, dan efek lainnya."
     },
     {
         q: "Efek audio untuk menghilangkan noise latar belakang seperti dengungan atau angin adalah...",
-        a: ["DeNoise", "Reverb", "Hard Limiter", "Parametric EQ"],
+        a: [
+            "DeNoise",
+            "Reverb",
+            "Hard Limiter",
+            "Parametric EQ",
+            "Delay"
+        ],
         correct: 0,
         pembahasan: "DeNoise menghapus noise latar belakang secara otomatis."
     },
     {
         q: "Tool yang digunakan untuk memperbesar area tampilan timeline tanpa mengubah ukuran klip adalah...",
-        a: ["Zoom Tool", "Hand Tool", "Rate Stretch Tool", "Slide Tool"],
+        a: [
+            "Zoom Tool",
+            "Hand Tool",
+            "Rate Stretch Tool",
+            "Slide Tool",
+            "Pen Tool"
+        ],
         correct: 0,
         pembahasan: "Zoom Tool memperbesar tampilan timeline agar proses editing lebih detail."
     }
