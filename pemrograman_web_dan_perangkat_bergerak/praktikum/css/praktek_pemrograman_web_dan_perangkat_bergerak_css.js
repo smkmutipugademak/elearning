@@ -2,7 +2,7 @@ let randomizedQuiz = [];
 let timerInterval;
 let timeRemaining = 0;
 
-const quizData = [
+const quizData =[
   {
     "q": "Kepanjangan dari CSS adalah....",
     "a": ["Cascading Style Sheets", "Creative Style System", "Computer Style Selector", "Coded Style Syntax", "Common Style Sheet"],
